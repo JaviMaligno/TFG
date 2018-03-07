@@ -1,0 +1,487 @@
+\documentclass[TFG.tex]{subfiles}
+
+\begin{document}
+
+
+%\hyphenation{equi-va-len-cia}\hyphenation{pro-pie-dad}\hyphenation{res-pec-ti-va-men-te}\hyphenation{sub-es-pa-cio}
+\chapter{Definiciones del grupo de trenzas}
+
+Aunque el término \emph{grupo de trenzas} fue acuñado por Artin en 1925 \cite{ArtinA}, estos grupos ya fueron considerados por Hurwitz en 1891 \cite{Hur} como lo que en terminología moderna se llamaría ``grupo fundamental de espacios de configuración de $n$ puntos en el plano complejo''. Magnus en 1935 \cite{Magnus} consideró el mismo grupo desde el punto de vista de los \emph{mapping classes}. Markoff \cite{Markoff} dio una aproximación totalmente algebraica. 
+
+En este capítulo veremos varias de estas definiciones, las cuales son todas equivalentes \cite{Zariski}, ya que una sola definición no es suficiente para enunciar y demostrar los resultados que se presentan en el resto del trabajo.
+
+\section{Trenzas como colección de cuerdas}
+Empezamos dando la definición más gráfica e intuitiva, consistente en visualizar las trenzas como cuerdas que se entrelazan. 
+
+\begin{defi}\label{geo}
+Sea $n\geq 1$ un entero. Denotemos $\Sigma_n$ al grupo simétrico sobre $n$ elementos.  Sean $n$ puntos $P_1,\dots, P_n$ en $\C$ (se puede suponer que $P_k=k$ para todo $1\leq k\leq n$). Se define la \emph{trenza geométrica de $n$ cuerdas} como la $n$-upla $\beta=(\beta_1,\dots,\beta_n)$ de caminos $\beta_k:[0,1]\to\C$ tal que:
+\begin{itemize}
+\item $\beta_k(0)=P_k$ para todo $1\leq k\leq n$,
+\item existe una permutación $\tau=\tau(\beta)\in\Sigma_n$ tal que $\beta_k(1)=P_{\tau(k)}$ para todo $1\leq k\leq n$, llamada \emph{permutación inducida por $\beta$},
+\item $\beta_k(t)\neq \beta_l(t)$ para todo $k\neq l$ y para todo $t\in[0,1]$.
+\end{itemize}
+Si la permutación inducida por $\beta$ es el elemento neutro de $\Sigma_n$, es decir, si $\beta_k(1)=P_k$ para todo $1\leq k\leq n$, entonces decimos que la trenza geométrica es \emph{pura}.
+
+Dos trenzas geométricas $\alpha$ y $\beta$ se dicen \emph{homotópicas} si existe una familia continua de trenzas $\{\gamma_s\}_{s\in[0,1]}$ de modo que $\gamma_0=\alpha$ y $\gamma_1=\beta$. Consideraremos que dos trenzas geométricas son la misma si son homotópicas, y a la clase de homotopía de una trenza geométrica de $n$ cuerdas la llamaremos \emph{trenza de $n$ cuerdas}. Nótese que si $\alpha$ y $\beta$ son homotópicas entonces $\tau(\alpha)=\tau(\beta)$, así que diremos que una trenza es \emph{pura} los elementos de la clase de homotopía son trenzas geométricas puras.
+\end{defi}
+
+El dibujo tridimensional de una trenza geométrica tendría la siguiente forma:
+\begin{figure}[h!]
+\includegraphics[scale=0.7]{Imagenes/hilos}
+\caption{Una trenza pura y una trenza no pura.}\label{hilos}
+\end{figure}
+%para conseguir cambiar la permutación habría que cortar un hilo porque los puntos finales no se pueden mover. 
+
+%La manera más usual de representar las trenzas puras es representar el movimiento de $n$ puntos en un dibujo tridimensional. Para cada $t\in[0,1]$ se representa la $n$-upla $\beta(t)=(\beta_1(t),\dots,\beta_n(t))$ simplemente dibujando en $\C\times[0,1]$ los $n$ puntos $(\beta_1(t),t),\dots,(\beta_n(t),t)$, con la condición de que dos de estos puntos nunca son iguales y de que $\beta_i(0)=\beta_i(1)$ para todo $i=1,\dots, n$.
+\begin{observacion}
+Para cada $t\in[0,1]$, el plano $\C\times\{t\}$ es atravesado una sola vez por cada cuerda de la trenza. 
+\end{observacion}
+
+Normalmente, se representan las trenzas como su proyección en $\R\times[0,1]$ (posiblemente seguida de una rotación de 90º). Salvo homotopía, podemos suponer que la proyección tiene un número finito de puntos de cruce, en los cuales solo intervienen dos cuerdas. Además podemos suponer también que los cruces ocurren a distintas alturas, es decir, para distintos valores de $t\in[0,1]$. En la Figura \ref{plana} se ilustra la proyección de la trenza no pura de la Figura \ref{hilos}. Además, adoptaremos el convenio de la Figura \ref{cruce} para decidir cuando un cruce es positivo o negativo. 
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}
+\braid[ number of strands=3, %lower bound
+ border height=2pt,style strands={1}{line width=2pt},style strands={2}{line width=2pt},style strands={3}{draw=none}] (braid) at (1,0)%optional, it's a name
+          a_1^{-1};
+\end{tikzpicture}
+\begin{tikzpicture}
+\braid[ number of strands=3, %lower bound
+ border height=2pt,style strands={3}{line width=2pt},style strands={2}{line width=2pt}, style strands={1}{draw=none}] (braid) at (1,0)%optional, it's a name
+          a_2;
+\end{tikzpicture}
+
+\caption{Cruce positivo y cruce negativo, respectivamente.}\label{cruce}
+\end{figure}
+
+\begin{defi}\label{estandar}
+Se definen los \emph{generadores estándar} o \emph{generadores de Artin} como las trenzas $\sigma_i$ con $1\leq i\leq n-1$ indicadas en la figura siguiente.
+\begin{figure}[h!]
+\begin{tikzpicture}
+\braid[ number of strands=3, %lower bound
+ border height=2pt,style strands={1}{line width=2pt},style strands={2}{line width=2pt},style strands={3}{draw=none}] (braid) at (1,0)%optional, it's a name
+          a_1^{-1};
+            \node[ at=(braid-1-s),  label=north :  $i$ ] {} ;
+\node[ at=(braid-2-s),  label=north : $i+1$ ] {} ;
+\draw (1.5,-2) node[anchor=south] {$\sigma_i$};
+\end{tikzpicture}
+\begin{tikzpicture}
+\braid[ number of strands=3, %lower bound
+ border height=2pt,style strands={3}{line width=2pt},style strands={2}{line width=2pt}, style strands={1}{draw=none}] (braid) at (1,0)%optional, it's a name
+          a_2;
+          \node[ at=(braid-2-s),  label=north :  $i$ ] {} ;
+\node[ at=(braid-3-s),  label=north : $i+1$ ] {} ;
+\draw (2.5,-2) node[anchor=south] {$\sigma_i^{-1}$};
+\end{tikzpicture}
+\end{figure}
+
+A partir de las observaciones anteriores, es claro que cualquier trenza se puede construir como concatenación de los generadores de Artin.
+\end{defi}
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}
+\draw [line width=1.5pt, dash pattern=on 4pt off 4pt] (0,0.9)-- (0,4.2);
+\draw (-0.7,0.7) node[anchor=north west] {$\mathbb{R}\times\{0\}$};
+\draw [line width=1.5pt, dash pattern=on 4pt off 4pt] (9.1,0.9)-- (9.1,4.2);
+\draw (8.4,0.7) node[anchor=north west] {$\mathbb{R}\times\{1\}$};
+\braid[rotate=90, number of strands=4, %lower bound
+ border height=2pt,style strands={1}{line width=2pt},style strands={2}{line width=2pt},style strands={3}{line width=2pt},style strands={4}{line width=2pt}, style floors={1}{dashed}] (braid) at (1,0)%optional, it's a name
+          a_1^{-1}a_3^{-1}a_2^{-1}a_1^{-1}a_3^{-1}a_2^{-1}a_3a_2^{-1}a_1^{-1};
+\node[ at=(braid-1-s),  label=west : 1 ] {} ;
+\node[ at=(braid-4-s),  label=west : $n$ ] {} ;
+\node[ at=(braid-1-e),  label=east : 1 ] {} ;
+\node[ at=(braid-2-e),  label=east : $n$ ] {} ;
+\end{tikzpicture}
+\caption{Ejemplo de representación plana.}\label{plana}
+\end{figure}
+
+
+
+
+\subsection{Estructura de grupo}
+Una de las características más importantes del conjunto de clases de homotopía de trenzas es que puede dotarse de estructura de grupo para cada $n$. Para ello, definiremos el producto de trenzas. 
+
+\begin{defi}
+El producto de dos trenzas $\alpha=(\alpha_1,\dots, \alpha_n)$ y $\beta=(\beta_1,\dots,\beta_n)$ se define como la trenza
+$$\alpha\cdot\beta = (\alpha_1\beta_{\tau(1)},\dots, \alpha_n\beta_{\tau(n)}),$$
+donde $\tau=\tau(\alpha)$. Es decir, el producto de dos trenzas en el mismo número de cuerdas es su concatenación, en la cual se recorre en primer lugar $\alpha$ y después $\beta$. En la Figura \ref{producto} se ilustra un ejemplo. En ocasiones omitiremos el punto y escribieremos simplemente $\alpha\beta$. Asímismo, denotaremos $\alpha^n=\underbrace{\alpha\cdots\alpha}_{n\text{ veces}}$.
+\end{defi}
+
+\begin{figure}[h!]
+\centering
+%\begin{center}
+\resizebox{7cm}{2.cm}{%
+\begin{tikzpicture}
+\braid[ rotate=90, number of strands=3, %lower bound
+ border height=2pt,style strands={1}{line width=1.5pt},style strands={2}{line width=1.5pt},style strands={3}{line width=1.5pt}] (braid) at (1,1.5)%optional, it's a name
+          a_2^{-1}a_1a_2^{-1};
+         \fill[ black ] ( 2 , 2 ) circle (2 pt ) ;
+\end{tikzpicture}
+\begin{tikzpicture}
+\braid[ rotate=90, number of strands=3, %lower bound
+ border height=2pt,style strands={1}{line width=1.5pt},style strands={2}{line width=1.5pt},style strands={3}{line width=1.5pt}] (braid) at (1,0)%optional, it's a name
+          a_2a_2a_1^{-1};
+          \draw (3.5,2.2) node[anchor=north west] {\Large=};
+\end{tikzpicture}
+}
+%\end{center}
+\end{figure}
+\begin{figure}[h!]
+\resizebox{10cm}{2.3cm}{%
+\begin{tikzpicture}
+\braid[ rotate = 90, number of strands=3, %lower bound
+ border height=2pt,style strands={1}{line width=1.5pt},style strands={2}{line width=1.5pt},style strands={3}{line width=1.5pt}] (braid) at (1,2)%optional, it's a name
+          a_2^{-1}a_1a_2^{-1}a_2a_2a_1^{-1};
+           \draw (4.3,2.2) node[anchor=north west] {\Large=};
+            \fill[ black ] ( 1.1 , 3 ) circle (2.3 pt ) ;
+            \fill[ black ] ( 1.1 , 2 ) circle (2.3 pt ) ;
+            \fill[ black ] ( 1.1 , 1 ) circle (2.3 pt ) ;
+            \draw [rotate around={90.:(1.1,2.5)},line width=1.5pt,dotted] (1.1,2.5) ellipse (0.7843018170151402cm and 0.6442593318876021cm);
+\end{tikzpicture}\begin{tikzpicture}
+%\clip (0,-2) rectangle (4, -8);
+\braid[ rotate=90, number of strands=3, %lower bound
+ border height=2pt,style strands={1}{line width=1.5pt},style strands={2}{line width=1.5pt},style strands={3}{line width=1.5pt}] (braid) at (1,3)%optional, it's a name
+          a_2^{-1}a_1a_2a_1^{-1};
+\end{tikzpicture}
+}
+\caption{Producto de dos trenzas.}\label{producto}
+\end{figure}
+
+\newpage
+
+Denotemos $B_n$ al conjunto de clases de homotopía de trenzas de $n$ cuerdas y $PB_n$ al conjunto de clases de homotopía de trenzas puras de $n$ cuerdas. Es evidente que la multiplicación anterior induce una operación en $B_n$ (y por tanto en $PB_n)$, es más, se tiene el siguiente resultado.
+
+\begin{prop}
+El conjunto $B_n$ dotado de esta operación tiene estructura de grupo, al que se le llama \emph{grupo de trenzas de $n$ cuerdas}. El resultado también es cierto para $PB_n$, cuyo nombre es \emph{grupo de trenzas puras de $n$ cuerdas}. 
+\end{prop}
+
+\begin{dem}
+Sean $\alpha$ y $\beta$ dos trenzas con representantes $a=(a_1,\dots, a_n)$ y $b=(b_1,\dots, b_n)$ respectivamente. En primer lugar, veamos que la operación está bien definida, es decir, que $a\cdot b$ es una trenza, y por tanto podemos definir $\alpha\beta=[a\cdot b]$. Sea $\tau=\tau(a)$ la permutación inducida por $a$. Como $a_kb_{\tau(k)}(0)=a_k(0)=P_k$ para todo $1\leq k\leq n$, se cumple la primera propiedad de la definición \ref{geo}. Para la segunda, basta observar que la nueva permutación es $\tau(a\cdot b)=\tau(a)\circ \tau(b)$. En particular, si $a$ y $b$ son puras, entonces la permutación inducida por el producto también es la identidad, por lo que el producto es una trenza pura. Por último, si $t\in[0,1/2]$, entonces $a_k\beta_{\tau(k)}=a_k(2t)$ y si $t\in [1/2,1]$, $\alpha_k\beta_{\tau(k)}=\beta_{\tau(k)}(2t-1)$ para todo $1\leq k\leq n$, por lo que se tiene claramente la tercera propiedad. 
+
+Por otra parte, si $a'$ y $b'$ son otros representantes de $\alpha$ y $\beta$ respectivamente, se tiene que $[a'\cdot b']=[a\cdot b]$ por las propiedades de la homotopía de caminos con respecto a la concatenación.
+
+Veamos ahora la estructura de grupo. Tenemos que probar que la operación es asociativa, pero esto se deduce de que la concatenación de caminos es asociativa salvo homotopía.
+Tenemos claramente que la identidad es la trenza constante representada por $Id=(Id_1,\dots, Id_n)$, donde $Id_k$ denota el camino constante en $P_k$ para $1\leq k\leq n$.
+Finalmente, dada $\alpha=[(a_1,\dots, a_n)]$ con permutación inducida $\tau$, se tiene que $\alpha^{-1}=[(\overline{a}_{\tau^{-1}(1)},\dots, \overline{a}_{\tau^{-1}(n)})]$, donde $\overline{a}_k$ denota el camino opuesto a $a_k$. 
+
+En efecto, usando las propiedades de la homotopía de caminos con respecto al camino opuesto:
+\[
+\alpha\alpha^{-1}=[(a_1,\dots, a_n)\cdot (\overline{a}_1,\dots, \overline{a}_n)]=[(a_1\overline{a}_{\tau^{-1}(1)},\dots, a_n\overline{a}_{\tau^{-1}(n)})]=[Id]
+\]
+Análogamente se prueba $\alpha^{-1}\alpha=[Id]$. 
+$\QED$
+\end{dem}
+
+\begin{figure}[h!]
+\begin{tikzpicture}
+\clip (0,-1) rectangle (5.5, 2.1);
+\braid[ rotate=90, number of strands=3, %lower bound
+ border height=2pt,style strands={1}{line width=1.5pt},style strands={2}{line width=1.5pt},style strands={3}{line width=1.5}, style all floors={}] (braid) at (0,-1)%optional, it's a name
+          a_2^{-1}a_2^{-1}a_1a_2^{-1} ;
+\draw (3,-1) node[anchor=south] {$\beta$};
+\end{tikzpicture}
+\begin{tikzpicture}
+\clip (0.5,-1) rectangle (6, 2.1);
+\braid[ rotate=90, number of strands=3, %lower bound
+ border height=2pt,style strands={3}{line width=1.5pt},style strands={2}{line width=1.5pt}, style strands={1}{line width=1.5pt}] (braid) at (0,-1)%optional, it's a name
+          a_2a_1^{-1}a_2a_2;
+\draw (3.2,-1) node[anchor=south] {$\beta^{-1}$};
+\end{tikzpicture}
+\caption{Inversa de una trenza.}\label{especular}
+\end{figure}
+
+\newpage
+
+\section{Espacios de configuración}
+Vamos a empezar dando la noción general de espacio de configuración.
+\begin{defi}
+Dado un espacio topológico $X$, el $n$-ésimo \emph{espacio de configuración} de $X$ o \emph{espacio de configuración de $n$ puntos} de $X$ se define como el conjunto
+$$M_n(X)=\{(x_1,\dots,x_n)\in X^n\mid x_i\neq x_j\ \forall i\neq j\},$$
+dotado de la topología relativa de $X^n$. Cuando el espacio topológico $X$ se sobreentienda por el contexto, el espacio de configuración se denotará simplemente $M_n$. 
+\end{defi}
+
+Hay una acción natural del grupo simétrico $\Sigma_n$ en los puntos de $M_n(X)$ dada por 
+\begin{gather*}
+\Sigma_n\times M_n(X)\to M_n(x)\\
+\ (\sigma,x)\mapsto \sigma(x).
+\end{gather*}
+Esto da lugar al siguiente espacio:
+\begin{defi}
+Se define el $n$-ésimo \emph{espacio de configuración no ordenado} de $X$ o \emph{espacio de configuración de $n$ puntos no ordenados} de $X$ como 
+$$N_n(X)=M_n(X)/\Sigma_n,$$
+es decir, el espacio de órbitas de la acción. De igual manera que con el anterior espacio de configuración, cuando se sobreentienda $X$, lo denotaremos por $N_n$. 
+\end{defi}
+
+\begin{observacion}
+Para cualquier espacio topológico $X$, $M_1(X)=N_1(X)=X$.
+\end{observacion}
+
+Consideremos el espacio de configuración de $n$ puntos distintos del plano complejo $\C$. Esto es,
+$$M_n=\{(z_1,\dots,z_n)\in\C^n\mid z_i\neq z_j\ \forall i\neq j\}.$$ 
+Obsérvese que es un espacio de dimensión real $2n$. No es una buena idea intentar visualizar el espacio de configuración $M_n$ en $2n$ dimensiones, en su lugar, basta considerar $n$ puntos distintos y ordenados de $\C$. Esto es, $(z_1,z_2,z_3,\dots, z_n)$ y $(z_2,z_1,z_3,\dots, z_n)$ representarían puntos distintos en $M_n$. 
+
+\begin{defi}
+El \emph{grupo de trenzas puras} de $n$ cuerdas, $PB_n$, es el grupo fundamental de $M_n$, es decir,
+$$PB_n=\pi_1(M_n).$$
+\end{defi}
+
+Tratemos de visualizar esta definición. Una trenza pura $\beta\in\pi_1(M_n)$ es un lazo en $M_n$
+\begin{align*}
+\beta: & [0,1]\to M_n\\
+& \quad t\ \mapsto \beta(t)= (\beta_1(t),\dots, \beta_n(t)),
+\end{align*}
+que empieza y acaba en el mismo punto base. Por tanto basta elegir un punto base de $M_n$, que puede ser, por ejemplo, la $n$-upla de enteros $(1,2,\dots, n)$. Una trenza pura será representada por el movimiento de estos puntos en $\C$, teniendo en cuenta que en cada momento los puntos son todos distintos entre sí. Al final del movimiento, cada punto regresa a su posición original. Por supuesto, el lazo está definido salvo homotopía, lo que nos permite deformar el movimiento de forma natural (evitando que dos puntos se encuentren en el mismo lugar al mismo tiempo), dando una trenza pura equivalente.
+
+Este movimiento se puede ver también en $\C\times[0,1]$, lo que nos daría una imagen similar a la de la Figura \ref{hilos} a la izquierda.
+
+La definición general de trenza se puede obtener inmediatamente a partir de la de trenzas puras, pues las trenzas (en general) surgen cuando no importa el orden de los puntos que se están moviendo, sino simplemente el conjunto de $n$ puntos distintos de $\C$.
+
+\begin{defi}
+El \emph{grupo de trenzas} de $n$ cuerdas, $B_n$,  es el grupo fundamental del $N_n$, es decir,
+$$B_n=\pi_1(N_n)=\pi_1(M_n/\Sigma_n).$$
+\end{defi}
+
+Al igual que antes, las trenzas pueden ser visualizadas como lazos, con la diferencia de que ahora, dado un lazo $\beta:[0,1]\to N_n$, $\beta(1)$ no tiene que ser necesariamente igual a $\beta(0)$, sino que puede ser una permutación de sus coordenadas. De nuevo, dos trenzas son consideradas iguales si son homotópicamente equivalentes. Al representar el movimiento en $\C\times[0,1]$ nos quedaría un dibujo similar al de la Figura \ref{hilos} a la derecha.
+
+En ambos grupos de trenzas, el producto se corresponde con la concatenación de lazos, que se corresponde con realizar un movimiento después de otro, o en la representación tridimensional, con apilar trenzas (reescalando verticalmente) como en la Figura \ref{producto}. 
+
+
+
+
+\section{Mapping Class Groups}
+
+Otra interpretación conocida de las trenzas consiste en considerarlas como automorfismos del disco punteado, salvo deformación. Para ello necesitamos definir una topología adecuada para un espacio de automorfismos, que será la siguiente:
+
+\begin{defi}
+Sean $X$ e $Y$ espacios topológicos y $C(X,Y)$ el conjunto de funciones continuas de $X$ en $Y$. La topología \emph{compacta-abierta} en $C(X,Y)$ es aquella que tiene como subbase los conjuntos de la forma
+$$B(K,U)=\{f\mid f(K)\subset U\},$$
+donde $K\subseteq X$ es compacto y $U\subseteq Y$ es abierto. Es decir, los abiertos de la topología compacta-abierta son uniones arbitrarias de intersecciones finitas de subconjuntos de la forma anterior.
+\end{defi}
+
+Sea pues $\D_n$ el disco cerrado menos $n$ puntos:
+$$\D_n=\D^2\setminus\{P_1,\dots, P_n\}.$$
+Sea $Homeo^+(\D_n)$ el conjunto de homeomorfismos que preservan la orientación de $\D_n$ en sí mismo, fijando los puntos del borde. Este conjunto admite la topología compacta-abierta. En efecto, basta tomar $K=U=\D^2$, considerando $P_1,\dots, P_n$ como puntos marcados en lugar de eliminarlos, y restringir la topología compacta-abierta al espacio de dichos homeomorfismos. Por tanto, tenemos una noción natural de \emph{deformación continua} de un automorfismo de $\D_n$, fijando el borde y los agujeros. Esta noción se formaliza mediante la siguiente definición.
+
+\begin{defi}
+Una \emph{isotopía} entre dos espacios topológicos $X$ e $Y$ es una familia continua de homeomorfismos $h_t:X\to Y$ con $0\leq t\leq 1$. Dos homeomorfismos $f,g:X\to Y$ son \emph{isotópicos} si existe una isotopía $h_t:X\to Y$ con $h_0=f$ y $h_1=g$. 
+\end{defi}
+
+Consideraremos que dos automorfismos son iguales si pueden ser transformados el uno en el otro mediante una isotopía de $\D_n$ en sí mismo que fije el borde y los agujeros. En otras palabras:
+
+\begin{defi} Si denotamos $Homeo^+_0(\D_n)$ a la componente conexa de $Id_{\D_n}$ en $Homeo^+(\D_n)$, definimos entonces el \emph{mapping class group} (grupo de clases de aplicaciones) de $\D_n$ como:
+$$\mathcal{M}(\D_n)=Homeo^+(\D_n)/Homeo^+_0(\D_n).$$
+\end{defi}
+
+Con esta definición se tiene:
+$$\mathcal{M}(\D_n)\cong B_n.$$
+Se sabe que un automorfismo del disco cerrado $\D^2$ que fije la frontera puede ser deformado mediante isotopía a la identidad (se prueba mediante el conocido como \emph{truco de Alexander} \cite{Alexander}). Por tanto, dado un elemento de $\mathcal{M}(\D_n)$, se puede tomar un homeomorfismo de $\D_n$ que lo represente y extenderlo de forma única a un homeomorfismo $f$ de $\D^2$. A continuación, se toma una isotopía de $Id_{\D^2}$ en $f$, y se sigue el camino de los puntos $P_1,\dots, P_n$ durante la deformación. Esto nos da un lazo en $\pi_1(\D_n/\Sigma_n)$, que se corresponde con una trenza. 
+
+
+%No es difícil probar que esto da lugar a una aplicación bien definida entre $\mathcal{M}(\D_n)$ y $B_n$ que es además homomorfismo de grupos. Por tanto, las trenzas pueden ser vistas como clases de aplicaciones del disco punteado.
+
+%automorfismo=autohomeomorfismo
+
+\section{Presentación del grupo de trenzas}
+Una de las características mejor conocidas de los grupos de trenzas es su presentación finita descubierta por Artin en \cite{Artin}. Ya hemos mencionado los generadores $\sigma_1,\dots,\sigma_{n-1}\in B_n$ en \ref{estandar}. La presentación completa sería la siguiente:
+\begin{equation}\label{presentacion}
+B_n=\left\langle\begin{array}{c| c c}
+\multirow{2}{*}{$\sigma_1,\dots,\sigma_{n-1}$} & \sigma_i\sigma_j=\sigma_j\sigma_i, & |i-j|>1\\
+& \sigma_i\sigma_j\sigma_i=\sigma_j\sigma_i\sigma_j, & |i-j|=1
+\end{array}\right\rangle.
+\end{equation}
+La prueba de la completitud de esta presentación puede encontrarse en \cite{Magnus}. 
+
+Vamos a dar también la presentación del grupo de trenzas puras, en concreto la dada por J. S. Birman en \cite{Birman} y corregida por J. González-Menses y M. Silvero en \cite{polynomial}, pues nos será más útil para probar ciertos resultados. La presentación original dada por Artin se puede encontrar en \cite{Artin}. Así pues, definimos los generadores
+$$A_{ij}=\sigma_{j-1}\dots\sigma_{i+1}\sigma_i^2\sigma_{i+1}^{-1}\dots\sigma_{j-1}^{-1}\ (1\leq i<j\leq n)$$
+y las relaciones %n!2(n-1)
+\begin{align*}
+A_{ij}^{-1}A_{rs}A_{ij}&=A_{rs}\text{ si } (i<j<r<s)\text{ o bien } (r+1<i<j<s),\\
+A_{ij}^{-1}A_{js}A_{ij}&=A_{is}A_{js}A_{is}^{-1} \text{ si } (i<j<s),\\
+A_{ij}^{-1}A_{is}A_{ij}&=A_{is}A_{js}A_{is}A_{js}^{-1}A_{is}^{-1}\text{ si } (i<j<s),\\
+A_{ij}^{-1}A_{rs}A_{ij}&=A_{is}A_{js}A_{is}^{-1}A_{js}^{-1}A_{rs}A_{js}A_{is}A_{js}^{-1}A_{is}^{-1}\text{ si } (i+1<r<j<s).
+\end{align*}
+
+En la Figura \ref{generador} se puede observar qué trenza representa geométricamente el generador $A_{ij}$. 
+
+\begin{nota}
+Cuando $j=i+1$, $A_{ij}=\sigma_i^2$ y cuando $j=i$, $A_{ij}=1$. 
+\end{nota}
+
+%\begin{figure}
+%\centering
+%\begin{tikzpicture}
+%\braid[ number of strands=12, %lower bound
+% border height=2pt,
+%       style strands={2}{draw=none}, style strands={3}{draw=none}, style strands={8}{line width=2pt},style strands={10}{draw=none},style strands={11}{draw=none}] (braid) at (1,0)%optional, it's a name
+%          a_7 a_6 a_5 a_5 a_6^{-1} a_7^{-1};
+%\fill[ black ] ( 2 , -3 ) circle (2 pt ) ;
+%\fill[ black ] ( 3 , -3 ) circle (2 pt ) ;
+%\fill[ black ] ( 10 , -3 ) circle (2 pt ) ;
+%\fill[ black ] ( 11 , -3 ) circle (2 pt ) ;
+%\node[ at=(braid-5-s),  pin=north : cuerda $i$ ] {} ;
+%\node[ at=(braid-8-s),  pin=north : cuerda $j$ ] {} ;
+%\end{tikzpicture}
+%\caption{Interpretación geométrica de la trenza $A_{ij}$.}\label{generador}
+%\end{figure}
+
+\begin{figure}
+\centering
+\tikzset{decorate sep/.style 2 args=
+{decorate,decoration={shape backgrounds,shape=circle,shape size=#1,shape sep=#2}}}
+\begin{tikzpicture}
+\draw[white,double=black,very thick,-] (-3,-2) -- (-3,0);
+
+
+\node[anchor=south] at (0,2.1) {$j$};
+\foreach \x in {-7,-4,-2,-1,1,4}{
+\draw[white,double=black,very thick,-] (\x,-2) -- (\x,2);
+}
+\draw[smooth,white,double=black,line width=2mm,-] plot[variable=\x,domain=-2:2] ({-3.5*exp(-1.4*\x*\x)},{\x});
+\draw[white,double=black,very thick,-] (-3,0) -- (-3,2);
+\node[anchor=south] at (-3,2.1) {$i$};
+\draw[decorate sep={1mm}{9mm},fill] (-6.5,0) -- (-4.5,0);
+\draw[decorate sep={1mm}{9mm},fill] (1.5,0) -- (3.5,0);
+\draw[-] (-8,2) -- (5,2);
+\draw[-] (-8,-2) -- (5,-2);
+\end{tikzpicture}
+\caption{Interpretación geométrica de la trenza $A_{ij}$.}\label{generador}
+\end{figure}
+
+También nos serán útiles a la hora de hacer cálculos las siguientes relaciones equivalentes a las anteriores, y que de nuevo se pueden encontrar en \cite{polynomial}:
+\begin{align*}
+A_{ij}A_{rs}A_{ij}^{-1}&=A_{rs}\text{ si } (i<j<r<s)\text{ o bien } (r+1<i<j<s),\\
+A_{ij}A_{js}A_{ij}^{-1}&=A_{js}^{-1}A_{is}^{-1}A_{js}A_{is}A_{js} \text{ si } (i<j<s),\\
+A_{ij}A_{is}A_{ij}^{-1}&=A_{js}^{-1}A_{is}A_{js}\text{ si } (i<j<s),\\
+A_{ij}A_{rs}A_{ij}^{-1}&=A_{js}^{-1}A_{is}^{-1}A_{js}A_{is}A_{rs}A_{is}^{-1}A_{js}^{-1}A_{is}A_{js}\text{ si } (i+1<r<j<s).
+\end{align*}
+%Al final no las usa, pero si hubiera querido pasar a la derecha en lugar de a la izquierda en el braid combing habrían hecho falta
+
+\section{Definiciones y resultados adicionales}
+
+En esta sección veremos definiciones y resultados que no son exclusivos de los grupos de trenzas, pero que serán utilizados a lo largo del trabajo. 
+
+\subsection{Monoides}
+
+\begin{defi}
+Un \emph{monoide} es una tupla $(S,*)$, donde $S$ es un conjunto y $*:S\times S\to S$ es una operación binaria satisfaciendo:
+\begin{itemize}
+\item Asociatividad, es decir, para cualesquiera $a,b,c\in S$, $(a*b)*c=a*(b*c)$.
+\item Existencia de elemento neutro, es decir, existe $e\in S$ tal que para todo $a\in S$, $e*a=a*e=a$. 
+\end{itemize}
+Habitualmente el símbolo de la operación será omitido y nos referiremos a $S$ como monoide, entendiéndose que en realidad es la tupla anterior.
+\end{defi}
+
+De forma análoga a como se hace para grupos, podemos considerar los generadores de un monoide y una presentación de un monoide mediante generadores y relaciones. También se definen de forma análoga los morfismos entre monoides. 
+
+\begin{defi}
+Dado un monoide $S$ con presentación $\langle M\mid R\rangle$, su \emph{grupo de fracciones} $G(S)$ es el grupo generado por la misma presentación.
+\end{defi}
+
+De forma natural podemos ver los elementos de un monoide dentro de su grupo de fracciones. Sin embargo, no siempre se conserva intacto, pues la existencia de inverso en el grupo, puede hacer que dos elementos distintos del monoide representen el mismo elemento del grupo de fracciones. Por ejemplo, si consideramos la presentación $\langle a,b,c\mid ab=cb\rangle$, los elementos $a$ y $c$ son distintos en el monoide, sin embargo, en el grupo son el mismo, pues multiplicando a la derecha por $b^{-1}$ en la relación obtenemos $a=c$. De aquí que consideremos la siguiende definición.
+
+\begin{defi}
+Decimos que un monoide $S$ se \emph{incrusta} en su grupo de fracciones $G(S)$, si el morfismo de monoides $\iota: S\to G(S)$ dado por $\iota(a)=a$ es inyectivo.
+\end{defi}
+
+\begin{defi}\label{condiciones}
+Decimos que un monoide $S$ satisface las \emph{condiciones de Öre} \cite{Ore} si se cumplen:
+\begin{itemize}
+\item $S$ es cancelativo, es decir, $xay=xby$ implica $a=b$ para todo $x,y,a,b\in S$. 
+\item Para todo $a,b\in S$ existen $a',b'\in S$ tales que $aa'=bb'$. 
+\end{itemize}
+\end{defi}
+
+\begin{prop}
+Si un monoide satisface las condiciones de Öre, entonces se incrusta en su grupo de fracciones \cite{Luis}.
+\end{prop}
+
+\subsection{Producto semidirecto}
+
+\begin{defi}
+Si un grupo $G$ actúa (por la izquierda) sobre un grupo $F$ mediante un automorfismo de grupos
+\[
+\rho: G\to Aut(F),
+\]
+el \emph{producto semidirecto} $F\rtimes G$ es el grupo cuyo conjunto subyacente es el producto cartesiano $F\times G$ y el producto está definido como 
+\[
+(\delta,h)(\gamma,g)=(\delta\rho_h(\gamma),hg)
+\]
+para $\delta,\gamma\in F$ y $h,g\in G$. Análogamente se puede definir $G\ltimes F$ utilizando una acción por la derecha. 
+\end{defi}
+
+En la definición hemos dicho que era un grupo, pero para ello tenemos que cerciorarnos de que se verifican los axiomas de grupo.
+
+\begin{prop}
+El producto semidirecto $F\rtimes G$ definido anteriormente es un grupo.
+\end{prop}
+\begin{dem}
+La asociatividad y la existencia de elemento neutro se tiene inmediatamente de la definición de acción de grupo y de que $G$ actúa sobre $F$ mediante automorfismos. De hecho, el elemento neutro es $e=(e_F,e_G)$, donde $e_F$ es el neutro de $F$ y $e_G$ el neutro de $G$. Vamos a probar entonces la existencia de elemento inverso. Dado $(\delta,h)\in F\rtimes G$ buscamos $(\gamma,g)\in F\rtimes G$ tal que $(\delta,h)(\gamma,g)=(e_F,e_G)=(\gamma,g)(\delta,h)$. Claramente se observa que $g=h^{-1}$. Por otro lado, tenemos
+\[
+\delta\rho_h(\gamma)=e_F, \quad \gamma \rho_{h^{-1}}(\delta)=e_F.
+\]
+Despejando $\gamma$ obtenemos
+\[
+\gamma=\rho_{h}^{-1}(\delta^{-1}),\quad \gamma=\rho_{h^{-1}}(\delta)^{-1}.
+\]
+Ambas expresiones son la misma puesto que $G$ actúa mediante automorfismos. Por tanto, el inverso de $(\delta,h)$ es $(\rho_{h^{-1}}(\delta^{-1}), h^{-1})$. \QED
+%https://proofwiki.org/wiki/Semidirect_Product_of_Groups_is_Group
+\end{dem}
+
+ Obsérvese que en el caso de que $\rho_h=h$ para todo $h\in G$ se tiene el producto directo. Otro caso particularmente interesante por la frecuencia con la que aparece se da cuando $G$ actúa por conjugación, en cuyo caso el producto sería
+\[
+(\delta,h)(\gamma,g)=(\delta h^{-1}\gamma h,hg).
+\]
+
+Por la forma en el que está definido el producto semidirecto, conseguimos conservar $F$ y de $G$ con cierta estructura dentro de $F\rtimes G$, es más 
+\begin{prop}
+ $F$ se puede ver como subgrupo normal de $F\rtimes G$ mediante la aplicación $\delta\mapsto (\delta,e_G)$, mientras que $G$ se puede ver como subgrupo mediante la aplicación $h\mapsto (e_F,h)$.
+\end{prop}
+\begin{dem}
+En ambos casos es elemental comprobar que la imagen de cada uno es un subgrupo, pues en ambos casos la asociatividad se hereda de $F\rtimes G$ y el elemento neutro $e=(e_F,e_G)$ está en los dos. Así mismo, atendiendo a la demostración anterior, vemos que cada componente del inverso está en el grupo correspondiente. Así que vamos a probar que la imagen de $F$ mediante la aplicación $\delta\mapsto (\delta,e_G)$ es un subgrupo normal de $F\rtimes G$. Para ello vamos a ver que $F\times\{e_G\}$ es el kernel de un cierto homomorfismo de grupos $\varphi:F\rtimes G\to G$. Este homomorfismo vendrá definido como $\varphi(\delta,h)=h$, el cual es fácil ver que efectivamente es homomorfismo de grupos. Claramente $\ker\varphi=\{(\delta,h)\mid h=e_G\}=F\times\{e_G\}$, como queríamos demostrar. 
+\QED
+%https://groupprops.subwiki.org/wiki/Normal_subgroup_equals_kernel_of_homomorphism
+%El razonamiento análogo para G no se podría ahcer porque el producto en F es el normal y en la primera componente es el producto twisteado, que no coincidiría en general
+\end{dem}
+
+
+
+Vamos a definir ahora una construcción que nos permitirá obtener productos semidirectos a partir de sucesiones exactas.
+
+\begin{defi}
+Dados tres grupos $F$, $G$ y $H$, se dice que $H$ es una \emph{extensión} de $F$ por $G$ si existe una sucesión exacta corta
+\[
+1\to F\to H\to G\to 1.
+\]
+En el caso de que $B$ sea un grupo finito, diremos que la extensión es \emph{finita}.
+\end{defi} 
+
+\begin{prop}\label{semidirect}
+Si $H$ es una extensión es $F$ por $G$, de modo que la sucesión exacta 
+\[
+1\to F\to H\to G\to 1.
+\]
+escinde y la imagen de $F$ es normal dentro de $H$, entonces $H\cong F\rtimes G$. 
+\end{prop}
+
+\begin{dem}
+Supongamos que tenemos una sección $s:G\to H$. Como la imagen de $F$ es isomorfa a $F$, podemos indentificarlos. Definamos pues, $\rho:G\to Aut(F)$, como $g\to C_{s(g)}|_F$, donde $C_{s(g)}$ denota la conjugación por $s(g)$ en $H$. Al restringirlo a $F$, esto nos da un automorfismo bien defino al ser $F$ normal en $H$. Así que hemos definido una acción mediante automorfismos que define un producto semidirecto isomorfo a $F\rtimes G$. 
+\QED
+%Para el recíproco basta tomar la sucesión exacta de inclusión y cociente por ser F normal y el cociente sale isomorfo a G con el 1er tma isomorfía usando la aplicación que he elegido en la demostración anterior \url{https://math.stackexchange.com/questions/339731/relation-between-semidirect-products-extensions-and-split-extensions}
+\end{dem}
+ 
+%Apréndete bien la definición de acción por si las moscas
+
+A LA HORA DE DEFINIR LA OPERACIÓN CON LA ACCIÓN A LA DERECHA NO CAMBIARÍA LA EXPRESIÓN ¿NO?
+%\url{https://math.stackexchange.com/questions/339731/relation-between-semidirect-products-extensions-and-split-extensions}
+%\url{https://ncatlab.org/nlab/show/semidirect+product+group}
+%\url{https://groupprops.subwiki.org/wiki/External_semidirect_product}
+%\url{https://groupprops.subwiki.org/wiki/Internal_semidirect_product}
+
+\section{Espacios recubridores}
+
+
+
+\end{document}
+
+%isotopía \url{https://link.springer.com/chapter/10.1007%2F978-94-015-9319-9_6}
+Orientation preserving (que las cartas conservan la orientación) https://math.stackexchange.com/questions/1319234/meaning-of-the-expression-orientation-preserving-homeomorphism 

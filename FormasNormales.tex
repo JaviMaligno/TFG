@@ -1,0 +1,127 @@
+\documentclass[TFG.tex]{subfiles}
+
+\begin{document}
+
+
+
+\chapter{Formas normales}
+
+El objetivo de este capítulo será proporcionar una \emph{forma normal} para las trenzas, es decir, una forma ``estándar'' de escribirlas, de modo que para ver si dos palabras son iguales sea suficiente calcular sus formas normales y comprobar si son iguales. Para llegar hasta esa forma normal estudiaremos la \emph{estructura de Garside} \cite{Garside} del grupo de trenzas. 
+
+\section{Estructura de Garside}
+
+%\url{http://chaoxuprime.com/posts/2011-07-05-garside-normal-form-and-summit-sets.html}
+
+
+Obsérvese que la presentación \ref{presentacion} solo involucra potencias positivas de los generadores. Por tanto, se puede considerar el monoide $B_n^+$ determinado por esa misma presentación. Los elementos de $B_n^+$ son palabras en $\sigma_1,\dots,\sigma_{n-1}$ (pero no sus inversos), y dos palabras son equivalentes si y solo si una puede obtenerse de la otra reemplazando reiteradamente subpalabras de la forma $\sigma_i\sigma_j$ con $|i-j|>1$ (respectivamente, $\sigma_i\sigma_j\sigma_i$ con $|i-j|=1$) por $\sigma_j\sigma_i$ (respectivamente, $\sigma_j\sigma_i\sigma_j$).
+
+\begin{defi}
+El monoide $B_n^+$ se denomina \emph{monoide de las trenzas positivas} y sus palabras son llamadas \emph{trenzas positivas}.
+\end{defi}
+En el monoide $B_n^+$ hay un orden parcial natural. 
+\begin{defi}
+Definimos en $B_n^+$ el orden parcial $\preccurlyeq$ tal que dadas $a,b\in B_n^+$, $a\preccurlyeq b$ si $ac=b$ para alguna $c\in B_n^+$. Decimos en ese caso que $a$ es un \emph{prefijo} de $b$. Escribimos $a\prec b$ si ni $c$ no es trivial. Si además $a\neq 1$, decimos que $a$ es un \emph{prefijo propio} de $b$. 
+\end{defi}
+Nótese que $\preccurlyeq$ es invariante por multiplicación a la izquierda, esto es, $a\preccurlyeq b$ implica $xa\preccurlyeq xb$ para todo $a,b,x\in B_n^+$. %vale el mismo c
+
+Dado tal orden parcial, uno podría preguntarse si existe un único máximo común divisor o mínimo común múltiplo con respecto a $\preccurlyeq$. Esto es, dadas $a,b\in B_n^+$, ¿existe un único $d\in B_n^+$ tal que $d\preccurlyeq a$, $d\preccurlyeq b$ y $d'\preccurlyeq d$ para todo $d'$ prefijo común de $a$ y $b$? ¿Y existe un único $m\in B_n^+$ tal que $a\preccurlyeq m$, $b\preccurlyeq m$ y $m\preccurlyeq m'$ para todo $m'$ que tenga a $a$ y a $b$ como prefijos? En tales casos, escribimos $d=a\land b$ y $m=a\lor b$. Nótese que también tenemos $xd=xa\land xb$ y $xm=xa\lor xb$ para todo $x\in B_n^+$.
+
+\begin{nota}
+Análogamente podríamos definir el orden parcial dual  de \emph{sufijos}, $\succcurlyeq$, invariante por multiplicación a la derecha.
+\end{nota}
+
+El punto clave en el trabajo de Garside fue demostrar, mediante métodos elementales, que $\sigma_i$ y $\sigma_j$ tienen mínimo común múltiplo en $B_n^+$. En concreto:
+\begin{prop} 
+El mínimo común múltiplo de los generadores $\sigma_i$ y $\sigma_j$ viene dado por
+$$\sigma_i\lor\sigma_j=\begin{cases}
+\sigma_i\sigma_j & |i-j|>1,\\
+\sigma_i\sigma_j\sigma_i & |i-j|=1.
+\end{cases}$$
+\end{prop}
+ME GUSTARÍA VER LA PRUEBA, NO ESTOY SEGURO DE SI ES EL 1.2 DE GARSIDE
+
+Él prueba al mismo tiempo que $B_n^+$ es cancelativo, es decir, $xay=xby$ implica $a=b$ para todo $a,b,x,y\in B_n^+$.
+
+Como las relaciones de \ref{presentacion} son homogéneas, palabras equivalentes en $B_n^+$ tienen la misma longitud, por lo que la longitud de una palabra está bien definida en $B_n^+$. Aunque Garside no lo menciona explícitamente, inducción en esta longitud junto con la cancelatividad, permite probar a partir del resultado anterior que todo par de elementos tiene de $B_n^+$ tiene un único mínimo común múltiplo y un único máximo común divisor. ¿CÓMO? ENTIENDO QUE EL CASO DE QUE LOS DOS TENGAN LONGITUD 1 PARA EL MCM PORQUE LA LONGITUD ES MÍNIMA %Maybe (ab)v(c)=av(bvc)
+
+%relaciones homogéneas= LA SUMA DE LOS EXPONENTES A UN LADO Y A OTRO DE LA ECUACIÓN ES LA MISMA
+Garside después estudia el siguiente elemento especial.
+\begin{defi}
+La \emph{trenza fundamental} en $n$ hilos es la trenza
+$$\Delta_n=\sigma_1(\sigma_2\sigma_1)\cdots(\sigma_{n-1}\dots\sigma_1).$$
+Cuando $n$ se sobreentiende, utilizamos simplemente $\Delta$. SI HAY QUE RELLENAR LE METO UN DIBUJO DE ESTO
+\end{defi} 
+A continuación, prueba el siguiente resultado.
+\begin{prop}\label{conjuga}
+Se verifican: 
+\begin{enumerate}
+\item $\Delta=\sigma_1\lor\dots\lor\sigma_{n-1}$.
+\item $\sigma_i\Delta=\Delta\sigma_{n-i}$ para todo $i=1,\dots, n-1$.
+\end{enumerate}
+\end{prop} 
+%ESTE RESULTADO TAMBIÉN. LA SEGUNDA ES EL LEMA 2, PERO LA PRIMERA NO SÉ. INTUYO QUE VER QUE ES MÚLTIPLO DE TODAS SE PUEDE HACER SIMPLEMENTE CON LAS RELACIONES
+
+A partir de este resultado podemos deducir las siguientes propiedades sobre $\Delta$.
+
+\begin{prop} Se cumplen:
+\begin{enumerate}
+\item $\sigma_1,\dots,\sigma_{n-1}$ son también sufijos de $\Delta$.
+\item $\Delta^2$ conmuta con todo elemento de $B_n^+$.
+\item Para todo $a\in B_n^+$ se tiene $a\preccurlyeq\Delta^m$ y $\Delta^m\succcurlyeq a$ para algún $m\geq 0$.
+\end{enumerate}
+%Esto implica que $\sigma_1,\dots,\sigma_{n-1}$ son también sufijos de $\Delta$, que $\Delta^2$ conmuta con todo elemento de $B_n^+$ y, por inducción en la longitud, que para todo $a\in B_n^+$ se tiene $a\preccurlyeq\Delta^m$ y $\Delta^m\succcurlyeq a$ para algún $m\geq 0$.  
+\end{prop}
+\begin{dem}\
+\begin{enumerate}
+\item NI IDEA, NO ME SALE
+\item Basta probar que $\Delta^2$ conmuta con $\sigma_i$ para todo $1\leq i\leq n-1$. 
+\[
+\sigma_i\Delta=\Delta\sigma_{n-i}\Leftrightarrow \sigma_i\Delta\Delta=\Delta(\sigma_{n-i}\Delta)\Leftrightarrow \sigma_i\Delta^2=\Delta^2\sigma_i.
+\]
+%Doble implicación por ser cancelativo
+\item Probamos $a\preccurlyeq\Delta^m$ para algún $m\geq 0$ por inducción en la longitud. Evidentemente, $1\preccurlyeq\Delta$. Para una palabra de longitud 1 también es claro porque $\sigma_i\preccurlyeq\Delta$ para todo $1\leq i\leq n-1$ por definición. Supongamos ahora, que para una palabra $a\in B_n^+$ de longitud $l-1$ se tiene el resultado. Entonces, cualquier palabra de longitud $l$ será de la forma $\sigma_j a$ para algún $1\leq j\leq n-1$. Así que, usando la invarianza por multiplicación a la izquierda y el caso $l=1$,
+\[
+a\preccurlyeq\Delta^m\Rightarrow \sigma_j a\preccurlyeq \sigma_j\Delta^m \preccurlyeq \Delta\Delta^m=\Delta^{m+1}.
+\]
+De forma análoga usando la invarianza a por multiplicación a la derecha se prueba que $\Delta^m\succcurlyeq a$ para algún $m\geq 0$.
+\end{enumerate}
+\QED
+\end{dem}
+
+
+% el a<\Delta^m es cuestión de que como \sigma_i<\Delta, luego ya solo hay que ir multiplicando a izquierda por el sigma_j correspondiente -> \sigma_j\sigma_i<\sigma_j\Delta<\Delta^2, etc El otro igual usando la multiplicación a la derecha
+
+Esto tiene importantes implicaciones. Como todo par de elementos de $B_n^+$ tiene un múltiplo común y $B_n^+$ es cancelativo, las condiciones de Öre (\ref{condiciones}) implican que $B_n^+$ se incrusta en su grupo de fracciones, que es precisamente $B_n$. Por lo tanto, $B_n^+$ no es solamente un monoide definido algebraicamente, sino que puede ser considerado como un subconjunto de $B_n$ formado por las trenzas que pueden ser escritas solo con potencias positivas de los generadores. 
+
+Las propiedades anteriores implican que el orden parcial $\preccurlyeq$ (respectivamente, $\succcurlyeq$) puede ser extendido a $B_n$ de la siguiente manera: $a\preccurlyeq b$ (resp. $a\succcurlyeq b$) si $ac=b$ (resp. $b=ca$) para algún $c\in B_n^+$. Esto da un orden parcial que es invariante por multiplicación a la izquierda (resp. a la derecha), y el cual admite un único mínimo común múltiplo y un único máximo común divisor. ¿QUE LA EXISTENCIA Y UNICIDAD SE MANTENGA EN EL GRUPO ES INMEDIATO?
+
+\section{Solución al problema de la palabra}
+Garside dio una nueva solución al problema de la palabra en los grupos de trenzas de la siguiente manera. Recordemos que para todo $i=1,\dots, n-1$ se tiene que $\sigma_i\preccurlyeq\Delta$, esto es, $\Delta=\sigma_iX_i$ para algún $X_i\in B_n^+$. Dada una trenza escrita como una palabra en $\sigma_1,\dots,\sigma_{n-1}$ y sus inversos, se puede reemplazar cada aparición de $\sigma_i^{-1}$ por $X_i\Delta^{-1}$. Conjugar una trenza positiva por $\Delta$ sigue dando una trenza positiva por la proposición \ref{conjuga} apartado 2, así que podemos mover todas las apariciones de $\Delta^{-1}$ a la izquierda, de la siguiente forma: si encontramos $\sigma_i\Delta^{-1}$, entonces por \ref{conjuga} sabemos que $\Delta\sigma_{i}=\sigma_{n-i}\Delta\Leftrightarrow  \sigma_i\Delta^{-1}=\Delta^{-1}\sigma_{n-i}$, por lo que podemos sustituir $\sigma_i\Delta^{-1}$ por $\Delta^{-1}\sigma_{n-i}$. Esto muestra que toda trenza puede ser escrita como $\Delta^p A$ para algún $p\in\Z$ y algún $A\in B_n^+$. Además, si $\Delta\preccurlyeq A$, podemos reemplazar $\Delta^p$ por $\Delta^{p+1}$ y $A$ por $\Delta^{-1}A$. Esto reduce la longitud de $A$, así que solo puede hacerse una cantidad finita de veces. Por tanto, toda trenza puede escribirse, \emph{de manera única}, como $\Delta^pA$, donde $p\in\Z$, $A\in B_n^+$ y $\Delta\not\preccurlyeq A$. 
+
+%\Delta c=A, \Delta^p A = \Delta^{p+1} \Delta^{-1}A=\Delta^{p+1}c
+\begin{defi}
+En base a lo comentado en el párrafo anterior, definimos la \emph{forma normal de Garside} de una palabra $w\in B_n$ como $w=\Delta^pA$, donde $p\in\Z$, $A\in B_n^+$ y $\Delta\not\preccurlyeq A$. 
+\end{defi}
+
+%la forma normal es única (A puede ser una equivalente obviamente), pues Delta es único y los pasos para llegar a la forma normal están unívocamente determinados
+
+Esta forma normal permite resolver el problema de la palabra, ya que se pueden enumerar todas las palabras positivas que representan la trenza positiva $A$, reiterando las relaciones del grupo de trenzas de todas las formas posibles. Esta fue la solución dada por Garside. Sin embargo, no es muy satisfactoria, ya que da lugar a un algoritmo altamente ineficiente.
+
+%al ser relaciones positivas y tal (la longitud es fija), solo hay una cantidad finita de posibilidades
+
+El-rifai y Morton \cite{EM} lo mejoraron definiendo la \emph{forma normal izquierda} de una trenza. Basta tomar la descomposición $\Delta^pA$ y después definir ¿IZQUIERDA PORQUE SE MULTIPLICAN POR LA IZQUIERDA?
+\begin{align*}
+&a_1=A\land\Delta\\
+&a_i=(a_{i-1}^{-1}\cdots a_1^{-1}A)\land\Delta,\ i=1,\dots, n.
+\end{align*}
+De esta forma, toda trenza puede ser escrita de manera única como: VER ESTO JUNTO CON LAS COSAS QUE DICE DESPUÉS
+$$\Delta^p a_1\cdots a_r,$$
+donde $a_i$ es un prefijo propio de $\Delta$, es decir, $1\prec a_i\prec\Delta$, y además $(a_ia_{i+1})\land\Delta=a_i$, para todo $i=1,\dots, r$. Esta es la anteriormente mencionada forma normal izquierda de la trenza. Los prefijos positivos de $\Delta$ son llamados \emph{elementos simples} o \emph{trenzas de permutación} (HABRÁ QUE VER QUE SON LAS MISMAS QUE SE DEFINIERON PARA EL PEINADO). Por tanto, la forma normal izquierda de una trenza es una descomposición única como producto de una potencia de $\Delta$ y una sucesión de elementos simples propios. Thurston \cite{Thurston} mostró que esta forma normal puede ser calculada en tiempo $O(l^2n\log(n))$ para una palabra de $l$ letras en $B_n$. 
+
+%prefijo propio de Delta porque Delta no era prefijo de A y se está haciendo el meet
+
+
+\begin{ej}
+\end{ej}
+\end{document}
+

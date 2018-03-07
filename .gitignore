@@ -1,0 +1,13 @@
+*.aux
+*.pdf
+!GAP/pdfs/*
+*.synctex
+*.synctex.gz
+*.txt
+*.log
+*.out
+*.toc
+*.swp
+*.dvi
+*.fls
+*.fdb_latexmk
