@@ -35,7 +35,7 @@ Para visualizarlo mejor, vamos a agrandar los agujeros de modo que se conviertan
 
 El hecho de que este sea el recubrimiento correspondiente a $\ker\phi$ se debe a que, fijada una preimagen $\tilde{d}_0\in\tilde{X}$ preimagen de $d_0$, un lazo en $d_0$ se levanta a un lazo en $\tilde{d}_0$ si y solo si su índice total es nulo, pues para cada vuelta positiva sube un nivel en el recubrimiento y para cada vuelta negativa lo baja, así que para acabar de nuevo en $\tilde{d}_0$ deberá subir tantas veces como baja, es decir, que el número total de vueltas sea nulo.
 
-Hay una acción natural de $\Z$ en $\tilde{X}$ dada por $X^*_j\ni x\mapsto g_{j+n}^{-1}g_jx$ para cada $n\in\Z$. Esta acción se puede interpretar como cambiar el punto $x$ de nivel. Además, la acción es claramente libre y el espacio de órbitas $\tilde{X}/\Z$ es $X$, por lo que el espacio recubridor es regular.
+Hay una acción natural de $\Z$ en $\tilde{X}$ como transformación del recubrimiento dada por $X^*_j\ni x\mapsto g_{j+n}^{-1}g_jx$ para cada $n\in\Z$. Esta acción se puede interpretar como cambiar el punto $x$ de nivel. Además, la acción es claramente libre y el espacio de órbitas $\tilde{X}/\Z$ es $X$, por lo que el espacio recubridor es regular.
 
 
 ¿PODRÍA DEFINIRLO ASÍ QUE ES MÁS SENCILLO EN LUGAR DE DEFINIRLO A PARTIR DE LAS TRANSFORMACIONES DE DECK QUE EMPIEZA COGIENDO AUTOMORFISMOS SOBRE LAS FIBRAS?
@@ -61,6 +61,7 @@ Se llama \emph{reducida} porque existe una representación $n$-dimensional de la
 $H_1(\tilde{\D}_n)$ es un módulo libre de rango $n-1$ sobre $\Z[t,t^{-1}]$.
 \end{prop}
 \begin{dem}
+En esta prueba quiero saber qué significa cuando coge el generador, si es un espacio topológico
 \end{dem}
 
 
@@ -70,13 +71,113 @@ $H_1(\tilde{\D}_n)$ es un módulo libre de rango $n-1$ sobre $\Z[t,t^{-1}]$.
 
 %Over a commutative ring R, more care is needed: a matrix over R is invertible if and only if its determinant is a unit in R, that is, if its determinant is invertible in R. Therefore, GL(n, R) may be defined as the group of matrices whose determinants are units.
 \subsection{Expresión matricial}
+Con las últimas observaciones del apartado anterior podemos obtener fácilmente la expresión matricial de la representación de Burau. Como la Figura \ref{representacion} muestra, la acción de $\sigma_i$ sobre $H_1(\tilde{X})$ viene dada por
+MUY PROBABLEMENTE TENGA QUE CAMBIAR TANTO EL DIBUJO COMO LA REPRESENTACIÓN PORQUE NO ENTIENDO NADA
+\[
+\psi_r\sigma_i(v_j)=\begin{cases}
+v_j+tv_{j+1} & j=i-1,\\
+-tv_j & j=i,\\
+v_{j-1}+v_j,\\
+v_j & c.c.
+\end{cases}
+\]
+
+Por lo tanto, las matrices para la representación con respecto a la base $\{v_1,\dots, v_n\}$ son
+\[
+\psi_r(\sigma_1)=\begin{pmatrix}
+-t & 1 & \\
+0 & 1 & \\
+& & I_{n-3}
+\end{pmatrix},\psi_r(\sigma_i )=\begin{pmatrix}
+I_{i-2} & & &\\
+& 1 & 0 & 0 & \\
+& t & -t & 1 & \\
+& 0 & 0 & 1 & \\
+& & & & I_{n-i-2}  
+\end{pmatrix}, \psi_r(\sigma_{n-1})=\begin{pmatrix}
+I_{n-3} & &\\
+1 & 0 & \\
+t & -t & 
+\end{pmatrix}.
+\]
+
+Se puede comprobar directamente que las matrices anteriores satisfacen las relaciones de la presentación \ref{presentacion}. Un hecho interesante de esta representación es que se sabe que es fiel para $n\leq 3$ \cite{Birman} y que no es fiel para $n\geq 5$ \cite{Bil}\cite{LP}, pero el caso $n=4$ sigue siendo un problema abierto.
 
 \section{Representación LKB}
+%Buscar por qué LKB, supongo que Krammer y Bigelow, pero la L no sé. Alomejor Luis Paris me da una pista.
+Siguiendo \cite{Krammer}, denotamos $Ref_n$ al conjunto de pares de enteros $(i,j)$ tales que $1\leq i<j\leq n$. Claramente, el cardinal de $Ref_n$ es $\dfrac{n(n-1)}{2}$.
+
+Sea $R$ un anillo conmutativo con unidad y $q,t\in R$ dos elementos invertibles. Sea $V=\oplus_{s\in Ref_n}Rx_s$ el $R$-módulo libre de rango $\dfrac{n(n-1)}{2}$ con base $\{x_s\}_{s\in Ref_n}$. Krammer define una acción $R$-lineal de $B_n$ sobre $V$ como sigue
 
 
+EL RANGO DE UN MÓDULO LIBRE NO ESTÁ ÚNICAMENTE DEFINIDO, ¿TIENE SENTIDO?
+\begin{equation}\label{LKB}
+\sigma_k(x_{i,j})=\begin{cases}
+x_{i,j} & \textit{si }(k<i)\text{ o }(j<k),\\
+x_{i-1,k}+(1-q)x_{i,j} & \text{si } (k=i-1),\\
+tq(q-1)x_{i,i+1}+qx_{i+1,j} & \text{si }(k=i<j-1),\\
+tq^2x_{i,j} & \text{si }k=i=j-1,\\
+x_{i,j}+tq^{k-i}(q-1)^2x_{k,k+1} & \text{si }(i<k<j-1),\\
+x_{i,j-1}+tq^{j-1}(q-1)x_{j-1,j} & \text{si }(i<k=j-1),\\
+(1-q)x_{i,j}+qx_{i,j+1} & \text{si }(k=j),
+\end{cases}
+\end{equation}
+donde $1\leq i<j\leq n$ y $k=1,\dots, n-1$. Que la acción de $\sigma_k$ es invertible y que se cumplen las relaciones de \ref{presentacion} se verifica mediante cálculo directo. Esta es la conocida como \emph{representación LKB} o \emph{representación de Krammer} de $B_n$.
+
+ALOMEJOR PONER LA DE BIGELOW EN UNA SUBSECCIÓN COMO CASO PARTICULAR DE ESTA
+
+%Para dar la matriz habría primero que fijar un orden en Ref y ya está
+\begin{teorema}
+Sea $R=\R[t^{\pm 1}]$ y $0<q<1$. Entonces, la representación $B_n\to Aut(V)$ es fiel para todo $n\geq 1$.
+\end{teorema}
+
+La prueba de este teorema se encuentra en \cite{Krammer}.
+
+%Rango=número de generadores libres
+
+\subsection{Representación de Bigelow}
+Existe un caso particular de la representación LKB encontrada independiente por Bigelow \cite{Bil}, la cual se puede obtener usando $R=\Z[q^{\pm 1},t^{\pm 1}]$. La ventaja de esta representación es que tiene una interpretación geométrica mucho más clara, como veremos a continuación.
+
+Consideremos $C=M_2(\D_n)/\Sigma_2$. Aquí, $\Sigma_2$ actúa sobre $M_2(\D_n)$ enviando $(x,y)$ a $(y,x)$. Se denotarán los puntos de $C$ como $\{x,y\}$ ya que al actuar $\Sigma_2$ no importa el orden. La proyección $M_2(\D_n)\to C$ que lleva $(x,y)$ a $\{x,y\}$ es claramente un recubrimiento de dos hojas. Sean $d_0$ y $d_0'$ dos puntos de $\partial\D_n$ los bastante cercano entre sí. Tomamos $c_0=\{d_0,d_0'\}$ como punto base de $C$.
+
+%Es sobreyectiva y continua porque la preimagen de un abierto es unión de dos abiertos simétricos y disjuntos porque no está la diagonal
+
+Sea $\alpha:[0,1]\to C$ un camino basado $c_0$. Este camino se puede levantar relativamente a $(d_0,d_0')$ como un par de caminos de la forma $(\alpha_1,\alpha_2)$, con$ \alpha_1,\alpha_2:[0,1]\to\D_n$, el primero basado en $d_0$ y el segundo en $d_0'$. Denotemos pues $\alpha(t)=\{\alpha_1(t),\alpha_2(t)\}$. Nótese que si $\alpha$ es un lazo entonces $\{\alpha_1(0),\alpha_2(0)\}=\{\alpha_1(1),\alpha_2(1)\}=\{d_0,d_0'\}$. Por lo tanto, o bien $\alpha_1$ y $\alpha_2$ son ambos lazos o bien su concatenación forma un lazo. Ambos casos se observan en la Figura \ref{loop}. 
+
+\begin{figure}[h!]
+\includegraphics[scale=0.6]{Imagenes/loop}
+\caption{A la izquierda, un lazo en $C$ que surge cuando los dos caminos originales son lazos (el parámetro $t$ muestra cómo está parametrizado el lazo). A la derecha, la concatenación de los dos lazos originales da lugar a un lazo en $C$.}\label{loop}
+\end{figure}
+
+Si $\alpha_1$ y $\alpha_2$ son caminos en $\D_n$ con $\alpha_1(t)\neq\alpha_2(t)$ para todo $t\in[0,1]$, entonces $(\alpha_1,\alpha_2)$ es un camino en $M_2(\D_n)$. La imagen de este camino mediante la proyección $M_2(\D_n)\to C$ se denota $\{\alpha_1,\alpha_2\}$.
+
+Sea $\alpha:I\to C$ un representante de un elemento en $\pi_1(C)$. Se definen las aplicaciones $a,b:\pi_1(C)\to\Z$ como sigue: si $\alpha_1$ y $\alpha_2$ son ambos lazos, entonces $a(\alpha)$ es la suma de los índices totales de $\alpha_1$ y $\alpha_2$. Si no son ambos lazos, entonces $a(\alpha)$ es el índice total del lazo $\alpha_1\alpha_2$. La aplicación $b$ está definida en primer lugar componiendo $I\ni t\mapsto \dfrac{(\alpha_1(t)-\alpha_2(t))}{|\alpha_1(t)-\alpha_2(t)|}\in S^1$ con la proyección $S^1\to \R P^1$ para obtener un lazo en $\R P^1$. El correspondiente elemento de $H_1(\R P^1)\cong\Z$ es $b(\alpha)$. Por tanto, $a$ mide la cantidad de veces que los lazos $\alpha_1$ y $\alpha_2$ envuelven a los agujeros, mientras que $b$ mide las veces que un lazo envuelve al otro.
+
+SI RP ES HOMEOMORFO A S1, ¿PARA QUÉ PROYECTAR? 
+
+LO DE B IGUAL TENDRÍA QUE VERLO CON MÁS CLARIDAD
+
+Sea $\langle q,t\rangle$ el grupo libre abeliano  generado por $q$ y $t$. Se define la aplicación $\phi:\pi_1(C)\to\langle q,t\rangle$ mediante $\alpha\mapsto q^{a(\alpha)}t^{b(\alpha)}$. Por ejemplo, si en la Figura \ref{loop} denotamos al lazo de la izquierda $\gamma_1$ y al de la derecha $\gamma_2$, tenemos $\phi(\gamma_1)=q^2$ y $\phi(\gamma_2)=tq^2$. 
+
+Sea $\tilde{C}\to C$ el espacio recubridor correspondiente a $\ker\phi$ y elijamos un levantamiento $\tilde{c}_0\in\tilde{C}$ de $c_0$. El grupo $\langle t,q\rangle$ actúa sobre $\tilde{C}$ como transformaciones del recubrimiento \cite{thesis}. Por tanto, el grupo de homología $H_2(\tilde{C})$ se convierte en un $\Z[q^{\pm 1},t^{\pm 1}]$-módulo \cite{nundam}.
+
+Sea $h$ un automorfismo de $\D_n$ que fije el borde punto a punto. Entonces $h$ induce un automorfismo denotado igual $h:C\to C$ dado por $h(\{x,y\})=\{h(x),h(y)\}$. Es fácil comprobar que $h(c_0)=c_0$ y que la acción de $h$ en $H_1(C)$ conmuta con $\phi$. Por tanto, este homeomorfismo se levanta de forma única a una aplicación $\tilde{h}:\tilde{C}\to\tilde{C}$ que fija la fibra sobre $c_0$ punto a punto y conmuta con las transformaciones $q$ y $t$. Por tanto, $\tilde{h}$ induce un isomorfismo de $\Z[q^{\pm 1},t^{\pm 1}]$-módulos $\tilde{h}_*:H_2(\tilde{C})\to H_2(\tilde{C})$.
+
+LO DE QUE CONMUTA EN ADELANTE LO TENGO QUE MIRAR CON DETALLE
+
+\begin{defi}
+La representación $\kappa:B_n\to Aut(H_2(\tilde{C}))$ inducida por $h\to\tilde{h}_*$ se llama \emph{representación de Bigelow}.
+\end{defi}
+
+Este resultado se prueba en \cite{Bil}. También por \cite{Bil} podemos tomar una base $\{v_{i,j}\in H_2(\tilde{C})\}_{(i,j)\in Ref}$. Con esto, podemos establecer la equivalencia \cite{nundam} entre esta representación de la representación  \ref{LKB} como sigue:
+\[
+v_{i,j}=x_{i,j}+(1-q)\sum_{i<k<j}x_{k,j},\quad x_{i,j}=v_{i,j}+(q-1)\sum_{i<k<j}q^{k-i-1}v_{k,j}.
+\]
+
+%El punto base se fija porque está en el borde
 
 \section{Solución al problema de la palabra}
-
+¿SIMPLEMENTE MULTIPLICAR LAS MATRICES Y VER LO QUE SALE?
 \begin{ej}
 \end{ej}
 
@@ -84,8 +185,8 @@ $H_1(\tilde{\D}_n)$ es un módulo libre de rango $n-1$ sobre $\Z[t,t^{-1}]$.
 %https://arxiv.org/pdf/math/0006202.pdf
 %http://ms.mcmaster.ca/~boden/students/Smeltzer-MSc.pdf
 %Creo que el de encima y el de debajo son el mismo
-%http://www.numdam.org/article/SB_1999-2000__42__389_0.pdf Aquí comenta cuándo la de Burau es fiel y cuándo no y quiénes lo probaron
+% HE ESCRITO LO DE ESTA EN KRAMMER http://www.numdam.org/article/SB_1999-2000__42__389_0.pdf Aquí comenta cuándo la de Burau es fiel y cuándo no y quiénes lo probaron
 %La de Krammer sí es faithful siempre
-%LKB http://wrap.warwick.ac.uk/90207/1/WRAP_Theses_Coles_2017.pdf PERO ESTAS COSAS SON SOBRE ANILLOS, NO SOBRE CUERPOS, ME ESTÁ RALLANDO
+%LKB http://wrap.warwick.ac.uk/90207/1/WRAP_Theses_Coles_2017.pdf 
 
 %Este tiene buena pinta http://go.owu.edu/~chjackso/Papers/thesis.pdf
