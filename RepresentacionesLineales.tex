@@ -40,6 +40,7 @@ Hay una acción natural de $\Z$ en $\tilde{X}$ como transformación del recubrim
 
 ¿PODRÍA DEFINIRLO ASÍ QUE ES MÁS SENCILLO EN LUGAR DE DEFINIRLO A PARTIR DE LAS TRANSFORMACIONES DE DECK QUE EMPIEZA COGIENDO AUTOMORFISMOS SOBRE LAS FIBRAS?
 
+%el espacio recubridor retrae con deformación sobre Z copias de n cuerdas con los extremos unidos a un mismo punto.
 
 Vamos a ver cómo definir la representación de Burau. Sea $\beta\in B_n$ inducida por un automorfismo $h$ de $\D_n$ fijando el borde, lo cual vamos a denotarlo $\beta=h_*$. Entonces, para cualquier lazo $\gamma$ en $\D_n$ se tiene que $\phi(h\gamma)=\gamma$, de modo que $h$ se levanta a un automorfismo $\tilde{h}$ de $\tilde{\D}_n$ que fija el borde. Pasando a la homología, esto nos da un automorfismo de $H_1(\tilde{\D}_n)$. Si $h'$ es cualquier otro automorfismo con $h'_*=\beta$, entonces $h_*^{-1}h'_*=1$, así que como la aplicación inducida por el recubrimiento $\pi_1(\tilde{\D}_n)\to\pi_1(\D_n)$ es inyectiva \cite{Hatcher} tenemos que $\tilde{h}_*^{-1}\tilde{h}'_*=1$ como aplicación en $\pi_1(\tilde{\D}_n)$. Pasando a homología, esto nos da $\tilde{h}'_*-\tilde{h}_*=1$ como aplicación en $H_1(\tilde{\D}_n)$. 
 
@@ -124,7 +125,6 @@ x_{i,j-1}+tq^{j-1}(q-1)x_{j-1,j} & \text{si }(i<k=j-1),\\
 \end{equation}
 donde $1\leq i<j\leq n$ y $k=1,\dots, n-1$. Que la acción de $\sigma_k$ es invertible y que se cumplen las relaciones de \ref{presentacion} se verifica mediante cálculo directo. Esta es la conocida como \emph{representación LKB} o \emph{representación de Krammer} de $B_n$.
 
-ALOMEJOR PONER LA DE BIGELOW EN UNA SUBSECCIÓN COMO CASO PARTICULAR DE ESTA
 
 %Para dar la matriz habría primero que fijar un orden en Ref y ya está
 \begin{teorema}
@@ -148,6 +148,8 @@ Sea $\alpha:[0,1]\to C$ un camino basado $c_0$. Este camino se puede levantar re
 \includegraphics[scale=0.6]{Imagenes/loop}
 \caption{A la izquierda, un lazo en $C$ que surge cuando los dos caminos originales son lazos (el parámetro $t$ muestra cómo está parametrizado el lazo). A la derecha, la concatenación de los dos lazos originales da lugar a un lazo en $C$.}\label{loop}
 \end{figure}
+
+%en la figura se ve que se cortan, pero basta que no se corten para el mismo valor de t
 
 Si $\alpha_1$ y $\alpha_2$ son caminos en $\D_n$ con $\alpha_1(t)\neq\alpha_2(t)$ para todo $t\in[0,1]$, entonces $(\alpha_1,\alpha_2)$ es un camino en $M_2(\D_n)$. La imagen de este camino mediante la proyección $M_2(\D_n)\to C$ se denota $\{\alpha_1,\alpha_2\}$.
 
