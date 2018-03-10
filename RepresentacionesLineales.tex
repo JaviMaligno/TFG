@@ -165,7 +165,7 @@ Sea $\tilde{C}\to C$ el espacio recubridor correspondiente a $\ker\phi$ y elijam
 
 Sea $h$ un automorfismo de $\D_n$ que fije el borde punto a punto. Entonces $h$ induce un automorfismo denotado igual $h:C\to C$ dado por $h(\{x,y\})=\{h(x),h(y)\}$. Es fácil comprobar que $h(c_0)=c_0$ y que la acción de $h$ en $H_1(C)$ conmuta con $\phi$. Por tanto, este homeomorfismo se levanta de forma única a una aplicación $\tilde{h}:\tilde{C}\to\tilde{C}$ que fija la fibra sobre $c_0$ punto a punto y conmuta con las transformaciones $q$ y $t$. Por tanto, $\tilde{h}$ induce un isomorfismo de $\Z[q^{\pm 1},t^{\pm 1}]$-módulos $\tilde{h}_*:H_2(\tilde{C})\to H_2(\tilde{C})$.
 
-LO DE QUE CONMUTA EN ADELANTE LO TENGO QUE MIRAR CON DETALLE
+NO SÉ QUÉ SIGNIFICA AQUÍ QUE CONMUTE, PORQUE PUEDO HACER PHI DE H(ALPHA), PERO NO AL REVÉS
 
 \begin{defi}
 La representación $\kappa:B_n\to Aut(H_2(\tilde{C}))$ inducida por $h\to\tilde{h}_*$ se llama \emph{representación de Bigelow}.
@@ -180,7 +180,64 @@ v_{i,j}=x_{i,j}+(1-q)\sum_{i<k<j}x_{k,j},\quad x_{i,j}=v_{i,j}+(q-1)\sum_{i<k<j}
 
 \section{Solución al problema de la palabra}
 ¿SIMPLEMENTE MULTIPLICAR LAS MATRICES Y VER LO QUE SALE?
+
+Una vez obtenida una representación lineal fiel, es inmediato resolver el problema de la palabra a partir de la expresión matricial: basta hacer el producto de las matrices que representan las letras de la palabra. Si el resultado de dicho producto es la matriz identidad, entonces la palabra es trivial y recíprocamente.
+
+EN BURAU NO LO HE DICHO EXPLÍCITAMENTE, PERO ENTIENDO QUE LA MATRIZ DE LA INVERSA ES LA INVERSA DE LA MATRIZ
+
+ALGO SOBRE LA EFICIENCIA DEL ALGORITMO
+
 \begin{ej}
+Vamos a ver un ejemplo de resolver el problema de la palabra con la representación de Burau para $n=3$, caso para el que sabemos que la representación es fiel. Para cualquier otra representación la mecánica es la misma. Consideremos la palabra $\sigma_1\sigma_1\sigma_2\sigma_1^{-1}\sigma_2^{-1}\sigma_1$. En este caso, tenemos las matrices
+\[
+\psi_r(\sigma_1)=\begin{pmatrix}
+-t&1 \\
+0 & 1
+\end{pmatrix},\quad \psi_r(\sigma_2)=\begin{pmatrix}
+1&0 \\
+t&-t
+\end{pmatrix}.
+\]
+Para este caso necesitaremos también las inversas
+\[
+\psi_r(\sigma_1^{-1})=\psi_r(\sigma_1)^{-1}=\begin{pmatrix}
+-t^{-1}&t^{-1} \\
+0&1
+\end{pmatrix},\quad \psi_r(\sigma_2^{-1})=\psi_r(\sigma_2)^{-1}=\begin{pmatrix}
+1&0 \\
+1&-t^{-1}
+\end{pmatrix}.
+\]
+Ahora, basta realizar el producto matricial
+\[
+\begin{pmatrix}
+-t&1 \\
+0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+-t&1 \\
+0 & 1
+\end{pmatrix}\begin{pmatrix}
+1&0 \\
+t&-t
+\end{pmatrix}\begin{pmatrix}
+-t^{-1}&t^{-1} \\
+0&1
+\end{pmatrix}\begin{pmatrix}
+1&0 \\
+1&-t^{-1}
+\end{pmatrix}\begin{pmatrix}
+-t&1 \\
+0 & 1
+\end{pmatrix}=
+\]
+\[
+\begin{pmatrix}
+(1-t)t^2& (1-t)^2-\frac{t^2+(1-t)t}{t^2}\\
+t^2& (1-t)-\frac{1}{t}
+\end{pmatrix}.
+\]
+Como la matriz no es la identidad, la palabra no representaba el elemento neutro.
 \end{ej}
 
 \end{document}
