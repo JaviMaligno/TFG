@@ -524,27 +524,33 @@ NO ESTOY SEGURO DE SI TENGO QUE PEDIRLE QUE ACTÚE LIBREMENTE (Y TRANSITIVAMENTE
 A continuación vamos a ver una serie de definiciones y resultados que aparecen en \cite{Hatcher}, los cuales usaremos más adelante.
 
 \begin{defi}
-SEMILOCALLY-SIMPLY CONNECTED
-
-Un espacio topológico $X$ se dice que es \emph{semilocalmente simplemente conexo} si todo punto $x\in X$ tiene un entorno tal que la inclusión inducida $\pi_1(U)\to\pi_1(X)$ es trivial. ¿ESTO NO ES LO MISMO QUE DECIR QUE U SEA SIMPLEMENTE CONEXO?
+Un espacio topológico $X$ se dice que es \emph{semilocalmente simplemente conexo} si todo punto $x\in X$ tiene un entorno $U$ tal que cualquier lazo de $U$ basado en $x$ es contráctil en $X$. 
 \end{defi}
+%La contracción del lazo de U no tiene que hacerse sin salirse de U
+Nótese que esta condición no implica que $U$ sea simplemente conexo, pues la contracción del lazo no se tiene por qué realizar enteramente dentro de $U$.
 
 \begin{prop}
-1.30
+Dado un espacio recubridor $p:\tilde{X}\to X$, una homotopía $f_t:Y\to X$ y una aplicación continua $\tilde{f}_0:Y\to\tilde{X}$ levantando a $f_0$, se tiene que existe una única homotopía $\tilde{f}_t:Y\to\tilde{X}$ de $\tilde{f}_0$ que levanta a $f_t$.
 \end{prop}
 
+En adelante, dado un punto base $x\in X$, supondremos fijado un punto base $\tilde{x}\in\tilde{X}$ con $\tilde{x}\in\p^{-1}(x)$.
 
 \begin{prop}
-1.31
-\end{prop}
-
-\begin{prop}
-1.33
+La aplicación $p_*:\pi_1(\tilde{X})\to\pi_1(X)$ inducida por $p:\tilde{X}\to X$ es inyectiva. El subgrupo imagen $p_*(\pi_1(\tilde{X}))$ consiste en las clases de homotopía de los lazos de $X$ basados en $x$ cuyos levantamientos a $\tilde{X}$ son lazos basados en $\tilde{x}$.
 \end{prop}
 
 \begin{prop}
-1.36
+Supongamos que tenemos un espacio recubridor $p:\tilde{X}\to X$ y una aplicación continua $f:X\to Y$ con $Y$ conexo por caminos y semilocalmente simplemente conexo, con punto base $y=f(x)$. Entonces existe un levantamiento $\tilde{f}:Y\to\tilde{X}$ de $f$ si y solo si $f_*(\pi_1(Y))\subseteq p_*(\pi_1(\tilde{X}))$.
 \end{prop}
+EN BURAU CREO QUE EFECTIVAMENTE SE DA, COMPROBARLO
+
+\begin{prop}
+Sea $X$ conexo por caminos, localmente conexo por caminos y semilocalmente simplemente conexo. Entonces, para todo subgrupo $H\subseteq \pi_1(X)$, existe un espacio recubridor $p:\tilde{X}\to X$ tal que $p_*(\pi_1(\tilde{X}))=H$ eligiendo adecuadamente el punto base $\tilde{x}$. 
+\end{prop}
+
+Con esta última proposición, podemos asociar a cada subgrupo de $\pi_1(X)$ un espacio recubridor $\tilde{X}$ que se corresponda con ese subgrupo.
+%al ser la p_* inyectiva es isomorfismo sobre su imagen
+Ver que las equivalencias de homotopía (si hace falta, homeomorfismos) se levantan a equivalencias de homoopía
 
 \end{document}
 
