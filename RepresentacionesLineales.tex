@@ -38,16 +38,18 @@ El hecho de que este sea el recubrimiento correspondiente a $\ker\phi$ se debe a
 Hay una acción natural de $\Z$ en $\tilde{X}$ como transformación del recubrimiento dada por $X^*_j\ni x\mapsto g_{j+n}^{-1}g_jx$ para cada $n\in\Z$. Esta acción se puede interpretar como cambiar el punto $x$ de nivel. Además, la acción es claramente libre y el espacio de órbitas $\tilde{X}/\Z$ es $X$, por lo que el espacio recubridor es regular.
 
 
-¿PODRÍA DEFINIRLO ASÍ QUE ES MÁS SENCILLO EN LUGAR DE DEFINIRLO A PARTIR DE LAS TRANSFORMACIONES DE DECK QUE EMPIEZA COGIENDO AUTOMORFISMOS SOBRE LAS FIBRAS?
+%PODRÍA DEFINIRLO ASÍ QUE ES MÁS SENCILLO EN LUGAR DE DEFINIRLO A PARTIR DE LAS TRANSFORMACIONES DE DECK QUE EMPIEZA COGIENDO AUTOMORFISMOS SOBRE LAS FIBRAS
 
 %el espacio recubridor retrae con deformación sobre Z copias de n cuerdas con los extremos unidos a un mismo punto.
 
+EN LUGAR DE AUTOMORFISMOS E LEVANTA COMO EQUIVALENCIA HOMOTÓPICA, QUE ESO ES EN GENERAL CON RECUBRIMIENTOS (HATCHER)
+
 Vamos a ver cómo definir la representación de Burau. Sea $\beta\in B_n$ inducida por un automorfismo $h$ de $\D_n$ fijando el borde, lo cual vamos a denotarlo $\beta=h_*$. Entonces, para cualquier lazo $\gamma$ en $\D_n$ se tiene que $\phi(h\gamma)=\gamma$, de modo que $h$ se levanta a un automorfismo $\tilde{h}$ de $\tilde{\D}_n$ que fija el borde. Pasando a la homología, esto nos da un automorfismo de $H_1(\tilde{\D}_n)$. Si $h'$ es cualquier otro automorfismo con $h'_*=\beta$, entonces $h_*^{-1}h'_*=1$, así que como la aplicación inducida por el recubrimiento $\pi_1(\tilde{\D}_n)\to\pi_1(\D_n)$ es inyectiva \cite{Hatcher} tenemos que $\tilde{h}_*^{-1}\tilde{h}'_*=1$ como aplicación en $\pi_1(\tilde{\D}_n)$. Pasando a homología, esto nos da $\tilde{h}'_*-\tilde{h}_*=1$ como aplicación en $H_1(\tilde{\D}_n)$. 
 
-¿EL SEGUNDO PASO A HOMOLOGÍA SE HACE ABELIANIZANDO CON HUREWICZ?
+%EL SEGUNDO PASO A HOMOLOGÍA SE HACE ABELIANIZANDO CON HUREWICZ
 
 AQUÍ TENGO UNA PREGUNTA COMENTADA EN EL TEX
-%¿Se puede levantar siempre el automorfismo? Supongo que sí, porque p:X->Dn, h:Dn->Dn, entonces cojo para cada fibra p^{-1}hp: X -> X. Como en los segmentos coincide para cada fibra, se extiende a todo X. 
+¿Se puede levantar siempre el automorfismo? Supongo que sí, porque $p:X->Dn, h:Dn->Dn$, entonces cojo para cada fibra $p^{-1}hp: X -> X$. Como en los segmentos coincide para cada fibra, se extiende a todo X. 
 
 
 \begin{defi}
