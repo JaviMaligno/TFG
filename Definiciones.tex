@@ -195,7 +195,6 @@ $\QED$
 \caption{Inversa de una trenza.}\label{especular}
 \end{figure}
 
-\newpage
 
 \section{Espacios de configuración}
 Vamos a empezar dando la noción general de espacio de configuración, introducidos por Fadell en 1962 \cite{Fadell}.
@@ -494,9 +493,58 @@ A LA HORA DE DEFINIR LA OPERACIÓN CON LA ACCIÓN A LA DERECHA NO CAMBIARÍA LA 
 %\url{https://groupprops.subwiki.org/wiki/External_semidirect_product}
 %\url{https://groupprops.subwiki.org/wiki/Internal_semidirect_product}
 
-\section{Espacios recubridores}
+\subsection{Espacios recubridores}
+
+\begin{defi}
+Sea $X$ un espacio topológico. Un \emph{espacio recubridor} de $X$ es un espacio topológico $\tilde{X}$ junto con una aplicación continua sobreyectiva $p:\tilde{X}\to X$, llamada \emph{aplicación recubridora}, tal que para todo $x\in X$, existe un entorno $U$ de $x$ de modo que $p^{-1}(U)$ es unión disjunta de abiertos de $C$ homeomorfos a $U$, llamados \emph{hojas}. Al espacio $p^{-1}(x)$ se llama \emph{fibra} de $x$.
+\end{defi}
+
+\begin{ej}
+El ejemplo más habitual de espacio recubridor es $\R$ con la aplicación $p:\R\to S^1$ dada por $p(t)=e^{2\pi i t}$. En este caso, el espacio recubierto es la circunferencia $S^1$. 
+\end{ej}
+
+\begin{defi}
+Sea $X$ un espacio topológico y $\tilde{X}$ un espacio recubridor de $X$ con aplicación recubridora $p$. Dado un grupo $G$ actuando sobre cada fibra $p^{-1}(x)\subseteq\tilde{X}$ con $x\in X$, si $p(gx)=p(x)$ para todo $g\in G$, se dice que $G$ es un grupo de \emph{transformaciones de recubrimiento} (\emph{deck transformations}).
+\end{defi}
+
+\begin{ej}
+En el ejemplo de espacio recubridor anterior, tenemos una acción natural de $\Z$ sobre las fibras, ya que $p(t)=p(t+ n)$ para todo $n\in\Z$. 
+\end{ej}
+
+\begin{defi}
+Dado un espacio topológico $X$ y un grupo $G$, se dice que un espacio recubridor $\tilde{X}$ \emph{se corresponde} a $G$ si $\pi_1(\tilde{X})=G$. 
+\end{defi}
+
+\begin{ej}
+Podemos dar un espacio recubridor de $S^1$ que se corresponda, por ejemplo, al grupo libre de dos elementos $\langle a, b\rangle$. Para ello, fijado un punto base $x\in S^1$, basta tomar como espacio recubridor $S^1\land S^1$ con punto base en el vértice, que denotaremos $y$. Etiquetamos cada una de las circunferencias como $a$ y $b$ respectivamente. La aplicación $p:S^1\land S^1\to S^1$ enviando $y\mapsto x$ e identifica $a$ con $b$ es claramente sobreyectiva y continua. Por tanto $p$ es una aplicación recubridora. Además, es bien sabido que $\pi_1(S^1\land S^2)=\langle a, b\rangle$. 
+\end{ej}
+
+NO ESTOY SEGURO DE SI TENGO QUE PEDIRLE QUE ACTÚE LIBREMENTE (Y TRANSITIVAMENTE) PORQUE NO ENTODOS LOS ESPACIOS SE CUMPLE ESO. PODRÍA EMPEZAR PIDIÉNDOLE MÁS COSAS A X. HATCHER 1.40 TIENE EQUIVALENCIAS 
+
+A continuación vamos a ver una serie de definiciones y resultados que aparecen en \cite{Hatcher}, los cuales usaremos más adelante.
+
+\begin{defi}
+SEMILOCALLY-SIMPLY CONNECTED
+
+Un espacio topológico $X$ se dice que es \emph{semilocalmente simplemente conexo} si todo punto $x\in X$ tiene un entorno tal que la inclusión inducida $\pi_1(U)\to\pi_1(X)$ es trivial. ¿ESTO NO ES LO MISMO QUE DECIR QUE U SEA SIMPLEMENTE CONEXO?
+\end{defi}
+
+\begin{prop}
+1.30
+\end{prop}
 
 
+\begin{prop}
+1.31
+\end{prop}
+
+\begin{prop}
+1.33
+\end{prop}
+
+\begin{prop}
+1.36
+\end{prop}
 
 \end{document}
 
