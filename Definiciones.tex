@@ -6,11 +6,8 @@
 %\hyphenation{equi-va-len-cia}\hyphenation{pro-pie-dad}\hyphenation{res-pec-ti-va-men-te}\hyphenation{sub-es-pa-cio}
 \chapter{Definiciones del grupo de trenzas}
 
-PONER EN CADA DEFINICIÓN UNA REFERENCIA QUE DIGA QUE ES EQUIVALENTE A UNA ANTERIOR -> NO TENGO ACCESO A LA PUBLICACIÓN DE ZARISKI, PERO DE TODAS FORMAS LO PONGO AL PRINCIPIO 
+ME QUIERO ASEGURAR MEJOR DE LO DE QUE SE PUEDEN CONSIDERAR SIEMPRE NÚMERO FINITO DE CRUCES Y TAL
 
-REVISAR QUE LOS PUNTOS ESTÉN EN Cx[0,1] -> ESTO DISCUTIRLO PORQUE ENTONCES PERMITIRÍA QUE LAS TRENZAS SE FUERAN PARA ARRIBA
-
-PONER EJEMPLO CONOCIDO DE ESPACIO DE CONFIGURACIÓN (R2 MENOS DOS PUNTOS) -> HE ENCONTRADO OTRO
 
 
 Aunque el término \emph{grupo de trenzas} fue acuñado por Artin en 1925 \cite{ArtinA}, estos grupos ya fueron considerados por Hurwitz en 1891 \cite{Hur} como lo que en terminología moderna se llamaría ``grupo fundamental de espacios de configuración de $n$ puntos en el plano complejo''. Magnus en 1935 \cite{Magnus} consideró el mismo grupo desde el punto de vista de los \emph{mapping classes}. Markov \cite{Markoff} dio una aproximación totalmente algebraica. 
@@ -21,11 +18,12 @@ En este capítulo veremos varias de estas definiciones, las cuales son todas equ
 Empezamos dando la definición más gráfica e intuitiva, consistente en visualizar las trenzas como cuerdas que se entrelazan. 
 
 \begin{defi}\label{geo}
-Sea $n\geq 1$ un entero. Denotemos $\Sigma_n$ al grupo simétrico sobre $n$ elementos.  Sean $n$ puntos $P_1,\dots, P_n$ en $\C$ (se puede suponer que $P_k=k$ para todo $1\leq k\leq n$). Se define la \emph{trenza geométrica de $n$ cuerdas} como la $n$-upla $\beta=(\beta_1,\dots,\beta_n)$ de caminos $\beta_k:[0,1]\to\C\times[0,1]$ tal que:
+Sea $n\geq 1$ un entero. Denotemos $\Sigma_n$ al grupo simétrico sobre $n$ elementos. Sean $n$ puntos $P_1,\dots, P_n$ en $\C$ (se puede suponer que $P_k=k$ para todo $1\leq k\leq n$). Se define la \emph{trenza geométrica de $n$ cuerdas} como la $n$-upla $\beta=(\beta_1,\dots,\beta_n)$ de caminos $\beta_k:[0,1]\to\C\times[0,1]$ tal que:
 \begin{itemize}
 \item $\beta_k(0)=(P_k,0)$ para todo $1\leq k\leq n$,
 \item existe una permutación $\tau=\tau(\beta)\in\Sigma_n$ tal que $\beta_k(1)=(P_{\tau(k)},1)$ para todo $1\leq k\leq n$, llamada \emph{permutación inducida por $\beta$},
 \item $\beta_k(t)\neq \beta_l(t)$ para todo $k\neq l$ y para todo $t\in[0,1]$.
+\item $\beta_k(t)$ es monótona no decreciente en la segunda coordenada para todo $k$. 
 \end{itemize}
 Si la permutación inducida por $\beta$ es el elemento neutro de $\Sigma_n$, es decir, si $\beta_k(1)=(P_k,1)$ para todo $1\leq k\leq n$, entonces decimos que la trenza geométrica es \emph{pura}.
 
@@ -35,7 +33,7 @@ Dos trenzas geométricas $\alpha$ y $\beta$ se dicen \emph{homotópicas} si exis
 El dibujo tridimensional de una trenza geométrica tendría la siguiente forma:
 \begin{figure}[h!]
 \includegraphics[scale=0.7]{Imagenes/hilos}
-\caption{Una trenza pura y una trenza no pura.}\label{hilos}
+\caption{Una trenza geométrica pura y una trenza geométrica no pura.}\label{hilos}
 \end{figure}
 %para conseguir cambiar la permutación habría que cortar un hilo porque los puntos finales no se pueden mover. 
 
@@ -167,16 +165,22 @@ Sean $\alpha$ y $\beta$ dos trenzas con representantes $a=(a_1,\dots, a_n)$ y $b
 Por otra parte, si $a'$ y $b'$ son otros representantes de $\alpha$ y $\beta$ respectivamente, se tiene que $[a'\cdot b']=[a\cdot b]$ por las propiedades de la homotopía de caminos con respecto a la concatenación.
 
 Veamos ahora la estructura de grupo. Tenemos que probar que la operación es asociativa, pero esto se deduce de que la concatenación de caminos es asociativa salvo homotopía.
-Tenemos claramente que la identidad es la trenza constante representada por $Id=(Id_1,\dots, Id_n)$, donde $Id_k$ denota el camino constante en $P_k$ para $1\leq k\leq n$.
-Finalmente, dada $\alpha=[(a_1,\dots, a_n)]$ con permutación inducida $\tau$, se tiene que $\alpha^{-1}=[(\overline{a}_{\tau^{-1}(1)},\dots, \overline{a}_{\tau^{-1}(n)})]$, donde $\overline{a}_k$ denota el camino opuesto a $a_k$. 
+Tenemos claramente que la identidad es la trenza constante representada por $Id=(Id_1,\dots, Id_n)$, donde $Id_k$ denota el camino $(P_k, t)$ para $t\in[0,1]$ y para $1\leq k\leq n$.
+Finalmente, dada $\alpha=[(a_1,\dots, a_n)]$ con permutación inducida $\tau$, se tiene que $\alpha^{-1}=[(\overline{a}_{\tau^{-1}(1)},\dots, \overline{a}_{\tau^{-1}(n)})]$, donde $\overline{a}_k$ denota el camino opuesto que es opuesto a $a_k$ en la primera coordenada y que es idéntico a $a_k$ en la segunda coordenada. 
 
 En efecto, usando las propiedades de la homotopía de caminos con respecto al camino opuesto:
 \[
 \alpha\alpha^{-1}=[(a_1,\dots, a_n)\cdot (\overline{a}_1,\dots, \overline{a}_n)]=[(a_1\overline{a}_{\tau^{-1}(1)},\dots, a_n\overline{a}_{\tau^{-1}(n)})]=[Id]
 \]
+Obsérvese que la segunda coordenada de la concatenación no tiene por qué ser exactamente igual al camino identidad, pero sí será siempre homotópico a él. Efectivamente, sí la segunda coordenada resulta un camino $f:[0,1]\to [0,1]$, podemos llevarlo a la identidad en $[0,1]$ con la homotopía $H:[0,1]\times[0,1]\to [0,1]$ dada por
+\[
+H(x,t)=(1-t)f(x)-tx.
+\]
 Análogamente se prueba $\alpha^{-1}\alpha=[Id]$. 
 $\QED$
 \end{dem}
+
+%la combinación de la homotopía es convexa así que siempre está en el [0,1]
 
 \begin{figure}[h!]
 \begin{tikzpicture}
@@ -226,7 +230,7 @@ Veamos un ejemplo no trivial de espacio de configuración. Consideremos $M_2(\R^
 \[
 (x_1,x_2)\mapsto (x_1+x_2,x_1-x_2).
 \]
-Es fácil ver que esta aplicación es un homeomorfismo, por lo que $M_2(\R^3)\cong \R^3\times(\R^3\setminus\{0\})$. Además, la aplicación es compatible con la acción de $\Sigma_2$, es decir, la aplicación sigue siendo un homeomorfismo sobre $\R^3\times(\R^3\setminus\{0\})$ al permutar las componentes. Sin embargo, punto a punto, lo que se observa es que la primera coordenada se conserva y la segunda cambia de signo tras la permutación. Por lo tanto, en $N_2(\R^3)=M_2(\R^3)/\Sigma_2$, $(x,y)\sim (x,-y)$ y no hay más puntos relacionados entre sí. Por tanto, $N_2(\R^3)=\R^3\times(\R^3_{\geq 0}\setminus\{0\})$, donde $\R^3_{\geq 0}$ denota los puntos que tienen todas sus coordenadas no negativas. ESTO NO ESTOY SEGURO DE HABERLO HECHO BIEN
+Es fácil ver que esta aplicación es un homeomorfismo, por lo que $M_2(\R^3)\cong \R^3\times(\R^3\setminus\{0\})$. Además, la aplicación es compatible con la acción de $\Sigma_2$, es decir, la aplicación sigue siendo un homeomorfismo sobre $\R^3\times(\R^3\setminus\{0\})$ al permutar las componentes. Sin embargo, punto a punto, lo que se observa es que la primera coordenada se conserva y la segunda cambia de signo tras la permutación. Por lo tanto, en $N_2(\R^3)=M_2(\R^3)/\Sigma_2$, $(x,y)\sim (x,-y)$ y no hay más puntos relacionados entre sí. Por tanto, $N_2(\R^3)=\R^3\times(\R^3_{\geq 0}\setminus\{0\})$, donde $\R^3_{\geq 0}$ denota los puntos que tienen todas sus coordenadas no negativas.
 
 \end{ej}
 
@@ -255,6 +259,8 @@ La definición general de trenza se puede obtener inmediatamente a partir de la 
 El \emph{grupo de trenzas} de $n$ cuerdas, $B_n$,  es el grupo fundamental del $N_n$, es decir,
 $$B_n=\pi_1(N_n)=\pi_1(M_n/\Sigma_n).$$
 \end{defi}
+
+La equivalencia entre estás definiciones y la definición \ref{geo} se puede encontrar en \cite{Zariski}.
 
 Al igual que antes, las trenzas pueden ser visualizadas como lazos, con la diferencia de que ahora, dado un lazo $\beta:[0,1]\to N_n$, $\beta(1)$ no tiene que ser necesariamente igual a $\beta(0)$, sino que puede ser una permutación de sus coordenadas. De nuevo, dos trenzas son consideradas iguales si son homotópicamente equivalentes. Al representar el movimiento en $\C\times[0,1]$ nos quedaría un dibujo similar al de la Figura \ref{hilos} a la derecha.
 
@@ -287,7 +293,7 @@ Consideraremos que dos automorfismos son iguales si pueden ser transformados el 
 $$\mathcal{M}(\D_n)=Homeo^+(\D_n)/Homeo^+_0(\D_n).$$
 \end{defi}
 
-Con esta definición se tiene:
+Con esta definición se tiene \cite{Magnus}:
 $$\mathcal{M}(\D_n)\cong B_n.$$
 Se sabe que un automorfismo del disco cerrado $\D^2$ que fije la frontera puede ser deformado mediante isotopía a la identidad (se prueba mediante el conocido como \emph{truco de Alexander} \cite{Alexander}). Por tanto, dado un elemento de $\mathcal{M}(\D_n)$, se puede tomar un homeomorfismo de $\D_n$ que lo represente y extenderlo de forma única a un homeomorfismo $f$ de $\D^2$. A continuación, se toma una isotopía de $Id_{\D^2}$ en $f$, y se sigue el camino de los puntos $P_1,\dots, P_n$ durante la deformación. Esto nos da un lazo en $\pi_1(\D_n/\Sigma_n)$, que se corresponde con una trenza. 
 
@@ -517,7 +523,7 @@ Dado un espacio topológico $X$ y un grupo $G$, se dice que un espacio recubrido
 \end{defi}
 
 \begin{ej}
-Podemos dar un espacio recubridor de $S^1$ que se corresponda, por ejemplo, al grupo libre de dos elementos $\langle a, b\rangle$. Para ello, fijado un punto base $x\in S^1$, basta tomar como espacio recubridor $S^1\land S^1$ con punto base en el vértice, que denotaremos $y$. Etiquetamos cada una de las circunferencias como $a$ y $b$ respectivamente. La aplicación $p:S^1\land S^1\to S^1$ enviando $y\mapsto x$ e identifica $a$ con $b$ es claramente sobreyectiva y continua. Por tanto $p$ es una aplicación recubridora. Además, es bien sabido que $\pi_1(S^1\land S^2)=\langle a, b\rangle$. 
+Podemos dar un espacio recubridor de $S^1$ que se corresponda, por ejemplo, al grupo libre de dos elementos $\langle a, b\rangle$. Para ello, fijado un punto base $x\in S^1$, basta tomar como espacio recubridor $S^1\lor S^1$ con punto base en el vértice, que denotaremos $y$. Etiquetamos cada una de las circunferencias como $a$ y $b$ respectivamente. La aplicación $p:S^1\lor S^1\to S^1$ enviando $y\mapsto x$ e identifica $a$ con $b$ es claramente sobreyectiva y continua. Por tanto $p$ es una aplicación recubridora. Además, es bien sabido que $\pi_1(S^1\lor  S^2)=\langle a, b\rangle$. 
 \end{ej}
 
 NO ESTOY SEGURO DE SI TENGO QUE PEDIRLE QUE ACTÚE LIBREMENTE (Y TRANSITIVAMENTE) PORQUE NO ENTODOS LOS ESPACIOS SE CUMPLE ESO. PODRÍA EMPEZAR PIDIÉNDOLE MÁS COSAS A X. HATCHER 1.40 TIENE EQUIVALENCIAS 
@@ -534,7 +540,7 @@ Nótese que esta condición no implica que $U$ sea simplemente conexo, pues la c
 Dado un espacio recubridor $p:\tilde{X}\to X$, una homotopía $f_t:Y\to X$ y una aplicación continua $\tilde{f}_0:Y\to\tilde{X}$ levantando a $f_0$, se tiene que existe una única homotopía $\tilde{f}_t:Y\to\tilde{X}$ de $\tilde{f}_0$ que levanta a $f_t$.
 \end{prop}
 
-En adelante, dado un punto base $x\in X$, supondremos fijado un punto base $\tilde{x}\in\tilde{X}$ con $\tilde{x}\in\p^{-1}(x)$.
+En adelante, dado un punto base $x\in X$, supondremos fijado un punto base $\tilde{x}\in\tilde{X}$ con $\tilde{x}\in p^{-1}(x)$.
 
 \begin{prop}
 La aplicación $p_*:\pi_1(\tilde{X})\to\pi_1(X)$ inducida por $p:\tilde{X}\to X$ es inyectiva. El subgrupo imagen $p_*(\pi_1(\tilde{X}))$ consiste en las clases de homotopía de los lazos de $X$ basados en $x$ cuyos levantamientos a $\tilde{X}$ son lazos basados en $\tilde{x}$.
@@ -551,7 +557,8 @@ Sea $X$ conexo por caminos, localmente conexo por caminos y semilocalmente simpl
 
 Con esta última proposición, podemos asociar a cada subgrupo de $\pi_1(X)$ un espacio recubridor $\tilde{X}$ que se corresponda con ese subgrupo.
 %al ser la p_* inyectiva es isomorfismo sobre su imagen
-Ver que las equivalencias de homotopía (si hace falta, homeomorfismos) se levantan a equivalencias de homoopía
+
+DON'T FORGET Ver que las equivalencias de homotopía (si hace falta, homeomorfismos) se levantan a equivalencias de homoopía
 
 \end{document}
 

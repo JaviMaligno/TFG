@@ -27,7 +27,7 @@ Nótese que $\preccurlyeq$ es invariante por multiplicación a la izquierda, est
 Dado tal orden parcial, uno podría preguntarse si existe un único máximo común divisor o mínimo común múltiplo con respecto a $\preccurlyeq$. Esto es, dadas $a,b\in B_n^+$, ¿existe un único $d\in B_n^+$ tal que $d\preccurlyeq a$, $d\preccurlyeq b$ y $d'\preccurlyeq d$ para todo $d'$ prefijo común de $a$ y $b$? ¿Y existe un único $m\in B_n^+$ tal que $a\preccurlyeq m$, $b\preccurlyeq m$ y $m\preccurlyeq m'$ para todo $m'$ que tenga a $a$ y a $b$ como prefijos? En tales casos, escribimos $d=a\land b$ y $m=a\lor b$. Nótese que también tenemos $xd=xa\land xb$ y $xm=xa\lor xb$ para todo $x\in B_n^+$.
 
 \begin{nota}
-Análogamente podríamos definir el orden parcial dual  de \emph{sufijos}, $\succcurlyeq$, invariante por multiplicación a la derecha.
+Análogamente podríamos definir el orden parcial dual  de \emph{sufijos}, $\succcurlyeq$, invariante por multiplicación a la derecha. Nótese que este orden no es equivalente al de prefijos, puesto que $b\succcurlyeq a$ no implica en general $a\preccurlyeq b$ ni recíprocamente. 
 \end{nota}
 
 El punto clave en el trabajo de Garside fue demostrar, mediante métodos elementales, que $\sigma_i$ y $\sigma_j$ tienen mínimo común múltiplo en $B_n^+$. En concreto:
@@ -153,12 +153,26 @@ donde $a_i$ es un prefijo propio de $\Delta$, es decir, $1\prec a_i\prec\Delta$,
 
 %prefijo propio de Delta porque Delta no era prefijo de A y se está haciendo el meet
 
+EXPLICAR EL ALGORITMO POR BLOQUES CITANDO QUE ESTÁ EN THURSTON
 
 \begin{ej}
-EN LO DE PASAR LAS LETRAS A LA IZQUIERDA, NO TENGO MUY CLARO SI EL $\Delta^p$ ESTÁ YA CALCULADO O ES LO QUE SE ACUMULA  LA IZQUIERDA. ENTIENDO QUE EL DE LA DE LA NORMAL SÍ, PERO EL DE LA LEFT-GREEDY NO, PERO PENSABA QUE ERAN EL MISMO
+En $B_4$ sean $\alpha_1=\sigma_1\sigma_2^{-1}\sigma_3$ y $\alpha_2=\sigma_3\sigma_1\sigma_1\sigma_2\sigma_1$, las cuales queremos comprobar si representan el mismo elemento. Lo primero que debemos hacer es eliminar el exponente negativo de $\alpha_1$. Para ello, tenemos que expresar $\Delta=\Delta_4=\sigma_1(\sigma_2\sigma_1)(\sigma_3\sigma_2\sigma_1)$ de forma que tenga a $\sigma_2$ como prefijo. Esto es sencillo pues, basta usar las relaciones del monoide de trenzas positivas para escribir
+\[
+\Delta=\sigma_2(\sigma_1\sigma_2)(\sigma_3\sigma_2\sigma_1).
+\]
+Así pues, $\sigma_2^{-1}=(\sigma_1\sigma_2)(\sigma_3\sigma_2\sigma_1)\Delta^{-1}$, de modo que $\alpha_1=\sigma_1(\sigma_1\sigma_2)(\sigma_3\sigma_2\sigma_1)\Delta^{-1}\sigma_3$. Usando la proposición \ref{conjuga}, pasamos $\Delta^{-1}$ a la izquierda:
+\begin{align*}
+\alpha_1&=\sigma_1(\sigma_1\sigma_2)(\sigma_3\sigma_2\sigma_1)\Delta^{-1}\sigma_3=\sigma_1\sigma_1\sigma_2\sigma_3\sigma_2\Delta^{-1}\sigma_3\sigma_3=\sigma_1\sigma_1\sigma_2\sigma_3\Delta^{-1}\sigma_2\sigma_3\sigma_3\\
+ & =\sigma_1\sigma_1\sigma_2\Delta^{-1}\sigma_1\sigma_2\sigma_3\sigma_3=\sigma_1\sigma_1\Delta^{-1}\sigma_2\sigma_1\sigma_2\sigma_3\sigma_3=\sigma_1\Delta^{-1}\sigma_3\sigma_2\sigma_1\sigma_2\sigma_3\sigma_3\\
+ &=\Delta^{-1}\sigma_3\sigma_3\sigma_2\sigma_1\sigma_2\sigma_3\sigma_3.
+\end{align*}
 
-ADEMÁS SI HAY QUE PARTIR DE LA FORMA NORMAL DE GARSIDE, CÓMO VA A SER MÁS EFICIENTE
+Ahora vamos a hacer la separación de bloques en las palabras positivas. 
+
+
+NO LE VEO SENTIDO A LOS EJEMPLOS QUE ME PUSO, CÓMO VA A SER SIMPLE UNA TRENZA QUE TIENE REPETIDOS LOS GENERADORES, ESO NO CUADRA CON LA DEFINICIÓN QUE DI EN PEINADO DE TRENZAS. TAMPOCO VEO CÓMO TE VAN A SALIR DELTAS (SUPONGO QUE UNIENDO VARIOS BLOQUES) DURANTE EL PROCESO SI EN TODO MOMENTOS VAS HACIENDO TRENZAS SIMPLES. DE HECHO THURSTON 9.1.14 DICE QUE ES EQUIVALENTE SER ELEMENTO SIMPLE COMO PREFIJO DE DELTA Y QUE LOS GENERADORES NO SE REPITAN, AUNQUE EL TERCER TROZO DE LA FIGURA 9.3 PARECE QUE REPITE SIGMA2
 \end{ej}
+%lo que hace Garside es que como A es positiva ya sabes que tienes una cantidad finita de representaciones, entonces te vas a la que tenga Delta y reduces hasta que ninguna tenga Delta y entonces ya comparas. Para la left-greedy no hay que pasar por esto, directamente se calculan los meet y te acaba quedando el Delta a la izquierda y los factores simples 
 
 Antes de terminar este capítulo, como comentábamos al final de la sección anterior, la forma normal de Garside permite probar la existencia y unicidad de mínimo común múltiplo y máximo común divisor en $B_n$ con el orden parcial inducido por el orden parcial definido en $B_n^+$.  Dadas $a,b\in B_n$, sean sus formas normales $a=\Delta^{p_1}A$ y $b=\Delta^{p_2}B$, donde $p_1,p_2\in\Z$ y $A,B\in B_n^+$. Si $p_1,p_2\geq 0$ entonces $a,b\in B_n^+$ y no hay nada que probar. Si $p_1< 0$, entonces $\Delta^{-p_1}a, \Delta^{-p_1}b\in B_n^+$ y, similarmente, si $p_2<0$, entonces $\Delta^{-p_2}a, \Delta^{-p_2}b\in B_n^+$. Si  $p_1,p_2<0$, entonces tomamos $q=\max\{-p_1,-p_2\}$, de modo que $\Delta^{q}a, \Delta^{q}b\in B_n^+$. 
 
