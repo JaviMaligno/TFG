@@ -6,7 +6,7 @@
 %\hyphenation{equi-va-len-cia}\hyphenation{pro-pie-dad}\hyphenation{res-pec-ti-va-men-te}\hyphenation{sub-es-pa-cio}
 \chapter{Definiciones del grupo de trenzas}
 
-ME QUIERO ASEGURAR MEJOR DE LO DE QUE SE PUEDEN CONSIDERAR SIEMPRE NÚMERO FINITO DE CRUCES Y TAL
+%ME QUIERO ASEGURAR MEJOR DE LO DE QUE SE PUEDEN CONSIDERAR SIEMPRE NÚMERO FINITO DE CRUCES Y TAL
 
 
 
@@ -302,6 +302,8 @@ Se sabe que un automorfismo del disco cerrado $\D^2$ que fije la frontera puede 
 
 %automorfismo=autohomeomorfismo
 
+\newpage
+
 \section{Presentación del grupo de trenzas}
 Una de las características mejor conocidas de los grupos de trenzas es su presentación finita descubierta por Artin en \cite{Artin}. Ya hemos mencionado los generadores $\sigma_1,\dots,\sigma_{n-1}\in B_n$ en \ref{estandar}. La presentación completa sería la siguiente:
 \begin{equation}\label{presentacion}
@@ -324,12 +326,6 @@ A_{ij}^{-1}A_{is}A_{ij}&=A_{is}A_{js}A_{is}A_{js}^{-1}A_{is}^{-1}\text{ si } (i<
 A_{ij}^{-1}A_{rs}A_{ij}&=A_{is}A_{js}A_{is}^{-1}A_{js}^{-1}A_{rs}A_{js}A_{is}A_{js}^{-1}A_{is}^{-1}\text{ si } (i+1<r<j<s).
 \end{align*}
 
-En la Figura \ref{generador} se puede observar qué trenza representa geométricamente el generador $A_{ij}$. 
-
-\begin{nota}
-Cuando $j=i+1$, $A_{ij}=\sigma_i^2$ y cuando $j=i$, $A_{ij}=1$. 
-\end{nota}
-
 %\begin{figure}
 %\centering
 %\begin{tikzpicture}
@@ -347,7 +343,9 @@ Cuando $j=i+1$, $A_{ij}=\sigma_i^2$ y cuando $j=i$, $A_{ij}=1$.
 %\caption{Interpretación geométrica de la trenza $A_{ij}$.}\label{generador}
 %\end{figure}
 
-\begin{figure}
+En la Figura \ref{generador} se puede observar qué trenza representa geométricamente el generador $A_{ij}$. 
+
+\begin{figure}[h!]
 \centering
 \tikzset{decorate sep/.style 2 args=
 {decorate,decoration={shape backgrounds,shape=circle,shape size=#1,shape sep=#2}}}
@@ -369,6 +367,11 @@ Cuando $j=i+1$, $A_{ij}=\sigma_i^2$ y cuando $j=i$, $A_{ij}=1$.
 \end{tikzpicture}
 \caption{Interpretación geométrica de la trenza $A_{ij}$.}\label{generador}
 \end{figure}
+
+
+\begin{nota}
+Cuando $j=i+1$, $A_{ij}=\sigma_i^2$ y cuando $j=i$, $A_{ij}=1$. 
+\end{nota}
 
 También nos serán útiles a la hora de hacer cálculos las siguientes relaciones equivalentes a las anteriores, y que de nuevo se pueden encontrar en \cite{polynomial}:
 \begin{align*}
@@ -400,7 +403,7 @@ De forma análoga a como se hace para grupos, podemos considerar los generadores
 Dado un monoide $S$ con presentación $\langle M\mid R\rangle$, su \emph{grupo de fracciones} $G(S)$ es el grupo generado por la misma presentación.
 \end{defi}
 
-De forma natural podemos ver los elementos de un monoide dentro de su grupo de fracciones. Sin embargo, no siempre se conserva intacto, pues la existencia de inverso en el grupo, puede hacer que dos elementos distintos del monoide representen el mismo elemento del grupo de fracciones. Por ejemplo, si consideramos la presentación $\langle a,b,c\mid ab=cb\rangle$, los elementos $a$ y $c$ son distintos en el monoide, sin embargo, en el grupo son el mismo, pues multiplicando a la derecha por $b^{-1}$ en la relación obtenemos $a=c$. De aquí que consideremos la siguiende definición.
+De forma natural podemos ver los elementos de un monoide dentro de su grupo de fracciones. Sin embargo, el monoide no siempre se conserva intacto, pues la existencia de inverso en el grupo, puede hacer que dos elementos distintos del monoide representen el mismo elemento del grupo de fracciones. Por ejemplo, si consideramos la presentación $\langle a,b,c\mid ab=cb\rangle$, los elementos $a$ y $c$ son distintos en el monoide; sin embargo, en el grupo son el mismo, pues multiplicando a la derecha por $b^{-1}$ en la relación obtenemos $a=c$. De aquí que consideremos la siguiende definición.
 
 \begin{defi}
 Decimos que un monoide $S$ se \emph{incrusta} en su grupo de fracciones $G(S)$, si el morfismo de monoides $\iota: S\to G(S)$ dado por $\iota(a)=a$ es inyectivo.
@@ -464,6 +467,7 @@ En ambos casos es elemental comprobar que la imagen de cada uno es un subgrupo, 
 \QED
 %https://groupprops.subwiki.org/wiki/Normal_subgroup_equals_kernel_of_homomorphism
 %El razonamiento análogo para G no se podría hacer porque el producto en F es el normal y en la primera componente es el producto twisteado, que no coincidiría en general
+%la componente primera del inverso está porque los automorfismos son de F
 \end{dem}
 
 
@@ -479,7 +483,7 @@ En el caso de que $B$ sea un grupo finito, diremos que la extensión es \emph{fi
 \end{defi} 
 
 \begin{prop}\label{semidirect}
-Si $H$ es una extensión es $F$ por $G$, de modo que la sucesión exacta 
+Si $H$ es una extensión de $F$ por $G$, de modo que la sucesión exacta 
 \[
 1\to F\to H\to G\to 1.
 \]
@@ -487,78 +491,78 @@ escinde y la imagen de $F$ es normal dentro de $H$, entonces $H\cong F\rtimes G$
 \end{prop}
 
 \begin{dem}
-Supongamos que tenemos una sección $s:G\to H$. Como la imagen de $F$ es isomorfa a $F$, podemos indentificarlos. Definamos pues, $\rho:G\to Aut(F)$, como $g\to C_{s(g)}|_F$, donde $C_{s(g)}$ denota la conjugación por $s(g)$ en $H$. Al restringirlo a $F$, esto nos da un automorfismo bien defino al ser $F$ normal en $H$. Así que hemos definido una acción mediante automorfismos que define un producto semidirecto isomorfo a $F\rtimes G$. 
+Supongamos que tenemos una sección $s:G\to H$. Como la imagen de $F$ es isomorfa a $F$, podemos indentificar ambos grupos. Definamos pues, $\rho:G\to Aut(F)$, como $g\to C_{s(g)}|_F$, donde $C_{s(g)}$ denota la conjugación por $s(g)$ en $H$. Al restringirlo a $F$, esto nos da un automorfismo bien defino al ser $F$ normal en $H$. Así que hemos definido una acción mediante automorfismos que define un producto semidirecto isomorfo a $F\rtimes G$. 
 \QED
 %Para el recíproco basta tomar la sucesión exacta de inclusión y cociente por ser F normal y el cociente sale isomorfo a G con el 1er tma isomorfía usando la aplicación que he elegido en la demostración anterior \url{https://math.stackexchange.com/questions/339731/relation-between-semidirect-products-extensions-and-split-extensions}
 \end{dem}
- 
-%Apréndete bien la definición de acción por si las moscas
-
-A LA HORA DE DEFINIR LA OPERACIÓN CON LA ACCIÓN A LA DERECHA NO CAMBIARÍA LA EXPRESIÓN ¿NO?
-%\url{https://math.stackexchange.com/questions/339731/relation-between-semidirect-products-extensions-and-split-extensions}
-%\url{https://ncatlab.org/nlab/show/semidirect+product+group}
-%\url{https://groupprops.subwiki.org/wiki/External_semidirect_product}
-%\url{https://groupprops.subwiki.org/wiki/Internal_semidirect_product}
-
-\subsection{Espacios recubridores}
-
-\begin{defi}
-Sea $X$ un espacio topológico. Un \emph{espacio recubridor} de $X$ es un espacio topológico $\tilde{X}$ junto con una aplicación continua sobreyectiva $p:\tilde{X}\to X$, llamada \emph{aplicación recubridora}, tal que para todo $x\in X$, existe un entorno $U$ de $x$ de modo que $p^{-1}(U)$ es unión disjunta de abiertos de $C$ homeomorfos a $U$, llamados \emph{hojas}. Al espacio $p^{-1}(x)$ se llama \emph{fibra} de $x$.
-\end{defi}
-
-\begin{ej}
-El ejemplo más habitual de espacio recubridor es $\R$ con la aplicación $p:\R\to S^1$ dada por $p(t)=e^{2\pi i t}$. En este caso, el espacio recubierto es la circunferencia $S^1$. 
-\end{ej}
-
-\begin{defi}
-Sea $X$ un espacio topológico y $\tilde{X}$ un espacio recubridor de $X$ con aplicación recubridora $p$. Dado un grupo $G$ actuando sobre cada fibra $p^{-1}(x)\subseteq\tilde{X}$ con $x\in X$, si $p(gx)=p(x)$ para todo $g\in G$, se dice que $G$ es un grupo de \emph{transformaciones de recubrimiento} (\emph{deck transformations}).
-\end{defi}
-
-\begin{ej}
-En el ejemplo de espacio recubridor anterior, tenemos una acción natural de $\Z$ sobre las fibras, ya que $p(t)=p(t+ n)$ para todo $n\in\Z$. 
-\end{ej}
-
-\begin{defi}
-Dado un espacio topológico $X$ y un grupo $G$, se dice que un espacio recubridor $\tilde{X}$ \emph{se corresponde} a $G$ si $\pi_1(\tilde{X})=G$. 
-\end{defi}
-
-\begin{ej}
-Podemos dar un espacio recubridor de $S^1$ que se corresponda, por ejemplo, al grupo libre de dos elementos $\langle a, b\rangle$. Para ello, fijado un punto base $x\in S^1$, basta tomar como espacio recubridor $S^1\lor S^1$ con punto base en el vértice, que denotaremos $y$. Etiquetamos cada una de las circunferencias como $a$ y $b$ respectivamente. La aplicación $p:S^1\lor S^1\to S^1$ enviando $y\mapsto x$ e identifica $a$ con $b$ es claramente sobreyectiva y continua. Por tanto $p$ es una aplicación recubridora. Además, es bien sabido que $\pi_1(S^1\lor  S^2)=\langle a, b\rangle$. 
-\end{ej}
-
-NO ESTOY SEGURO DE SI TENGO QUE PEDIRLE QUE ACTÚE LIBREMENTE (Y TRANSITIVAMENTE) PORQUE NO ENTODOS LOS ESPACIOS SE CUMPLE ESO. PODRÍA EMPEZAR PIDIÉNDOLE MÁS COSAS A X. HATCHER 1.40 TIENE EQUIVALENCIAS 
-
-A continuación vamos a ver una serie de definiciones y resultados que aparecen en \cite{Hatcher}, los cuales usaremos más adelante.
-
-\begin{defi}
-Un espacio topológico $X$ se dice que es \emph{semilocalmente simplemente conexo} si todo punto $x\in X$ tiene un entorno $U$ tal que cualquier lazo de $U$ basado en $x$ es contráctil en $X$. 
-\end{defi}
-%La contracción del lazo de U no tiene que hacerse sin salirse de U
-Nótese que esta condición no implica que $U$ sea simplemente conexo, pues la contracción del lazo no se tiene por qué realizar enteramente dentro de $U$.
-
-\begin{prop}
-Dado un espacio recubridor $p:\tilde{X}\to X$, una homotopía $f_t:Y\to X$ y una aplicación continua $\tilde{f}_0:Y\to\tilde{X}$ levantando a $f_0$, se tiene que existe una única homotopía $\tilde{f}_t:Y\to\tilde{X}$ de $\tilde{f}_0$ que levanta a $f_t$.
-\end{prop}
-
-En adelante, dado un punto base $x\in X$, supondremos fijado un punto base $\tilde{x}\in\tilde{X}$ con $\tilde{x}\in p^{-1}(x)$.
-
-\begin{prop}
-La aplicación $p_*:\pi_1(\tilde{X})\to\pi_1(X)$ inducida por $p:\tilde{X}\to X$ es inyectiva. El subgrupo imagen $p_*(\pi_1(\tilde{X}))$ consiste en las clases de homotopía de los lazos de $X$ basados en $x$ cuyos levantamientos a $\tilde{X}$ son lazos basados en $\tilde{x}$.
-\end{prop}
-
-\begin{prop}
-Supongamos que tenemos un espacio recubridor $p:\tilde{X}\to X$ y una aplicación continua $f:X\to Y$ con $Y$ conexo por caminos y semilocalmente simplemente conexo, con punto base $y=f(x)$. Entonces existe un levantamiento $\tilde{f}:Y\to\tilde{X}$ de $f$ si y solo si $f_*(\pi_1(Y))\subseteq p_*(\pi_1(\tilde{X}))$.
-\end{prop}
-EN BURAU CREO QUE EFECTIVAMENTE SE DA, COMPROBARLO
-
-\begin{prop}
-Sea $X$ conexo por caminos, localmente conexo por caminos y semilocalmente simplemente conexo. Entonces, para todo subgrupo $H\subseteq \pi_1(X)$, existe un espacio recubridor $p:\tilde{X}\to X$ tal que $p_*(\pi_1(\tilde{X}))=H$ eligiendo adecuadamente el punto base $\tilde{x}$. 
-\end{prop}
-
-Con esta última proposición, podemos asociar a cada subgrupo de $\pi_1(X)$ un espacio recubridor $\tilde{X}$ que se corresponda con ese subgrupo.
-%al ser la p_* inyectiva es isomorfismo sobre su imagen
-
-DON'T FORGET Ver que las equivalencias de homotopía (si hace falta, homeomorfismos) se levantan a equivalencias de homoopía
+% 
+%%Apréndete bien la definición de acción por si las moscas
+%
+%A LA HORA DE DEFINIR LA OPERACIÓN CON LA ACCIÓN A LA DERECHA NO CAMBIARÍA LA EXPRESIÓN ¿NO?
+%%\url{https://math.stackexchange.com/questions/339731/relation-between-semidirect-products-extensions-and-split-extensions}
+%%\url{https://ncatlab.org/nlab/show/semidirect+product+group}
+%%\url{https://groupprops.subwiki.org/wiki/External_semidirect_product}
+%%\url{https://groupprops.subwiki.org/wiki/Internal_semidirect_product}
+%
+%\subsection{Espacios recubridores}
+%
+%\begin{defi}
+%Sea $X$ un espacio topológico. Un \emph{espacio recubridor} de $X$ es un espacio topológico $\tilde{X}$ junto con una aplicación continua sobreyectiva $p:\tilde{X}\to X$, llamada \emph{aplicación recubridora}, tal que para todo $x\in X$, existe un entorno $U$ de $x$ de modo que $p^{-1}(U)$ es unión disjunta de abiertos de $C$ homeomorfos a $U$, llamados \emph{hojas}. Al espacio $p^{-1}(x)$ se llama \emph{fibra} de $x$.
+%\end{defi}
+%
+%\begin{ej}
+%El ejemplo más habitual de espacio recubridor es $\R$ con la aplicación $p:\R\to S^1$ dada por $p(t)=e^{2\pi i t}$. En este caso, el espacio recubierto es la circunferencia $S^1$. 
+%\end{ej}
+%
+%\begin{defi}
+%Sea $X$ un espacio topológico y $\tilde{X}$ un espacio recubridor de $X$ con aplicación recubridora $p$. Dado un grupo $G$ actuando sobre cada fibra $p^{-1}(x)\subseteq\tilde{X}$ con $x\in X$, si $p(gx)=p(x)$ para todo $g\in G$, se dice que $G$ es un grupo de \emph{transformaciones de recubrimiento} (\emph{deck transformations}).
+%\end{defi}
+%
+%\begin{ej}
+%En el ejemplo de espacio recubridor anterior, tenemos una acción natural de $\Z$ sobre las fibras, ya que $p(t)=p(t+ n)$ para todo $n\in\Z$. 
+%\end{ej}
+%
+%\begin{defi}
+%Dado un espacio topológico $X$ y un grupo $G$, se dice que un espacio recubridor $\tilde{X}$ \emph{se corresponde} a $G$ si $\pi_1(\tilde{X})=G$. 
+%\end{defi}
+%
+%\begin{ej}
+%Podemos dar un espacio recubridor de $S^1$ que se corresponda, por ejemplo, al grupo libre de dos elementos $\langle a, b\rangle$. Para ello, fijado un punto base $x\in S^1$, basta tomar como espacio recubridor $S^1\lor S^1$ con punto base en el vértice, que denotaremos $y$. Etiquetamos cada una de las circunferencias como $a$ y $b$ respectivamente. La aplicación $p:S^1\lor S^1\to S^1$ enviando $y\mapsto x$ e identifica $a$ con $b$ es claramente sobreyectiva y continua. Por tanto $p$ es una aplicación recubridora. Además, es bien sabido que $\pi_1(S^1\lor  S^2)=\langle a, b\rangle$. 
+%\end{ej}
+%
+%NO ESTOY SEGURO DE SI TENGO QUE PEDIRLE QUE ACTÚE LIBREMENTE (Y TRANSITIVAMENTE) PORQUE NO ENTODOS LOS ESPACIOS SE CUMPLE ESO. PODRÍA EMPEZAR PIDIÉNDOLE MÁS COSAS A X. HATCHER 1.40 TIENE EQUIVALENCIAS 
+%
+%A continuación vamos a ver una serie de definiciones y resultados que aparecen en \cite{Hatcher}, los cuales usaremos más adelante.
+%
+%\begin{defi}
+%Un espacio topológico $X$ se dice que es \emph{semilocalmente simplemente conexo} si todo punto $x\in X$ tiene un entorno $U$ tal que cualquier lazo de $U$ basado en $x$ es contráctil en $X$. 
+%\end{defi}
+%%La contracción del lazo de U no tiene que hacerse sin salirse de U
+%Nótese que esta condición no implica que $U$ sea simplemente conexo, pues la contracción del lazo no se tiene por qué realizar enteramente dentro de $U$.
+%
+%\begin{prop}
+%Dado un espacio recubridor $p:\tilde{X}\to X$, una homotopía $f_t:Y\to X$ y una aplicación continua $\tilde{f}_0:Y\to\tilde{X}$ levantando a $f_0$, se tiene que existe una única homotopía $\tilde{f}_t:Y\to\tilde{X}$ de $\tilde{f}_0$ que levanta a $f_t$.
+%\end{prop}
+%
+%En adelante, dado un punto base $x\in X$, supondremos fijado un punto base $\tilde{x}\in\tilde{X}$ con $\tilde{x}\in p^{-1}(x)$.
+%
+%\begin{prop}
+%La aplicación $p_*:\pi_1(\tilde{X})\to\pi_1(X)$ inducida por $p:\tilde{X}\to X$ es inyectiva. El subgrupo imagen $p_*(\pi_1(\tilde{X}))$ consiste en las clases de homotopía de los lazos de $X$ basados en $x$ cuyos levantamientos a $\tilde{X}$ son lazos basados en $\tilde{x}$.
+%\end{prop}
+%
+%\begin{prop}
+%Supongamos que tenemos un espacio recubridor $p:\tilde{X}\to X$ y una aplicación continua $f:X\to Y$ con $Y$ conexo por caminos y semilocalmente simplemente conexo, con punto base $y=f(x)$. Entonces existe un levantamiento $\tilde{f}:Y\to\tilde{X}$ de $f$ si y solo si $f_*(\pi_1(Y))\subseteq p_*(\pi_1(\tilde{X}))$.
+%\end{prop}
+%EN BURAU CREO QUE EFECTIVAMENTE SE DA, COMPROBARLO
+%
+%\begin{prop}
+%Sea $X$ conexo por caminos, localmente conexo por caminos y semilocalmente simplemente conexo. Entonces, para todo subgrupo $H\subseteq \pi_1(X)$, existe un espacio recubridor $p:\tilde{X}\to X$ tal que $p_*(\pi_1(\tilde{X}))=H$ eligiendo adecuadamente el punto base $\tilde{x}$. 
+%\end{prop}
+%
+%Con esta última proposición, podemos asociar a cada subgrupo de $\pi_1(X)$ un espacio recubridor $\tilde{X}$ que se corresponda con ese subgrupo.
+%%al ser la p_* inyectiva es isomorfismo sobre su imagen
+%
+%DON'T FORGET Ver que las equivalencias de homotopía (si hace falta, homeomorfismos) se levantan a equivalencias de homoopía
 
 \end{document}
 

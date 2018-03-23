@@ -153,7 +153,7 @@ donde $a_i$ es un prefijo propio de $\Delta$, es decir, $1\prec a_i\prec\Delta$,
 
 %prefijo propio de Delta porque Delta no era prefijo de A y se está haciendo el meet
 
-EXPLICAR EL ALGORITMO POR BLOQUES CITANDO QUE ESTÁ EN THURSTON
+EXPLICAR EL ALGORITMO POR BLOQUES CITANDO QUE ESTÁ EN THURSTON. RECORDAR COMENTAR QUE SI LA PALABRA SE ESCRIBE DE OTRA FORMA ALOMEJOR PODEMOS METER LETRAS Y DECIR QUE EN EL EJEMPLO SE VE UN CASO. SI ALGÚN BLOQUE SE QUEDA VACÍO SE ELIMINA
 
 \begin{ej}
 En $B_4$ sean $\alpha_1=\sigma_1\sigma_2^{-1}\sigma_3$ y $\alpha_2=\sigma_3\sigma_1\sigma_1\sigma_2\sigma_1$, las cuales queremos comprobar si representan el mismo elemento. Lo primero que debemos hacer es eliminar el exponente negativo de $\alpha_1$. Para ello, tenemos que expresar $\Delta=\Delta_4=\sigma_1(\sigma_2\sigma_1)(\sigma_3\sigma_2\sigma_1)$ de forma que tenga a $\sigma_2$ como prefijo. Esto es sencillo pues, basta usar las relaciones del monoide de trenzas positivas para escribir
@@ -164,13 +164,39 @@ Así pues, $\sigma_2^{-1}=(\sigma_1\sigma_2)(\sigma_3\sigma_2\sigma_1)\Delta^{-1
 \begin{align*}
 \alpha_1&=\sigma_1(\sigma_1\sigma_2)(\sigma_3\sigma_2\sigma_1)\Delta^{-1}\sigma_3=\sigma_1\sigma_1\sigma_2\sigma_3\sigma_2\Delta^{-1}\sigma_3\sigma_3=\sigma_1\sigma_1\sigma_2\sigma_3\Delta^{-1}\sigma_2\sigma_3\sigma_3\\
  & =\sigma_1\sigma_1\sigma_2\Delta^{-1}\sigma_1\sigma_2\sigma_3\sigma_3=\sigma_1\sigma_1\Delta^{-1}\sigma_2\sigma_1\sigma_2\sigma_3\sigma_3=\sigma_1\Delta^{-1}\sigma_3\sigma_2\sigma_1\sigma_2\sigma_3\sigma_3\\
- &=\Delta^{-1}\sigma_3\sigma_3\sigma_2\sigma_1\sigma_2\sigma_3\sigma_3.
+ & =\Delta^{-1}\sigma_3\sigma_3\sigma_2\sigma_1\sigma_2\sigma_3\sigma_3.
 \end{align*}
 
-Ahora vamos a hacer la separación de bloques en las palabras positivas. 
+Ahora vamos a hacer la separación de bloques en las palabras positivas. Empezamos con $\alpha_2$. Vamos a dividirla en los bloques $a_1=\sigma_3\sigma_1$ y $a_2=\sigma_1\sigma_2\sigma_1$. Así, obtenemos
+\[
+\alpha_2=a_1a_2=(\sigma_3\sigma_1)(\sigma_1\sigma_2\sigma_1).
+\]
+Aparentemente no podemos pasar ninguna letra de $a_2$ a $a_1$, pues aparecería $\sigma_1$ dos veces seguidas. Sin embargo, recordemos que las relaciones de \ref{presentacion} nos dan $\sigma_1\sigma_2\sigma_1=\sigma_2\sigma_1\sigma_2$. Por lo tanto, reescribimos $\alpha_2$ y continuamos
+\begin{align*}
+\alpha_2&=(\sigma_3\sigma_1)(\sigma_2\sigma_1\sigma_2)=(\sigma_3\sigma_1\sigma_2\sigma_1)(\sigma_2).
+\end{align*}
+Ahora tenemos la situación inversa: aparentemente podríamos añadir $\sigma_2$ al primer bloque, pero utilizando la misma relación de la presentación del grupo de trenzas que antes, nos aparecería $\sigma_2$ dos veces consecutivas, por lo que hemos finalizado el proceso. Obsérvese que el bloque que hemos pasado a la izquierda se corresponde con $a_2\land (a_1^{-1}\Delta)$ y el bloque resultante se corresponde con $\alpha_2\land\Delta$ en el algoritmo original de El-rifai y Morton. Además es claro que ninguno de los factores es una potencia de $\Delta$.
+% En el caso del primer factor podemos verlo mejor gráficamente, el número de cruces es distinto. Aunque mejor el número de factores, porque el producto de deltas no puede decrecer en letras
+%\begin{figure}[h!]
+%\centering
+%\begin{tikzpicture}
+%\braid[rotate=90,width=.65cm,height=0.7cm,line width=1.5pt] s_3^{-1} s_1^{-1} s_2^{-1} s_1^{-1};
+%\end{tikzpicture}
+%\caption{$\sigma_3\sigma_1\sigma_2\sigma_1$.}
+%\end{figure}
 
-
-NO LE VEO SENTIDO A LOS EJEMPLOS QUE ME PUSO, CÓMO VA A SER SIMPLE UNA TRENZA QUE TIENE REPETIDOS LOS GENERADORES, ESO NO CUADRA CON LA DEFINICIÓN QUE DI EN PEINADO DE TRENZAS. TAMPOCO VEO CÓMO TE VAN A SALIR DELTAS (SUPONGO QUE UNIENDO VARIOS BLOQUES) DURANTE EL PROCESO SI EN TODO MOMENTOS VAS HACIENDO TRENZAS SIMPLES. DE HECHO THURSTON 9.1.14 DICE QUE ES EQUIVALENTE SER ELEMENTO SIMPLE COMO PREFIJO DE DELTA Y QUE LOS GENERADORES NO SE REPITAN, AUNQUE EL TERCER TROZO DE LA FIGURA 9.3 PARECE QUE REPITE SIGMA2
+Vamos ahora con la parte positiva de $\alpha_1$, que la dividimos en bloques $a_1=\sigma_3$, $a_2=\sigma_3\sigma_2\sigma_1\sigma_2\sigma_3$ y $a_3=\sigma_3$. Tenemos
+\begin{align*}
+\alpha_1&=a_1a_2a_3=(\sigma_3)(\sigma_3\sigma_2\sigma_1\sigma_2\sigma_3)(\sigma_3)\\
+&=(\sigma_3)(\sigma_3\sigma_1\sigma_2\sigma_1\sigma_3)(\sigma_3)\\
+&=(\sigma_3)(\sigma_1\sigma_3\sigma_2\sigma_1\sigma_3)(\sigma_3)\\
+&=(\sigma_3\sigma_1)(\sigma_3\sigma_2\sigma_1\sigma_3)(\sigma_3)\\
+&=(\sigma_1\sigma_3)(\sigma_3\sigma_2\sigma_3\sigma_1)(\sigma_3)\\
+&=(\sigma_1\sigma_3)(\sigma_2\sigma_3\sigma_2\sigma_1)(\sigma_3)\\
+&=(\sigma_1\sigma_3\sigma_2\sigma_3)(\sigma_2\sigma_1)(\sigma_3)\\
+&=(\sigma_1\sigma_3\sigma_2\sigma_3)(\sigma_2\sigma_1\sigma_3)
+\end{align*}
+Vemos que ya no podemos pasar ninguna letra más a la izquierda y que ningún factor es una potencia de $\Delta$, por lo que hemos terminado y $\alpha_1=\Delta^{-1}(\sigma_1\sigma_3\sigma_2\sigma_3)(\sigma_2\sigma_1\sigma_3)$. Al comparar las descomposiciones finales de $\alpha_1$ y $\alpha_2$ comprobamos que nos tienen la misma forma normal, luego representan elementos distintos.
 \end{ej}
 %lo que hace Garside es que como A es positiva ya sabes que tienes una cantidad finita de representaciones, entonces te vas a la que tenga Delta y reduces hasta que ninguna tenga Delta y entonces ya comparas. Para la left-greedy no hay que pasar por esto, directamente se calculan los meet y te acaba quedando el Delta a la izquierda y los factores simples 
 

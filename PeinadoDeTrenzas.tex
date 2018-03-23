@@ -43,9 +43,9 @@ $$1\to\pi_1(\C_n)\to\pi_1(M_{n+1})\to\pi_1(M_n)\to 1,$$
 que por definición es equivalente a \ref{pure}. 
 
 
-\begin{figure}[h!]\label{inclusion}
+\begin{figure}[h!]
 \includegraphics[scale=0.4]{Imagenes/inclusion.png}
-\caption{Inclusión de $F_n$ en $PB_{n+1}$.}
+\caption{Inclusión de $F_n$ en $PB_{n+1}$.}\label{inclusion}
 \end{figure}\
 %la fibra es homeomorfa a eso porque hay n puntos donde no podemos colocar el n+1
 %\newpage
@@ -88,7 +88,7 @@ PEDIR DIBUJOS A JUAN
 
 Supongamos que tenemos que decidir si una palabra $\beta\in B_n$ representa el elemento neutro. En primer lugar, mediante el homomorfismo $\eta$ de \ref{extension} comprobamos si la permutación que induce $\beta$ es la identidad. En caso de no serlo, sabemos que $\beta$ no es trivial. Si $\eta(\beta)=1\in\Sigma_n$, entonces $\beta$ es pura por definición, por lo que trataremos de expresarla como elemento del producto semidirecto de grupos libres, ya que será trivial si y solo si cada uno de los factores lo es. Sin embargo, para conseguir esta expresión tenemos que escribir $\beta$ como producto de los generadores de Birman, puesto que estos son los que representan cada grupo libre.
 
-Para ello, hagamos la siguiente consideración: dada una permutación $\tau\in\Sigma_n$ podemos encontrar una trenza que induzca esta permutación. Además podemos hacerlo de forma inyectiva, pues para permutaciones distintas daremos trenzas distintas. Esto da lugar a una \emph{sección conjuntista} (no es homomorfismo de grupos) en \ref{extension} $\varphi:\Sigma_n\to B_n$. Estas trenzas pueden ser elegidas de modo que todos los cruces sean positivos si empezamos por el $n$-ésimo punto y vamos asignando los demás de modo que las cuerdas siempre pasen por debajo de las ya existentes a las que tengan que cruzar. A estas trenzas las llamaremos \emph{trenzas simples} o \emph{trenzas de permutación}. Como toda permutación se puede expresar como producto de transposiciones, las trenzas simples tendrán la forma $\sigma_{i_1}\cdots\sigma_{i_l}$ para algún $1\leq l\leq n$. 
+Para ello, hagamos la siguiente consideración: dada una permutación $\tau\in\Sigma_n$ podemos encontrar una trenza que induzca esta permutación. Además podemos hacerlo de forma inyectiva, pues para permutaciones distintas daremos trenzas distintas. Esto da lugar a una \emph{sección conjuntista} (no es homomorfismo de grupos) en \ref{extension} $\varphi:\Sigma_n\to B_n$. Estas trenzas pueden ser elegidas de modo que todos los cruces sean positivos y cada par de cuerdas solo se cruce una vez. Para ello, empezamos por el $n$-ésimo punto y vamos asignando los demás de modo que las cuerdas siempre pasen por debajo de las ya existentes a las que tengan que cruzar y evitamos repetir de forma consecutiva algún $\sigma_i$. A estas trenzas las llamaremos \emph{trenzas simples} o \emph{trenzas de permutación}. Como toda permutación se puede expresar como producto de transposiciones, las trenzas simples tendrán la forma $\sigma_{i_1}\cdots\sigma_{i_l}$ para algún $1\leq l\leq n$. 
 
 
 Vamos a explicar en qué consiste entonces el algoritmo para resolver el problema de la palabra. Supongamos que tenemos una trenza $\sigma_{i_1}^{\pm 1}\sigma_{i_2}^{\pm 1}\cdots\sigma_{i_l}^{\pm 1}$. Vamos a multiplicar a izquierda y derecha cada generador por unas ciertas trenzas de permutación y sus inversas, de modo que nos quede un producto de trenzas puras que, por la forma que tendrá, será más sencillo de expresar en función de los generadores de Birman. Podemos empezar considerando la permutación $s_0=Id$, de modo que $\varphi(s_0)=1$. A continuación, tenemos que anular la permutación de $\sigma_{i_1}$, por lo que elegimos $s_1$ tal que $\varphi(s_1)=\sigma_{i_1}$ y hacemos el producto
