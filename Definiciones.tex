@@ -384,6 +384,8 @@ A_{ij}A_{rs}A_{ij}^{-1}&=A_{js}^{-1}A_{is}^{-1}A_{js}A_{is}A_{rs}A_{is}^{-1}A_{j
 
 \section{Definiciones y resultados adicionales}
 
+IGUAL DEBERÍA PONER PRIMERO LO DE PRODUCTO SEMIDIRECTO Y LUEGO LO DE MONOIDES POR SEGUIR EL ORDEN DE DONDE APARECEN
+
 En esta sección veremos definiciones y resultados que no son exclusivos de los grupos de trenzas, pero que serán utilizados a lo largo del trabajo. 
 
 \subsection{Monoides}
@@ -498,71 +500,71 @@ Supongamos que tenemos una sección $s:G\to H$. Como la imagen de $F$ es isomorf
 % 
 %%Apréndete bien la definición de acción por si las moscas
 %
-%A LA HORA DE DEFINIR LA OPERACIÓN CON LA ACCIÓN A LA DERECHA NO CAMBIARÍA LA EXPRESIÓN ¿NO?
-%%\url{https://math.stackexchange.com/questions/339731/relation-between-semidirect-products-extensions-and-split-extensions}
-%%\url{https://ncatlab.org/nlab/show/semidirect+product+group}
-%%\url{https://groupprops.subwiki.org/wiki/External_semidirect_product}
-%%\url{https://groupprops.subwiki.org/wiki/Internal_semidirect_product}
-%
-%\subsection{Espacios recubridores}
-%
-%\begin{defi}
-%Sea $X$ un espacio topológico. Un \emph{espacio recubridor} de $X$ es un espacio topológico $\tilde{X}$ junto con una aplicación continua sobreyectiva $p:\tilde{X}\to X$, llamada \emph{aplicación recubridora}, tal que para todo $x\in X$, existe un entorno $U$ de $x$ de modo que $p^{-1}(U)$ es unión disjunta de abiertos de $C$ homeomorfos a $U$, llamados \emph{hojas}. Al espacio $p^{-1}(x)$ se llama \emph{fibra} de $x$.
-%\end{defi}
-%
-%\begin{ej}
-%El ejemplo más habitual de espacio recubridor es $\R$ con la aplicación $p:\R\to S^1$ dada por $p(t)=e^{2\pi i t}$. En este caso, el espacio recubierto es la circunferencia $S^1$. 
-%\end{ej}
-%
-%\begin{defi}
-%Sea $X$ un espacio topológico y $\tilde{X}$ un espacio recubridor de $X$ con aplicación recubridora $p$. Dado un grupo $G$ actuando sobre cada fibra $p^{-1}(x)\subseteq\tilde{X}$ con $x\in X$, si $p(gx)=p(x)$ para todo $g\in G$, se dice que $G$ es un grupo de \emph{transformaciones de recubrimiento} (\emph{deck transformations}).
-%\end{defi}
-%
-%\begin{ej}
-%En el ejemplo de espacio recubridor anterior, tenemos una acción natural de $\Z$ sobre las fibras, ya que $p(t)=p(t+ n)$ para todo $n\in\Z$. 
-%\end{ej}
-%
-%\begin{defi}
-%Dado un espacio topológico $X$ y un grupo $G$, se dice que un espacio recubridor $\tilde{X}$ \emph{se corresponde} a $G$ si $\pi_1(\tilde{X})=G$. 
-%\end{defi}
-%
-%\begin{ej}
-%Podemos dar un espacio recubridor de $S^1$ que se corresponda, por ejemplo, al grupo libre de dos elementos $\langle a, b\rangle$. Para ello, fijado un punto base $x\in S^1$, basta tomar como espacio recubridor $S^1\lor S^1$ con punto base en el vértice, que denotaremos $y$. Etiquetamos cada una de las circunferencias como $a$ y $b$ respectivamente. La aplicación $p:S^1\lor S^1\to S^1$ enviando $y\mapsto x$ e identifica $a$ con $b$ es claramente sobreyectiva y continua. Por tanto $p$ es una aplicación recubridora. Además, es bien sabido que $\pi_1(S^1\lor  S^2)=\langle a, b\rangle$. 
-%\end{ej}
-%
-%NO ESTOY SEGURO DE SI TENGO QUE PEDIRLE QUE ACTÚE LIBREMENTE (Y TRANSITIVAMENTE) PORQUE NO ENTODOS LOS ESPACIOS SE CUMPLE ESO. PODRÍA EMPEZAR PIDIÉNDOLE MÁS COSAS A X. HATCHER 1.40 TIENE EQUIVALENCIAS 
-%
-%A continuación vamos a ver una serie de definiciones y resultados que aparecen en \cite{Hatcher}, los cuales usaremos más adelante.
-%
-%\begin{defi}
-%Un espacio topológico $X$ se dice que es \emph{semilocalmente simplemente conexo} si todo punto $x\in X$ tiene un entorno $U$ tal que cualquier lazo de $U$ basado en $x$ es contráctil en $X$. 
-%\end{defi}
-%%La contracción del lazo de U no tiene que hacerse sin salirse de U
-%Nótese que esta condición no implica que $U$ sea simplemente conexo, pues la contracción del lazo no se tiene por qué realizar enteramente dentro de $U$.
-%
-%\begin{prop}
-%Dado un espacio recubridor $p:\tilde{X}\to X$, una homotopía $f_t:Y\to X$ y una aplicación continua $\tilde{f}_0:Y\to\tilde{X}$ levantando a $f_0$, se tiene que existe una única homotopía $\tilde{f}_t:Y\to\tilde{X}$ de $\tilde{f}_0$ que levanta a $f_t$.
-%\end{prop}
-%
-%En adelante, dado un punto base $x\in X$, supondremos fijado un punto base $\tilde{x}\in\tilde{X}$ con $\tilde{x}\in p^{-1}(x)$.
-%
-%\begin{prop}
-%La aplicación $p_*:\pi_1(\tilde{X})\to\pi_1(X)$ inducida por $p:\tilde{X}\to X$ es inyectiva. El subgrupo imagen $p_*(\pi_1(\tilde{X}))$ consiste en las clases de homotopía de los lazos de $X$ basados en $x$ cuyos levantamientos a $\tilde{X}$ son lazos basados en $\tilde{x}$.
-%\end{prop}
-%
-%\begin{prop}
-%Supongamos que tenemos un espacio recubridor $p:\tilde{X}\to X$ y una aplicación continua $f:X\to Y$ con $Y$ conexo por caminos y semilocalmente simplemente conexo, con punto base $y=f(x)$. Entonces existe un levantamiento $\tilde{f}:Y\to\tilde{X}$ de $f$ si y solo si $f_*(\pi_1(Y))\subseteq p_*(\pi_1(\tilde{X}))$.
-%\end{prop}
-%EN BURAU CREO QUE EFECTIVAMENTE SE DA, COMPROBARLO
-%
-%\begin{prop}
-%Sea $X$ conexo por caminos, localmente conexo por caminos y semilocalmente simplemente conexo. Entonces, para todo subgrupo $H\subseteq \pi_1(X)$, existe un espacio recubridor $p:\tilde{X}\to X$ tal que $p_*(\pi_1(\tilde{X}))=H$ eligiendo adecuadamente el punto base $\tilde{x}$. 
-%\end{prop}
-%
-%Con esta última proposición, podemos asociar a cada subgrupo de $\pi_1(X)$ un espacio recubridor $\tilde{X}$ que se corresponda con ese subgrupo.
-%%al ser la p_* inyectiva es isomorfismo sobre su imagen
-%
-%DON'T FORGET Ver que las equivalencias de homotopía (si hace falta, homeomorfismos) se levantan a equivalencias de homoopía
+A LA HORA DE DEFINIR LA OPERACIÓN CON LA ACCIÓN A LA DERECHA NO CAMBIARÍA LA EXPRESIÓN ¿NO?
+%\url{https://math.stackexchange.com/questions/339731/relation-between-semidirect-products-extensions-and-split-extensions}
+%\url{https://ncatlab.org/nlab/show/semidirect+product+group}
+%\url{https://groupprops.subwiki.org/wiki/External_semidirect_product}
+%\url{https://groupprops.subwiki.org/wiki/Internal_semidirect_product}
+
+\subsection{Espacios recubridores}
+
+\begin{defi}
+Sea $X$ un espacio topológico. Un \emph{espacio recubridor} de $X$ es un espacio topológico $\tilde{X}$ junto con una aplicación continua sobreyectiva $p:\tilde{X}\to X$, llamada \emph{aplicación recubridora}, tal que para todo $x\in X$, existe un entorno $U$ de $x$ de modo que $p^{-1}(U)$ es unión disjunta de abiertos de $C$ homeomorfos a $U$, llamados \emph{hojas}. Al espacio $p^{-1}(x)$ se llama \emph{fibra} de $x$.
+\end{defi}
+
+\begin{ej}
+El ejemplo más habitual de espacio recubridor es $\R$ con la aplicación $p:\R\to S^1$ dada por $p(t)=e^{2\pi i t}$. En este caso, el espacio recubierto es la circunferencia $S^1$. 
+\end{ej}
+
+\begin{defi}
+Sea $X$ un espacio topológico y $\tilde{X}$ un espacio recubridor de $X$ con aplicación recubridora $p$. Dado un grupo $G$ actuando sobre cada fibra $p^{-1}(x)\subseteq\tilde{X}$ con $x\in X$, si $p(gx)=p(x)$ para todo $g\in G$, se dice que $G$ es un grupo de \emph{transformaciones de recubrimiento} (\emph{deck transformations}).
+\end{defi}
+
+\begin{ej}
+En el ejemplo de espacio recubridor anterior, tenemos una acción natural de $\Z$ sobre las fibras, ya que $p(t)=p(t+ n)$ para todo $n\in\Z$. 
+\end{ej}
+
+\begin{defi}
+Dado un espacio topológico $X$ y un grupo $G$, se dice que un espacio recubridor $\tilde{X}$ \emph{se corresponde} a $G$ si $\pi_1(\tilde{X})=G$. 
+\end{defi}
+
+\begin{ej}
+Podemos dar un espacio recubridor de $S^1$ que se corresponda, por ejemplo, al grupo libre de dos elementos $\langle a, b\rangle$. Para ello, fijado un punto base $x\in S^1$, basta tomar como espacio recubridor $S^1\lor S^1$ con punto base en el vértice, que denotaremos $y$. Etiquetamos cada una de las circunferencias como $a$ y $b$ respectivamente. La aplicación $p:S^1\lor S^1\to S^1$ enviando $y\mapsto x$ e identifica $a$ con $b$ es claramente sobreyectiva y continua. Por tanto $p$ es una aplicación recubridora. Además, es bien sabido que $\pi_1(S^1\lor  S^2)=\langle a, b\rangle$. 
+\end{ej}
+
+NO ESTOY SEGURO DE SI TENGO QUE PEDIRLE QUE ACTÚE LIBREMENTE (Y TRANSITIVAMENTE) PORQUE NO ENTODOS LOS ESPACIOS SE CUMPLE ESO. PODRÍA EMPEZAR PIDIÉNDOLE MÁS COSAS A X. HATCHER 1.40 TIENE EQUIVALENCIAS 
+
+A continuación vamos a ver una serie de definiciones y resultados que aparecen en \cite{Hatcher}, los cuales usaremos más adelante.
+
+\begin{defi}
+Un espacio topológico $X$ se dice que es \emph{semilocalmente simplemente conexo} si todo punto $x\in X$ tiene un entorno $U$ tal que cualquier lazo de $U$ basado en $x$ es contráctil en $X$. 
+\end{defi}
+%La contracción del lazo de U no tiene que hacerse sin salirse de U
+Nótese que esta condición no implica que $U$ sea simplemente conexo, pues la contracción del lazo no se tiene por qué realizar enteramente dentro de $U$.
+
+\begin{prop}
+Dado un espacio recubridor $p:\tilde{X}\to X$, una homotopía $f_t:Y\to X$ y una aplicación continua $\tilde{f}_0:Y\to\tilde{X}$ levantando a $f_0$, se tiene que existe una única homotopía $\tilde{f}_t:Y\to\tilde{X}$ de $\tilde{f}_0$ que levanta a $f_t$.
+\end{prop}
+
+En adelante, dado un punto base $x\in X$, supondremos fijado un punto base $\tilde{x}\in\tilde{X}$ con $\tilde{x}\in p^{-1}(x)$.
+
+\begin{prop}
+La aplicación $p_*:\pi_1(\tilde{X})\to\pi_1(X)$ inducida por $p:\tilde{X}\to X$ es inyectiva. El subgrupo imagen $p_*(\pi_1(\tilde{X}))$ consiste en las clases de homotopía de los lazos de $X$ basados en $x$ cuyos levantamientos a $\tilde{X}$ son lazos basados en $\tilde{x}$.
+\end{prop}
+
+\begin{prop}
+Supongamos que tenemos un espacio recubridor $p:\tilde{X}\to X$ y una aplicación continua $f:X\to Y$ con $Y$ conexo por caminos y semilocalmente simplemente conexo, con punto base $y=f(x)$. Entonces existe un levantamiento $\tilde{f}:Y\to\tilde{X}$ de $f$ si y solo si $f_*(\pi_1(Y))\subseteq p_*(\pi_1(\tilde{X}))$.
+\end{prop}
+EN BURAU CREO QUE EFECTIVAMENTE SE DA, COMPROBARLO
+
+\begin{prop}
+Sea $X$ conexo por caminos, localmente conexo por caminos y semilocalmente simplemente conexo. Entonces, para todo subgrupo $H\subseteq \pi_1(X)$, existe un espacio recubridor $p:\tilde{X}\to X$ tal que $p_*(\pi_1(\tilde{X}))=H$ eligiendo adecuadamente el punto base $\tilde{x}$. 
+\end{prop}
+
+Con esta última proposición, podemos asociar a cada subgrupo de $\pi_1(X)$ un espacio recubridor $\tilde{X}$ que se corresponda con ese subgrupo.
+%al ser la p_* inyectiva es isomorfismo sobre su imagen
+
+DON'T FORGET Ver que las equivalencias de homotopía (si hace falta, homeomorfismos) se levantan a equivalencias de homoopía
 
 \end{document}
 
