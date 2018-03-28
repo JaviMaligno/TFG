@@ -22,6 +22,15 @@ En el monoide $B_n^+$ hay un orden parcial natural.
 \begin{defi}
 Definimos en $B_n^+$ el orden parcial $\preccurlyeq$ tal que dadas $a,b\in B_n^+$, $a\preccurlyeq b$ si $ac=b$ para alguna $c\in B_n^+$. Decimos en ese caso que $a$ es un \emph{prefijo} de $b$. Escribimos $a\prec b$ si ni $c$ no es trivial. Si además $a\neq 1$, decimos que $a$ es un \emph{prefijo propio} de $b$. 
 \end{defi}
+
+Antes de continuar debemos probar que la relación que hemos definido es realmente un orden parcial.
+
+\begin{lemma}
+La relación $\preccurlyeq$ es una relación de orden.
+\end{lemma}
+\begin{dem}
+Dada $x\in B_n^+$ se tiene que $x\preccurlyeq x\cdot 1=x$, por lo que se cumple la propiedad reflexiva. Si $x,y\in B_n^+$ con $x \preccurlyeq y $ y $y \preccurlyeq x$, entonces tenemos que $y=xa$ y $x=yb$ para algunos $a,b\in B_n^+$, así que $y=yba$. Como en el monoide de trenzas positivas no hay inversos y las relaciones son homogéneas, tenemos necesariamente que $a=b=1$, por lo que $x=y$, cumpliéndose la propiedad antisimétrica. Por último, supongamos que $x\preccurlyeq y\preccurlyeq z$ para ciertas $x,y,z\in B_n^+$. Entonces $y=xa$ y $z=yb$ para $a,b\in B_n^+$. Sustituyendo, $z=xab$, por lo que $x\preccurlyeq z$, lo que prueba la propiedad transitiva. \QED
+\end{dem}
 Nótese que $\preccurlyeq$ es invariante por multiplicación a la izquierda, esto es, $a\preccurlyeq b$ implica $xa\preccurlyeq xb$ para todo $a,b,x\in B_n^+$. %vale el mismo c
 
 Dado tal orden parcial, uno podría preguntarse si existe un único máximo común divisor o mínimo común múltiplo con respecto a $\preccurlyeq$. Esto es, dadas $a,b\in B_n^+$, ¿existe un único $d\in B_n^+$ tal que $d\preccurlyeq a$, $d\preccurlyeq b$ y $d'\preccurlyeq d$ para todo $d'$ prefijo común de $a$ y $b$? ¿Y existe un único $m\in B_n^+$ tal que $a\preccurlyeq m$, $b\preccurlyeq m$ y $m\preccurlyeq m'$ para todo $m'$ que tenga a $a$ y a $b$ como prefijos? En tales casos, escribimos $d=a\land b$ y $m=a\lor b$. Nótese que también tenemos $xd=xa\land xb$ y $xm=xa\lor xb$ para todo $x\in B_n^+$.
@@ -48,9 +57,21 @@ Como las relaciones de \ref{presentacion} son homogéneas, palabras equivalentes
 
 Garside después estudia el siguiente elemento especial.
 \begin{defi}
-La \emph{trenza fundamental} en $n$ hilos es la trenza
+La \emph{trenza fundamental} de $n$ hilos es la trenza
 $$\Delta_n=\sigma_1(\sigma_2\sigma_1)\cdots(\sigma_{n-1}\dots\sigma_1).$$
 Cuando $n$ se sobreentiende, utilizamos simplemente $\Delta$. 
+\end{defi} 
+%A continuación, Garside prueba el siguiente resultado.
+\begin{prop}\label{conjuga}
+Se verifican: 
+\begin{enumerate}
+\item $\Delta=\sigma_1\lor\dots\lor\sigma_{n-1}$.
+\item $\sigma_i\Delta=\Delta\sigma_{n-i}$ para todo $i=1,\dots, n-1$.
+\end{enumerate}
+\end{prop} 
+
+%ESTE RESULTADO TAMBIÉN. LA SEGUNDA ES EL LEMA 2, PERO LA PRIMERA NO SÉ. INTUYO QUE VER QUE ES MÚLTIPLO DE TODAS SE PUEDE HACER SIMPLEMENTE CON LAS RELACIONES
+
 \begin{figure}[h!]
 \centering
 \begin{tikzpicture}
@@ -59,16 +80,6 @@ Cuando $n$ se sobreentiende, utilizamos simplemente $\Delta$.
 \caption{$\Delta_5$.}
 \end{figure}
 
-\end{defi} 
-A continuación, prueba el siguiente resultado.
-\begin{prop}\label{conjuga}
-Se verifican: 
-\begin{enumerate}
-\item $\Delta=\sigma_1\lor\dots\lor\sigma_{n-1}$.
-\item $\sigma_i\Delta=\Delta\sigma_{n-i}$ para todo $i=1,\dots, n-1$.
-\end{enumerate}
-\end{prop} 
-%ESTE RESULTADO TAMBIÉN. LA SEGUNDA ES EL LEMA 2, PERO LA PRIMERA NO SÉ. INTUYO QUE VER QUE ES MÚLTIPLO DE TODAS SE PUEDE HACER SIMPLEMENTE CON LAS RELACIONES
 
 A partir de este resultado podemos deducir las siguientes propiedades sobre $\Delta$.
 
@@ -76,7 +87,7 @@ A partir de este resultado podemos deducir las siguientes propiedades sobre $\De
 \begin{enumerate}
 \item $\sigma_1,\dots,\sigma_{n-1}$ son también sufijos de $\Delta$.
 \item $\Delta^2$ conmuta con todo elemento de $B_n^+$.
-\item Para todo $a\in B_n^+$ se tiene $a\preccurlyeq\Delta^m$ y $\Delta^m\succcurlyeq a$ para algún $m\geq 0$.
+\item Para todo $a\in B_n^+$ se tiene $a\preccurlyeq\Delta^m$ y $\Delta^m\succcurlyeq a$, donde  $m\geq 0$ es la longitud de $a$.
 \end{enumerate}
 %Esto implica que $\sigma_1,\dots,\sigma_{n-1}$ son también sufijos de $\Delta$, que $\Delta^2$ conmuta con todo elemento de $B_n^+$ y, por inducción en la longitud, que para todo $a\in B_n^+$ se tiene $a\preccurlyeq\Delta^m$ y $\Delta^m\succcurlyeq a$ para algún $m\geq 0$.  
 \end{prop}
@@ -111,11 +122,11 @@ Procedemos a desplazar a la derecha el $\sigma_1$ subrayado tal como hemos anter
 \]
 %Doble implicación por ser cancelativo
 
-\item Probamos $a\preccurlyeq\Delta^m$ para algún $m\geq 0$ por inducción en la longitud. Evidentemente, $1\preccurlyeq\Delta$. Para una palabra de longitud 1 también es claro porque $\sigma_i\preccurlyeq\Delta$ para todo $1\leq i\leq n-1$ por definición de mínimo común múltiplo. Supongamos ahora, que para una palabra $a\in B_n^+$ de longitud $l-1$ se tiene el resultado. Entonces, cualquier palabra de longitud $l$ será de la forma $\sigma_j a$ para algún $1\leq j\leq n-1$. Así que, usando la invarianza por multiplicación a la izquierda y el caso $l=1$,
+\item Probamos $a\preccurlyeq\Delta^m$ para algún $m\geq 0$ por inducción en la longitud. Evidentemente, $1\preccurlyeq\Delta^0=1$. Para una palabra de longitud 1 también es claro porque $\sigma_i\preccurlyeq\Delta$ para todo $1\leq i\leq n-1$ por definición de mínimo común múltiplo. Supongamos ahora, que para una palabra $a\in B_n^+$ de longitud $l-1$ se tiene el resultado. Entonces, cualquier palabra de longitud $m$ será de la forma $\sigma_j a$ para algún $1\leq j\leq n-1$. Así que, usando la invarianza por multiplicación a la izquierda y el caso $m=1$,
 \[
-a\preccurlyeq\Delta^m\Rightarrow \sigma_j a\preccurlyeq \sigma_j\Delta^m \preccurlyeq \Delta\Delta^m=\Delta^{m+1}.
+a\preccurlyeq\Delta^{m-1}\Rightarrow \sigma_j a\preccurlyeq \sigma_j\Delta^m \preccurlyeq \Delta\Delta^{m-1}=\Delta^{m}.
 \]
-De forma análoga usando la invarianza por multiplicación a la derecha se prueba que $\Delta^m\succcurlyeq a$ para algún $m\geq 0$.
+De forma análoga usando la invarianza por multiplicación a la derecha se prueba que $\Delta^m\succcurlyeq a$.
 \end{enumerate}
 \QED
 \end{dem}
@@ -126,7 +137,7 @@ De forma análoga usando la invarianza por multiplicación a la derecha se prueb
 Esto tiene importantes implicaciones. Como todo par de elementos de $B_n^+$ tiene un múltiplo común y $B_n^+$ es cancelativo, las condiciones de Öre (\ref{condiciones}) implican que $B_n^+$ se incrusta en su grupo de fracciones, que es precisamente $B_n$. Por lo tanto, $B_n^+$ no es solamente un monoide definido algebraicamente, sino que puede ser considerado como un subconjunto de $B_n$ formado por las trenzas que pueden ser escritas solo con potencias positivas de los generadores. 
 
 Las propiedades anteriores implican que el orden parcial $\preccurlyeq$ (respectivamente, $\succcurlyeq$) puede ser extendido a $B_n$ de la siguiente manera: $a\preccurlyeq b$ (resp. $a\succcurlyeq b$) si $ac=b$ (resp. $b=ca$) para algún $c\in B_n^+$. Esto da un orden parcial que es invariante por multiplicación a la izquierda (resp. a la derecha), y el cual admite un único mínimo común múltiplo y un único máximo común divisor. Este hecho podrá ser probado una vez definida la \emph{forma normal de Garside} en la sección a continuación.
-% ¿QUE LA EXISTENCIA Y UNICIDAD SE MANTENGA EN EL GRUPO ES INMEDIATO?
+% a,b\in B_n, a<b sii a^{-1}b\in B_n^+
 
 \section{Solución al problema de la palabra}
 Garside dio una nueva solución al problema de la palabra en los grupos de trenzas de la siguiente manera. Recordemos que para todo $i=1,\dots, n-1$ se tiene que $\sigma_i\preccurlyeq\Delta$, esto es, $\Delta=\sigma_iX_i$ para algún $X_i\in B_n^+$. Dada una trenza escrita como una palabra en $\sigma_1,\dots,\sigma_{n-1}$ y sus inversos, se puede reemplazar cada aparición de $\sigma_i^{-1}$ por $X_i\Delta^{-1}$. Conjugar una trenza positiva por $\Delta$ sigue dando una trenza positiva por la proposición \ref{conjuga} apartado 2, así que podemos mover todas las apariciones de $\Delta^{-1}$ a la izquierda, de la siguiente forma: si encontramos $\sigma_i\Delta^{-1}$, entonces por \ref{conjuga} sabemos que $\Delta\sigma_{i}=\sigma_{n-i}\Delta\Leftrightarrow  \sigma_i\Delta^{-1}=\Delta^{-1}\sigma_{n-i}$, por lo que podemos sustituir $\sigma_i\Delta^{-1}$ por $\Delta^{-1}\sigma_{n-i}$. Esto muestra que toda trenza puede ser escrita como $\Delta^p A$ para algún $p\in\Z$ y algún $A\in B_n^+$. Además, si $\Delta\preccurlyeq A$, podemos reemplazar $\Delta^p$ por $\Delta^{p+1}$ y $A$ por $\Delta^{-1}A$. Esto reduce la longitud de $A$, así que solo puede hacerse una cantidad finita de veces. Por tanto, toda trenza puede escribirse, \emph{de manera única}, como $\Delta^pA$, donde $p\in\Z$, $A\in B_n^+$ y $\Delta\not\preccurlyeq A$. 
@@ -138,7 +149,7 @@ En base a lo comentado en el párrafo anterior, definimos la \emph{forma normal 
 
 %la forma normal es única (A puede ser una equivalente obviamente), pues Delta es único y los pasos para llegar a la forma normal están unívocamente determinados
 
-Esta forma normal permite resolver el problema de la palabra, ya que se pueden enumerar todas las palabras positivas que representan la trenza positiva $A$, reiterando las relaciones del grupo de trenzas de todas las formas posibles. Esta fue la solución dada por Garside. Sin embargo, no es muy satisfactoria, ya que da lugar a un algoritmo altamente ineficiente.
+Esta forma normal permite resolver el problema de la palabra, ya que se pueden enumerar todas las palabras positivas que representan la trenza positiva $A$, reiterando las relaciones del monoide de trenzas positivas de todas las formas posibles. Esta fue la solución dada por Garside. Sin embargo, no es muy satisfactoria, ya que da lugar a un algoritmo altamente ineficiente.
 
 %al ser relaciones positivas y tal (la longitud es fija), solo hay una cantidad finita de posibilidades
 
@@ -153,9 +164,15 @@ donde $a_i$ es un prefijo propio de $\Delta$, es decir, $1\prec a_i\prec\Delta$,
 
 %prefijo propio de Delta porque Delta no era prefijo de A y se está haciendo el meet
 
-EXPLICAR EL ALGORITMO POR BLOQUES CITANDO QUE ESTÁ EN THURSTON. RECORDAR COMENTAR QUE SI LA PALABRA SE ESCRIBE DE OTRA FORMA ALOMEJOR PODEMOS METER LETRAS Y DECIR QUE EN EL EJEMPLO SE VE UN CASO. SI ALGÚN BLOQUE SE QUEDA VACÍO SE ELIMINA
+En \cite{Thurston} se puede encontrar además una forma más práctica de llevar a cabo el algoritmo de encontrar la forma normal izquierda, la cual será la que utilicemos en el ejemplo \ref{ejnormal}. Esta forma consiste en, una vez tenemos una palabra $w\in B_n$ en forma normal de Garside $w=\Delta^p A$, dividir $A$ en bloques formados por elementos simples, digamos, $A=a_1a_2\dots a_m$. En el primer paso, tratamos de pasar letras de $a_2$ a $a_1$ sin que $a_1$ deje de ser un elemento simple. Para ello tendremos que comprobar las distintas formas de escribir $a_2$, como veremos el ejemplo \ref{ejnormal}.  Una vez que no podemos añadir ninguna letra más, pasamos a enviar letras de $a_3$ a $a_2$. Una vez terminemos el proceso entre $a_3$ y $a_2$, es posible que ahora podamos volver a pasar letras de $a_2$ a $a_1$ mediante reordenación usando las relaciones del monoide de trenzas positivas. Así que volveríamos a pasar letras, si es posible, de $a_2$ a $a_1$ y, en caso contrario, vamos a los bloques $a_3$ y $a_4$ y repetiríamos el proceso. En caso de que un bloque quede vacío simplemente lo eliminamos. Este proceso naturalmente termina porque la longitud de $w$ es finita y la longitud de los bloques está acotada por la longitud de $\Delta$, ya que están formados por elementos simples. 
 
-\begin{ej}
+Alternativamente, podríamos empezar con una descomposición $w=\Delta^qA$ con $A\in B_n^+$, pero sin asegurarnos de que $\Delta \not\preccurlyeq A$, pues $\Delta$ aparecería al acumular elementos simples en caso de ser prefijo de $A$, y podríamos enviarlo al bloque de $\Delta^q$. En cualquier caso, este proceso acabará con la forma normal izquierda, pues no poder pasar ninguna letra del bloque $a_{i+1}$ al bloque $a_i$ sin que $a_i$ deje de ser simple es equivalente a que $a_i=(a_ia_{i+1})\land \Delta$. 
+
+%porque poder pasar algo de i+1 a i es que se pueda coger un trozo de palabra más grande de (i i+1), es decir, sería un prefijo más grande de dicha palabra que i. Además debe ser prefijo de delta porque se está haciendo el meet, y estos son justamente los elementos simples. Como es maximal por ser el meet po ya está
+
+
+
+\begin{ej}\label{ejnormal}
 En $B_4$ sean $\alpha_1=\sigma_1\sigma_2^{-1}\sigma_3$ y $\alpha_2=\sigma_3\sigma_1\sigma_1\sigma_2\sigma_1$, las cuales queremos comprobar si representan el mismo elemento. Lo primero que debemos hacer es eliminar el exponente negativo de $\alpha_1$. Para ello, tenemos que expresar $\Delta=\Delta_4=\sigma_1(\sigma_2\sigma_1)(\sigma_3\sigma_2\sigma_1)$ de forma que tenga a $\sigma_2$ como prefijo. Esto es sencillo pues, basta usar las relaciones del monoide de trenzas positivas para escribir
 \[
 \Delta=\sigma_2(\sigma_1\sigma_2)(\sigma_3\sigma_2\sigma_1).
@@ -175,7 +192,7 @@ Aparentemente no podemos pasar ninguna letra de $a_2$ a $a_1$, pues aparecería 
 \begin{align*}
 \alpha_2&=(\sigma_3\sigma_1)(\sigma_2\sigma_1\sigma_2)=(\sigma_3\sigma_1\sigma_2\sigma_1)(\sigma_2).
 \end{align*}
-Ahora tenemos la situación inversa: aparentemente podríamos añadir $\sigma_2$ al primer bloque, pero utilizando la misma relación de la presentación del grupo de trenzas que antes, nos aparecería $\sigma_2$ dos veces consecutivas, por lo que hemos finalizado el proceso. Obsérvese que el bloque que hemos pasado a la izquierda se corresponde con $a_2\land (a_1^{-1}\Delta)$ y el bloque resultante se corresponde con $\alpha_2\land\Delta$ en el algoritmo original de El-rifai y Morton. Además es claro que ninguno de los factores es una potencia de $\Delta$.
+Ahora tenemos la situación inversa: aparentemente podríamos añadir $\sigma_2$ al primer bloque, pero utilizando la misma relación de la presentación del grupo de trenzas que antes, nos aparecería $\sigma_2$ dos veces consecutivas, por lo que hemos finalizado el proceso. Obsérvese que el bloque que hemos pasado a la izquierda ($\sigma_2\sigma_1$) se corresponde con $a_2\land (a_1^{-1}\Delta)$ y el bloque resultante $(\sigma_3\sigma_1\sigma_2\sigma_1)$ se corresponde con $\alpha_2\land\Delta$ en el algoritmo original de El-rifai y Morton. Además es claro que ninguno de los factores es una potencia de $\Delta$.
 % En el caso del primer factor podemos verlo mejor gráficamente, el número de cruces es distinto. Aunque mejor el número de factores, porque el producto de deltas no puede decrecer en letras
 %\begin{figure}[h!]
 %\centering
@@ -187,11 +204,11 @@ Ahora tenemos la situación inversa: aparentemente podríamos añadir $\sigma_2$
 
 Vamos ahora con la parte positiva de $\alpha_1$, que la dividimos en bloques $a_1=\sigma_3$, $a_2=\sigma_3\sigma_2\sigma_1\sigma_2\sigma_3$ y $a_3=\sigma_3$. Tenemos
 \begin{align*}
-\alpha_1&=a_1a_2a_3=(\sigma_3)(\sigma_3\sigma_2\sigma_1\sigma_2\sigma_3)(\sigma_3)\\
-&=(\sigma_3)(\sigma_3\sigma_1\sigma_2\sigma_1\sigma_3)(\sigma_3)\\
+\alpha_1&=a_1a_2a_3=(\sigma_3)(\sigma_3\underline{\sigma_2\sigma_1\sigma_2}\sigma_3)(\sigma_3)\\
+&=(\sigma_3)(\sigma_3\underline{\sigma_1\sigma_2\sigma_1}\sigma_3)(\sigma_3)\\
 &=(\sigma_3)(\sigma_1\sigma_3\sigma_2\sigma_1\sigma_3)(\sigma_3)\\
-&=(\sigma_3\sigma_1)(\sigma_3\sigma_2\sigma_1\sigma_3)(\sigma_3)\\
-&=(\sigma_1\sigma_3)(\sigma_3\sigma_2\sigma_3\sigma_1)(\sigma_3)\\
+&=(\sigma_3\sigma_1)(\sigma_3\sigma_2\underline{\sigma_1\sigma_3})(\sigma_3)\\
+&=(\sigma_1\sigma_3)(\sigma_3\sigma_2\underline{\sigma_3\sigma_1})(\sigma_3)\\
 &=(\sigma_1\sigma_3)(\sigma_2\sigma_3\sigma_2\sigma_1)(\sigma_3)\\
 &=(\sigma_1\sigma_3\sigma_2\sigma_3)(\sigma_2\sigma_1)(\sigma_3)\\
 &=(\sigma_1\sigma_3\sigma_2\sigma_3)(\sigma_2\sigma_1\sigma_3)

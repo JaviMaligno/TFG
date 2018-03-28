@@ -35,25 +35,27 @@ Para visualizarlo mejor, vamos a agrandar los agujeros de modo que se conviertan
 
 El hecho de que este sea el recubrimiento correspondiente a $\ker\phi$ se debe a que, fijada una preimagen $\tilde{d}_0\in\tilde{X}$ preimagen de $d_0$, un lazo en $d_0$ se levanta a un lazo en $\tilde{d}_0$ si y solo si su índice total es nulo, pues para cada vuelta positiva sube un nivel en el recubrimiento y para cada vuelta negativa lo baja, así que para acabar de nuevo en $\tilde{d}_0$ deberá subir tantas veces como baja, es decir, que el número total de vueltas sea nulo.
 
-Hay una acción natural de $\Z$ en $\tilde{X}$ como transformación del recubrimiento dada por $X^*_j\ni x\mapsto g_{j+n}^{-1}g_jx$ para cada $n\in\Z$. Esta acción se puede interpretar como cambiar el punto $x$ de nivel. Además, la acción es claramente libre y el espacio de órbitas $\tilde{X}/\Z$ es $X$, por lo que el espacio recubridor es regular.
+Hay una acción natural de $\Z$ en $\tilde{X}$ como transformación del recubrimiento dada por $X^*_j\ni x\mapsto g_{j+n}^{-1}g_jx$ para cada $n\in\Z$. Esta acción se puede interpretar como cambiar el punto $x$ de nivel. Además, la acción es claramente libre y el espacio de órbitas $\tilde{X}/\Z$ es $X$.%, por lo que el espacio recubridor es regular.
 
 
 %PODRÍA DEFINIRLO ASÍ QUE ES MÁS SENCILLO EN LUGAR DE DEFINIRLO A PARTIR DE LAS TRANSFORMACIONES DE DECK QUE EMPIEZA COGIENDO AUTOMORFISMOS SOBRE LAS FIBRAS
 
 %el espacio recubridor retrae con deformación sobre Z copias de n cuerdas con los extremos unidos a un mismo punto.
 
-POSIBLEMENTE CAMBIAR LA NOTACIÓN ESTRELLA POR LA DE CLASE DE EQUIVALENCIA
 
-Vamos a ver cómo definir la representación de Burau. Sea $\beta\in B_n$ inducida por un automorfismo $h$ de $\D_n$ fijando el borde, lo cual vamos a denotarlo $\beta=h_*$. Entonces, para cualquier lazo $\gamma$ en $\D_n$ se tiene que $\phi(h\gamma)=\gamma$, de modo que $h$ se levanta a unz equivalencia de homotopía \cite{Hatcher} $\tilde{h}$ de $\tilde{\D}_n$ que fija el borde. Pasando a la homología, esto nos da un automorfismo de $H_1(\tilde{\D}_n)$. Si $h'$ es cualquier otro automorfismo con $h'_*=\beta$, entonces $h_*^{-1}h'_*=1$, así que como la aplicación inducida por el recubrimiento $\pi_1(\tilde{\D}_n)\to\pi_1(\D_n)$ es inyectiva \cite{Hatcher} tenemos que $\tilde{h}_*^{-1}\tilde{h}'_*=1$ como aplicación en $\pi_1(\tilde{\D}_n)$. Pasando a homología, esto nos da $\tilde{h}'_*-\tilde{h}_*=1$ como aplicación en $H_1(\tilde{\D}_n)$. 
+Vamos a ver cómo definir la representación de Burau. Sea $\beta\in B_n$ inducida por un automorfismo $h$ de $\D_n$ fijando el borde, lo cual vamos a denotarlo $\beta=[h]$. Entonces, para cualquier lazo $\gamma$ en $\D_n$ se tiene que $\phi(h\gamma)=\phi\gamma$, de modo que $h$ se levanta a una equivalencia de homotopía \cite{Hatcher} $\tilde{h}$ de $\tilde{\D}_n$ que fija el borde. Pasando a la homología, esto nos da un automorfismo de $H_1(\tilde{\D}_n)$. Si $h'$ es cualquier otro automorfismo con $[h']=\beta$, entonces $[h]^{-1}[h']=1$, así que como la aplicación inducida por el recubrimiento $\pi_1(\tilde{\D}_n)\to\pi_1(\D_n)$ es inyectiva (\ref{inyect}) tenemos que $[\tilde{h}]^{-1}[\tilde{h}']=1$ como aplicación en $\pi_1(\tilde{\D}_n)$. Pasando a homología, esto nos da $[\tilde{h}']^{-1}[\tilde{h}]=1$ como aplicación en $H_1(\tilde{\D}_n)$. 
 
 %EL SEGUNDO PASO A HOMOLOGÍA SE HACE ABELIANIZANDO CON HUREWICZ
 
-%AQUÍ TENGO UNA PREGUNTA COMENTADA EN EL TEX
+%EL WINDING NUMBER ES INVARIANTE HOMOTÓPICO
+
+%DE LO DE QUE PHI(H GAMMA)=PHI GAMMA SE OBTIENE QUE SI GAMMA ESTÁ EN EL KER DE PHI ENTONCES TAMBIÉN LO ESTÁ H(GAMMA)
+
 %¿Se puede levantar siempre el automorfismo? Supongo que sí, porque $p:X->Dn, h:Dn->Dn$, entonces cojo para cada fibra $p^{-1}hp: X -> X$. Como en los segmentos coincide para cada fibra, se extiende a todo X. 
 
 
 \begin{defi}
-Sea el homomorfismo $\psi_r:B_n\to GL(H_1(\tilde{\D}_n))$ dado por $\psi_r(\beta)=\tilde{h}_*$. Esta aplicación está bien definida por las observaciones anteriores y es lo que se conoce como \emph{representación de Burau reducida} de $B_n$.
+Sea el homomorfismo $\psi_r:B_n\to GL(H_1(\tilde{\D}_n))$ dado por $\psi_r(\beta)=[\tilde{h}]$. Esta aplicación está bien definida por las observaciones anteriores y es lo que se conoce como \emph{representación de Burau reducida} de $B_n$.
 \end{defi}
 
 Se llama \emph{reducida} porque existe una representación $n$-dimensional de la cual la forma reducida es un sumando irreducible. Esta mencionada representación $n$-dimensional puede encontrarse en \cite{thesis}. Como veremos con la siguiente proposición, la representación que hemos dado es $n-1$-dimensional.
@@ -110,7 +112,7 @@ Se puede comprobar directamente que las matrices anteriores satisfacen las relac
 %Buscar por qué LKB, supongo que Krammer y Bigelow, pero la L no sé. Alomejor Luis Paris me da una pista.
 Siguiendo \cite{Krammer}, denotamos $Ref_n$ al conjunto de pares de enteros $(i,j)$ tales que $1\leq i<j\leq n$. Claramente, el cardinal de $Ref_n$ es $\dfrac{n(n-1)}{2}$.
 
-Sea $R$ un anillo conmutativo con unidad y $q,t\in R$ dos elementos invertibles. Sea $V=\oplus_{s\in Ref_n}Rx_s$ el $R$-módulo libre de rango $\dfrac{n(n-1)}{2}$ con base $\{x_s\}_{s\in Ref_n}$. Krammer define una acción $R$-lineal de $B_n$ sobre $V$ como sigue
+Sea $R$ un anillo conmutativo con unidad y $q,t\in R$ dos elementos invertibles. Sea $V=\oplus_{s\in Ref_n}Rx_s$ el $R$-módulo libre de rango $\dfrac{n(n-1)}{2}$ con base $\{x_s\}_{s\in Ref_n}$. Krammer \cite{Krammer} define una acción $R$-lineal de $B_n$ sobre $V$ como sigue
 
 
 EL RANGO DE UN MÓDULO LIBRE NO ESTÁ ÚNICAMENTE DEFINIDO, ¿TIENE SENTIDO?
@@ -172,6 +174,10 @@ NO SÉ QUÉ SIGNIFICA AQUÍ QUE CONMUTE, PORQUE PUEDO HACER PHI DE H(ALPHA), PER
 \begin{defi}
 La representación $\kappa:B_n\to Aut(H_2(\tilde{C}))$ inducida por $h\to\tilde{h}_*$ se llama \emph{representación de Bigelow}.
 \end{defi}
+
+\begin{teorema}
+La representación de Bigelow $\kappa:B_n\to Aut(H_2(\tilde{C}))$ es fiel para todo $n\geq 1$.
+\end{teorema}
 
 Este resultado se prueba en \cite{Bil}. También por \cite{Bil} podemos tomar una base $\{v_{i,j}\in H_2(\tilde{C})\}_{(i,j)\in Ref}$. Con esto, podemos establecer la equivalencia \cite{nundam} entre esta representación de la representación  \ref{LKB} como sigue:
 \[
