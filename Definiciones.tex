@@ -3,6 +3,11 @@
 \begin{document}
 
 
+
+LA ÚLTIMA DE MONOIDE, EL RECÍPROCO ME LO DA LA PROPOSICIÓN ANTERIOR
+
+PONER WIDETILDE
+
 %\hyphenation{equi-va-len-cia}\hyphenation{pro-pie-dad}\hyphenation{res-pec-ti-va-men-te}\hyphenation{sub-es-pa-cio}
 \chapter{Definiciones del grupo de trenzas}
 
@@ -23,7 +28,7 @@ Sea $n\geq 1$ un entero. Denotemos $\Sigma_n$ al grupo simétrico sobre $n$ elem
 \item $\beta_k(0)=(P_k,0)$ para todo $1\leq k\leq n$,
 \item existe una permutación $\tau=\tau(\beta)\in\Sigma_n$ tal que $\beta_k(1)=(P_{\tau(k)},1)$ para todo $1\leq k\leq n$, llamada \emph{permutación inducida por $\beta$},
 \item $\beta_k(t)\neq \beta_l(t)$ para todo $k\neq l$ y para todo $t\in[0,1]$.
-\item $\beta_k(t)$ es monótona no decreciente en la segunda coordenada para todo $k$. 
+\item $\beta_k(t)$ es monótona creciente en la segunda coordenada para todo $k$. 
 \end{itemize}
 Si la permutación inducida por $\beta$ es el elemento neutro de $\Sigma_n$, es decir, si $\beta_k(1)=(P_k,1)$ para todo $1\leq k\leq n$, entonces decimos que la trenza geométrica es \emph{pura}.
 
@@ -384,45 +389,8 @@ A_{ij}A_{rs}A_{ij}^{-1}&=A_{js}^{-1}A_{is}^{-1}A_{js}A_{is}A_{rs}A_{is}^{-1}A_{j
 
 \section{Definiciones y resultados adicionales}
 
-IGUAL DEBERÍA PONER PRIMERO LO DE PRODUCTO SEMIDIRECTO Y LUEGO LO DE MONOIDES POR SEGUIR EL ORDEN DE DONDE APARECEN
 
 En esta sección veremos definiciones y resultados que no son exclusivos de los grupos de trenzas, pero que serán utilizados a lo largo del trabajo. 
-
-\subsection{Monoides}
-
-\begin{defi}
-Un \emph{monoide} es una tupla $(S,*)$, donde $S$ es un conjunto y $*:S\times S\to S$ es una operación binaria satisfaciendo:
-\begin{itemize}
-\item Asociatividad, es decir, para cualesquiera $a,b,c\in S$, $(a*b)*c=a*(b*c)$.
-\item Existencia de elemento neutro, es decir, existe $e\in S$ tal que para todo $a\in S$, $e*a=a*e=a$. 
-\end{itemize}
-Habitualmente el símbolo de la operación será omitido y nos referiremos a $S$ como monoide, entendiéndose que en realidad es la tupla anterior.
-\end{defi}
-
-De forma análoga a como se hace para grupos, podemos considerar los generadores de un monoide y una presentación de un monoide mediante generadores y relaciones. También se definen de forma análoga los morfismos entre monoides. 
-
-\begin{defi}
-Dado un monoide $S$ con presentación $\langle M\mid R\rangle$, su \emph{grupo de fracciones} $G(S)$ es el grupo generado por la misma presentación.
-\end{defi}
-
-De forma natural podemos ver los elementos de un monoide dentro de su grupo de fracciones. Sin embargo, el monoide no siempre se conserva intacto, pues la existencia de inverso en el grupo, puede hacer que dos elementos distintos del monoide representen el mismo elemento del grupo de fracciones. Por ejemplo, si consideramos la presentación $\langle a,b,c\mid ab=cb\rangle$, los elementos $a$ y $c$ son distintos en el monoide; sin embargo, en el grupo son el mismo, pues multiplicando a la derecha por $b^{-1}$ en la relación obtenemos $a=c$. De aquí que consideremos la siguiende definición.
-
-\begin{defi}
-Decimos que un monoide $S$ se \emph{incrusta} en su grupo de fracciones $G(S)$, si el morfismo de monoides $\iota: S\to G(S)$ dado por $\iota(a)=a$ es inyectivo.
-\end{defi}
-
-\begin{defi}\label{condiciones}
-Decimos que un monoide $S$ satisface las \emph{condiciones de Öre} \cite{Ore} si se cumplen:
-\begin{itemize}
-\item $S$ es cancelativo, es decir, $xay=xby$ implica $a=b$ para todo $x,y,a,b\in S$. 
-\item Para todo $a,b\in S$ existen $a',b'\in S$ tales que $aa'=bb'$. 
-\end{itemize}
-\end{defi}
-
-\begin{prop}
-Si un monoide satisface las condiciones de Öre, entonces se incrusta en su grupo de fracciones \cite{Luis}.
-\end{prop}
-
 \subsection{Producto semidirecto}
 
 \begin{defi}
@@ -461,7 +429,7 @@ Ambas expresiones son la misma puesto que $G$ actúa mediante automorfismos. Por
 \]
 
 Por la forma en el que está definido el producto semidirecto, conseguimos conservar $F$ y de $G$ con cierta estructura dentro de $F\rtimes G$, es más 
-\begin{prop}
+\begin{prop}\label{reciproco}
  $F$ se puede ver como subgrupo normal de $F\rtimes G$ mediante la aplicación $\delta\mapsto (\delta,e_G)$, mientras que $G$ se puede ver como subgrupo mediante la aplicación $h\mapsto (e_F,h)$.
 \end{prop}
 \begin{dem}
@@ -489,27 +457,69 @@ Si $H$ es una extensión de $F$ por $G$, de modo que la sucesión exacta
 \[
 1\to F\to H\to G\to 1.
 \]
-escinde y la imagen de $F$ es normal dentro de $H$, entonces $H\cong F\rtimes G$. 
+escinde y la imagen de $F$ es normal dentro de $H$, entonces $H\cong F\rtimes G$. El recíproco también es cierto. 
 \end{prop}
 
 \begin{dem}
 Supongamos que tenemos una sección $s:G\to H$. Como la imagen de $F$ es isomorfa a $F$, podemos indentificar ambos grupos. Definamos pues, $\rho:G\to Aut(F)$, como $g\to C_{s(g)}|_F$, donde $C_{s(g)}$ denota la conjugación por $s(g)$ en $H$. Al restringirlo a $F$, esto nos da un automorfismo bien defino al ser $F$ normal en $H$. Así que hemos definido una acción mediante automorfismos que define un producto semidirecto isomorfo a $F\rtimes G$. 
+
+El recíproco nos lo da la proposición \ref{reciproco}, en la cual definimos la sección y probamos que la imagen de $F$ era normal en el producto semidirecto.
 \QED
 %Para el recíproco basta tomar la sucesión exacta de inclusión y cociente por ser F normal y el cociente sale isomorfo a G con el 1er tma isomorfía usando la aplicación que he elegido en la demostración anterior \url{https://math.stackexchange.com/questions/339731/relation-between-semidirect-products-extensions-and-split-extensions}
 \end{dem}
 % 
 %%Apréndete bien la definición de acción por si las moscas
 %
-A LA HORA DE DEFINIR LA OPERACIÓN CON LA ACCIÓN A LA DERECHA NO CAMBIARÍA LA EXPRESIÓN ¿NO?
+
 %\url{https://math.stackexchange.com/questions/339731/relation-between-semidirect-products-extensions-and-split-extensions}
 %\url{https://ncatlab.org/nlab/show/semidirect+product+group}
 %\url{https://groupprops.subwiki.org/wiki/External_semidirect_product}
 %\url{https://groupprops.subwiki.org/wiki/Internal_semidirect_product}
 
+\subsection{Monoides}
+
+\begin{defi}
+Un \emph{monoide} es una tupla $(S,*)$, donde $S$ es un conjunto y $*:S\times S\to S$ es una operación binaria satisfaciendo:
+\begin{itemize}
+\item Asociatividad, es decir, para cualesquiera $a,b,c\in S$, $(a*b)*c=a*(b*c)$.
+\item Existencia de elemento neutro, es decir, existe $e\in S$ tal que para todo $a\in S$, $e*a=a*e=a$. 
+\end{itemize}
+Habitualmente el símbolo de la operación será omitido y nos referiremos a $S$ como monoide, entendiéndose que en realidad es la tupla anterior.
+\end{defi}
+
+De forma análoga a como se hace para grupos, podemos considerar los generadores de un monoide y una presentación de un monoide mediante generadores y relaciones. También se definen de forma análoga los morfismos entre monoides. 
+
+\begin{defi}
+Dado un monoide $S$ con presentación $\langle M\mid R\rangle$, su \emph{grupo de fracciones} $G(S)$ es el grupo generado por la misma presentación.
+\end{defi}
+
+Existe una aplicación natural de un monoide en su grupo de fracciones. Sin embargo, esta aplicación no siempre es inyectiva, pues la existencia de inverso en el grupo, puede hacer que dos elementos distintos del monoide representen el mismo elemento del grupo de fracciones. Por ejemplo, si consideramos la presentación $\langle a,b,c\mid ab=cb\rangle$, los elementos $a$ y $c$ son distintos en el monoide; sin embargo, en el grupo son el mismo, pues multiplicando a la derecha por $b^{-1}$ en la relación obtenemos $a=c$. De aquí que consideremos la siguiende definición.
+
+\begin{defi}
+Decimos que un monoide $S$ se \emph{inyecta} en su grupo de fracciones $G(S)$, si el morfismo de monoides $\iota: S\to G(S)$ dado por $\iota(a)=a$ es inyectivo.
+\end{defi}
+\newpage
+\begin{defi}\label{condiciones}
+Decimos que un monoide $S$ satisface las \emph{condiciones de Ore} \cite{Ore} si se cumplen:
+\begin{itemize}
+\item $S$ es cancelativo, es decir, $xay=xby$ implica $a=b$ para todo $x,y,a,b\in S$. 
+\item Para todo $a,b\in S$ existen $a',b'\in S$ tales que $aa'=bb'$ (existe un múltiplo común). 
+\end{itemize}
+\end{defi}
+
+\begin{prop}
+Si un monoide satisface las condiciones de Ore, entonces se inyecta en su grupo de fracciones \cite{Luis}.
+\end{prop}
+
+
+
+DECK TRANSFORMATION -> TRANSFORMACIÓN RECUBRIDORA
+
+DEFINIRLAS COMO AUTOMORFISMOS 
 \subsection{Espacios recubridores}
 
 \begin{defi}
-Sea $X$ un espacio topológico. Un \emph{espacio recubridor} de $X$ es un espacio topológico $\tilde{X}$ junto con una aplicación continua sobreyectiva $p:\tilde{X}\to X$, llamada \emph{aplicación recubridora}, tal que para todo $x\in X$, existe un entorno $U$ de $x$ de modo que $p^{-1}(U)$ es unión disjunta de abiertos de $C$ homeomorfos a $U$, llamados \emph{hojas}. Al espacio $p^{-1}(x)$ se llama \emph{fibra} de $x$.
+Sea $X$ un espacio topológico. Un \emph{espacio recubridor} de $X$ es un espacio topológico $\widetilde{X}$ junto con una aplicación continua sobreyectiva $p:\widetilde{X}\to X$, llamada \emph{aplicación recubridora}, tal que para todo $x\in X$, existe un entorno $U$ de $x$ de modo que $p^{-1}(U)$ es unión disjunta de abiertos de $C$ homeomorfos a $U$, llamados \emph{hojas}. Al espacio $p^{-1}(x)$ se llama \emph{fibra} de $x$.
 \end{defi}
 
 \begin{ej}
@@ -517,7 +527,7 @@ El ejemplo más habitual de espacio recubridor es $\R$ con la aplicación $p:\R\
 \end{ej}
 
 \begin{defi}
-Sea $X$ un espacio topológico y $\tilde{X}$ un espacio recubridor de $X$ con aplicación recubridora $p$. Dado un grupo $G$ actuando sobre cada fibra $p^{-1}(x)\subseteq\tilde{X}$ con $x\in X$, si $p(gx)=p(x)$ para todo $g\in G$, se dice que $G$ es un grupo de \emph{transformaciones de recubrimiento} (\emph{deck transformations}).
+Sea $X$ un espacio topológico y $\widetilde{X}$ un espacio recubridor de $X$ con aplicación recubridora $p$. Dado un grupo $G$ actuando sobre cada fibra $p^{-1}(x)\subseteq\widetilde{X}$ con $x\in X$, si $p(gx)=p(x)$ para todo $g\in G$, se dice que $G$ es un grupo de \emph{transformaciones de recubrimiento} (\emph{deck transformations}).
 \end{defi}
 
 \begin{ej}
@@ -525,7 +535,7 @@ En el ejemplo de espacio recubridor anterior, tenemos una acción natural de $\Z
 \end{ej}
 
 \begin{defi}
-Dado un espacio topológico $X$ y un grupo $G$, se dice que un espacio recubridor $\tilde{X}$ \emph{se corresponde} a $G$ si $\pi_1(\tilde{X})=G$. 
+Dado un espacio topológico $X$ y un grupo $G$, se dice que un espacio recubridor $\widetilde{X}$ \emph{se corresponde} a $G$ si $\pi_1(\widetilde{X})=G$. 
 \end{defi}
 
 \begin{ej}
@@ -543,25 +553,24 @@ Un espacio topológico $X$ se dice que es \emph{semilocalmente simplemente conex
 Nótese que esta condición no implica que $U$ sea simplemente conexo, pues la contracción del lazo no se tiene por qué realizar enteramente dentro de $U$.
 
 \begin{prop}
-Dado un espacio recubridor $p:\tilde{X}\to X$, una homotopía $f_t:Y\to X$ y una aplicación continua $\tilde{f}_0:Y\to\tilde{X}$ levantando a $f_0$, se tiene que existe una única homotopía $\tilde{f}_t:Y\to\tilde{X}$ de $\tilde{f}_0$ que levanta a $f_t$.
+Dado un espacio recubridor $p:\widetilde{X}\to X$, una homotopía $f_t:Y\to X$ y una aplicación continua $\widetilde{f}_0:Y\to\widetilde{X}$ levantando a $f_0$, se tiene que existe una única homotopía $\widetilde{f}_t:Y\to\widetilde{X}$ de $\widetilde{f}_0$ que levanta a $f_t$.
 \end{prop}
 
-En adelante, dado un punto base $x\in X$, supondremos fijado un punto base $\tilde{x}\in\tilde{X}$ con $\tilde{x}\in p^{-1}(x)$.
+En adelante, dado un punto base $x\in X$, supondremos fijado un punto base $\widetilde{x}\in\widetilde{X}$ con $\widetilde{x}\in p^{-1}(x)$.
 
 \begin{prop}\label{inyect}
-La aplicación $p_*:\pi_1(\tilde{X})\to\pi_1(X)$ inducida por $p:\tilde{X}\to X$ es inyectiva. El subgrupo imagen $p_*(\pi_1(\tilde{X}))$ consiste en las clases de homotopía de los lazos de $X$ basados en $x$ cuyos levantamientos a $\tilde{X}$ son lazos basados en $\tilde{x}$.
+La aplicación $p_*:\pi_1(\widetilde{X})\to\pi_1(X)$ inducida por $p:\widetilde{X}\to X$ es inyectiva. El subgrupo imagen $p_*(\pi_1(\widetilde{X}))$ consiste en las clases de homotopía de los lazos de $X$ basados en $x$ cuyos levantamientos a $\widetilde{X}$ son lazos basados en $\widetilde{x}$.
 \end{prop}
 
 \begin{prop}
-Supongamos que tenemos un espacio recubridor $p:\tilde{X}\to X$ y una aplicación continua $f:X\to Y$ con $Y$ conexo por caminos y semilocalmente simplemente conexo, con punto base $y=f(x)$. Entonces existe un levantamiento $\tilde{f}:Y\to\tilde{X}$ de $f$ si y solo si $f_*(\pi_1(Y))\subseteq p_*(\pi_1(\tilde{X}))$.
+Supongamos que tenemos un espacio recubridor $p:\widetilde{X}\to X$ y una aplicación continua $f:X\to Y$ con $Y$ conexo por caminos y semilocalmente simplemente conexo, con punto base $y=f(x)$. Entonces existe un levantamiento $\widetilde{f}:X\to\widetilde{X}$ de $f$ si y solo si $f_*(\pi_1(X))\subseteq p_*(\pi_1(\widetilde{X}))$.
 \end{prop}
-EN BURAU CUANDO HAGO H, QUE ES HOMEOMORFISMO, ESTO NO DEBERÍA CUMPLIRSE PORQUE H* ES ISOMORFISMO Y EL GRUPO FUNDAMENTAL DEL RECUBRIDOR ES ESTRICTAMENTE SUBGRUPO
 
 \begin{prop}
-Sea $X$ conexo por caminos, localmente conexo por caminos y semilocalmente simplemente conexo. Entonces, para todo subgrupo $H\subseteq \pi_1(X)$, existe un espacio recubridor $p:\tilde{X}\to X$ tal que $p_*(\pi_1(\tilde{X}))=H$ eligiendo adecuadamente el punto base $\tilde{x}$. 
+Sea $X$ conexo por caminos, localmente conexo por caminos y semilocalmente simplemente conexo. Entonces, para todo subgrupo $H\subseteq \pi_1(X)$, existe un espacio recubridor $p:\widetilde{X}\to X$ tal que $p_*(\pi_1(\widetilde{X}))=H$ eligiendo adecuadamente el punto base $\widetilde{x}$. 
 \end{prop}
 
-Con esta última proposición, podemos asociar a cada subgrupo de $\pi_1(X)$ un espacio recubridor $\tilde{X}$ que se corresponda con ese subgrupo.
+Con esta última proposición, podemos asociar a cada subgrupo de $\pi_1(X)$ un espacio recubridor $\widetilde{X}$ que se corresponda con ese subgrupo.
 %al ser la p_* inyectiva es isomorfismo sobre su imagen
 
 %DON'T FORGET Ver que las equivalencias de homotopía (si hace falta, homeomorfismos) se levantan a equivalencias de homoopía
