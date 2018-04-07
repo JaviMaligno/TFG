@@ -513,9 +513,6 @@ Si un monoide satisface las condiciones de Ore, entonces se inyecta en su grupo 
 
 
 
-DECK TRANSFORMATION -> TRANSFORMACIÓN RECUBRIDORA
-
-DEFINIRLAS COMO AUTOMORFISMOS 
 \subsection{Espacios recubridores}
 
 \begin{defi}
@@ -527,11 +524,17 @@ El ejemplo más habitual de espacio recubridor es $\R$ con la aplicación $p:\R\
 \end{ej}
 
 \begin{defi}
-Sea $X$ un espacio topológico y $\widetilde{X}$ un espacio recubridor de $X$ con aplicación recubridora $p$. Dado un grupo $G$ actuando sobre cada fibra $p^{-1}(x)\subseteq\widetilde{X}$ con $x\in X$, si $p(gx)=p(x)$ para todo $g\in G$, se dice que $G$ es un grupo de \emph{transformaciones de recubrimiento} (\emph{deck transformations}).
+Un \emph{isomorfismo} de espacios recubridores $p_1:\widetilde{X}_1\to X$ y $p_2:\widetilde{X}_2\to X$ es un homeomorfismo $f:\widetilde{X}_1\to\widetilde{X}_2$ tal que $p_1=p_2f$.
 \end{defi}
 
+\begin{defi}
+Para un espacio recubridor $p:\widetilde{X}\to X$, los isomorfismos $\widetilde{X}\to\widetilde{X}$ se denominan \emph{transformaciones recubridoras} (\emph{deck transformations}). 
+\end{defi}
+
+Claramente, la inversa de un isomorfismo de espacios recubridores es isomorfismo y la composición de isomorfismos es isomorfismo. Por tanto, el conjunto de transformaciones recubridoras forma un grupo con elemento neutro la identidad denotado $G(\widetilde{X})$. 
+
 \begin{ej}
-En el ejemplo de espacio recubridor anterior, tenemos una acción natural de $\Z$ sobre las fibras, ya que $p(t)=p(t+ n)$ para todo $n\in\Z$. 
+En el ejemplo de espacio recubridor anterior, las transformaciones del recubrimiento son las aplicaciones de la forma $f(t)=t+n$ para cada $n\in\Z$, por lo que $G(\widetilde{X})\cong\Z$. En particular, $\Z$ actúa sobre el espacio recubridor mediante $f$. 
 \end{ej}
 
 \begin{defi}
@@ -542,7 +545,7 @@ Dado un espacio topológico $X$ y un grupo $G$, se dice que un espacio recubrido
 Podemos dar un espacio recubridor de $S^1$ que se corresponda, por ejemplo, al grupo libre de dos elementos $\langle a, b\rangle$. Para ello, fijado un punto base $x\in S^1$, basta tomar como espacio recubridor $S^1\lor S^1$ con punto base en el vértice, que denotaremos $y$. Etiquetamos cada una de las circunferencias como $a$ y $b$ respectivamente. La aplicación $p:S^1\lor S^1\to S^1$ enviando $y\mapsto x$ e identifica $a$ con $b$ es claramente sobreyectiva y continua. Por tanto $p$ es una aplicación recubridora. Además, es bien sabido que $\pi_1(S^1\lor  S^2)=\langle a, b\rangle$. 
 \end{ej}
 
-NO ESTOY SEGURO DE SI TENGO QUE PEDIRLE QUE ACTÚE LIBREMENTE (Y TRANSITIVAMENTE) PORQUE NO ENTODOS LOS ESPACIOS SE CUMPLE ESO. PODRÍA EMPEZAR PIDIÉNDOLE MÁS COSAS A X. HATCHER 1.40 TIENE EQUIVALENCIAS 
+
 
 A continuación vamos a ver una serie de definiciones y resultados que aparecen en \cite{Hatcher}, los cuales usaremos más adelante.
 
@@ -562,9 +565,9 @@ En adelante, dado un punto base $x\in X$, supondremos fijado un punto base $\wid
 La aplicación $p_*:\pi_1(\widetilde{X})\to\pi_1(X)$ inducida por $p:\widetilde{X}\to X$ es inyectiva. El subgrupo imagen $p_*(\pi_1(\widetilde{X}))$ consiste en las clases de homotopía de los lazos de $X$ basados en $x$ cuyos levantamientos a $\widetilde{X}$ son lazos basados en $\widetilde{x}$.
 \end{prop}
 
-\begin{prop}
-Supongamos que tenemos un espacio recubridor $p:\widetilde{X}\to X$ y una aplicación continua $f:X\to Y$ con $Y$ conexo por caminos y semilocalmente simplemente conexo, con punto base $y=f(x)$. Entonces existe un levantamiento $\widetilde{f}:X\to\widetilde{X}$ de $f$ si y solo si $f_*(\pi_1(X))\subseteq p_*(\pi_1(\widetilde{X}))$.
-\end{prop}
+%\begin{prop}
+%Supongamos que tenemos un espacio recubridor $p:\widetilde{X}\to X$ y una aplicación continua $f:X\to Y$ con $Y$ conexo por caminos y semilocalmente simplemente conexo, con punto base $y=f(x)$. Entonces existe un levantamiento $\widetilde{f}:X\to\widetilde{X}$ de $f$ si y solo si $f_*(\pi_1(X))\subseteq p_*(\pi_1(\widetilde{X}))$.
+%\end{prop}
 
 \begin{prop}
 Sea $X$ conexo por caminos, localmente conexo por caminos y semilocalmente simplemente conexo. Entonces, para todo subgrupo $H\subseteq \pi_1(X)$, existe un espacio recubridor $p:\widetilde{X}\to X$ tal que $p_*(\pi_1(\widetilde{X}))=H$ eligiendo adecuadamente el punto base $\widetilde{x}$. 
