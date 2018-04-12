@@ -67,11 +67,13 @@ Sea el homomorfismo $\psi_r:B_n\to GL(H_1(\tilde{\D}_n))$ dado por $\psi_r(\beta
 
 Se llama \emph{reducida} porque existe una representación $n$-dimensional de la cual la forma reducida es un sumando irreducible, es decir, que no se puede expresar como una combinación de dos representaciones lineales. Esta mencionada representación $n$-dimensional puede encontrarse en \cite{thesis}. Como veremos con la siguiente proposición, la representación que hemos dado es $n-1$-dimensional.
 
-¿SUMANDO IRREDUCIBLE QUÉ SIGNIFICA? ¿COMO SUMA DIRECTA?
+%SUMANDO IRREDUCIBLE: la reducida se expresa como suma directa de la reducida y de otra, lo cual se ve como que las matrices de la reducida son submatrices de las otras, de modo que la submatriz que dejan fuera no interactúa con las anteriores
+
 
 \begin{prop}
 $H_1(\tilde{\D}_n)$ es un módulo libre de rango $n-1$ sobre $\Z[t,t^{-1}]$.
 \end{prop}
+%módulo libre -> tiene base de longitud fija
 \begin{dem}
 En esta prueba quiero saber qué significa cuando coge el generador, si es un espacio topológico
 \end{dem}
@@ -84,7 +86,7 @@ En esta prueba quiero saber qué significa cuando coge el generador, si es un es
 %Over a commutative ring R, more care is needed: a matrix over R is invertible if and only if its determinant is a unit in R, that is, if its determinant is invertible in R. Therefore, GL(n, R) may be defined as the group of matrices whose determinants are units.
 \subsection{Expresión matricial}
 Con las últimas observaciones del apartado anterior podemos obtener fácilmente la expresión matricial de la representación de Burau. Como la Figura \ref{representacion} muestra, la acción de $\sigma_i$ sobre $H_1(\tilde{X})$ viene dada por
-MUY PROBABLEMENTE TENGA QUE CAMBIAR TANTO EL DIBUJO COMO LA REPRESENTACIÓN PORQUE NO ENTIENDO NADA
+
 \[
 \psi_r\sigma_i(v_j)=\begin{cases}
 v_j+tv_{j+1} & j=i-1,\\
@@ -122,7 +124,6 @@ Siguiendo \cite{Krammer}, denotamos $Ref_n$ al conjunto de pares de enteros $(i,
 Sea $R$ un anillo conmutativo con unidad y $q,t\in R$ dos elementos invertibles. Sea $V=\oplus_{s\in Ref_n}Rx_s$ el $R$-módulo libre de rango $\dfrac{n(n-1)}{2}$ con base $\{x_s\}_{s\in Ref_n}$. Krammer \cite{Krammer} define una acción $R$-lineal de $B_n$ sobre $V$ como sigue
 
 
-EL RANGO DE UN MÓDULO LIBRE NO ESTÁ ÚNICAMENTE DEFINIDO, ¿TIENE SENTIDO?
 \begin{equation}\label{LKB}
 \sigma_k(x_{i,j})=\begin{cases}
 x_{i,j} & \textit{si }(k<i)\text{ o }(j<k),\\
@@ -147,13 +148,13 @@ La prueba de este teorema se encuentra en \cite{Krammer}.
 %Rango=número de generadores libres
 
 \subsection{Representación de Bigelow}
-Existe un caso particular de la representación LKB encontrada independiente por Bigelow \cite{Bil}, la cual se puede obtener usando $R=\Z[q^{\pm 1},t^{\pm 1}]$. La ventaja de esta representación es que tiene una interpretación geométrica mucho más clara, como veremos a continuación.
+Existe un caso particular de la representación LKB encontrada independientemente por Bigelow \cite{Bil}, la cual se puede obtener usando $R=\Z[q^{\pm 1},t^{\pm 1}]$. La ventaja de esta representación es que tiene una interpretación geométrica mucho más clara, como veremos a continuación.
 
 Consideremos $C=M_2(\D_n)/\Sigma_2$. Aquí, $\Sigma_2$ actúa sobre $M_2(\D_n)$ enviando $(x,y)$ a $(y,x)$. Se denotarán los puntos de $C$ como $\{x,y\}$ ya que al actuar $\Sigma_2$ no importa el orden. La proyección $M_2(\D_n)\to C$ que lleva $(x,y)$ a $\{x,y\}$ es claramente un recubrimiento de dos hojas. Sean $d_0$ y $d_0'$ dos puntos de $\partial\D_n$ los bastante cercano entre sí. Tomamos $c_0=\{d_0,d_0'\}$ como punto base de $C$.
 
 %Es sobreyectiva y continua porque la preimagen de un abierto es unión de dos abiertos simétricos y disjuntos porque no está la diagonal
 
-Sea $\alpha:[0,1]\to C$ un camino basado $c_0$. Este camino se puede levantar relativamente a $(d_0,d_0')$ como un par de caminos de la forma $(\alpha_1,\alpha_2)$, con$ \alpha_1,\alpha_2:[0,1]\to\D_n$, el primero basado en $d_0$ y el segundo en $d_0'$. Denotemos pues $\alpha(t)=\{\alpha_1(t),\alpha_2(t)\}$. Nótese que si $\alpha$ es un lazo entonces $\{\alpha_1(0),\alpha_2(0)\}=\{\alpha_1(1),\alpha_2(1)\}=\{d_0,d_0'\}$. Por lo tanto, o bien $\alpha_1$ y $\alpha_2$ son ambos lazos o bien su concatenación forma un lazo. Ambos casos se observan en la Figura \ref{loop}. 
+Sea $\alpha:[0,1]\to C$ un camino basado $c_0$. Este camino se puede levantar relativamente a $(d_0,d_0')$ como un par de caminos de la forma $(\alpha_1,\alpha_2)$, con $\alpha_1,\alpha_2:[0,1]\to\D_n$, el primero basado en $d_0$ y el segundo en $d_0'$. Denotemos pues $\alpha(t)=\{\alpha_1(t),\alpha_2(t)\}$. Nótese que si $\alpha$ es un lazo entonces $\{\alpha_1(0),\alpha_2(0)\}=\{\alpha_1(1),\alpha_2(1)\}=\{d_0,d_0'\}$. Por lo tanto, o bien $\alpha_1$ y $\alpha_2$ son ambos lazos o bien su concatenación forma un lazo. Ambos casos se observan en la Figura \ref{loop}. 
 
 \begin{figure}[h!]
 \includegraphics[scale=0.6]{Imagenes/loop}
@@ -166,9 +167,9 @@ Si $\alpha_1$ y $\alpha_2$ son caminos en $\D_n$ con $\alpha_1(t)\neq\alpha_2(t)
 
 Sea $\alpha:I\to C$ un representante de un elemento en $\pi_1(C)$. Se definen las aplicaciones $a,b:\pi_1(C)\to\Z$ como sigue: si $\alpha_1$ y $\alpha_2$ son ambos lazos, entonces $a(\alpha)$ es la suma de los índices totales de $\alpha_1$ y $\alpha_2$. Si no son ambos lazos, entonces $a(\alpha)$ es el índice total del lazo $\alpha_1\alpha_2$. La aplicación $b$ está definida en primer lugar componiendo $I\ni t\mapsto \dfrac{(\alpha_1(t)-\alpha_2(t))}{|\alpha_1(t)-\alpha_2(t)|}\in S^1$ con la proyección $S^1\to \R P^1$ para obtener un lazo en $\R P^1$. El correspondiente elemento de $H_1(\R P^1)\cong\Z$ es $b(\alpha)$. Por tanto, $a$ mide la cantidad de veces que los lazos $\alpha_1$ y $\alpha_2$ envuelven a los agujeros, mientras que $b$ mide las veces que un lazo envuelve al otro.
 
-SI RP ES HOMEOMORFO A S1, ¿PARA QUÉ PROYECTAR? 
+%SI RP ES HOMEOMORFO A S1, ¿PARA QUÉ PROYECTAR?: Si acaban en los puntos opuestos entonces en S1 saldría en el (-1,0) pero en RP1 ese punto y el (1,0) son el mismo. 
 
-LO DE B IGUAL TENDRÍA QUE VERLO CON MÁS CLARIDAD
+%LO DE B es que si coges el segmento que une dos puntos simultáneos de las curvas, se cuenta las veces que el segmento se da la vuelta (media vuelta basta por aquello del proyectivo, así es un lazo aunque solo dé media vuelta
 
 Sea $\langle q,t\rangle$ el grupo libre abeliano  generado por $q$ y $t$. Se define la aplicación $\phi:\pi_1(C)\to\langle q,t\rangle$ mediante $\alpha\mapsto q^{a(\alpha)}t^{b(\alpha)}$. Por ejemplo, si en la Figura \ref{loop} denotamos al lazo de la izquierda $\gamma_1$ y al de la derecha $\gamma_2$, tenemos $\phi(\gamma_1)=q^2$ y $\phi(\gamma_2)=tq^2$. 
 
@@ -177,6 +178,8 @@ Sea $\tilde{C}\to C$ el espacio recubridor correspondiente a $\ker\phi$ y elijam
 Sea $h$ un automorfismo de $\D_n$ que fije el borde punto a punto. Entonces $h$ induce un automorfismo denotado igual $h:C\to C$ dado por $h(\{x,y\})=\{h(x),h(y)\}$. Es fácil comprobar que $h(c_0)=c_0$ y que la acción de $h$ en $H_1(C)$ conmuta con $\phi$. Por tanto, este homeomorfismo se levanta de forma única a una aplicación $\tilde{h}:\tilde{C}\to\tilde{C}$ que fija la fibra sobre $c_0$ punto a punto y conmuta con las transformaciones $q$ y $t$. Por tanto, $\tilde{h}$ induce un isomorfismo de $\Z[q^{\pm 1},t^{\pm 1}]$-módulos $\tilde{h}_*:H_2(\tilde{C})\to H_2(\tilde{C})$.
 
 NO SÉ QUÉ SIGNIFICA AQUÍ QUE CONMUTE, PORQUE PUEDO HACER PHI DE H(ALPHA), PERO NO AL REVÉS
+
+COPIAR DE BIGELOW, QUE VIENE MEJOR EXPRESADO AUNQUE NO DETALLE TANTO Y ME AHORRO PROBLEMAS
 
 \begin{defi}
 La representación $\kappa:B_n\to Aut(H_2(\tilde{C}))$ inducida por $h\to\tilde{h}_*$ se llama \emph{representación de Bigelow}.
@@ -194,13 +197,11 @@ v_{i,j}=x_{i,j}+(1-q)\sum_{i<k<j}x_{k,j},\quad x_{i,j}=v_{i,j}+(q-1)\sum_{i<k<j}
 %El punto base se fija porque está en el borde
 
 \section{Solución al problema de la palabra}
-¿SIMPLEMENTE MULTIPLICAR LAS MATRICES Y VER LO QUE SALE?
-
 Una vez obtenida una representación lineal fiel, es inmediato resolver el problema de la palabra a partir de la expresión matricial: basta hacer el producto de las matrices que representan las letras de la palabra. Si el resultado de dicho producto es la matriz identidad, entonces la palabra es trivial y recíprocamente.
 
-EN BURAU NO LO HE DICHO EXPLÍCITAMENTE, PERO ENTIENDO QUE LA MATRIZ DE LA INVERSA ES LA INVERSA DE LA MATRIZ
+Dado que el producto de matrices se puede calcular en tiempo polinomial sobre la dimensión de la matriz, este algoritmo puede ser bastante rápido, pero la aparición de polinomios en $t$ y $t^{-1}$ de tamaño arbitrario en las entradas de las matrices puede ralentizarlo significativamente.
 
-ALGO SOBRE LA EFICIENCIA DEL ALGORITMO
+MANDARLE UN CORREO A JUAN PARA QUE ME DÉ ALGUNA REFERENCIA CONCRETA DE LA EFICIENCIA
 
 \begin{ej}
 Vamos a ver un ejemplo de resolver el problema de la palabra con la representación de Burau para $n=3$, caso para el que sabemos que la representación es fiel. Para cualquier otra representación la mecánica es la misma. Consideremos la palabra $\sigma_1\sigma_1\sigma_2\sigma_1^{-1}\sigma_2^{-1}\sigma_1$. En este caso, tenemos las matrices
