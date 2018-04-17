@@ -3,7 +3,19 @@
 \begin{document}
 
 
-%\hyphenation{equi-va-len-cia}\hyphenation{pro-pie-dad}\hyphenation{res-pec-ti-va-men-te}\hyphenation{sub-es-pa-cio}
 \mychapter{0}{Resumen}
+
+El problema de la palabra fue uno de los tres problemas fundamentales del álgebra propuestos por Max Dehn \cite{Dehn11} junto con el problema de la conjugación y el problema del isomorfismo. Este problema consiste en lo siguiente: dado un grupo $G$ con una presentación finita $\langle S| R\rangle$ y dados dos elementos $A$ y $B$ de $G$ expresados como producto de los elementos de $S$ y sus inversos, decidir si $A=B$ como elementos del grupo o, equivalentemente, si $AB^{-1}=e$, donde $e$ representa el elemento neutro.
+
+El nombre de este problema proviene de que podemos considerar el alfabeto $\Sigma=S\cup S^{-1}$, donde $S^{-1}$ representa el conjunto formado por los inversos de los elementos de $S$, y ver $G$ como un lenguaje sobre $\Sigma$, en el que dos palabras $A$ y $B$ representarán el mismo elemento si y solo si se puede transformar $A$ en $B$ mediante un número finito de pasos usando las reglas de reescritura proporcionadas por las relaciones de $R$ junto con la cancelación de inversos.  
+
+El propio Dehn describió algoritmos para resolver el problema de la palabra en grupos fundamentales de 2-variedades orientables cerradas con género mayor o igual que 2 \cite{Dehn12}. Sin embargo, en 1955 Pyotr Novikov encontró ejemplos de grupos finitamente presentados donde el problema de la palabra era indecidible \cite{Novikov}, es decir, que no se puede diseñar un algoritmo que lo resuelva. A pesar de esto, hay gran cantidad de grupos donde el problema de la palabra sí es resoluble. Ejemplos claros de ello son los grupos finitos y los grupos libres. Un ejemplo más sofisticado son los grupos de trenzas, sobre los que veremos en este trabajo distintas formas de resolverlo.
+
+Empezaremos el trabajo dando distintas definiciones equivalentes de los grupos de trenzas, partiendo de la idea intuitiva de las trenzas en el mundo real. Cada una de las definiciones aportará un enfoque distinto, lo cual permitirá utilizar una mayor cantidad de herramientas para la resolución del problema de la palabra. Al final del primer capítulo daremos algunas definiciones y resultados que serán fundamentales para el desarrollo del resto del trabajo. 
+
+En el segundo capítulo daremos el primer algoritmo encontrado para resolver el problema de la palabra en los grupos de trenzas, consistente en representar estos grupos como automorfismos de un grupo libre. En el tercer capítulo veremos un método conocido como \emph{peinado de trenzas}, basado también en la resolubilidad del problema de la palabra en los grupos libres. En el cuarto capítulo exploraremos la \emph{estructura de Garside} de los grupos de trenzas, la cual nos permitirá resolver el problema de la palabra mediante el uso de unas \emph{formas normales} para los elementos de este grupo. Por último, veremos algunos ejemplos de representaciones lineales del grupo de trenzas con los que se puede resolver el problema de la palabra. 
+
+En cada uno de estos capítulos se mostrarán ejemplos concretos de cómo resolver el problema de la palabra con cada uno de los métodos explicados. 
+
 
 \end{document}

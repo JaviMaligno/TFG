@@ -3,7 +3,19 @@
 \begin{document}
 
 
-%\hyphenation{equi-va-len-cia}\hyphenation{pro-pie-dad}\hyphenation{res-pec-ti-va-men-te}\hyphenation{sub-es-pa-cio}
+
 \mychapter{0}{Abstract}
+
+The word problem was one of the fundamental problems of algebra proposed by Max Dehn \cite{Dehn11} together with the conjugacy problem and the isomorphism problem. This problem consist of: given a group $G$ with a finite presentation $\langle S|R\rangle$ and given two elements $A,B\in G$ as a product of elements of $S$ and their inverses, decide whether $A=B$ as elements of the group or, equivalently, whether $AB^{-1}=e$, where $e$ denotes the neutral element. 
+
+The name of this problem comes from the fact that we can consider the alphabet $\Sigma=S\cup S^{-1}$, where $S^{-1}$ is the set of inverses of the elements of $S$, and view $G$ as a language over $\Sigma$, where two words $A$ and $B$ represent the same element if and only if one can transform $A$ into $B$ in a finite amount of steps using the rewriting rules given by $R$ and the inverse cancellation. 
+
+Dehn described algorithms to solve the word problem for the fundamental groups of closed orientable two-dimensional manifolds of genus greater than or equal to 2 \cite{Dehn12}. However, in 1955 Pyotr Novikov found examples of finitely presented groups where the word problem is undecidable \cite{Novikov}, i.e., there cannot be any algorithm to solve it. Nevertheless, the word problem is solvable for many groups. Clear examples of this are the finite groups and the free groups. A more sophisticated example are the braid groups, for which we shall give several ways to solve it. 
+
+This project begins giving different equivalent definitions of the braid groups, starting from the intuitive idea of geometric braid. Each definition will give a different perspective, something that will provide us more tools to solve the word problem. At the end of the first chapter we shall give some additional definitions and results that turn crucial on the rest of the project.
+
+In the second chapter we will explain the first known algorithm to solve the word problem in the braid groups, based on representing braids as automorphisms of a free group. In the third chapter we will see a method called \emph{braid combing}, based on the solvability of the word problem for the free groups. In the fourth chapter we will explore the \emph{Garside structure} of the braid groups, which will allow us to solve the word problem by means of a \emph{normal form} of the elements of the group. In the last chapter, we will present some examples of linear representations that generate another algorithm to solve the word problem. 
+
+In every one of these chapters there will be concrete examples of how to solve the word problem using each one of the methods presented.
 
 \end{document}
