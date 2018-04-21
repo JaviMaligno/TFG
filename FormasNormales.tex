@@ -201,6 +201,7 @@ Aparentemente no podemos pasar ninguna letra de $b_{2,0}$ a $b_{1,0}$, pues apar
 \end{align*}
 Ahora tenemos la situación inversa: aparentemente podríamos añadir $\sigma_2$ al primer bloque, pero utilizando la misma relación de la presentación del grupo de trenzas que antes, nos aparecería $\sigma_2$ dos veces consecutivas, por lo que hemos finalizado el proceso y $\alpha_2=\Delta^0b_1b_2$ con $b_1=b_{1,1}$ y $b_2=b_{2,1}$. Obsérvese que el bloque que hemos pasado a la izquierda ($\sigma_2\sigma_1$) se corresponde con $b_{2,0}\land (b_{1,0}^{-1}\Delta)$ y el bloque resultante $(\sigma_3\sigma_1\sigma_2\sigma_1)$ se corresponde con $\alpha_2\land\Delta$ en el algoritmo original de El-rifai y Morton. Además es claro que ninguno de los factores es una potencia de $\Delta$.
 % En el caso del primer factor podemos verlo mejor gráficamente, el número de cruces es distinto. Aunque mejor el número de factores, porque el producto de deltas no puede decrecer en letras
+
 %\begin{figure}[h!]
 %\centering
 %\begin{tikzpicture}
@@ -209,13 +210,15 @@ Ahora tenemos la situación inversa: aparentemente podríamos añadir $\sigma_2$
 %\caption{$\sigma_3\sigma_1\sigma_2\sigma_1$.}
 %\end{figure}
 
+%el bloque que hemos pasado a la izquierda se corresponde con eso porque estamos añadiendo elementos de Delta que no están en b_{1,0}
+
 Vamos ahora con la parte positiva de $\alpha_1$, que la dividimos en bloques $a_{1,0}=\sigma_3$, $a_{2,0}=\sigma_3\sigma_2\sigma_1\sigma_2\sigma_3$ y $a_{3,0}=\sigma_3$. Tenemos 
 \begin{align*}
 \alpha_1&=(\sigma_3)(\sigma_1\sigma_2\sigma_3\sigma_2\sigma_1)(\sigma_3)=a_{1,0}a_{2,0}a_{3,0} \\
 &=(\sigma_3\sigma_1\sigma_2\sigma_3)(\sigma_2\sigma_1)(\sigma_3)=a_{1,1}a_{2,1}a_{3,1}\\
 &=(\sigma_3\sigma_1\sigma_2\sigma_3)(\sigma_2\sigma_1\sigma_3)()= a_{1,2}a_{2,2}a_{3,2}
 \end{align*}
-Vemos que ya no podemos pasar ninguna letra más a la izquierda y que ningún factor es una potencia de $\Delta$, por lo que hemos terminado. Como $a_{3,2}$ es trivial y está al final de la palabra, podemos eliminarlo, con lo que $\alpha_1=\Delta^{-1}a_1a_2$ donde $a_1=a_{1,2}$ y $a_2=a_{2,2}$. Al comparar las descomposiciones finales de $\alpha_1$ y $\alpha_2$ comprobamos que nos tienen la misma forma normal, luego representan elementos distintos.
+Vemos que ya no podemos pasar ninguna letra más a la izquierda y que ningún factor es una potencia de $\Delta$, por lo que hemos terminado. Como $a_{3,2}$ es trivial podemos eliminarlo, con lo que $\alpha_1=\Delta^{-1}a_1a_2$ donde $a_1=a_{1,2}$ y $a_2=a_{2,2}$. Al comparar las descomposiciones finales de $\alpha_1$ y $\alpha_2$ comprobamos que nos tienen la misma forma normal, luego representan elementos distintos.
 \end{ej}
 %lo que hace Garside es que como A es positiva ya sabes que tienes una cantidad finita de representaciones, entonces te vas a la que tenga Delta y reduces hasta que ninguna tenga Delta y entonces ya comparas. Para la left-greedy no hay que pasar por esto, directamente se calculan los meet y te acaba quedando el Delta a la izquierda y los factores simples 
 

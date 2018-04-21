@@ -82,7 +82,7 @@ $H_1(\widetilde{\D}_n)$ es un módulo libre de rango $n-1$ sobre $\Z[t,t^{-1}]$.
 
 
 
-Vamos a calcular la homología de $\widetilde{X}$, que es claramente del mismo tipo de homotopía que $\widetilde{\D}_n$. Además podemos considerar $\phi$ como una aplicación $\pi_1(X)\to\Z$ por ser $X$ homotópicamente equivalente a $\D_n$. Eligiendo entonces un generador de la homología $t\in \widetilde{X}/\ker\phi$ podemos ver $H_1(\widetilde{X})$ como un $\Z[t,t^{-1}]$-módulo. 
+Vamos a calcular la homología de $\widetilde{X}$, que es claramente del mismo tipo de homotopía que $\widetilde{\D}_n$. Además podemos considerar $\phi$ como una aplicación $\pi_1(X)\to\Z$ por ser $X$ homotópicamente equivalente a $\D_n$. Eligiendo entonces $t\in \widetilde{X}/\ker\phi$ podemos ver $H_1(\widetilde{X})$ como un $\Z[t,t^{-1}]$-módulo. 
 
 Sean $A=\bigcup_{j\in\Z}X_{2j}^*$ y $B=\bigcup_{j\in\Z}X_{2j+1}^*$ subespacios cuya unión es $\widetilde{X}$. La sucesión de Mayer-Vietoris nos da
 \[
@@ -92,7 +92,7 @@ donde el 0 proviene de que $A$ y $B$ son homotópicamente equivalentes a un espa
 \end{dem}
 %\end{comment}
 
-%Lo del t^j es que t es una que da solo una vuelta, con lo cual en el recubridor sube o baja un nivel, así que hacer eso j veces te da j cambios de nivel y por eso te lo lleva a esa base
+%Lo del t^j es que t es una que da solo una vuelta (se puede expresar como phi(p(t))=1, con lo cual en el recubridor sube o baja un nivel, así que hacer eso j veces te da j cambios de nivel y por eso te lo lleva a esa base
 
 %Lo de que se corresponda al ker es como cuando en Hatcher hace corresponder un espacio recubridor de S1vS1 a cada grupo libre generado con combinaciones de los lazos ab. Como explica Hatcher, se hace cogiendo la imagen del homomorfismo inducido por el recubrimiento en el grupo fundamental del recubrimiento fijando un punto base preimagen del punto base de X. El subgrupo generado por esta imagen en pi(X,x0) es el que se corresponde con el recubrimiento. En este caso, fijada una preimagen de d0, los lazos en d0 son los que tienen total winding number 0 porque cada vez que hacen un giro bajan o suben de nivel, por lo que para volver a d0 tienen que subir lo mismo que bajan
 
@@ -136,11 +136,11 @@ I_{n-3} & &\\
 \end{pmatrix}.
 \]
 
-Vamos a ver exactamente cómo obtener estas matrices a partir de la Figura \ref{representacion}. Tenemos en la figura todos los casos en los que $\sigma_i$ afecta a un generador de la homología representado por un levantamiento de un lazo de la forma $x_jx_{j+1}^{-1}$. Suponemos que partimos de la hoja $X^*_0$. Buscamos expresar el levantamiento la imagen de $x_jx_{j+1}^{-1}$ como el levantamiento de un conjugado de un producto de generadores del tipo $x_jx_{j+1}^{-1}$ y sus inversos. En la homología, conjugar no afecta porque es un grupo abeliano, pero nos indicará en qué nivel del recubridor comienza el levantamiento de cada $(x_jx_{j+1}^{-1})^{\pm 1}$. La fila en la que coloquemos los monomios será la $j$-ésima donde $x_jx_{j+1}$ es el lazo al que se le aplicaba $\sigma_i$. La columna será la de índice $k$ tal que un levantamiento de $x_kx_{k+1}$ (o de su inverso) es un factor del levantamiento de la imagen de $x_jx_{j+1}$ mediante $\sigma_i$. El monomio que ocupará la posición $(j,k)$ será $(-1)^nt^m$ donde $n$ es el exponente de $x_kx_{k+1}$ y $m$ es el nivel más bajo del recubrimiento por el que pasa el levantamiento de $x_kx_{k+1}$. El resto de entradas serán 0.
+Vamos a ver exactamente cómo obtener estas matrices a partir de la Figura \ref{representacion}. Tenemos en la figura todos los casos en los que $\sigma_i$ afecta a un generador de la homología representado por un levantamiento de un lazo de la forma $x_jx_{j+1}^{-1}$. Suponemos que partimos de la hoja $X^*_0$. Buscamos expresar el levantamiento la imagen de $x_jx_{j+1}^{-1}$ como el levantamiento de un conjugado de un producto de generadores del tipo $x_jx_{j+1}^{-1}$ y sus inversos. En la homología, conjugar no afecta porque es un grupo abeliano, pero nos indicará en qué nivel del recubridor comienza el levantamiento de cada $(x_jx_{j+1}^{-1})^{\pm 1}$. La fila en la que coloquemos los monomios será la $j$-ésima donde $x_jx_{j+1}^{-1}$ es el lazo al que se le aplicaba $\sigma_i$. La columna será la de índice $k$ tal que un levantamiento de $x_kx_{k+1}^{-1}$ (o de su inverso) es un factor del levantamiento de la imagen de $x_jx_{j+1}^{-1}$ mediante $\sigma_i$. El monomio que ocupará la posición $(j,k)$ será $(-1)^nt^m$ donde $n$ es el exponente de $x_kx_{k+1}^{-1}$ y $m$ es el nivel más bajo del recubrimiento por el que pasa el levantamiento de $x_kx_{k+1}^{-1}$. El resto de entradas serán 0.
 
 En el primer caso de la Figura \ref{representacion} partimos de $x_{i-1}x_i^{-1}$ y vemos que el resultado es un levantamiento de $x_{i-1}x_ix_{i+1}^{-1}x_i^{-1}$, o equivalentemente en la homología, de $x_{i-1}x_i^{-1}x_ix_{i+1}^{-1}$. La primera expresión nos permite ver que el lazo $x_ix_{i+1}^{-1}$ ocurre entre el nivel 1 y el 2, ya que $x_{i-1}$ sube a $X^*_1$ en el recubridor, para luego bajar a $X^*_0$ con $x_i^{-1}$. La segunda expresión hace ver que hay dos generadores interviniendo. Entonces, como el lazo al que le aplicábamos $\sigma_i$ era $x_{i-1}x_i^{-1}$, vamos a situarnos en la fila $i-1$ de la matriz. En la columna $i-1$ introducimos la información proporcionada por $x_{i-1}x_i^{-1}$ en el levantamiento. Como hemos explicado, este generador aparece levantado entre los niveles 0 y 1, por lo que elegimos el monomio $t^0=1$ para ocupar la posición $(i-1,i-1)$. En el caso de $x_ix_{i+1}^{-1}$, que ocuparía la posición $(i-1,i)$, como este generador aparece entre los niveles 1 y 2, el monomio que elegimos es $t^1=t$. 
 
-En el segundo caso, la imagen viene dada por el levantamiento de $x_ix_{i+1}x_i^{-1}x_i^{-1}=x_i(x_ix_{i+1}^{-1})^{-1}x_i^{-1}$, es decir, un conjungado de $(x_ix_{i+1}^{-1})^{-1}$. Como, ahora $\sigma$ actuaba sobre $x_ix_{i+1}^{-1}$, nos situamos en la fila $i$. Al empezar con $x_i$, vemos que el levantamiento de $(x_ix_{i+1}^{-1})^{-1}$ ocurre entre los niveles 1 y 2. Como además tiene exponente negativo, la posición $(i,i)$ estará ocupada por $-t$. 
+En el segundo caso, la imagen viene dada por el levantamiento de $x_ix_{i+1}x_i^{-1}x_i^{-1}=x_i(x_ix_{i+1}^{-1})^{-1}x_i^{-1}$, es decir, un conjungado de $(x_ix_{i+1}^{-1})^{-1}$. Como ahora $\sigma_i$ actuaba sobre $x_ix_{i+1}^{-1}$, nos situamos en la fila $i$. Al empezar con $x_i$, vemos que el levantamiento de $(x_ix_{i+1}^{-1})^{-1}$ ocurre entre los niveles 1 y 2. Como además tiene exponente negativo, la posición $(i,i)$ estará ocupada por $-t$. 
 
 Por último, en el tercer caso la imagen es un levantamiento de $x_ix_{i+2}^{-1}=x_ix_{i+1}^{-1}x_{i+1}x_{i+2}^{-1}$. Análogamente a los casos anteriores, tenemos un 1 en la posición $(i+1,i+1)$ y otro 1 en la posición $(i+1,i+2)$. 
 
@@ -181,11 +181,12 @@ La prueba de este teorema se encuentra en \cite{Krammer}.
 %Rango=número de generadores libres
 
 \subsection{Representación de Bigelow}
-Existe un caso particular de la representación LKB encontrada independientemente por Bigelow \cite{Bil}, la cual se puede obtener usando $R=\Z[q^{\pm 1},t^{\pm 1}]$. La ventaja de esta representación es que tiene una interpretación geométrica mucho más clara, como veremos a continuación.
+Existe un caso particular de la representación LKB encontrado independientemente por Bigelow \cite{Bil}, la cual se puede obtener usando $R=\Z[q^{\pm 1},t^{\pm 1}]$. La ventaja de esta representación es que tiene una interpretación geométrica mucho más clara, como veremos a continuación.
 
 Consideremos $C=M_2(\D_n)/\Sigma_2$. Aquí, $\Sigma_2$ actúa sobre $M_2(\D_n)$ enviando $(x,y)$ a $(y,x)$. Se denotarán los puntos de $C$ como $\{x,y\}$ ya que al actuar $\Sigma_2$ no importa el orden. La proyección $M_2(\D_n)\to C$ que lleva $(x,y)$ a $\{x,y\}$ es claramente un recubrimiento de dos hojas. Sean $d_0$ y $d_0'$ dos puntos de $\partial\D_n$ los bastante cercano entre sí. Tomamos $c_0=\{d_0,d_0'\}$ como punto base de $C$.
 
 %Es sobreyectiva y continua porque la preimagen de un abierto es unión de dos abiertos simétricos y disjuntos porque no está la diagonal
+%lo de cercanos es para asegurar que estén siempre en la misma hoja del recubridor
 
 Sea $\alpha:[0,1]\to C$ un camino basado $c_0$. Este camino se puede levantar relativamente a $(d_0,d_0')$ como un par de caminos de la forma $(\alpha_1,\alpha_2)$, con $\alpha_1,\alpha_2:[0,1]\to\D_n$, el primero basado en $d_0$ y el segundo en $d_0'$. Denotemos pues $\alpha(t)=\{\alpha_1(t),\alpha_2(t)\}$. Nótese que si $\alpha$ es un lazo entonces $\{\alpha_1(0),\alpha_2(0)\}=\{\alpha_1(1),\alpha_2(1)\}=\{d_0,d_0'\}$. Por lo tanto, o bien $\alpha_1$ y $\alpha_2$ son ambos lazos o bien su concatenación forma un lazo. Ambos casos se observan en la Figura \ref{loop}. 
 
@@ -198,7 +199,7 @@ Si $\alpha_1$ y $\alpha_2$ son caminos en $\D_n$ con $\alpha_1(t)\neq\alpha_2(t)
 \begin{figure}[h!]
 \includegraphics[scale=0.55]{Imagenes/loop}
 \caption{A la izquierda, un lazo en $C$ que surge cuando los dos caminos originales son lazos (el parámetro $t$ muestra cómo está parametrizado el lazo). A la derecha, la concatenación de los dos lazos originales da lugar a un lazo en $C$.}\label{loop}
-\end{figure}\
+\end{figure}\ %el t tal como está puesto indica que aunque se crucen en el dibujo no es al mismo tiempo
 
 Sea $\alpha:[0,1]\to C$ un representante de un elemento en $\pi_1(C)$. Se definen las aplicaciones $a,b:\pi_1(C)\to\Z$ como sigue: si $\alpha_1$ y $\alpha_2$ son ambos lazos, entonces $a(\alpha)$ es la suma de los índices totales de $\alpha_1$ y $\alpha_2$. Si no son ambos lazos, entonces $a(\alpha)$ es el índice total del lazo $\alpha_1\alpha_2$. La aplicación $b$ está definida en primer lugar componiendo $[0,1]\ni t\mapsto \dfrac{(\alpha_1(t)-\alpha_2(t))}{|\alpha_1(t)-\alpha_2(t)|}\in S^1$ con la proyección $S^1\to \R P^1$ para obtener un lazo en $\R P^1$. El correspondiente elemento de $H_1(\R P^1)\cong\Z$ es $b(\alpha)$. Por tanto, $a$ mide la cantidad de veces que los lazos $\alpha_1$ y $\alpha_2$ envuelven a los agujeros, mientras que $b$ mide las veces que un lazo envuelve al otro.
 
@@ -210,7 +211,7 @@ Sea $\langle q,t\rangle$ el grupo libre abeliano  generado por $q$ y $t$. Se def
 
 Sea $\widetilde{C}\to C$ el espacio recubridor correspondiente a $\ker\phi$ y elijamos un levantamiento $\tilde{c}_0\in\widetilde{C}$ de $c_0$. El grupo de homología $H_2(\widetilde{C})$ se puede considerar como un un $\Z[q^{\pm 1},t^{\pm 1}]$-módulo, donde el grupo $\langle t,q\rangle$ actúa sobre $\widetilde{C}$ como transformaciones recubridoras \cite{Bigelow}.
 
-Sea $h$ un automorfismo de $\D_n$ que fije el borde punto a punto. Entonces $h$ induce un automorfismo denotado igual $h:C\to C$ dado por $h(\{x,y\})=\{h(x),h(y)\}$. Es claro que $h(c_0)=c_0$. Por tanto, este homeomorfismo se levanta de forma única a una aplicación $\tilde{h}:\widetilde{C}\to\widetilde{C}$ que fija $\tilde{c}_0$. Por tanto, $\tilde{h}$ induce un isomorfismo de $\Z[q^{\pm 1},t^{\pm 1}]$-módulos $\tilde{h}_*:H_2(\widetilde{C})\to H_2(\widetilde{C})$.
+Sea $h$ un automorfismo de $\D_n$ que fije el borde punto a punto. Entonces $h$ induce un automorfismo denotado igual $h:C\to C$ dado por $h(\{x,y\})=\{h(x),h(y)\}$. Es claro que $h(c_0)=c_0$. Por tanto, este homeomorfismo se levanta de forma única a una equivalencia de homotopía $\tilde{h}:\widetilde{C}\to\widetilde{C}$ que fija $\tilde{c}_0$. Por tanto, $\tilde{h}$ induce un isomorfismo de $\Z[q^{\pm 1},t^{\pm 1}]$-módulos $\tilde{h}_*:H_2(\widetilde{C})\to H_2(\widetilde{C})$.
 
 
 \begin{defi}
@@ -221,7 +222,7 @@ La representación $\kappa:B_n\to Aut(H_2(\widetilde{C}))$ inducida por $h\to\ti
 La representación de Bigelow $\kappa:B_n\to Aut(H_2(\widetilde{C}))$ es fiel para todo $n\geq 1$.
 \end{teorema}
 
-Este resultado se prueba en \cite{Bil}. También por \cite{Bil} podemos tomar una base $\{v_{i,j}\in H_2(\widetilde{C})\}_{(i,j)\in Ref}$. Con esto, podemos establecer la equivalencia \cite{nundam} entre esta representación y la representación  \ref{LKB} como sigue:
+Este resultado se prueba en \cite{Bil}. También por \cite{Bil} podemos tomar una base $\{v_{i,j}\in H_2(\widetilde{C})\}_{(i,j)\in Ref}$. Con esto, podemos establecer la equivalencia (\cite{nundam}) entre esta representación y la representación  \ref{LKB} como sigue:
 \[
 v_{i,j}=x_{i,j}+(1-q)\sum_{i<k<j}x_{k,j},\quad x_{i,j}=v_{i,j}+(q-1)\sum_{i<k<j}q^{k-i-1}v_{k,j}.
 \]
