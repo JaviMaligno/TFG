@@ -78,9 +78,10 @@ Se definen los \emph{generadores estándar} o \emph{generadores de Artin} como l
 \draw (2.5,-2) node[anchor=south] {$\sigma_i^{-1}$};
 \end{tikzpicture}
 \end{figure}
+\end{defi}\
 
 A partir de las observaciones anteriores, es claro que cualquier trenza se puede construir como concatenación de los generadores de Artin.
-\end{defi}
+
 \begin{figure}[h!]
 \centering
 \begin{tikzpicture}
@@ -165,7 +166,7 @@ Por otra parte, si $a'$ y $b'$ son otros representantes de $\alpha$ y $\beta$ re
 
 Veamos ahora la estructura de grupo. Tenemos que probar que la operación es asociativa, pero esto se deduce de que la concatenación de caminos es asociativa salvo homotopía.
 Tenemos claramente que la identidad es la trenza constante representada por $Id=(Id_1,\dots, Id_n)$, donde $Id_k$ denota el camino $(P_k, t)$ para $t\in[0,1]$ y para $1\leq k\leq n$.
-Finalmente, dada $\alpha=[(a_1,\dots, a_n)]$ con permutación inducida $\tau$, se tiene que $\alpha^{-1}=[(\overline{a}_{\tau^{-1}(1)},\dots, \overline{a}_{\tau^{-1}(n)})]$, donde $\overline{a}_k$ denota el camino opuesto que es opuesto a $a_k$ en la primera coordenada y que es idéntico a $a_k$ en la segunda coordenada. 
+Finalmente, dada $\alpha=[(a_1,\dots, a_n)]$ con permutación inducida $\tau$, se tiene que $\alpha^{-1}=[(\overline{a}_{\tau^{-1}(1)},\dots, \overline{a}_{\tau^{-1}(n)})]$, donde $\overline{a}_k$ denota el camino que es opuesto a $a_k$ en la primera coordenada y que es idéntico a $a_k$ en la segunda coordenada. 
 
 En efecto, usando las propiedades de la homotopía de caminos con respecto al camino opuesto:
 \[
@@ -229,7 +230,7 @@ Veamos un ejemplo no trivial de espacio de configuración. Consideremos $M_2(\R^
 \[
 (x_1,x_2)\mapsto (x_1+x_2,x_1-x_2).
 \]
-Es fácil ver que esta aplicación es un homeomorfismo, por lo que $M_2(\R^3)\cong \R^3\times(\R^3\setminus\{0\})$. Además, la aplicación es compatible con la acción de $\Sigma_2$, es decir, la aplicación sigue siendo un homeomorfismo sobre $\R^3\times(\R^3\setminus\{0\})$ al permutar las componentes. Sin embargo, punto a punto, lo que se observa es que la primera coordenada se conserva y la segunda cambia de signo tras la permutación. Por lo tanto, en $N_2(\R^3)=M_2(\R^3)/\Sigma_2$, $(x,y)\sim (x,-y)$ y no hay más puntos relacionados entre sí. Por tanto, $N_2(\R^3)=\R^3\times(\R^3_{\geq 0}\setminus\{0\})$, donde $\R^3_{\geq 0}$ denota los puntos que tienen todas sus coordenadas no negativas.
+Es fácil ver que esta aplicación es un homeomorfismo, por lo que $M_2(\R^3)\cong \R^3\times(\R^3\setminus\{0\})$. Además, la aplicación es compatible con la acción de $\Sigma_2$, es decir, la aplicación sigue siendo un homeomorfismo sobre $\R^3\times(\R^3\setminus\{0\})$ al permutar las componentes. Sin embargo, punto a punto, lo que se observa es que la primera coordenada se conserva y la segunda cambia de signo tras la permutación. Por lo tanto, en $N_2(\R^3)=M_2(\R^3)/\Sigma_2$, $(x,y)\sim (x,-y)$ y no hay más puntos distintos relacionados entre sí. Por tanto, $N_2(\R^3)=\R^3\times(\R^3_{\geq 0}\setminus\{0\})$, donde $\R^3_{\geq 0}$ denota los puntos que tienen todas sus coordenadas no negativas.
 
 \end{ej}
 
@@ -427,7 +428,7 @@ Por la forma en el que está definido el producto semidirecto, conseguimos conse
  $F$ se puede ver como subgrupo normal de $F\rtimes G$ mediante la aplicación $\delta\mapsto (\delta,e_G)$, mientras que $G$ se puede ver como subgrupo mediante la aplicación $h\mapsto (e_F,h)$.
 \end{prop}
 \begin{dem}
-En ambos casos es elemental comprobar que la imagen de cada uno es un subgrupo, pues en ambos casos la asociatividad se hereda de $F\rtimes G$ y el elemento neutro $e=(e_F,e_G)$ está en los dos. Así mismo, atendiendo a la demostración anterior, vemos que cada componente del inverso está en el grupo correspondiente. Así que vamos a probar que la imagen de $F$ mediante la aplicación $\delta\mapsto (\delta,e_G)$ es un subgrupo normal de $F\rtimes G$. Para ello vamos a ver que $F\times\{e_G\}$ es el kernel de un cierto homomorfismo de grupos $\varphi:F\rtimes G\to G$. Este homomorfismo vendrá definido como $\varphi(\delta,h)=h$, el cual es fácil ver que efectivamente es homomorfismo de grupos. Claramente $\ker\varphi=\{(\delta,h)\mid h=e_G\}=F\times\{e_G\}$, como queríamos demostrar. 
+En ambos casos es elemental comprobar que la imagen de cada uno es un subgrupo, pues en ambos casos la asociatividad se hereda de $F\rtimes G$ y el elemento neutro $e=(e_F,e_G)$ está en los dos. Así mismo, atendiendo a la demostración anterior, vemos que cada componente del inverso está en el grupo correspondiente. Así que vamos a probar que la imagen de $F$ mediante la aplicación $\delta\mapsto (\delta,e_G)$ es un subgrupo normal de $F\rtimes G$. Para ello vamos a ver que $F\times\{e_G\}$ es el núcleo de un cierto homomorfismo de grupos $\varphi:F\rtimes G\to G$. Este homomorfismo vendrá definido como $\varphi(\delta,h)=h$, el cual es fácil ver que efectivamente es homomorfismo de grupos. Claramente $\ker\varphi=\{(\delta,h)\mid h=e_G\}=F\times\{e_G\}$, como queríamos demostrar. 
 \QED
 %https://groupprops.subwiki.org/wiki/Normal_subgroup_equals_kernel_of_homomorphism
 %El razonamiento análogo para G no se podría hacer porque el producto en F es el normal y en la primera componente es el producto twisteado, que no coincidiría en general
@@ -487,7 +488,7 @@ De forma análoga a como se hace para grupos, podemos considerar los generadores
 Dado un monoide $S$ con presentación $\langle M\mid R\rangle$, su \emph{grupo de fracciones} $G(S)$ es el grupo generado por la misma presentación.
 \end{defi}
 
-Existe una aplicación natural de un monoide en su grupo de fracciones. Sin embargo, esta aplicación no siempre es inyectiva, pues la existencia de inverso en el grupo, puede hacer que dos elementos distintos del monoide representen el mismo elemento del grupo de fracciones. Por ejemplo, si consideramos la presentación $\langle a,b,c\mid ab=cb\rangle$, los elementos $a$ y $c$ son distintos en el monoide; sin embargo, en el grupo son el mismo, pues multiplicando a la derecha por $b^{-1}$ en la relación obtenemos $a=c$. De aquí que consideremos la siguiende definición.
+Existe una aplicación natural de un monoide en su grupo de fracciones. Sin embargo, esta aplicación no siempre es inyectiva, pues la existencia de inverso en el grupo puede hacer que dos elementos distintos del monoide representen el mismo elemento del grupo de fracciones. Por ejemplo, si consideramos la presentación $\langle a,b,c\mid ab=cb\rangle$, los elementos $a$ y $c$ son distintos en el monoide; sin embargo, en el grupo son el mismo, pues multiplicando a la derecha por $b^{-1}$ en la relación obtenemos $a=c$. De aquí que consideremos la siguiende definición.
 
 \begin{defi}
 Decimos que un monoide $S$ se \emph{inyecta} en su grupo de fracciones $G(S)$, si el morfismo de monoides $\iota: S\to G(S)$ dado por $\iota(a)=a$ es inyectivo.
@@ -510,7 +511,7 @@ Si un monoide satisface las condiciones de Ore, entonces se inyecta en su grupo 
 \subsection{Espacios recubridores}
 
 \begin{defi}
-Sea $X$ un espacio topológico. Un \emph{espacio recubridor} de $X$ es un espacio topológico $\widetilde{X}$ junto con una aplicación continua sobreyectiva $p:\widetilde{X}\to X$, llamada \emph{aplicación recubridora}, tal que para todo $x\in X$, existe un entorno $U$ de $x$ de modo que $p^{-1}(U)$ es unión disjunta de abiertos de $C$ homeomorfos a $U$, llamados \emph{hojas}. Al espacio $p^{-1}(x)$ se llama \emph{fibra} de $x$.
+Sea $X$ un espacio topológico. Un \emph{espacio recubridor} de $X$ es un espacio topológico $\widetilde{X}$ junto con una aplicación continua sobreyectiva $p:\widetilde{X}\to X$, llamada \emph{aplicación recubridora}, tal que para todo $x\in X$ existe un entorno $U$ de $x$ de modo que $p^{-1}(U)$ es unión disjunta de abiertos de $\widetilde{X}$ homeomorfos a $U$, llamados \emph{hojas}. El espacio $p^{-1}(x)$ se llama \emph{fibra} de $x$.
 \end{defi}
 
 \begin{ej}
@@ -536,7 +537,7 @@ Dado un espacio topológico $X$ y un grupo $G$, se dice que un espacio recubrido
 \end{defi}
 
 \begin{ej}
-Podemos dar un espacio recubridor de $S^1$ que se corresponda, por ejemplo, al grupo libre de dos elementos $\langle a, b\rangle$. Para ello, fijado un punto base $x\in S^1$, basta tomar como espacio recubridor $S^1\lor S^1$ con punto base en el vértice, que denotaremos $y$. Etiquetamos cada una de las circunferencias como $a$ y $b$ respectivamente. La aplicación $p:S^1\lor S^1\to S^1$ enviando $y\mapsto x$ e identifica $a$ con $b$ es claramente sobreyectiva y continua. Por tanto $p$ es una aplicación recubridora. Además, es bien sabido que $\pi_1(S^1\lor  S^2)=\langle a, b\rangle$. 
+Podemos dar un espacio recubridor de $S^1$ que se corresponda, por ejemplo, al grupo libre de dos elementos $\langle a, b\rangle$. Para ello, fijado un punto base $x\in S^1$, basta tomar como espacio recubridor $S^1\lor S^1$ con punto base en el vértice, que denotaremos $y$. Etiquetamos cada una de las circunferencias como $a$ y $b$ respectivamente. La aplicación $p:S^1\lor S^1\to S^1$ enviando $y\mapsto x$ e identificando $a$ con $b$ es claramente sobreyectiva y continua. Por tanto $p$ es una aplicación recubridora. Además, es bien sabido que $\pi_1(S^1\lor  S^1)=\langle a, b\rangle$. 
 \end{ej}
 
 

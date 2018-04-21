@@ -28,7 +28,7 @@ donde $A_{i,n+1}$ son generadores de Birman (\ref{birman}). La aplicación está
 La aplicación $\iota$ anteriormente definida es inyectiva.
 \end{prop}
 \begin{dem}
-La idea de esta demostración será interpretar la sucesión exacta \ref{pure} en términos que sabemos que es exacta y comprobar que $\iota$ es la aplicación correspondiente con esa otra interpretación.
+La idea de esta demostración será interpretar la sucesión exacta \ref{pure} en términos de otra que sabemos que es exacta y comprobar que $\iota$ es la aplicación correspondiente con esa otra interpretación.
 
 Para $n\geq 1$ consideramos la aplicación
 \begin{align}\label{fibrado}
@@ -38,7 +38,7 @@ p: & \qquad M_{n+1}\ \quad \longrightarrow\quad M_n\\
 
 Nótese que que cada fibra $p^{-1}((z_1,\dots, z_n))$ es homeomorfa a $\C\setminus\{z_1,\dots, z_n\}=\C_n$. Como este espacio retrae con deformación sobre $S^1\lor\dots\lor S^1$, su grupo fundamental es $F_n$. De la sucesión exacta larga de grupos de homotopía asociada a $p$ \cite{Hatcher} de este fibrado obtenemos:
 $$\pi_2(\C_n)\to\pi_2(M_{n+1})\to\pi_2(M_n)\to\pi_1(\C_n)\to\pi_1(M_{n+1})\to\pi_1(M_n)\to 1.$$
-Se sabe que $\pi_2(\C_n)=\{1\}$ \cite{Hatcher}. Por otra parte, $\pi_2(M_1)=\pi_2(\C)={1}$. En la sucesión exacta anterior, esto implica que $\pi_2(M_2)=\{1\}$. Inductivamente se prueba que $\pi_2(M_n)=\{1\}$ para todo $n$. Esto da lugar a la sucesión exacta
+Se sabe que $\pi_2(\C_n)=1$ \cite{Hatcher}. Por otra parte, $\pi_2(M_1)=\pi_2(\C)={1}$. En la sucesión exacta anterior, esto implica que $\pi_2(M_2)=1$. Inductivamente se prueba que $\pi_2(M_n)=1$ para todo $n$. Esto da lugar a la sucesión exacta
 $$1\to\pi_1(\C_n)\to\pi_1(M_{n+1})\to\pi_1(M_n)\to 1,$$
 que por definición es equivalente a \ref{pure}. 
 
@@ -86,7 +86,7 @@ Por tanto, cada trenza de $PB_{n+1}$ se expresa de forma única como producto de
 
 \section{Solución al problema de la palabra}\label{simples}
 
-Supongamos que tenemos que decidir si una palabra $\beta\in B_n$ representa el elemento neutro. En primer lugar, mediante el homomorfismo $\eta$ de \ref{extension} comprobamos si la permutación que induce $\beta$ es la identidad. En caso de no serlo, sabemos que $\beta$ no es trivial. Si $\eta(\beta)=1\in\Sigma_n$, entonces $\beta$ es pura por definición, por lo que trataremos de expresarla como elemento del producto semidirecto de grupos libres, ya que será trivial si y solo si cada uno de los factores lo es. Sin embargo, para conseguir esta expresión tenemos que escribir $\beta$ como producto de los generadores de Birman, puesto que estos son los que representan cada grupo libre.
+Supongamos que tenemos que decidir si una palabra $\beta\in B_n$ representa el elemento neutro. En primer lugar, mediante el homomorfismo $\eta$ de \ref{extension} comprobamos si la permutación que induce $\beta$ es la identidad. En caso de no serlo, sabemos que $\beta$ no es trivial. Si $\eta(\beta)=Id\in\Sigma_n$, entonces $\beta$ es pura por definición, por lo que trataremos de expresarla como elemento del producto semidirecto de grupos libres, ya que será trivial si y solo si cada uno de los factores lo es. Sin embargo, para conseguir esta expresión tenemos que escribir $\beta$ como producto de los generadores de Birman, puesto que estos son los que representan cada grupo libre.
 
 Para ello, hagamos la siguiente consideración: dada una permutación $\tau\in\Sigma_n$ podemos encontrar una trenza que induzca esta permutación. Además podemos hacerlo de forma inyectiva, pues para permutaciones distintas daremos trenzas distintas. Esto da lugar a una \emph{sección conjuntista} (no es homomorfismo de grupos) en \ref{extension} $\varphi:\Sigma_n\to B_n$. Estas trenzas pueden ser elegidas de modo que todos los cruces sean positivos y cada par de cuerdas solo se cruce una vez. Para ello, empezamos por el $n$-ésimo punto y vamos asignando los demás de modo que las cuerdas siempre pasen por debajo de las ya existentes a las que tengan que cruzar y evitamos repetir de forma consecutiva algún $\sigma_i$. A estas trenzas las llamaremos \emph{trenzas simples} o \emph{trenzas de permutación}. Como toda permutación se puede expresar como producto de transposiciones, las trenzas simples tendrán la forma $\sigma_{i_1}\cdots\sigma_{i_l}$ para algún $1\leq l\leq n$, de modo que $\sigma_{i_j}\neq\sigma_{i_{j+1}}$ en cualquier palabra que represente a la trenza.  
 
@@ -97,8 +97,11 @@ Vamos a explicar en qué consiste entonces el algoritmo para resolver el problem
 \]
 En el siguiente paso tenemos que anular la permutación de $\varphi(s_1)\sigma_{i_2}^{\pm 1}$, así que elegimos $s_2$ tal que $\varphi(s_2)=\sigma_{i_2}$ y hacemos el producto
 \[
-(\varphi(s_0)\sigma_{i_1}^{\pm 1}\varphi(s_1)^{-1})(\varphi(s_1)\sigma_{i_2}^{\pm 1}\varphi(s_2)^{-1}\varphi(s_1)^{-1})\varphi(s_2)\varphi(s_1)\cdots\sigma_{i_l}^{\pm 1}.
+(\varphi(s_0)\sigma_{i_1}^{\pm 1}\varphi(s_1)^{-1})(\varphi(s_1)\sigma_{i_2}^{\pm 1}\varphi(s_2)^{-1}\varphi(s_1)^{-1})\varphi(s_1)\varphi(s_2)\cdots\sigma_{i_l}^{\pm 1}.
 \]
+
+%Lo de usar trenzas simples es porque la idea era que en cada paso solo se vaya moviendo una cuerda alrededor de las otras
+
 Así iríamos reiterando hasta llegar al final de la palabra. Obsérvese que al sustituir, muchos términos se cancelarán y otros quedarán con una cierta simetría que facilitará expresarlos como producto de los generadores de Birman. En cualquier caso, como hay $n!$ trenzas de permutación y $2(n-1)$ generadores contando las potencias negativas, hay a lo sumo $n!2(n-1)$ factores distintos para expresarlos como producto de los generadores de Birman. Al ser una cantidad finita, siempre es teóricamente factible hacer una lista para transformarlos automáticamente. Una vez que tengamos una palabra de la forma
 \[
 A_{i_1,j_1}^{\pm 1}\cdots A_{i_r,j_r}^{\pm 1},
@@ -125,7 +128,7 @@ Nos quedan entonces un factor que expresar como producto de los generadores de B
 \sigma_1\sigma_2^{-1}\sigma_2^{-1}\sigma_1^{-1}=& \sigma_2^{-1}\underline{\sigma_2\sigma_1\sigma_2}\sigma_2^{-1}\sigma_2^{-1}\sigma_2^{-1}\sigma_1^{-1}=(\sigma_2^{-1})\sigma_1\sigma_2\sigma_1\sigma_2^{-1}\sigma_2^{-1}\sigma_2^{-1}\sigma_1^{-1}\\
 &=(\sigma_2^{-1})\sigma_1\sigma_2\sigma_1\sigma_2^{-1}\sigma_2^{-1}\underline{\sigma_2^{-1}\sigma_1^{-1}\sigma_2^{-1}}(\sigma_2)=(\sigma_2^{-1})\sigma_1\sigma_2\sigma_1\sigma_2^{-1}\underline{\sigma_2^{-1}\sigma_1^{-1}\sigma_2^{-1}}(\sigma_1^{-1}\sigma_2)\\
 &=(\sigma_2^{-1})\sigma_1\sigma_2\sigma_1\underline{\sigma_2^{-1}\sigma_1^{-1}\sigma_2^{-1}}(\sigma_1^{-1}\sigma_1^{-1}\sigma_2)=(\sigma_2^{-1})\sigma_1\sigma_2\sigma_1\sigma_1^{-1}\sigma_2^{-1}\sigma_1^{-1}(\sigma_1^{-1}\sigma_1^{-1}\sigma_2)\\
-&=\sigma_2^{-1}\sigma_1^{-1}\sigma_1^{-1}\sigma_2= (\sigma_2^{-2})(\sigma_2\sigma_1^{-2}\sigma_2^{-1})(\sigma_2^2)\\
+&=(\sigma_2^{-1})(\sigma_1^{-1}\sigma_1^{-1}\sigma_2)= (\sigma_2^{-2})(\sigma_2\sigma_1^{-2}\sigma_2^{-1})(\sigma_2^2)\\
 &=A_{23}^{-1}A_{13}^{-1}A_{23}
 \end{align*}
 Este hecho se puede observar geométricamente en la Figura \ref{peinado}.
