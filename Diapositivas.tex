@@ -187,6 +187,9 @@ Consideraremos que dos automorfismos son iguales si pueden ser transformados el 
 \begin{defi} Si denotamos $Homeo^+_0(\D_n)$ a la clase de equivalencia de $Id_{\D_n}$ en $Homeo^+(\D_n)$, definimos entonces el \textbf{mapping class group} (grupo de clases de aplicaciones) de $\D_n$ como:
 $$\mathcal{M}(\D_n)=Homeo^+(\D_n)/Homeo^+_0(\D_n).$$
 \end{defi}
+\begin{teorema}
+$$B_n\cong \mathcal{M}(\D_n)$$
+\end{teorema}
 \end{frame}
 
 \subsection{Presentación del grupo de trenzas}
@@ -195,12 +198,14 @@ $$\mathcal{M}(\D_n)=Homeo^+(\D_n)/Homeo^+_0(\D_n).$$
 
 \begin{frame}
 \frametitle{Presentación del grupo de trenzas}
+\begin{teorema}
 \[
 B_n=\left\langle\begin{array}{c| c c}
 \multirow{2}{*}{$\sigma_1,\dots,\sigma_{n-1}$} & \sigma_i\sigma_j=\sigma_j\sigma_i, & |i-j|>1\\
 & \sigma_i\sigma_j\sigma_i=\sigma_j\sigma_i\sigma_j, & |i-j|=1
 \end{array}\right\rangle
 \]
+\end{teorema}
 \end{frame}
 
 \begin{frame}
@@ -221,19 +226,70 @@ A_{ij}^{-1}A_{rs}A_{ij}&=A_{is}A_{js}A_{is}^{-1}A_{js}^{-1}A_{rs}A_{js}A_{is}A_{
 \section{Automorfismos del grupo libre}
 \begin{frame}
 \frametitle{Automorfismos del grupo libre}
+
+\begin{figure}[h!]
+\includegraphics[scale=0.7]{Imagenes/Disco.png}
+\caption{Los lazos $x_1,\dots,x_n$ son generadores de $\pi_1(\D_n)$.}
+\end{figure}
 \end{frame}
 
 \begin{frame}
-Poner la expresión de la presentación y los dibujitos
+\begin{align*}
+\rho: & B_n \to Aut(F_n)\\
+      & \beta\ \ \mapsto\ \ \rho_\beta.
+\end{align*}
+
+$$\rho_{\sigma_i}(x_i)=x_{i+1},\quad \rho_{\sigma_i}(x_{i+1})=x_{i+1}^{-1}x_ix_{i+1},\quad \rho_{\sigma_i}(x_j)=x_j\ (j\neq i,i+1).$$
+
+$$\rho^{-1}_{\sigma_i}(x_i)=x_ix_{i+1}x_i^{-1},\quad \rho^{-1}_{\sigma_i}(x_{i+1})=x_i,\quad \rho^{-1}_{\sigma_i}(x_j)=x_j\ (j\neq i,i+1).$$
+\end{frame}
+
+\begin{frame}
+\begin{figure}[h!]
+\includegraphics[scale=0.5]{Imagenes/auto.png}
+\caption{Acción de $\sigma_i$ sobre los generadores $x_i$ y $x_{i+1}$.}
+\end{figure}
 \end{frame}
 
 \begin{frame}
 \frametitle{Solución al problema de la palabra}
+\begin{teorema}
+La representación anterior es fiel, es decir, dos trenzas están representadas por el mismo automorfismo si y solo si son la misma.
+\end{teorema}
+
+Dadas $\beta_1,\beta_2\in B_n$, 
+$$\beta_1=\beta_2\Leftrightarrow \rho_{\beta_1}(x_i)=\rho_{\beta_2}(x_i)\ \forall x_i$$
 \end{frame}
 
 \section{Peinado de trenzas}
 \begin{frame}
 \frametitle{Peinado de trenzas}
 \end{frame}
+
+
+
+\section{Formas normales}
+\begin{frame}
+\frametitle{Formas normales}
+\end{frame}
+
+
+\section{Representaciones lineales}
+\begin{frame}
+\frametitle{Representaciones lineales}
+\end{frame}
+
+
+\subsection{Representación de Burau}
+\begin{frame}
+\frametitle{Representación de Burau}
+\end{frame}
+
+\subsection{Representación LKB}
+\begin{frame}
+\frametitle{Representación LKB}
+\end{frame}
+
+
 
 \end{document}
