@@ -6,8 +6,13 @@
 %\usepackage{estilo-apuntes}
 \usepackage{braids}
 \usepackage[]{graphicx}
+\usepackage{rotating}
 \usepackage{pgf,tikz}
 \usepackage{pgfplots}
+\usepackage{tikz-cd}
+\usetikzlibrary{arrows}
+\usetikzlibrary{cd}
+\usetikzlibrary{babel}
 \pgfplotsset{compat=1.13}
 \usetikzlibrary{decorations.shapes}
 \pgfkeyssetvalue{/tikz/braid height}{1cm} %no parece hacer nada
@@ -21,6 +26,7 @@
 \newtheorem{defi}{Definición}
 \newtheorem{prop}[teorema]{Proposición}
 
+\newcommand{\Z}{\mathbb{Z}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\D}{\mathbb{D}}
 \providecommand{\gene}[1]{\langle{#1}\rangle}
@@ -131,7 +137,7 @@ Denotemos $\Sigma_n$ al grupo simétrico sobre $n$ elementos. Sean $n$ puntos $P
 \begin{frame}
 \frametitle{Concatenación}
 \begin{figure}[h!]
-\includegraphics[scale=0.6]{Imagenes/Diapconca}
+\includegraphics[scale=0.5]{Imagenes/Diapconca}
 \caption{Concatenación de trenzas.}
 \end{figure}
 Esta operación induce un producto entre las clases de homotopía.
@@ -152,12 +158,12 @@ El conjunto $B_n$ dotado de la operación inducida por la concatenación tiene e
 \frametitle{Espacios de configuración}
 \begin{defi}
 Dado un espacio topológico $X$, el $n$-ésimo \textbf{espacio de configuración} de $X$ se define como el conjunto
-$$M_n(X)=\{(x_1,\dots,x_n)\in X^n\mid x_i\neq x_j\ \forall i\neq j\},$$
+$$M_n(X)=\{(x_1,\dots,x_n)\in X^n\mid x_i\neq x_j\ \forall i\neq j\}$$
 dotado de la topología relativa de $X^n$.
 \end{defi}
 \begin{defi}
 Se define el $n$-ésimo \textbf{espacio de configuración no ordenado} de $X$ como el espacio de órbitas
-$$N_n(X)=M_n(X)/\Sigma_n.$$
+$$N_n(X)=M_n(X)/\Sigma_n$$
 \end{defi}
 \end{frame}
 
@@ -167,7 +173,7 @@ NO SÉ SI PONER TAMBIÉN AQUÍ LAS REFERENCIAS
 El grupo de trenzas puras de $n$ cuerdas es
 $$PB_n=\pi_1(M_n(\C))$$
 y el grupo de trenzas de $n$ cuerdas es
-$$B_n=\pi_1(N_n(\C)).$$
+$$B_n=\pi_1(N_n(\C))$$
 \end{teorema}
 \end{frame}
 
@@ -185,7 +191,7 @@ Sea $Homeo^+(\D_n)$ el conjunto de homeomorfismos que preservan la orientación 
 \begin{frame}
 Consideraremos que dos automorfismos son iguales si pueden ser transformados el uno en el otro mediante una isotopía de $\D_n$ en sí mismo que fije el borde y los agujeros.
 \begin{defi} Si denotamos $Homeo^+_0(\D_n)$ a la clase de equivalencia de $Id_{\D_n}$ en $Homeo^+(\D_n)$, definimos entonces el \textbf{mapping class group} (grupo de clases de aplicaciones) de $\D_n$ como:
-$$\mathcal{M}(\D_n)=Homeo^+(\D_n)/Homeo^+_0(\D_n).$$
+$$\mathcal{M}(\D_n)=Homeo^+(\D_n)/Homeo^+_0(\D_n)$$
 \end{defi}
 \begin{teorema}
 $$B_n\cong \mathcal{M}(\D_n)$$
@@ -229,19 +235,19 @@ A_{ij}^{-1}A_{rs}A_{ij}&=A_{is}A_{js}A_{is}^{-1}A_{js}^{-1}A_{rs}A_{js}A_{is}A_{
 
 \begin{figure}[h!]
 \includegraphics[scale=0.7]{Imagenes/Disco.png}
-\caption{Los lazos $x_1,\dots,x_n$ son generadores de $\pi_1(\D_n)$.}
+\caption{Los lazos $x_1,\dots,x_n$ son generadores de $\pi_1(\D_n)\cong F_n$.}
 \end{figure}
 \end{frame}
 
 \begin{frame}
 \begin{align*}
 \rho: & B_n \to Aut(F_n)\\
-      & \beta\ \ \mapsto\ \ \rho_\beta.
+      & \beta\ \ \mapsto\ \ \rho_\beta
 \end{align*}
 
-$$\rho_{\sigma_i}(x_i)=x_{i+1},\quad \rho_{\sigma_i}(x_{i+1})=x_{i+1}^{-1}x_ix_{i+1},\quad \rho_{\sigma_i}(x_j)=x_j\ (j\neq i,i+1).$$
+$$\rho_{\sigma_i}(x_i)=x_{i+1},\quad \rho_{\sigma_i}(x_{i+1})=x_{i+1}^{-1}x_ix_{i+1},\quad \rho_{\sigma_i}(x_j)=x_j\ (j\neq i,i+1)$$
 
-$$\rho^{-1}_{\sigma_i}(x_i)=x_ix_{i+1}x_i^{-1},\quad \rho^{-1}_{\sigma_i}(x_{i+1})=x_i,\quad \rho^{-1}_{\sigma_i}(x_j)=x_j\ (j\neq i,i+1).$$
+$$\rho^{-1}_{\sigma_i}(x_i)=x_ix_{i+1}x_i^{-1},\quad \rho^{-1}_{\sigma_i}(x_{i+1})=x_i,\quad \rho^{-1}_{\sigma_i}(x_j)=x_j\ (j\neq i,i+1)$$
 \end{frame}
 
 \begin{frame}
@@ -257,13 +263,60 @@ $$\rho^{-1}_{\sigma_i}(x_i)=x_ix_{i+1}x_i^{-1},\quad \rho^{-1}_{\sigma_i}(x_{i+1
 La representación anterior es fiel, es decir, dos trenzas están representadas por el mismo automorfismo si y solo si son la misma.
 \end{teorema}
 
-Dadas $\beta_1,\beta_2\in B_n$, 
+\begin{itemize}
+\item Dadas $\beta_1,\beta_2\in B_n$, 
 $$\beta_1=\beta_2\Leftrightarrow \rho_{\beta_1}(x_i)=\rho_{\beta_2}(x_i)\ \forall x_i$$
+\end{itemize}
 \end{frame}
 
 \section{Peinado de trenzas}
-\begin{frame}
+\begin{frame}[fragile]
 \frametitle{Peinado de trenzas}
+\[
+\begin{tikzcd}
+1\arrow[r]& PB_n\arrow[r, "i"] & B_n\arrow[r,"\eta"]& \Sigma_n\arrow[r] & 1
+\end{tikzcd}
+\]
+
+\[
+\begin{tikzcd}
+1\arrow[r]& F_n\arrow[r, "\iota"] & PB_{n+1}\arrow[r,"\rho", shift left]& \arrow[l,"s",shift left]PB_n\arrow[r] & 1
+\end{tikzcd}
+\]
+\end{frame}
+
+\begin{frame}
+Inductivamente, combinando $PB_{n+1}\cong F_n\rtimes PB_n$ y $PB_2\cong F_1$ obtenemos:
+
+\begin{block}{Resultado}
+$$PB_{n+1}\cong F_n\rtimes (F_{n-1} \rtimes\dots\rtimes (F_3\rtimes (F_2\rtimes F_1))\cdots))$$
+\end{block}
+
+\begin{enumerate}
+\item<1-> Una trenza $\beta$ es pura si y solo $\eta(\beta)=1$.
+\item<2-> Un elemento de un producto semidirecto es trivial si y solo si lo es cada uno de sus coordenadas.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Solución al problema de la palabra}
+\begin{enumerate}
+\item<1-> Comprobar si $\beta$ es pura calculando la permutación inducida.
+\item<2-> Si no es pura, no es trivial. Si es pura, expresarla como elemento del producto semidirecto usando los generadores $A_{ij}$. A esto se le llama ``peinar la trenza''.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+
+
+\begin{figure}
+\begin{turn}{1.5}
+\includegraphics[scale=0.4]{Imagenes/peinado}
+\end{turn}
+\caption{Trenza peinada.}
+\end{figure}
+
 \end{frame}
 
 
@@ -271,18 +324,54 @@ $$\beta_1=\beta_2\Leftrightarrow \rho_{\beta_1}(x_i)=\rho_{\beta_2}(x_i)\ \foral
 \section{Formas normales}
 \begin{frame}
 \frametitle{Formas normales}
+\begin{defi}
+Definimos el monoide $B_n^+$ formado por las trenzas que solo tienen exponentes positivos en los generadores, llamado \textbf{monoide de las trenzas positivas} y sus palabras son llamadas \textbf{trenzas positivas}.
+\end{defi}
+\begin{defi}
+Definimos en $B_n^+$ el orden parcial $\preccurlyeq$ tal que dadas $a,b\in B_n^+$, $a\preccurlyeq b$ si $ac=b$ para alguna $c\in B_n^+$. Decimos en ese caso que $a$ es un \textbf{prefijo} de $b$. %Escribimos $a\prec b$ si $c$ no es trivial. Si además $a\neq 1$, decimos que $a$ es un \emph{prefijo propio} de $b$. 
+\end{defi}
 \end{frame}
+
+\begin{frame}
+
+\begin{defi}
+La \textbf{trenza fundamental} de $n$ cuerdas es la trenza
+$$\Delta=\sigma_1(\sigma_2\sigma_1)\cdots(\sigma_{n-1}\cdots\sigma_1)$$
+\end{defi} 
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}
+\braid[rotate=90,width=.6cm,height=0.7cm,line width=1.5pt] s_1^{-1} s_2^{-1} s_1^{-1} s_3^{-1} s_2^{-1} s_1^{-1} s_4^{-1} s_3^{-1} s_2^{-1} s_1^{-1};
+\end{tikzpicture}
+\caption{La trenza fundamental para $n=5$.}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Forma normal de Garside}
+
+\begin{teorema}
+Todo elemento $w\in B_n$ se puede escribir \emph{de forma única} como $w=\Delta^pA$, donde $p\in\Z$, $A\in B_n^+$ y $\Delta\not\preccurlyeq A$. A esta forma de escribir los elementos la denominamos \textbf{forma normal de Garside}.
+\end{teorema}
+
+\begin{itemize}
+\item Para averiguar si dos trenzas $\beta_1,\beta_2\in B_n$ representan el mismo elemento, basta calcular sus formas normales de Garside y comprobar si coinciden. 
+\end{itemize}
+\end{frame}
+
 
 
 \section{Representaciones lineales}
-\begin{frame}
-\frametitle{Representaciones lineales}
-\end{frame}
+%\begin{frame}
+%\frametitle{Representaciones lineales}
+%\end{frame}
 
 
 \subsection{Representación de Burau}
 \begin{frame}
 \frametitle{Representación de Burau}
+
+¿PONGO DIRECTAMENTE LAS EXPRESIONES MATRICIALES O HABLO ALGO DE LA CONSTRUCCIÓN?
 \end{frame}
 
 \subsection{Representación LKB}
