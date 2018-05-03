@@ -11,7 +11,7 @@
 
 Aunque el término \emph{grupo de trenzas} fue acuñado por Artin en 1925 \cite{ArtinA}, estos grupos ya fueron considerados por Hurwitz en 1891 \cite{Hur} como lo que en terminología moderna se llamaría ``grupo fundamental de espacios de configuración de $n$ puntos en el plano complejo''. Magnus en 1935 \cite{Magnus} consideró el mismo grupo desde el punto de vista de los \emph{mapping classes}. Markov \cite{Markoff} dio una aproximación totalmente algebraica. 
 
-En este capítulo veremos varias de estas definiciones, las cuales son todas equivalentes \cite{Zariski}, ya que una sola definición no es suficiente para enunciar y demostrar los resultados que se presentan en el resto del trabajo. Esta variedad de definiciones permite estudiar los grupos de trenzas desde perspectivas muy distintas, lo cual aporta una gran riqueza a la teoría.
+En este capítulo veremos varias de estas definiciones, que son todas equivalentes \cite{Zariski}, ya que una sola definición no es suficiente para enunciar y demostrar los resultados que se presentan en el resto del trabajo. Esta variedad de definiciones permite estudiar los grupos de trenzas desde perspectivas muy distintas, lo cual aporta una gran riqueza a la teoría.
 
 \section{Trenzas como colección de cuerdas}
 Empezamos dando la definición más gráfica e intuitiva, consistente en visualizar las trenzas como cuerdas que se entrelazan. 
@@ -20,16 +20,16 @@ Empezamos dando la definición más gráfica e intuitiva, consistente en visuali
 Sea $n\geq 1$ un entero. Denotemos $\Sigma_n$ al grupo simétrico sobre $n$ elementos. Sean $n$ puntos $P_1,\dots, P_n$ en $\C$ (se puede suponer que $P_k=k$ para todo $1\leq k\leq n$). Se define la \emph{trenza geométrica de $n$ cuerdas} como la $n$-upla $\beta=(\beta_1,\dots,\beta_n)$ de caminos $\beta_k:[0,1]\to\C\times[0,1]$ tal que:
 \begin{itemize}
 \item $\beta_k(0)=(P_k,0)$ para todo $1\leq k\leq n$,
+\item la segunda coordenada de $\beta_k(t)$ es igual a $t$ para todo $1\leq k\leq n$ y para todo $t\in [0,1]$,
 \item existe una permutación $\tau=\tau(\beta)\in\Sigma_n$ tal que $\beta_k(1)=(P_{\tau(k)},1)$ para todo $1\leq k\leq n$, llamada \emph{permutación inducida por $\beta$},
 \item $\beta_k(t)\neq \beta_l(t)$ para todo $k\neq l$ y para todo $t\in[0,1]$.
-\item $\beta_k(t)$ es monótona creciente en la segunda coordenada para todo $k$. 
 \end{itemize}
 Si la permutación inducida por $\beta$ es el elemento neutro de $\Sigma_n$, es decir, si $\beta_k(1)=(P_k,1)$ para todo $1\leq k\leq n$, entonces decimos que la trenza geométrica es \emph{pura}.
 
-Dos trenzas geométricas $\alpha$ y $\beta$ se dicen \emph{homotópicas} si existe una familia continua de trenzas $\{\gamma_s\}_{s\in[0,1]}$ de modo que $\gamma_0=\alpha$ y $\gamma_1=\beta$. Es decir, dos trenzas geométricas son homotópicas si son homotópicas como colección de caminos relativamente a los puntos extremos. Consideraremos que dos trenzas geométricas son la misma si son homotópicas, y a la clase de homotopía de una trenza geométrica de $n$ cuerdas la llamaremos \emph{trenza de $n$ cuerdas}. Nótese que si $\alpha$ y $\beta$ son homotópicas entonces $\tau(\alpha)=\tau(\beta)$, así que diremos que una trenza es \emph{pura} los elementos de la clase de homotopía son trenzas geométricas puras.
+Dos trenzas geométricas $\alpha$ y $\beta$ se dicen \emph{homotópicas} si existe una familia continua de trenzas $\{\gamma_s\}_{s\in[0,1]}$ de modo que $\gamma_0=\alpha$ y $\gamma_1=\beta$. Es decir, dos trenzas geométricas son homotópicas si son homotópicas como colección de caminos relativamente a los puntos extremos. Consideraremos que dos trenzas geométricas son la misma si son homotópicas, y a la clase de homotopía de una trenza geométrica de $n$ cuerdas la llamaremos \emph{trenza de $n$ cuerdas}. Nótese que si $\alpha$ y $\beta$ son homotópicas entonces $\tau(\alpha)=\tau(\beta)$, así que diremos que una trenza es \emph{pura} si los elementos de su clase de homotopía son trenzas geométricas puras.
 \end{defi}
 
-El dibujo tridimensional de una trenza geométrica tendría la siguiente forma:
+El dibujo tridimensional de una trenza geométrica tiene la siguiente forma:
 \begin{figure}[h!]
 \includegraphics[scale=0.7]{Imagenes/hilos}
 \caption{Una trenza geométrica pura y una trenza geométrica no pura.}\label{hilos}
@@ -41,7 +41,7 @@ El dibujo tridimensional de una trenza geométrica tendría la siguiente forma:
 Para cada $t\in[0,1]$, el plano $\C\times\{t\}$ es atravesado una sola vez por cada cuerda de la trenza. 
 \end{observacion}
 
-Normalmente, se representan las trenzas como su proyección en $\R\times[0,1]$ (posiblemente seguida de una rotación de 90º). En los puntos en los que la proyección de dos cuerdas coincida los representaremos como en la Figura \ref{cruce} para conservar la información de cuál cruzaba originalmente por encima. Salvo homotopía, podemos suponer que la proyección tiene un número finito de puntos de cruce, en los cuales solo intervienen dos cuerdas. Además podemos suponer también que los cruces ocurren a distintas alturas, es decir, para distintos valores de $t\in[0,1]$. En la Figura \ref{plana} se ilustra la proyección de la trenza no pura de la Figura \ref{hilos}. 
+Normalmente, se representan las trenzas como su proyección en $\R\times[0,1]$ (posiblemente seguida de una rotación de 90º). Los puntos en los que la proyección de dos cuerdas coincida los representaremos como en la Figura \ref{cruce} para conservar la información de cuál cruzaba originalmente por encima. Salvo homotopía, podemos suponer que la proyección tiene un número finito de puntos de cruce, en los cuales solo intervienen dos cuerdas. Además podemos suponer también que los cruces ocurren a distintas alturas, es decir, para distintos valores de $t\in[0,1]$. En la Figura \ref{plana} se ilustra la proyección de la trenza no pura de la Figura \ref{hilos}. 
 \begin{figure}[h!]
 \centering
 \begin{tikzpicture}
@@ -109,7 +109,7 @@ Una de las características más importantes del conjunto de clases de homotopí
 \begin{defi}
 El producto de dos trenzas $\alpha=(\alpha_1,\dots, \alpha_n)$ y $\beta=(\beta_1,\dots,\beta_n)$ se define como la trenza
 $$\alpha\cdot\beta = (\alpha_1\beta_{\tau(1)},\dots, \alpha_n\beta_{\tau(n)}),$$
-donde $\tau=\tau(\alpha)$. Es decir, el producto de dos trenzas en el mismo número de cuerdas es su concatenación, en la cual se recorre en primer lugar $\alpha$ y después $\beta$. En la Figura \ref{producto} se ilustra un ejemplo. En ocasiones omitiremos el punto y escribieremos simplemente $\alpha\beta$. Asímismo, denotaremos $\alpha^n=\underbrace{\alpha\cdots\alpha}_{n\text{ veces}}$.
+donde $\tau=\tau(\alpha)$. Es decir, el producto de dos trenzas en el mismo número de cuerdas es su concatenación, en la cual se recorre en primer lugar $\alpha$ y después $\beta$. En la Figura \ref{producto} se ilustra un ejemplo. En ocasiones omitiremos el punto y escribiremos simplemente $\alpha\beta$. Asimismo, denotaremos $\alpha^n=\underbrace{\alpha\cdots\alpha}_{n\text{ veces}}$.
 \end{defi}
 
 \begin{figure}[h!]
@@ -153,14 +153,14 @@ donde $\tau=\tau(\alpha)$. Es decir, el producto de dos trenzas en el mismo núm
 \end{figure}
 
 
-Denotemos $B_n$ al conjunto de clases de homotopía de trenzas de $n$ cuerdas y $PB_n$ al conjunto de clases de homotopía de trenzas puras de $n$ cuerdas. Es evidente que la multiplicación anterior induce una operación en $B_n$ (y por tanto en $PB_n)$, es más, se tiene el siguiente resultado.
+Denotemos $B_n$ al conjunto de clases de homotopía de trenzas de $n$ cuerdas y $PB_n$ al conjunto de clases de homotopía de trenzas puras de $n$ cuerdas. Es evidente que la multiplicación anterior induce una operación en $B_n$ (y por tanto en $PB_n)$; es más, se tiene el siguiente resultado.
 
 \begin{prop}
-El conjunto $B_n$ dotado de esta operación tiene estructura de grupo, al que se le llama \emph{grupo de trenzas de $n$ cuerdas}. El resultado también es cierto para $PB_n$, cuyo nombre es \emph{grupo de trenzas puras de $n$ cuerdas}. 
+El conjunto $B_n$ dotado de esta operación tiene estructura de grupo, y se le llama \emph{grupo de trenzas de $n$ cuerdas}. El resultado también es cierto para $PB_n$, cuyo nombre es \emph{grupo de trenzas puras de $n$ cuerdas}. 
 \end{prop}
 
 \begin{dem}
-Sean $\alpha$ y $\beta$ dos trenzas con representantes $a=(a_1,\dots, a_n)$ y $b=(b_1,\dots, b_n)$ respectivamente. En primer lugar, veamos que la operación está bien definida, es decir, que $a\cdot b$ es una trenza, y por tanto podemos definir $\alpha\beta=[a\cdot b]$. Sea $\tau=\tau(a)$ la permutación inducida por $a$. Como $a_kb_{\tau(k)}(0)=a_k(0)=(P_k,0)$ para todo $1\leq k\leq n$, se cumple la primera propiedad de la definición \ref{geo}. Para la segunda, basta observar que la nueva permutación es $\tau(a\cdot b)=\tau(a)\circ \tau(b)$. En particular, si $a$ y $b$ son puras, entonces la permutación inducida por el producto también es la identidad, por lo que el producto es una trenza pura. Por último, si $t\in[0,1/2]$, entonces $a_k\beta_{\tau(k)}=a_k(2t)$ y si $t\in [1/2,1]$, $\alpha_k\beta_{\tau(k)}=\beta_{\tau(k)}(2t-1)$ para todo $1\leq k\leq n$, por lo que se tiene claramente la tercera propiedad. 
+Sean $\alpha$ y $\beta$ dos trenzas con representantes $a=(a_1,\dots, a_n)$ y $b=(b_1,\dots, b_n)$ respectivamente. En primer lugar, veamos que la operación está bien definida, es decir, que $a\cdot b$ es una trenza, y por tanto podemos definir $\alpha\beta=[a\cdot b]$. Sea $\tau=\tau(a)$ la permutación inducida por $a$. Como $a_kb_{\tau(k)}(0)=a_k(0)=(P_k,0)$ para todo $1\leq k\leq n$, se cumple la primera propiedad de la definición \ref{geo}. Para la segunda, basta observar que la nueva permutación es $\tau(a\cdot b)=\tau(b)\circ \tau(a)$. En particular, si $a$ y $b$ son puras, entonces la permutación inducida por el producto también es la identidad, por lo que el producto es una trenza pura. Por último, si $t\in[0,1/2]$, entonces $a_k\beta_{\tau(k)}=a_k(2t)$ y si $t\in [1/2,1]$, $\alpha_k\beta_{\tau(k)}=\beta_{\tau(k)}(2t-1)$ para todo $1\leq k\leq n$, por lo que se tiene claramente la tercera propiedad. 
 
 Por otra parte, si $a'$ y $b'$ son otros representantes de $\alpha$ y $\beta$ respectivamente, se tiene que $[a'\cdot b']=[a\cdot b]$ por las propiedades de la homotopía de caminos con respecto a la concatenación.
 
@@ -170,11 +170,7 @@ Finalmente, dada $\alpha=[(a_1,\dots, a_n)]$ con permutación inducida $\tau$, s
 
 En efecto, usando las propiedades de la homotopía de caminos con respecto al camino opuesto:
 \[
-\alpha\alpha^{-1}=[(a_1,\dots, a_n)\cdot (\overline{a}_1,\dots, \overline{a}_n)]=[(a_1\overline{a}_{\tau^{-1}(1)},\dots, a_n\overline{a}_{\tau^{-1}(n)})]=[Id]
-\]
-Obsérvese que la segunda coordenada de la concatenación no tiene por qué ser exactamente igual al camino identidad, pero sí será siempre homotópico a él. Efectivamente, sí la segunda coordenada resulta un camino $f:[0,1]\to [0,1]$, podemos llevarlo a la identidad en $[0,1]$ con la homotopía $H:[0,1]\times[0,1]\to [0,1]$ dada por
-\[
-H(x,t)=(1-t)f(x)-tx.
+\alpha\alpha^{-1}=[(a_1,\dots, a_n)\cdot (\overline{a}_{\tau^{-1}(1)},\dots, \overline{a}_{\tau^{-1}(n)})]=[(a_1\overline{a}_{\tau(\tau^{-1}(1))},\dots, a_n\overline{a}_{\tau(\tau^{-1}(n))})]=[Id]
 \]
 Análogamente se prueba $\alpha^{-1}\alpha=[Id]$. 
 $\QED$
@@ -206,7 +202,7 @@ Vamos a empezar dando la noción general de espacio de configuración, introduci
 \begin{defi}
 Dado un espacio topológico $X$, el $n$-ésimo \emph{espacio de configuración} de $X$ o \emph{espacio de configuración de $n$ puntos} de $X$ se define como el conjunto
 $$M_n(X)=\{(x_1,\dots,x_n)\in X^n\mid x_i\neq x_j\ \forall i\neq j\},$$
-dotado de la topología relativa de $X^n$. Cuando el espacio topológico $X$ se sobreentienda por el contexto, el espacio de configuración se denotará simplemente $M_n$. 
+dotado de la topología de subsespacio de $X^n$. Cuando el espacio topológico $X$ se sobreentienda por el contexto, el espacio de configuración se denotará simplemente $M_n$. 
 \end{defi}
 
 Hay una acción natural del grupo simétrico $\Sigma_n$ en los puntos de $M_n(X)$ dada por 
@@ -214,7 +210,7 @@ Hay una acción natural del grupo simétrico $\Sigma_n$ en los puntos de $M_n(X)
 \Sigma_n\times M_n(X)\to M_n(x)\\
 \ (\sigma,x)\mapsto \sigma(x).
 \end{gather*}
-Esto da lugar al siguiente espacio:
+Esto da lugar al espacio definido a continuación:
 \begin{defi}
 Se define el $n$-ésimo \emph{espacio de configuración no ordenado} de $X$ o \emph{espacio de configuración de $n$ puntos no ordenados} de $X$ como 
 $$N_n(X)=M_n(X)/\Sigma_n,$$
@@ -230,7 +226,7 @@ Veamos un ejemplo no trivial de espacio de configuración. Consideremos $M_2(\R^
 \[
 (x_1,x_2)\mapsto (x_1+x_2,x_1-x_2).
 \]
-Es fácil ver que esta aplicación es un homeomorfismo, por lo que $M_2(\R^3)\cong \R^3\times(\R^3\setminus\{0\})$. Además, la aplicación es compatible con la acción de $\Sigma_2$, es decir, la aplicación sigue siendo un homeomorfismo sobre $\R^3\times(\R^3\setminus\{0\})$ al permutar las componentes. Sin embargo, punto a punto, lo que se observa es que la primera coordenada se conserva y la segunda cambia de signo tras la permutación. Por lo tanto, en $N_2(\R^3)=M_2(\R^3)/\Sigma_2$, $(x,y)\sim (x,-y)$ y no hay más puntos distintos relacionados entre sí. Por tanto, $N_2(\R^3)=\R^3\times(\R^3_{\geq 0}\setminus\{0\})$, donde $\R^3_{\geq 0}$ denota los puntos que tienen todas sus coordenadas no negativas.
+Es fácil ver que esta aplicación es un homeomorfismo, por lo que $M_2(\R^3)\cong \R^3\times(\R^3\setminus\{0\})$. Además, la aplicación es compatible con la acción de $\Sigma_2$, es decir, la aplicación sigue siendo un homeomorfismo sobre $\R^3\times(\R^3\setminus\{0\})$ al permutar las componentes. Sin embargo, punto a punto, lo que se observa es que la primera coordenada se conserva y la segunda cambia de signo tras la permutación. Por lo tanto, en $N_2(\R^3)=M_2(\R^3)/\Sigma_2$, $(x,y)\sim (x,-y)$ y no hay más puntos distintos relacionados entre sí. Por tanto, $N_2(\R^3)=\R^3\times(\R^3_{\geq 0}\setminus\{0\})$, donde $\R^3_{\geq 0}$ denota los puntos que tienen alguna coordenada no negativa.
 
 \end{ej}
 
@@ -244,12 +240,12 @@ El \emph{grupo de trenzas puras} de $n$ cuerdas, $PB_n$, es el grupo fundamental
 $$PB_n=\pi_1(M_n).$$
 \end{defi}
 
-Tratemos de visualizar esta definición. Una trenza pura $\beta\in\pi_1(M_n)$ es un lazo en $M_n$
+Tratemos de interpretar esta definición. Una trenza pura $\beta\in\pi_1(M_n)$ es un lazo en $M_n$
 \begin{align*}
 \beta: & [0,1]\to M_n\\
 & \quad t\ \mapsto \beta(t)= (\beta_1(t),\dots, \beta_n(t)),
 \end{align*}
-que empieza y acaba en el mismo punto base. Por tanto basta elegir un punto base de $M_n$, que puede ser, por ejemplo, la $n$-upla de enteros $(1,2,\dots, n)$. Una trenza pura será representada por el movimiento de estos puntos en $\C$, teniendo en cuenta que en cada momento los puntos son todos distintos entre sí. Al final del movimiento, cada punto regresa a su posición original. Por supuesto, el lazo está definido salvo homotopía, lo que nos permite deformar el movimiento de forma natural (evitando que dos puntos se encuentren en el mismo lugar al mismo tiempo), dando una trenza pura equivalente.
+Por tanto basta elegir un punto base de $M_n$, que puede ser, por ejemplo, la $n$-upla de enteros $(1,2,\dots, n)$. Una trenza pura será representada por el movimiento de estos puntos en $\C$, teniendo en cuenta que en cada momento los puntos son todos distintos entre sí. Al final del movimiento, cada punto regresa a su posición original. Por supuesto, el lazo está definido salvo homotopía, lo que nos permite deformar el movimiento de forma natural (evitando que dos puntos se encuentren en el mismo lugar al mismo tiempo), dando una trenza pura equivalente.
 
 Este movimiento se puede ver también en $\C\times[0,1]$, lo que nos daría una imagen similar a la de la Figura \ref{hilos} a la izquierda.
 
@@ -260,11 +256,11 @@ El \emph{grupo de trenzas} de $n$ cuerdas, $B_n$,  es el grupo fundamental del $
 $$B_n=\pi_1(N_n)=\pi_1(M_n/\Sigma_n).$$
 \end{defi}
 
-La equivalencia entre estás definiciones y la definición \ref{geo} se puede encontrar en \cite{Zariski}.
+La equivalencia entre estas definiciones y la definición \ref{geo} se puede encontrar en \cite{Zariski}.
 
-Al igual que antes, las trenzas pueden ser visualizadas como lazos, con la diferencia de que ahora, dado un lazo $\beta:[0,1]\to N_n$, $\beta(1)$ no tiene que ser necesariamente igual a $\beta(0)$, sino que puede ser una permutación de sus coordenadas. De nuevo, dos trenzas son consideradas iguales si son homotópicamente equivalentes. Al representar el movimiento en $\C\times[0,1]$ nos quedaría un dibujo similar al de la Figura \ref{hilos} a la derecha.
+Al igual que antes, las trenzas pueden ser visualizadas como lazos, con la diferencia de que ahora, dado un lazo $\beta:[0,1]\to N_n$, $\beta(1)$ puede tener como representante una permutación de las coordenadas de $\beta(0)$. De nuevo, dos trenzas son consideradas iguales si son homotópicamente equivalentes. Al representar el movimiento en $\C\times[0,1]$ nos quedaría un dibujo similar al de la Figura \ref{hilos} a la derecha.
 
-En ambos grupos de trenzas, el producto se corresponde con la concatenación de lazos, que se corresponde con realizar un movimiento después de otro, o en la representación tridimensional, con apilar trenzas (reescalando verticalmente) como en la Figura \ref{producto}. 
+En ambos grupos de trenzas, el producto se corresponde con la concatenación de lazos, que a su vez consiste en realizar un movimiento después de otro, o en la representación tridimensional, con apilar trenzas (reescalando verticalmente) como en la Figura \ref{producto}. 
 
 
 
@@ -281,13 +277,16 @@ donde $K\subseteq X$ es compacto y $U\subseteq Y$ es abierto. Es decir, los abie
 
 Sea pues $\D_n$ el disco cerrado menos $n$ puntos:
 $$\D_n=\D^2\setminus\{P_1,\dots, P_n\}.$$
-Sea $Homeo^+(\D_n)$ el conjunto de homeomorfismos que preservan la orientación de $\D_n$ en sí mismo, fijando los puntos del borde. Este conjunto admite la topología compacta-abierta. En efecto, basta tomar $K=U=\D^2$, considerando $P_1,\dots, P_n$ como puntos marcados en lugar de eliminarlos, y restringir la topología compacta-abierta al espacio de dichos homeomorfismos. Por tanto, tenemos una noción natural de \emph{deformación continua} de un automorfismo de $\D_n$, fijando el borde y los agujeros. Esta noción se formaliza mediante la siguiente definición.
+Sea $Homeo^+(\D_n)$ el conjunto de homeomorfismos de $\D_n$ en sí mismo que preservan la orientación y fijan los puntos del borde. Este conjunto admite la topología compacta-abierta. %En efecto, basta tomar $K=U=\D^2$, considerando $P_1,\dots, P_n$ como puntos marcados en lugar de eliminarlos, y restringir la topología compacta-abierta al espacio de dichos homeomorfismos. 
+Por tanto, tenemos una noción natural de \emph{deformación continua} de un automorfismo de $\D_n$, fijando el borde y los agujeros. Esta noción se formaliza mediante la siguiente definición.
 
+%https://math.stackexchange.com/questions/1347497/general-relationship-between-braid-groups-and-mapping-class-groups
 \begin{defi}
 Una \emph{isotopía} entre dos espacios topológicos $X$ e $Y$ es una familia continua de homeomorfismos $h_t:X\to Y$ con $0\leq t\leq 1$. Dos homeomorfismos $f,g:X\to Y$ son \emph{isotópicos} si existe una isotopía $h_t:X\to Y$ con $h_0=f$ y $h_1=g$. 
 \end{defi}
 
-Consideraremos que dos automorfismos son iguales si pueden ser transformados el uno en el otro mediante una isotopía de $\D_n$ en sí mismo que fije el borde y los agujeros. En otras palabras:
+Consideraremos que dos automorfismos son iguales si pueden ser transformados el uno en el otro mediante una isotopía de $\D_n$ en sí mismo que fije el borde punto a punto. En otras palabras:
+
 
 \begin{defi} Si denotamos $Homeo^+_0(\D_n)$ a la componente conexa de $Id_{\D_n}$ en $Homeo^+(\D_n)$, definimos entonces el \emph{mapping class group} (grupo de clases de aplicaciones) de $\D_n$ como:
 $$\mathcal{M}(\D_n)=Homeo^+(\D_n)/Homeo^+_0(\D_n).$$
@@ -295,7 +294,7 @@ $$\mathcal{M}(\D_n)=Homeo^+(\D_n)/Homeo^+_0(\D_n).$$
 
 Con esta definición se tiene \cite{Magnus}:
 $$\mathcal{M}(\D_n)\cong B_n.$$
-Se sabe que un automorfismo del disco cerrado $\D^2$ que fije la frontera puede ser deformado mediante isotopía a la identidad (se prueba mediante el conocido como \emph{truco de Alexander} \cite{Alexander}). Por tanto, dado un elemento de $\mathcal{M}(\D_n)$, se puede tomar un homeomorfismo de $\D_n$ que lo represente y extenderlo de forma única a un homeomorfismo $f$ de $\D^2$. A continuación, se toma una isotopía de $Id_{\D^2}$ en $f$, y se sigue el camino de los puntos $P_1,\dots, P_n$ durante la deformación. Esto nos da un lazo en $\pi_1(\D_n/\Sigma_n)$, que se corresponde con una trenza. 
+Se sabe que un automorfismo del disco cerrado $\D^2$ que fije la frontera puede ser deformado mediante isotopía a la identidad (se prueba mediante el conocido como \emph{truco de Alexander} \cite{Alexander}). Por tanto, dado un elemento de $\mathcal{M}(\D_n)$, se puede tomar un homeomorfismo de $\D_n$ que lo represente y extenderlo de forma única a un homeomorfismo $f$ de $\D^2$. A continuación, se toma una isotopía entre $Id_{\D^2}$ y $f$, y se sigue el camino de los puntos $P_1,\dots, P_n$ durante la deformación. Esto nos da un lazo en $\pi_1(N_n(\D_n))$, que se corresponde con una trenza. 
 
 
 %No es difícil probar que esto da lugar a una aplicación bien definida entre $\mathcal{M}(\D_n)$ y $B_n$ que es además homomorfismo de grupos. Por tanto, las trenzas pueden ser vistas como clases de aplicaciones del disco punteado.
@@ -305,7 +304,7 @@ Se sabe que un automorfismo del disco cerrado $\D^2$ que fije la frontera puede 
 \newpage
 
 \section{Presentación del grupo de trenzas}
-Una de las características mejor conocidas de los grupos de trenzas es su presentación finita descubierta por Artin en \cite{Artin}. Ya hemos mencionado los generadores $\sigma_1,\dots,\sigma_{n-1}\in B_n$ en \ref{estandar}. La presentación completa sería la siguiente:
+Una de las características mejor conocidas de los grupos de trenzas es su presentación finita descubierta por Artin en \cite{Artin}. Ya hemos mencionado los generadores $\sigma_1,\dots,\sigma_{n-1}\in B_n$ en la definición \ref{estandar}. La presentación completa sería la siguiente:
 \begin{equation}\label{presentacion}
 B_n=\left\langle\begin{array}{c| c c}
 \multirow{2}{*}{$\sigma_1,\dots,\sigma_{n-1}$} & \sigma_i\sigma_j=\sigma_j\sigma_i, & |i-j|>1\\
@@ -314,7 +313,7 @@ B_n=\left\langle\begin{array}{c| c c}
 \end{equation}
 La prueba de la completitud de esta presentación puede encontrarse en \cite{Magnus}. 
 
-Vamos a dar también la presentación del grupo de trenzas puras, en concreto la dada por J. S. Birman en \cite{Birman} y corregida por J. González-Meneses y M. Silvero en \cite{polynomial}, pues nos será más útil para probar ciertos resultados. La presentación original dada por Artin se puede encontrar en \cite{Artin}. Así pues, definimos los \emph{generadores de Birman}
+Vamos a dar también la presentación del grupo de trenzas puras, en concreto la dada por J. S. Birman en \cite{Birman} (ver también \cite{polynomial}), pues nos será más útil para probar ciertos resultados. La presentación original dada por Artin se puede encontrar en \cite{Artin}. Así pues, definimos los \emph{generadores de Birman}
 \begin{equation}\label{birman}
 A_{ij}=\sigma_{j-1}\dots\sigma_{i+1}\sigma_i^2\sigma_{i+1}^{-1}\dots\sigma_{j-1}^{-1}\ (1\leq i<j\leq n)
 \end{equation}
@@ -350,15 +349,16 @@ En la Figura \ref{generador} se puede observar qué trenza representa geométric
 \tikzset{decorate sep/.style 2 args=
 {decorate,decoration={shape backgrounds,shape=circle,shape size=#1,shape sep=#2}}}
 \begin{tikzpicture}
-\draw[white,double=black,very thick,-] (-3,-2) -- (-3,0);
+
 
 
 \node[anchor=south] at (0,2.1) {$j$};
 \foreach \x in {-7,-4,-2,-1,1,4}{
 \draw[white,double=black,very thick,-] (\x,-2) -- (\x,2);
 }
-\draw[smooth,white,double=black,line width=2mm,-] plot[variable=\x,domain=-2:2] ({-3.5*exp(-1.4*\x*\x)},{\x});
 \draw[white,double=black,very thick,-] (-3,0) -- (-3,2);
+\draw[smooth,white,double=black,line width=2mm,-] plot[variable=\x,domain=-2:2] ({-3.5*exp(-1.4*\x*\x)},{\x});
+\draw[white,double=black,very thick,-] (-3,-2) -- (-3,0);
 \node[anchor=south] at (-3,2.1) {$i$};
 \draw[decorate sep={1mm}{9mm},fill] (-6.5,0) -- (-4.5,0);
 \draw[decorate sep={1mm}{9mm},fill] (1.5,0) -- (3.5,0);
@@ -385,7 +385,7 @@ A_{ij}A_{rs}A_{ij}^{-1}&=A_{js}^{-1}A_{is}^{-1}A_{js}A_{is}A_{rs}A_{is}^{-1}A_{j
 \section{Definiciones y resultados adicionales}
 
 
-En esta sección veremos definiciones y resultados que no son exclusivos de los grupos de trenzas, pero que serán utilizados a lo largo del trabajo. 
+En esta sección veremos definiciones y resultados más generales  que serán utilizados a lo largo del trabajo. 
 \subsection{Producto semidirecto}
 
 \begin{defi}
