@@ -20,7 +20,7 @@ Empezamos dando la definición más gráfica e intuitiva, consistente en visuali
 Sea $n\geq 1$ un entero. Denotemos $\Sigma_n$ al grupo simétrico sobre $n$ elementos. Sean $n$ puntos $P_1,\dots, P_n$ en $\C$ (se puede suponer que $P_k=k$ para todo $1\leq k\leq n$). Se define la \emph{trenza geométrica de $n$ cuerdas} como la $n$-upla $\beta=(\beta_1,\dots,\beta_n)$ de caminos $\beta_k:[0,1]\to\C\times[0,1]$ tal que:
 \begin{itemize}
 \item $\beta_k(0)=(P_k,0)$ para todo $1\leq k\leq n$,
-\item la segunda coordenada de $\beta_k(t)$ es igual a $t$ para todo $1\leq k\leq n$ y para todo $t\in [0,1]$,
+\item la segunda coordenada de $\beta_k(t)$ es la misma función monótona creciente para todo $1\leq k\leq n$, 
 \item existe una permutación $\tau=\tau(\beta)\in\Sigma_n$ tal que $\beta_k(1)=(P_{\tau(k)},1)$ para todo $1\leq k\leq n$, llamada \emph{permutación inducida por $\beta$},
 \item $\beta_k(t)\neq \beta_l(t)$ para todo $k\neq l$ y para todo $t\in[0,1]$.
 \end{itemize}
@@ -172,6 +172,12 @@ En efecto, usando las propiedades de la homotopía de caminos con respecto al ca
 \[
 \alpha\alpha^{-1}=[(a_1,\dots, a_n)\cdot (\overline{a}_{\tau^{-1}(1)},\dots, \overline{a}_{\tau^{-1}(n)})]=[(a_1\overline{a}_{\tau(\tau^{-1}(1))},\dots, a_n\overline{a}_{\tau(\tau^{-1}(n))})]=[Id]
 \]
+
+Obsérvese que la segunda coordenada de la concatenación no tiene por qué ser exactamente igual al camino identidad, pero sí será siempre homotópico a él. Efectivamente, si la segunda coordenada resulta un camino $f:[0,1]\to [0,1]$, podemos llevarlo a la identidad den $[0,1]$ con la homotopía $H:[0,1]\times[0,1]\to [0,1]$ dada por
+\[
+H(x,t)=(1-t)f(x)-tx.
+\]
+
 Análogamente se prueba $\alpha^{-1}\alpha=[Id]$. 
 $\QED$
 \end{dem}
@@ -389,18 +395,18 @@ En esta sección veremos definiciones y resultados más generales  que serán ut
 \subsection{Producto semidirecto}
 
 \begin{defi}
-Si un grupo $G$ actúa (por la izquierda) sobre un grupo $F$ mediante un automorfismo de grupos
+Si un grupo $G$ actúa (por la izquierda) sobre un grupo $F$ mediante automorfismos de grupos
 \[
 \rho: G\to Aut(F),
 \]
-el \emph{producto semidirecto} $F\rtimes G$ es el grupo cuyo conjunto subyacente es el producto cartesiano $F\times G$ y el producto está definido como 
+el \emph{producto semidirecto} $F\rtimes G$ es el grupo cuyo conjunto subyacente es el producto cartesiano $F\times G$ y cuyo producto está definido como 
 \[
 (\delta,h)(\gamma,g)=(\delta\rho_h(\gamma),hg)
 \]
-para $\delta,\gamma\in F$ y $h,g\in G$. Análogamente se puede definir $G\ltimes F$ utilizando una acción por la derecha. 
+para $\delta,\gamma\in F$ y $h,g\in G$. Análogamente se puede definir $F\ltimes G$ utilizando una acción por la derecha. 
 \end{defi}
 
-En la definición hemos dicho que era un grupo, pero para ello tenemos que cerciorarnos de que se verifican los axiomas de grupo.
+En la definición hemos establecido que era un grupo, pero para ello tenemos que cerciorarnos de que se verifican los axiomas de grupo.
 
 \begin{prop}
 El producto semidirecto $F\rtimes G$ definido anteriormente es un grupo.
@@ -428,7 +434,7 @@ Por la forma en el que está definido el producto semidirecto, conseguimos conse
  $F$ se puede ver como subgrupo normal de $F\rtimes G$ mediante la aplicación $\delta\mapsto (\delta,e_G)$, mientras que $G$ se puede ver como subgrupo mediante la aplicación $h\mapsto (e_F,h)$.
 \end{prop}
 \begin{dem}
-En ambos casos es elemental comprobar que la imagen de cada uno es un subgrupo, pues en ambos casos la asociatividad se hereda de $F\rtimes G$ y el elemento neutro $e=(e_F,e_G)$ está en los dos. Así mismo, atendiendo a la demostración anterior, vemos que cada componente del inverso está en el grupo correspondiente. Así que vamos a probar que la imagen de $F$ mediante la aplicación $\delta\mapsto (\delta,e_G)$ es un subgrupo normal de $F\rtimes G$. Para ello vamos a ver que $F\times\{e_G\}$ es el núcleo de un cierto homomorfismo de grupos $\varphi:F\rtimes G\to G$. Este homomorfismo vendrá definido como $\varphi(\delta,h)=h$, el cual es fácil ver que efectivamente es homomorfismo de grupos. Claramente $\ker\varphi=\{(\delta,h)\mid h=e_G\}=F\times\{e_G\}$, como queríamos demostrar. 
+En ambos casos es elemental probar que se tratan de morfismos inyectivos. Así que vamos a probar que la imagen de $F$ mediante la aplicación $\delta\mapsto (\delta,e_G)$ es un subgrupo normal de $F\rtimes G$. Para ello vamos a ver que $F\times\{e_G\}$ es el núcleo de un cierto homomorfismo de grupos $\varphi:F\rtimes G\to G$. Este homomorfismo vendrá definido como $\varphi(\delta,h)=h$, el cual es fácil ver que efectivamente es homomorfismo de grupos. Claramente $\ker\varphi=\{(\delta,h)\mid h=e_G\}=F\times\{e_G\}$, como queríamos demostrar. 
 \QED
 %https://groupprops.subwiki.org/wiki/Normal_subgroup_equals_kernel_of_homomorphism
 %El razonamiento análogo para G no se podría hacer porque el producto en F es el normal y en la primera componente es el producto twisteado, que no coincidiría en general
@@ -444,7 +450,7 @@ Dados tres grupos $F$, $G$ y $H$, se dice que $H$ es una \emph{extensión} de $F
 \[
 1\to F\to H\to G\to 1.
 \]
-En el caso de que $B$ sea un grupo finito, diremos que la extensión es \emph{finita}.
+En el caso de que $G$ sea un grupo finito, diremos que la extensión es \emph{finita}.
 \end{defi} 
 
 \begin{prop}\label{semidirect}
@@ -452,13 +458,13 @@ Si $H$ es una extensión de $F$ por $G$, de modo que la sucesión exacta
 \[
 1\to F\to H\to G\to 1
 \]
-escinde y la imagen de $F$ es normal dentro de $H$, entonces $H\cong F\rtimes G$. El recíproco también es cierto. 
+escinde, entonces $H\cong F\rtimes G$. El recíproco también es cierto. 
 \end{prop}
-
+%la imagen de F siempre es normal en H por ser isomorfa al núcleo de la otra
 \begin{dem}
-Supongamos que tenemos una sección $s:G\to H$. Como la imagen de $F$ es isomorfa a $F$, podemos indentificar ambos grupos. Definamos pues, $\rho:G\to Aut(F)$, como $g\to C_{s(g)}|_F$, donde $C_{s(g)}$ denota la conjugación por $s(g)$ en $H$. Al restringirlo a $F$, esto nos da un automorfismo bien defino al ser $F$ normal en $H$. Así que hemos definido una acción mediante automorfismos que define un producto semidirecto isomorfo a $F\rtimes G$. 
+Supongamos que tenemos una sección $s:G\to H$. Como la imagen de $F$ es isomorfa a $F$, podemos identificar ambos grupos. Definamos pues $\rho:G\to Aut(F)$ como $g\to C_{s(g)}|_F$, donde $C_{s(g)}$ denota la conjugación por $s(g)$ en $H$. Al restringirlo a $F$, esto nos da un automorfismo bien definido al ser $F$ normal en $H$ al ser el núcleo de la aplicación $H\to G$. Así que hemos definido una acción mediante automorfismos que da lugar a un producto semidirecto isomorfo a $F\rtimes G$. 
 
-El recíproco nos lo da la proposición \ref{reciproco}, en la cual definimos la sección y probamos que la imagen de $F$ era normal en el producto semidirecto.
+El recíproco nos lo da la proposición \ref{reciproco}, en la cual definimos la sección $h\mapsto (e_F,h)$ y probamos que la imagen de $F$ era normal en el producto semidirecto.
 \QED
 %Para el recíproco basta tomar la sucesión exacta de inclusión y cociente por ser F normal y el cociente sale isomorfo a G con el 1er tma isomorfía usando la aplicación que he elegido en la demostración anterior \url{https://math.stackexchange.com/questions/339731/relation-between-semidirect-products-extensions-and-split-extensions}
 \end{dem}
@@ -474,12 +480,12 @@ El recíproco nos lo da la proposición \ref{reciproco}, en la cual definimos la
 \subsection{Monoides}
 
 \begin{defi}
-Un \emph{monoide} es una tupla $(S,*)$, donde $S$ es un conjunto y $*:S\times S\to S$ es una operación binaria satisfaciendo:
+Un \emph{monoide} es un par $(S,*)$, donde $S$ es un conjunto y $*:S\times S\to S$ es una operación binaria satisfaciendo:
 \begin{itemize}
 \item Asociatividad, es decir, para cualesquiera $a,b,c\in S$, $(a*b)*c=a*(b*c)$.
 \item Existencia de elemento neutro, es decir, existe $e\in S$ tal que para todo $a\in S$, $e*a=a*e=a$. 
 \end{itemize}
-Habitualmente el símbolo de la operación será omitido y nos referiremos a $S$ como monoide, entendiéndose que en realidad es la tupla anterior.
+Habitualmente el símbolo de la operación será omitido y nos referiremos a $S$ como monoide, entendiéndose que en realidad es el par anterior.
 \end{defi}
 
 De forma análoga a como se hace para grupos, podemos considerar los generadores de un monoide y una presentación de un monoide mediante generadores y relaciones. También se definen de forma análoga los morfismos entre monoides. 
@@ -495,7 +501,7 @@ Decimos que un monoide $S$ se \emph{inyecta} en su grupo de fracciones $G(S)$, s
 \end{defi}
 \newpage
 \begin{defi}\label{condiciones}
-Decimos que un monoide $S$ satisface las \emph{condiciones de Ore} \cite{Ore} si se cumplen:
+Decimos que un monoide $S$ satisface las \emph{condiciones de Ore} \cite{Ore} si se cumple:
 \begin{itemize}
 \item $S$ es cancelativo, es decir, $xay=xby$ implica $a=b$ para todo $x,y,a,b\in S$. 
 \item Para todo $a,b\in S$ existen $a',b'\in S$ tales que $aa'=bb'$ (existe un múltiplo común). 
@@ -503,7 +509,7 @@ Decimos que un monoide $S$ satisface las \emph{condiciones de Ore} \cite{Ore} si
 \end{defi}
 
 \begin{prop}
-Si un monoide satisface las condiciones de Ore, entonces se inyecta en su grupo de fracciones (\cite{Clifford}, teorema 1.23).
+Si un monoide satisface las condiciones de Ore, entonces se inyecta en su grupo de fracciones \cite[Teorema 1.23]{Clifford}.
 \end{prop}
 
 
@@ -515,7 +521,7 @@ Sea $X$ un espacio topológico. Un \emph{espacio recubridor} de $X$ es un espaci
 \end{defi}
 
 \begin{ej}
-El ejemplo más habitual de espacio recubridor es $\R$ con la aplicación $p:\R\to S^1$ dada por $p(t)=e^{2\pi i t}$. En este caso, el espacio recubierto es la circunferencia $S^1$. 
+El ejemplo más habitual de espacio recubridor se da para $S^1$ usando como espacio recubridor $\R$ con la aplicación $p:\R\to S^1$ dada por $p(t)=e^{2\pi i t}$. 
 \end{ej}
 
 \begin{defi}
@@ -542,13 +548,13 @@ Podemos dar un espacio recubridor de $S^1$ que se corresponda, por ejemplo, al g
 
 
 
-A continuación vamos a ver una serie de definiciones y resultados que aparecen en \cite{Hatcher}, en la sección \emph{Covering Spaces}, los cuales usaremos más adelante.
+A continuación vamos a ver una serie de definiciones y resultados cuyas pruebas aparecen en \cite{Hatcher}, en la sección \emph{Covering Spaces}, que usaremos más adelante.
 
 \begin{defi}
 Un espacio topológico $X$ se dice que es \emph{semilocalmente simplemente conexo} si todo punto $x\in X$ tiene un entorno $U$ tal que cualquier lazo de $U$ basado en $x$ es contráctil en $X$. 
 \end{defi}
 %La contracción del lazo de U no tiene que hacerse sin salirse de U
-Nótese que esta condición no implica que $U$ sea simplemente conexo, pues la contracción del lazo no se tiene por qué realizar enteramente dentro de $U$.
+Nótese que esta condición no implica que $U$ sea simplemente conexo, pues la contracción del lazo no se tiene por qué realizar enteramente dentro de $U$. Ejemplo de espacio topológico no semilocalmente simplemente conexo es el \emph{pendiente hawaiiano}\footnote{\url{https://en.wikipedia.org/wiki/Hawaiian_earring}}.
 
 \begin{prop}
 Dado un espacio recubridor $p:\widetilde{X}\to X$, una homotopía $f_t:Y\to X$ y una aplicación continua $\widetilde{f}_0:Y\to\widetilde{X}$ levantando a $f_0$, se tiene que existe una única homotopía $\widetilde{f}_t:Y\to\widetilde{X}$ de $\widetilde{f}_0$ que levanta a $f_t$.
@@ -565,7 +571,7 @@ La aplicación $p_*:\pi_1(\widetilde{X})\to\pi_1(X)$ inducida por $p:\widetilde{
 %\end{prop}
 
 \begin{prop}
-Sea $X$ conexo por caminos, localmente conexo por caminos y semilocalmente simplemente conexo. Entonces, para todo subgrupo $H\subseteq \pi_1(X)$, existe un espacio recubridor $p:\widetilde{X}\to X$ tal que $p_*(\pi_1(\widetilde{X}))=H$ eligiendo adecuadamente el punto base $\widetilde{x}$. 
+Sea $X$ conexo por caminos, localmente conexo por caminos y semilocalmente simplemente conexo. Entonces, para todo subgrupo $H\subseteq \pi_1(X)$, existe un espacio recubridor $p:\widetilde{X}\to X$ tal que $p_*(\pi_1(\widetilde{X}))=H$ si se elige adecuadamente el punto base $\widetilde{x}$. 
 \end{prop}
 
 Con esta última proposición, podemos asociar a cada subgrupo de $\pi_1(X)$ un espacio recubridor $\widetilde{X}$ que se corresponda con ese subgrupo.

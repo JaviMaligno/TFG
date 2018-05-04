@@ -15,7 +15,7 @@ Vamos a empezar este capítulo dando otra interpretación de los grupos de trenz
 \caption{Los lazos $x_1,\dots,x_n$ son generadores de $\pi_1(\D_n)$.}\label{disco}
 \end{figure}
 
-Observamos que el grupo fundamental del disco agujereado $n$ veces, $\D_n$, es precisamente el grupo libre de rango $n$, es decir, $\pi_1(\D_n)=F_n$. Si fijamos un punto base, digamos, en el borde del disco, podemos tomar como generadores los lazos $x_1,\dots, x_n$ descritos en la Figura \ref{disco}. Ahora, una trenza $\beta\in B_n$ puede ser vista como un automorfismo de $\D_n$ que es la identidad en el borde $\partial(\D_n)$ salvo isotopía (que también fija los puntos de $\partial(\D_n)$), así que $\beta$ induce una acción bien definida sobre $\pi_1(\D_n)=F_n$, donde un lazo $\gamma\in\pi_1(\D_n)$ es enviado a $\beta(\gamma)$. Esta acción es claramente un homomorfismo de grupos (respeta la concatenación), %igual esto debería intentar comprobarlo cuando entienda lo de los mapping class mejor 
+Observamos que el grupo fundamental del disco agujereado $n$ veces, denotado $\D_n$, es precisamente el grupo libre de rango $n$, es decir, $\pi_1(\D_n)=F_n$. Si fijamos un punto base, digamos, en el borde del disco, podemos tomar como generadores los lazos $x_1,\dots, x_n$ descritos en la Figura \ref{disco}. Ahora, una trenza $\beta\in B_n$ puede ser vista como un automorfismo de $\D_n$ que es la identidad en el borde $\partial(\D_n)$ salvo isotopía (que también fija los puntos de $\partial(\D_n)$), así que $\beta$ induce una acción bien definida sobre $\pi_1(\D_n)=F_n$, donde un lazo $\gamma\in\pi_1(\D_n)$ es enviado a $\beta(\gamma)$. Esta acción es claramente un homomorfismo de grupos (respeta la concatenación), %igual esto debería intentar comprobarlo cuando entienda lo de los mapping class mejor 
 el cual es biyectivo pues $\beta^{-1}$ da lugar a la acción inversa. Entonces, $\beta$ induce un automorfismo de $F_n$, y esto nos da la representación
 %\[
 %\begin{tikzcd}
@@ -27,7 +27,7 @@ el cual es biyectivo pues $\beta^{-1}$ da lugar a la acción inversa. Entonces, 
 \rho: & B_n \to Aut(F_n)\\
       & \beta\ \ \mapsto\ \ \rho_\beta.
 \end{align*}
-El automorfismo $\rho_\beta$ puede ser descrito fácilmente cuando $\beta=\sigma_i$, dando la imagen de los generadores $x_1,\dots, x_n$ de $F_n$ (ver Figura \ref{auto}), esto es:
+El automorfismo $\rho_\beta$ puede ser descrito fácilmente cuando $\beta=\sigma_i$, identificando la imagen de los generadores $x_1,\dots, x_n$ de $F_n$ (ver Figura \ref{auto}), esto es:
 $$\rho_{\sigma_i}(x_i)=x_{i+1},\quad \rho_{\sigma_i}(x_{i+1})=x_{i+1}^{-1}x_ix_{i+1},\quad \rho_{\sigma_i}(x_j)=x_j\ (j\neq i,i+1).$$
 El automorfismo $\rho_{\sigma_i^{-1}}=\rho^{-1}_{\sigma_i}$ puede ser deducido fácilmente a partir de $\rho_{\sigma_i}$, lo que nos da
 $$\rho^{-1}_{\sigma_i}(x_i)=x_ix_{i+1}x_i^{-1},\quad \rho^{-1}_{\sigma_i}(x_{i+1})=x_i,\quad \rho^{-1}_{\sigma_i}(x_j)=x_j\ (j\neq i,i+1).$$
