@@ -119,10 +119,42 @@ Denotemos $\Sigma_n$ al grupo simétrico sobre $n$ elementos. Sean $n$ puntos $P
 \end{figure}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
 \frametitle{Representación plana}
 \begin{figure}[h!]
-\includegraphics[scale=0.6]{Imagenes/Diapcruce}
+\resizebox{11cm}{2.5cm}{
+\begin{tikzpicture}
+\fill[black] ( 6.7 , -0.5 ) circle ( 1 pt ) ;
+\fill[black] ( 7 , -0.5 ) circle ( 1 pt ) ;
+\fill[black] ( 7.3 , -0.5 ) circle ( 1 pt ) ;
+
+\fill[black] ( 1.7 , -0.5 ) circle ( 1 pt ) ;
+\fill[black] ( 2 , -0.5 ) circle ( 1 pt ) ;
+\fill[black] ( 2.3 , -0.5 ) circle ( 1 pt ) ;
+\braid[ number of strands=8, %lower bound
+ border height=2pt,style strands={8}{line width=2pt}, style strands={7}{draw=none},style strands={6}{line width=2pt},style strands={5}{line width=2pt},style strands={4}{line width=2pt},style strands={3}{line width=2pt}, style strands={2}{draw=none},style strands={1}{line width=2pt}] (braid) at (1,0)%optional, it's a name
+          a_4^{-1};
+          \node[ at=(braid-4-s),  label=north :  $i$ ] {} ;
+\node[ at=(braid-5-s),  label=north : $i+1$ ] {} ;
+\draw (4.5,-2) node[anchor=south] {$\sigma_i$};
+\end{tikzpicture}
+\qquad
+\begin{tikzpicture}
+\fill[black] ( 6.7 , -0.5 ) circle ( 1 pt ) ;
+\fill[black] ( 7 , -0.5 ) circle ( 1 pt ) ;
+\fill[black] ( 7.3 , -0.5 ) circle ( 1 pt ) ;
+
+\fill[black] ( 1.7 , -0.5 ) circle ( 1 pt ) ;
+\fill[black] ( 2 , -0.5 ) circle ( 1 pt ) ;
+\fill[black] ( 2.3 , -0.5 ) circle ( 1 pt ) ;
+\braid[ number of strands=8, %lower bound
+ border height=2pt,style strands={8}{line width=2pt}, style strands={7}{draw=none},style strands={6}{line width=2pt},style strands={5}{line width=2pt},style strands={4}{line width=2pt},style strands={3}{line width=2pt}, style strands={2}{draw=none},style strands={1}{line width=2pt}] (braid) at (1,0)%optional, it's a name
+          a_4;
+          \node[ at=(braid-4-s),  label=north :  $i$ ] {} ;
+\node[ at=(braid-5-s),  label=north : $i+1$ ] {} ;
+\draw (4.5,-2) node[anchor=south] {$\sigma_i^{-1}$};
+\end{tikzpicture}
+}
 \caption{Cruce positivo y cruce negativo.}
 \end{figure}
 \end{frame}

@@ -62,20 +62,35 @@ Normalmente, se representan las trenzas como su proyección en $\R\times[0,1]$ (
 Se definen los \emph{generadores estándar} o \emph{generadores de Artin} como las trenzas $\sigma_i$ con $1\leq i\leq n-1$ indicadas en la figura siguiente.
 \begin{figure}[h!]
 \begin{tikzpicture}
-\braid[ number of strands=3, %lower bound
- border height=2pt,style strands={1}{line width=2pt},style strands={2}{line width=2pt},style strands={3}{draw=none}] (braid) at (1,0)%optional, it's a name
-          a_1^{-1};
-            \node[ at=(braid-1-s),  label=north :  $i$ ] {} ;
-\node[ at=(braid-2-s),  label=north : $i+1$ ] {} ;
-\draw (1.5,-2) node[anchor=south] {$\sigma_i$};
+\fill[black] ( 6.7 , -0.5 ) circle ( 1 pt ) ;
+\fill[black] ( 7 , -0.5 ) circle ( 1 pt ) ;
+\fill[black] ( 7.3 , -0.5 ) circle ( 1 pt ) ;
+
+\fill[black] ( 1.7 , -0.5 ) circle ( 1 pt ) ;
+\fill[black] ( 2 , -0.5 ) circle ( 1 pt ) ;
+\fill[black] ( 2.3 , -0.5 ) circle ( 1 pt ) ;
+\braid[ number of strands=8, %lower bound
+ border height=2pt,style strands={8}{line width=2pt}, style strands={7}{draw=none},style strands={6}{line width=2pt},style strands={5}{line width=2pt},style strands={4}{line width=2pt},style strands={3}{line width=2pt}, style strands={2}{draw=none},style strands={1}{line width=2pt}] (braid) at (1,0)%optional, it's a name
+          a_4^{-1};
+          \node[ at=(braid-4-s),  label=north :  $i$ ] {} ;
+\node[ at=(braid-5-s),  label=north : $i+1$ ] {} ;
+\draw (4.5,-2) node[anchor=south] {$\sigma_i$};
 \end{tikzpicture}
+
 \begin{tikzpicture}
-\braid[ number of strands=3, %lower bound
- border height=2pt,style strands={3}{line width=2pt},style strands={2}{line width=2pt}, style strands={1}{draw=none}] (braid) at (1,0)%optional, it's a name
-          a_2;
-          \node[ at=(braid-2-s),  label=north :  $i$ ] {} ;
-\node[ at=(braid-3-s),  label=north : $i+1$ ] {} ;
-\draw (2.5,-2) node[anchor=south] {$\sigma_i^{-1}$};
+\fill[black] ( 6.7 , -0.5 ) circle ( 1 pt ) ;
+\fill[black] ( 7 , -0.5 ) circle ( 1 pt ) ;
+\fill[black] ( 7.3 , -0.5 ) circle ( 1 pt ) ;
+
+\fill[black] ( 1.7 , -0.5 ) circle ( 1 pt ) ;
+\fill[black] ( 2 , -0.5 ) circle ( 1 pt ) ;
+\fill[black] ( 2.3 , -0.5 ) circle ( 1 pt ) ;
+\braid[ number of strands=8, %lower bound
+ border height=2pt,style strands={8}{line width=2pt}, style strands={7}{draw=none},style strands={6}{line width=2pt},style strands={5}{line width=2pt},style strands={4}{line width=2pt},style strands={3}{line width=2pt}, style strands={2}{draw=none},style strands={1}{line width=2pt}] (braid) at (1,0)%optional, it's a name
+          a_4;
+          \node[ at=(braid-4-s),  label=north :  $i$ ] {} ;
+\node[ at=(braid-5-s),  label=north : $i+1$ ] {} ;
+\draw (4.5,-2) node[anchor=south] {$\sigma_i^{-1}$};
 \end{tikzpicture}
 \end{figure}
 \end{defi}\
