@@ -79,8 +79,15 @@ $$PB_{n+1}\cong F_n\rtimes (F_{n-1} \rtimes\dots\rtimes (F_3\rtimes (F_2\rtimes 
 %$\heartsuit$
 De igual modo, podríamos empezar con $PB_{n+1}\cong PB_n\ltimes F_n$, lo que nos daría
 $$PB_{n+1}\cong ((\cdots ((F_1\ltimes F_2)\ltimes F_3)\ltimes\dots\ltimes F_{n-1})\ltimes F_n.$$
-Por tanto, cada trenza de $PB_{n+1}$ se expresa de forma única como producto de elementos de los grupos libres desde $F_1$ hasta $F_n$, donde los generadores pueden ser vistos como los generadores de Birman de las trenzas puras. Esto nos permitirá resolver el problema de la palabra en los grupos de trenzas puras mediante un proceso denominado \emph{peinado de trenzas}, consistente en expresar una trenza pura como un elemento del producto semidirecto anterior. El nombre es debido a que, geométricamente, la trenza original se convierte en una trenza en que en cada nivel solo se mueve una cuerda (en el nivel $j$ se mueve la cuerda $j$ mediante los generadores $A_{ij}$ con $i<j$ de $F_{j-1}$).
+Por tanto, cada trenza de $PB_{n+1}$ se expresa de forma única como producto de elementos de los grupos libres desde $F_1$ hasta $F_n$, donde los generadores pueden ser vistos como los generadores de Birman de las trenzas puras. Esto nos permitirá resolver el problema de la palabra en los grupos de trenzas puras mediante un proceso denominado \emph{peinado de trenzas}, consistente en expresar una trenza pura como un elemento del producto semidirecto anterior. El nombre es debido a que, geométricamente, la trenza original se convierte en una trenza en que en cada nivel solo se mueve una cuerda (en el nivel $j$ se mueve la cuerda $j$ mediante los generadores $A_{ij}$ con $i<j$ de $F_{j-1}$, ver Figura \ref{peinada}).
 
+
+\begin{figure}[h!]
+\begin{turn}{1.5}
+\includegraphics[scale=0.4]{Imagenes/peinado}
+\end{turn}
+\caption{Trenza peinada.}\label{peinada}
+\end{figure}
 %PEDIR DIBUJOS A JUAN
 
 
@@ -133,6 +140,27 @@ Nos quedan entonces un factor que expresar como producto de los generadores de B
 \end{align*}
 Este hecho se puede observar geométricamente en la Figura \ref{peinado}.
 
+
+
+Por tanto, $\beta=A_{23}^{-1}A_{13}^{-1}A_{23}A_{34}^{-1}A_{12}$. Todavía no la tenemos de la forma buscada pues el orden no es el correcto. Por tanto, usamos las relaciones del grupo de trenzas puras para expresarla en el orden correcto. De todos modos, en este caso ya sabemos que no será trivial porque aparece $A_{12}$, generador de $F_1$, pero continuaremos el algoritmo por mostrar un ejemplo completo.
+
+En este caso moveremos $A_{12}$ hacia la izquierda con los siguientes pasos.
+
+%Para ahorrar espacio usaremos la notación $a^b=b^{-1}ab$. Obsérvese que $(a^b)^c=a^{bc}$, pues $(a^b)^c=(b^{-1}ab)^c=c^{-1}b^{-1}abc=a^{bc}$. Así pues,
+%\begin{gather*}
+%A_{23}^{-1}A_{13}^{-1}\underline{A_{23}A_{34}^{-1}}A_{12}=\\
+%A_{23}^{-1}A_{13}^{-1}\underline{( A_{34}^{-1}A_{24}^{-1}A_{34}^{-1}A_{24}A_{34}) A_{23}}A_{12}=
+%\end{gather*}
+
+\begin{gather*}
+A_{23}^{-1}A_{13}^{-1}A_{23}\underline{A_{34}^{-1}A_{12}}=\\
+A_{23}^{-1}A_{13}^{-1}\underline{A_{23}A_{12}}A_{34}^{-1}=\\
+A_{23}^{-1}A_{13}^{-1}\underline{A_{12}(A_{13}A_{23}A_{13}^{-1})}A_{34}^{-1}=\\
+A_{23}^{-1}\underline{A_{12}(A_{13}A_{23}A_{13}^{-1}A_{23}^{-1}A_{13}^{-1}}A_{13}A_{23}A_{13}^{-1})A_{34}^{-1}=\\
+\underline{A_{12}(A_{13}A_{23}^{-1}A_{13}^{-1}}A_{13}A_{23}A_{13}^{-1}A_{23}^{-1}A_{13}^{-1}A_{13}A_{23}A_{13}^{-1})A_{34}^{-1}.
+\end{gather*}
+Tal como adelantábamos, claramente no es trivial.
+
 \begin{figure}[h!]
 \centering
 \tikzset{decorate sep/.style 2 args=
@@ -182,24 +210,6 @@ Este hecho se puede observar geométricamente en la Figura \ref{peinado}.
 \caption{En el primer paso tiramos hacia la izquierda de la tercera cuerda, arrastrando con ella la primera, y en el segundo la vamos doblando.}\label{peinado}
 \end{figure}
 
-Por tanto, $\beta=A_{23}^{-1}A_{13}^{-1}A_{23}A_{34}^{-1}A_{12}$. Todavía no la tenemos de la forma buscada pues el orden no es el correcto. Por tanto, usamos las relaciones del grupo de trenzas puras para expresarla en el orden correcto. De todos modos, en este caso ya sabemos que no será trivial porque aparece $A_{12}$, generador de $F_1$, pero continuaremos el algoritmo por mostrar un ejemplo completo.
-
-En este caso moveremos $A_{12}$ hacia la izquierda con los siguientes pasos.
-
-%Para ahorrar espacio usaremos la notación $a^b=b^{-1}ab$. Obsérvese que $(a^b)^c=a^{bc}$, pues $(a^b)^c=(b^{-1}ab)^c=c^{-1}b^{-1}abc=a^{bc}$. Así pues,
-%\begin{gather*}
-%A_{23}^{-1}A_{13}^{-1}\underline{A_{23}A_{34}^{-1}}A_{12}=\\
-%A_{23}^{-1}A_{13}^{-1}\underline{( A_{34}^{-1}A_{24}^{-1}A_{34}^{-1}A_{24}A_{34}) A_{23}}A_{12}=
-%\end{gather*}
-
-\begin{gather*}
-A_{23}^{-1}A_{13}^{-1}A_{23}\underline{A_{34}^{-1}A_{12}}=\\
-A_{23}^{-1}A_{13}^{-1}\underline{A_{23}A_{12}}A_{34}^{-1}=\\
-A_{23}^{-1}A_{13}^{-1}\underline{A_{12}(A_{13}A_{23}A_{13}^{-1})}A_{34}^{-1}=\\
-A_{23}^{-1}\underline{A_{12}(A_{13}A_{23}A_{13}^{-1}A_{23}^{-1}A_{13}^{-1}}A_{13}A_{23}A_{13}^{-1})A_{34}^{-1}=\\
-\underline{A_{12}(A_{13}A_{23}^{-1}A_{13}^{-1}}A_{13}A_{23}A_{13}^{-1}A_{23}^{-1}A_{13}^{-1}A_{13}A_{23}A_{13}^{-1})A_{34}^{-1}.
-\end{gather*}
-Tal como adelantábamos, claramente no es trivial.
 \end{ej}
 
 Como hemos podido comprobar en el ejemplo anterior, la palabra se va haciendo exponencialmente más larga durante el proceso, convirtiendo este algoritmo en altamente ineficiente, hasta el punto de que el propio Artin comentara \cite{Artin}:
