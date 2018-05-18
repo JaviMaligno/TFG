@@ -6,7 +6,7 @@
 
 \chapter{Formas normales}
 
-El objetivo de este capítulo será proporcionar una \emph{forma normal} para las trenzas, es decir, una forma ``estándar'' de escribirlas, de modo que para ver si dos palabras representan la misma trenza sea suficiente calcular sus formas normales y comprobar si son iguales. Para llegar hasta esa forma normal estudiaremos la \emph{estructura de Garside} del grupo de trenzas. Los resultados referentes a \cite{Thurston} se pueden encontrar en el capítulo 9 de dicho libro.
+El objetivo de este capítulo será proporcionar una \emph{forma normal} para las trenzas, es decir, una forma ``estándar'' de escribirlas, de modo que para ver si dos palabras representan la misma trenza sea suficiente calcular sus formas normales y comprobar si son iguales. Para llegar hasta esa forma normal estudiaremos la \emph{estructura de Garside} del grupo de trenzas. Los resultados referentes a Thurston \cite{Thurston} se pueden encontrar en el capítulo 9 de dicho libro.
 
 \section{Estructura de Garside}
 
@@ -36,7 +36,7 @@ Nótese que $\preccurlyeq$ es invariante por multiplicación a izquierda, esto e
 Dado tal orden parcial, uno podría preguntarse si existe un único máximo común divisor o mínimo común múltiplo con respecto a $\preccurlyeq$. Esto es, dadas $a,b\in B_n^+$, ¿existe un único $d\in B_n^+$ tal que $d\preccurlyeq a$, $d\preccurlyeq b$ y $d'\preccurlyeq d$ para todo $d'$ prefijo común de $a$ y $b$? ¿Y existe un único $m\in B_n^+$ tal que $a\preccurlyeq m$, $b\preccurlyeq m$ y $m\preccurlyeq m'$ para todo $m'$ que tenga a $a$ y a $b$ como prefijos? En tales casos, escribimos $d=a\land b$ y $m=a\lor b$. Nótese que también tendríamos $xd=xa\land xb$ y $xm=xa\lor xb$ para todo $x\in B_n^+$.
 
 \begin{nota}
-Análogamente podríamos definir el orden parcial de \emph{sufijos}, $\succcurlyeq$, invariante por multiplicación a derecha. Nótese que este orden no es equivalente al de prefijos, puesto que $b\succcurlyeq a$ no implica en general $a\preccurlyeq b$ ni recíprocamente. 
+Análogamente podríamos definir el orden parcial de \emph{sufijos}, $\succcurlyeq$, invariante por multiplicación a derecha. Nótese que este orden no es equivalente al de prefijos, puesto que $b\succcurlyeq a$ no implica en general $a\preccurlyeq b$ ni recíprocamente. Por ejemplo, $\sigma_1\preccurlyeq \sigma_1\sigma_2$, pero claramente $\sigma_1\sigma_2\not\succcurlyeq \sigma_1$.
 \end{nota}
 
 El punto clave en el trabajo de Garside fue demostrar mediante métodos elementales que $\sigma_i$ y $\sigma_j$ tienen mínimo común múltiplo en $B_n^+$. En concreto:
@@ -51,7 +51,7 @@ $$\sigma_i\lor\sigma_j=\begin{cases}
 
 Garside prueba al mismo tiempo que $B_n^+$ es cancelativo, es decir, $xay=xby$ implica $a=b$ para todo $a,b,x,y\in B_n^+$.
 
-Como las relaciones de \ref{presentacion} son homogéneas, palabras equivalentes en $B_n^+$ tienen la misma longitud, por lo que la longitud de una trenza positiva se define como la longitud de cualquier palabra que la represente. Aunque Garside no lo menciona explícitamente, inducción en esta longitud junto con la cancelatividad, permite probar a partir del resultado anterior que todo par de elementos tiene de $B_n^+$ tiene un único mínimo común múltiplo y un único máximo común divisor, tal como se prueba en \cite{Dehornoy}. 
+Como las relaciones de \ref{presentacion} son homogéneas, palabras equivalentes en $B_n^+$ tienen la misma longitud, por lo que la longitud de una trenza positiva se define como la longitud de cualquier palabra que la represente. Aunque Garside no lo menciona explícitamente, un argumento inductivo en esta longitud utilizando la cancelatividad permite probar a partir del resultado anterior que todo par de elementos tiene de $B_n^+$ tiene un único mínimo común múltiplo y un único máximo común divisor, tal como se prueba en \cite{Dehornoy}. 
 %relaciones homogéneas= LA SUMA DE LOS EXPONENTES A UN LADO Y A OTRO DE LA ECUACIÓN ES LA MISMA
 %lo de dehornoy lo tengo en el mismo papel donde me explica el 1.2 de Garside y lo de que los sigma_i son sufijos de Delta. Lo del mcm es lo de las flechitas y el mcd es los bloques
 
@@ -161,7 +161,7 @@ El-rifai y Morton \cite{EM} lo mejoraron definiendo la \emph{forma normal a la i
 Nótese que existe un $r\geq 0$ tal que $a_i=1$ para todo $i>r$, ya que la longitud de $a_{i-1}^{-1}\cdots a_1^{-1}A$ es estrictamente decreciente. De esta forma, toda trenza puede ser escrita de manera única como:
 %la longitud decrece porque estás cancelando prefijos de A, luego cada vez lo haces más corto
 $$\Delta^p a_1\cdots a_r,$$
-donde $a_i$ es un prefijo propio de $\Delta$, es decir, $1\prec a_i\prec\Delta$, y además se puede demostrar que $(a_ia_{i+1})\land\Delta=a_i$ \cite{Thurston} para todo $i=1,\dots, r-1$. Esta es la anteriormente mencionada forma normal a la izquierda de la trenza. Los prefijos positivos de $\Delta$ son llamados \emph{elementos simples} o \emph{trenzas de permutación}. El nombre no es casual, ya que como prueba Thurston \cite{Thurston}, estas trenzas son justamente las mismas trenzas de permutación definidas en \ref{simples}. Por tanto, la forma normal a la izquierda de una trenza es una descomposición única como producto de una potencia de $\Delta$ y una sucesión de elementos simples propios. Thurston \cite{Thurston} mostró que esta forma normal puede ser calculada en tiempo $O(l^2n\log(n))$ para una palabra de $l$ letras en $B_n$. 
+donde los $a_i$ son los definidos anteriormente, los cuales por definición son un prefijos propios de $\Delta$, es decir, $1\prec a_i\prec\Delta$, y además se puede demostrar que $(a_ia_{i+1})\land\Delta=a_i$ \cite{Thurston} para todo $i=1,\dots, r-1$. Esta es la anteriormente mencionada forma normal a la izquierda de la trenza. Los prefijos positivos de $\Delta$ son llamados \emph{elementos simples} o \emph{trenzas de permutación}. El nombre no es casual, ya que como prueba Thurston \cite{Thurston}, estas trenzas son justamente las mismas trenzas de permutación definidas en \ref{simples}. Por tanto, la forma normal a la izquierda de una trenza es una descomposición única como producto de una potencia de $\Delta$ y una sucesión de elementos simples propios. Thurston \cite{Thurston} mostró que esta forma normal puede ser calculada en tiempo $O(l^2n\log(n))$ para una palabra de $l$ letras en $B_n$. 
 
 %prefijo propio de Delta porque Delta no era prefijo de A y se está haciendo el meet
 
@@ -193,7 +193,7 @@ Así pues, $\sigma_2^{-1}=\Delta^{-1}\sigma_1\sigma_2\sigma_3\sigma_2\sigma_1$, 
 \alpha_1=\Delta^{-1}\sigma_3\sigma_1\sigma_2\sigma_3\sigma_2\sigma_1\sigma_3
 \]
 
-Ahora vamos a hacer la separación de bloques en las palabras positivas. Empezamos con $\alpha_2$. Vamos a dividirla en los bloques $b_{1,0}=\sigma_3\sigma_1$ y $b_{2,0}=\sigma_1\sigma_2\sigma_1$. Así, obtenemos
+Ahora vamos a hacer la separación de bloques en las palabras positivas. Empezamos con $\alpha_2$. Vamos a dividirla en los bloques $b_{1,0}=\sigma_3\sigma_1$ y $b_{2,0}=\sigma_1\sigma_2\sigma_1$, que son claramente trenzas simples. Así, obtenemos
 \[
 \alpha_2=b_{1,0}b_{2,0}=(\sigma_3\sigma_1)(\sigma_1\sigma_2\sigma_1).
 \]
