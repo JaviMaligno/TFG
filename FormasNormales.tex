@@ -165,26 +165,26 @@ donde los $a_i$ son los definidos anteriormente, los cuales por definición son 
 
 %prefijo propio de Delta porque Delta no era prefijo de A y se está haciendo el meet
 
-En \cite{Thurston} se puede encontrar además una forma más práctica de llevar a cabo el algoritmo de encontrar la forma normal a la izquierda, la cual será la que utilicemos en el ejemplo \ref{ejnormal}. Esta forma consiste en:
+En \cite{Thurston} se puede encontrar además una forma más práctica de llevar a cabo el algoritmo de encontrar la forma normal a la izquierda, la cual será la que utilicemos en el ejemplo \ref{ejnormal}. Antes de explicarla vamos a introducir algo de nomenclatura. Dadas dos trenzas simples positivas $A$ y $B$, decimos que un prefijo no trivial $b\preccurlyeq B$ \emph{se puede pasar} de $B$ a $A$ si $Ab$ es simple, y en tal caso \emph{pasar} $b$ de $B$ a $A$ consiste en las transformacines $A\to Ab$ y $B\to b^{-1}B$. Con esto presente, el algoritmo consiste en lo siguiente:
 \begin{enumerate}
 \item Una vez tenemos una palabra $w\in B_n$ en forma normal de Garside $w=\Delta^p A$, si $A=1$, entonces no hay nada que hacer. En caso contrario, dividimos $A$ en bloques formados por elementos simples, digamos, $$A=a_{1,0}a_{2,0}\dots a_{m,0}.$$
 \item En el paso $t\geq 0$ tenemos $A$ expresada en bloques de elementos simples como
 $$A=a_{1,t}a_{2,t}\dots a_{m,t}.$$
-En este paso buscamos el primer par $a_{i,t}a_{i+1,t}$ de modo que se pueda pasar alguna letra de $a_{i+1,t}$ a $a_{i,t}$ sin que $a_{i,t}$ deje de ser simple y pasamos todas las letras posibles. Para ello habrá que tener en cuenta todas las posibles formas equivalentes de escribir estos bloques, como veremos en el ejemplo \ref{ejnormal}. Esto nos dará la descomposición 
+En este paso buscamos el primer par $a_{i,t}a_{i+1,t}$ de modo que se pueda pasar algún prefijo de $a_{i+1,t}$ a $a_{i,t}$ y lo pasamos. Esto nos dará la descomposición 
 $$A=a_{1,t+1}a_{2,t+1}\dots a_{m,t+1}.$$
 \item Volvemos paso 2 y reiteramos hasta que no quede ningún par que verifique la condición. 
 \end{enumerate} 
 
-Este proceso naturalmente termina porque el vector formado por las longitudes de los bloques aumenta en cada paso su orden lexicográfico, el cual está acotado por $(m,0,\dots, 0)$ donde $m$ es la longitud de $A$. La forma normal a la izquierda se obtendrá eliminando los bloques triviales (que necesariamente estarán al final).
+Este proceso naturalmente termina porque el vector formado por las longitudes de los bloques aumenta en cada paso su orden lexicográfico, el cual está acotado por $(m,0,\dots, 0)$ donde $m$ es la longitud de $A$. La forma normal a la izquierda se obtendrá eliminando los bloques triviales (que necesariamente estarán al final). %porque siempre se puede pasar una palabra no vacía a un bloque vacío
 
-Alternativamente, podríamos empezar con una descomposición $w=\Delta^qA$ con $A\in B_n^+$, pero sin asegurarnos de que $\Delta \not\preccurlyeq A$, pues $\Delta$ aparecería al acumular elementos simples en caso de ser prefijo de $A$, y podríamos enviarlo al bloque de $\Delta^q$. En cualquier caso, este proceso acabará con la forma normal a la izquierda, pues no poder pasar ninguna letra del bloque $a_{i+1}$ al bloque $a_i$ sin que $a_i$ deje de ser simple es equivalente a que $a_i=(a_ia_{i+1})\land \Delta$. 
+Alternativamente, podríamos empezar con una descomposición $w=\Delta^qA$ con $A\in B_n^+$, pero sin asegurarnos de que $\Delta \not\preccurlyeq A$, pues $\Delta$ aparecería al acumular elementos simples en caso de ser prefijo de $A$, y podríamos enviarlo al bloque de $\Delta^q$. En cualquier caso, este proceso acabará con la forma normal a la izquierda, pues no poder pasar ninguna letra del bloque $a_{i+1}$ al bloque $a_i$ es equivalente a que $a_i=(a_ia_{i+1})\land \Delta$. 
 
 %porque poder pasar algo de i+1 a i es que se pueda coger un trozo de palabra más grande de (i i+1), es decir, sería un prefijo más grande de dicha palabra que i. Además debe ser prefijo de delta porque se está haciendo el meet, y estos son justamente los elementos simples. Como es maximal por ser el meet po ya está
 
 
 
 \begin{ej}\label{ejnormal}
-En $B_4$ sean $\alpha_1=\sigma_1\sigma_2^{-1}\sigma_3$ y $\alpha_2=\sigma_3\sigma_1\sigma_1\sigma_2\sigma_1$, las cuales queremos comprobar si representan el mismo elemento. Lo primero que debemos hacer es eliminar el exponente negativo de $\alpha_1$. Para ello, tenemos que expresar $\Delta=\Delta_4=\sigma_1(\sigma_2\sigma_1)(\sigma_3\sigma_2\sigma_1)$ de forma que tenga a $\sigma_2$ como sufijo. Esto es sencillo pues, basta usar la técnica de la demostración del primer apartado de la proposición \ref{sufijos} para escribir
+En $B_4$ sean $\alpha_1=\sigma_1\sigma_2^{-1}\sigma_3$ y $\alpha_2=\sigma_3\sigma_1\sigma_1\sigma_2\sigma_1$, las cuales queremos comprobar si representan el mismo elemento. Lo primero que debemos hacer es eliminar el exponente negativo de $\alpha_1$. Para ello, tenemos que expresar $\Delta=\Delta_4=\sigma_1(\sigma_2\sigma_1)(\sigma_3\sigma_2\sigma_1)$ de forma que tenga a $\sigma_2$ como sufijo. Esto es sencillo pues basta usar la técnica de la demostración del primer apartado de la proposición \ref{sufijos} para escribir
 \[
 \Delta=\sigma_1(\sigma_2)(\sigma_3\sigma_2\sigma_1)\sigma_2.
 \]
@@ -193,7 +193,7 @@ Así pues, $\sigma_2^{-1}=\Delta^{-1}\sigma_1\sigma_2\sigma_3\sigma_2\sigma_1$, 
 \alpha_1=\Delta^{-1}\sigma_3\sigma_1\sigma_2\sigma_3\sigma_2\sigma_1\sigma_3
 \]
 
-Ahora vamos a hacer la separación de bloques en las palabras positivas. Empezamos con $\alpha_2$. Vamos a dividirla en los bloques $b_{1,0}=\sigma_3\sigma_1$ y $b_{2,0}=\sigma_1\sigma_2\sigma_1$, que son claramente trenzas simples. Así, obtenemos
+Ahora vamos a hacer la separación de bloques en las palabras positivas. Empezamos con $\alpha_2$. Vamos a dividirla en los bloques $b_{1,0}=\sigma_3\sigma_1$ y $b_{2,0}=\sigma_1\sigma_2\sigma_1$, que son claramente trenzas simples. En general se puede comenzar por bloques de una sola letra. Así, obtenemos
 \[
 \alpha_2=b_{1,0}b_{2,0}=(\sigma_3\sigma_1)(\sigma_1\sigma_2\sigma_1).
 \]
@@ -214,7 +214,7 @@ Ahora tenemos la situación inversa: aparentemente podríamos añadir $\sigma_2$
 
 %el bloque que hemos pasado a la izquierda se corresponde con eso porque estamos añadiendo elementos de Delta que no están en b_{1,0}
 
-Vamos ahora con la parte positiva de $\alpha_1$, que la dividimos en bloques $a_{1,0}=\sigma_3$, $a_{2,0}=\sigma_1\sigma_2\sigma_3\sigma_2\sigma_3$ y $a_{3,0}=\sigma_3$. Tenemos 
+Vamos ahora con la parte positiva de $\alpha_1$, que la dividimos en bloques $a_{1,0}=\sigma_3$, $a_{2,0}=\sigma_1\sigma_2\sigma_3\sigma_2\sigma_1$ y $a_{3,0}=\sigma_3$. Tenemos 
 \begin{align*}
 \alpha_1&=(\sigma_3)(\sigma_1\sigma_2\sigma_3\sigma_2\sigma_1)(\sigma_3)=a_{1,0}a_{2,0}a_{3,0} \\
 &=(\sigma_3\sigma_1\sigma_2\sigma_3)(\sigma_2\sigma_1)(\sigma_3)=a_{1,1}a_{2,1}a_{3,1}\\

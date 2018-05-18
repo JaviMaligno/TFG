@@ -93,19 +93,33 @@ Por tanto, cada trenza de $PB_{n+1}$ se expresa de forma única (proposición \r
 
 \section{Solución al problema de la palabra}\label{simples}
 
-Supongamos que tenemos que decidir si una palabra $\beta\in B_n$ representa el elemento neutro. En primer lugar, mediante el homomorfismo $\eta$ de \ref{extension} comprobamos si la permutación que induce $\beta$ es la identidad. En caso de no serlo, sabemos que $\beta$ no es trivial. Si $\eta(\beta)=Id\in\Sigma_n$, entonces $\beta$ es pura por definición, por lo que trataremos de expresarla como elemento del producto semidirecto de grupos libres, ya que será trivial si y solo si cada uno de los factores lo es. Sin embargo, para conseguir esta expresión tenemos que escribir $\beta$ como producto de los generadores de Birman, puesto que estos son los que representan cada grupo libre.
+Supongamos que tenemos que decidir si una palabra $\beta\in B_n$ representa el elemento neutro. En primer lugar, mediante el homomorfismo $\eta$ de la sucesión exacta \ref{extension} comprobamos si la permutación que induce $\beta$ es la identidad. En caso de no serlo, sabemos que $\beta$ no es trivial. Si $\eta(\beta)=Id\in\Sigma_n$, entonces $\beta$ es pura por definición, por lo que trataremos de expresarla como elemento del producto semidirecto de grupos libres, ya que será trivial si y solo si cada uno de los factores lo es. Sin embargo, para conseguir esta expresión tenemos que escribir $\beta$ como producto de los generadores de Birman, puesto que estos son los que representan cada grupo libre.
 
-Para ello, hagamos la siguiente consideración: dada una permutación $\tau\in\Sigma_n$ podemos encontrar una trenza que induzca esta permutación. Además podemos hacerlo de forma inyectiva, pues para permutaciones distintas daremos trenzas distintas. Esto da lugar a una \emph{sección conjuntista} (no es homomorfismo de grupos) en la sucesión exacta \ref{extension} $\varphi:\Sigma_n\to B_n$. Estas trenzas pueden ser elegidas de modo que todos los cruces sean positivos y cada par de cuerdas solo se cruce como máximo una vez. Para ello, expresamos la permutación como producto de trasposiciones $(i\ i+1)$ con $1\leq i\leq n-1$ de la forma más corta posible y sustituimos cada $(i\ i+1)$ por $\sigma_i$. A estas trenzas las llamaremos \emph{trenzas simples} o \emph{trenzas de permutación}. Las trenzas simples tendrán la forma $\sigma_{i_1}\cdots\sigma_{i_l}$ para algún $1\leq l\leq n$, de modo que $\sigma_{i_j}\neq\sigma_{i_{j+1}}$ en cualquier palabra que represente a la trenza.  
+Para ello, hagamos la siguiente consideración: dada una permutación $\tau\in\Sigma_n$ podemos encontrar una trenza que induzca esta permutación. Además podemos hacerlo de forma inyectiva, pues para permutaciones distintas daremos trenzas distintas. Esto da lugar a una \emph{sección conjuntista} (no es homomorfismo de grupos) en la sucesión exacta \ref{extension} $\varphi:\Sigma_n\to B_n$. Estas trenzas pueden ser elegidas de modo que todos los cruces sean positivos y cada par de cuerdas solo se cruce como máximo una vez. Para ello, expresamos la permutación como producto de trasposiciones $(i\ i+1)$ con $1\leq i\leq n-1$ de la forma más corta posible y sustituimos cada $(i\ i+1)$ por $\sigma_i$. A estas trenzas las llamaremos \emph{trenzas simples} o \emph{trenzas de permutación}. Las trenzas simples tendrán la forma $\sigma_{i_1}\cdots\sigma_{i_k}$ para algún $1\leq l\leq n$, de modo que $\sigma_{i_j}\neq\sigma_{i_{j+1}}$ en cualquier palabra que represente a la trenza.  
 
 
-Vamos a explicar en qué consiste entonces el algoritmo para resolver el problema de la palabra. Supongamos que tenemos una trenza $\sigma_{i_1}^{\pm 1}\sigma_{i_2}^{\pm 1}\cdots\sigma_{i_l}^{\pm 1}$. Vamos a multiplicar a izquierda y derecha cada generador por unas ciertas trenzas de permutación y sus inversas, de modo que nos quede un producto de trenzas puras que, por la forma que tendrá, será más sencillo de expresar en función de los generadores de Birman. Podemos empezar considerando la permutación $s_0=Id$, de modo que $\varphi(s_0)=1$. A continuación, tenemos que anular la permutación de $\sigma_{i_1}$, por lo que elegimos $s_1$ tal que $\varphi(s_1)=\sigma_{i_1}$ y hacemos el producto
+Vamos a explicar en qué consiste entonces el algoritmo para resolver el problema de la palabra. Supongamos que tenemos una trenza pura $\beta=\sigma_{i_1}^{\pm 1}\sigma_{i_2}^{\pm 1}\cdots\sigma_{i_k}^{\pm 1}$. Vamos a multiplicar a izquierda y derecha cada generador por unas ciertas trenzas de permutación y sus inversas, de modo que nos quede un producto de trenzas puras que, por la forma que tendrá, será más sencillo de expresar en función de los generadores de Birman. 
+
+Sea $s_j=\eta(\sigma_{i_1}^{\pm 1}\cdots\sigma_{i_j}^{\pm 1})=\eta(\beta_j)$ para todo $j=0,\dots, k$. Obsérvese que $s_0=s_k=Id$. Ahora podemos escribir
 \[
-(\varphi(s_0)\sigma_{i_1}^{\pm 1}\varphi(s_1)^{-1})\varphi(s_1)\sigma_{i_2}^{\pm 1}\cdots\sigma_{i_l}^{\pm 1}.
+\beta=(\varphi(s_0)\sigma_{i_1}^{\pm 1}\varphi(s_1)^{-1})(\varphi(s_1)\sigma_{i_2}^{\pm 1}\varphi(s_2)^{-1})\cdots(\varphi(s_{k-1})\sigma_{i_k}\varphi(s_k))
 \]
-En el siguiente paso tenemos que anular la permutación de $\varphi(s_1)\sigma_{i_2}^{\pm 1}$, así que elegimos $s_2$ tal que $\varphi(s_2)=\sigma_{i_2}$ y hacemos el producto
+%cada trocito es más pequeño porque hay cancelaciones y además resulta ser más fácil transformarla
+Cada paréntesis es una trenza pura pues
 \[
-(\varphi(s_0)\sigma_{i_1}^{\pm 1}\varphi(s_1)^{-1})(\varphi(s_1)\sigma_{i_2}^{\pm 1}\varphi(s_2)^{-1}\varphi(s_1)^{-1})\varphi(s_1)\varphi(s_2)\cdots\sigma_{i_l}^{\pm 1}.
+\eta(\varphi(s_{j-1})\sigma_{i_j}^{\pm 1}\varphi(s_j)^{-1})=s_{j-1}\eta(\sigma_{i_j}^{\pm 1})s_j^{-1}=\eta(\beta_{j-1})\eta(\sigma_{i_j}^{\pm 1})\eta(\beta_j^{-1})=\eta(1)=Id.
 \]
+%\eta(\beta_{j-1})\eta(\sigma_j^{\pm 1})=\eta(\beta_j)
+
+
+%Podemos empezar considerando la permutación $s_0=Id$, de modo que $\varphi(s_0)=1$. A continuación, tenemos que anular la permutación de $\sigma_{i_1}$, por lo que elegimos $s_1$ tal que $\varphi(s_1)=\sigma_{i_1}$ y hacemos el producto
+%\[
+%(\varphi(s_0)\sigma_{i_1}^{\pm 1}\varphi(s_1)^{-1})\varphi(s_1)\sigma_{i_2}^{\pm 1}\cdots\sigma_{i_l}^{\pm 1}.
+%\]
+%En el siguiente paso tenemos que anular la permutación de $\varphi(s_1)\sigma_{i_2}^{\pm 1}$, así que elegimos $s_2$ tal que $\varphi(s_2)=\sigma_{i_2}$ y hacemos el producto
+%\[
+%(\varphi(s_0)\sigma_{i_1}^{\pm 1}\varphi(s_1)^{-1})(\varphi(s_1)\sigma_{i_2}^{\pm 1}\varphi(s_2)^{-1}\varphi(s_1)^{-1})\varphi(s_1)\varphi(s_2)\cdots\sigma_{i_l}^{\pm 1}.
+%\]
 
 %Lo de usar trenzas simples es porque la idea era que en cada paso solo se vaya moviendo una cuerda alrededor de las otras
 
