@@ -3,15 +3,13 @@
 \begin{document}
 
 %\hyphenation{equi-va-len-cia}\hyphenation{pro-pie-dad}\hyphenation{res-pec-ti-va-men-te}\hyphenation{sub-es-pa-cio}
-\chapter{Definiciones del grupo de trenzas}
+\chapter{Preliminares}
 
 %ME QUIERO ASEGURAR MEJOR DE LO DE QUE SE PUEDEN CONSIDERAR SIEMPRE NÚMERO FINITO DE CRUCES Y TAL
-
-
-
 Aunque el término \emph{grupo de trenzas} fue acuñado por Artin en 1925 \cite{ArtinA}, estos grupos ya fueron considerados por Hurwitz en 1891 \cite{Hur} como lo que en terminología moderna se llamaría ``grupo fundamental de espacios de configuración de $n$ puntos en el plano complejo''. Magnus en 1935 \cite{Magnus} consideró el mismo grupo desde el punto de vista de los \emph{mapping classes}. Markov \cite{Markoff} dio una aproximación totalmente algebraica. 
 
 En este capítulo veremos varias de estas definiciones, que son todas equivalentes \cite{Zariski}, ya que una sola definición no es suficiente para enunciar y demostrar los resultados que se presentan en el resto del trabajo. Esta variedad de definiciones permite estudiar los grupos de trenzas desde perspectivas muy distintas, lo cual aporta una gran riqueza a la teoría.
+
 
 \section{Trenzas como colección de cuerdas}
 Empezamos dando la definición más gráfica e intuitiva, consistente en visualizar las trenzas como cuerdas que se entrelazan. 
@@ -19,10 +17,9 @@ Empezamos dando la definición más gráfica e intuitiva, consistente en visuali
 \begin{defi}\label{geo}
 Sea $n\geq 1$ un entero. Denotemos $\Sigma_n$ al grupo simétrico sobre $n$ elementos. Sean $n$ puntos $P_1,\dots, P_n$ en $\C$ (se puede suponer que $P_k=k$ para todo $1\leq k\leq n$). Se define la \emph{trenza geométrica de $n$ cuerdas} como la $n$-upla $\beta=(\beta_1,\dots,\beta_n)$ de caminos $\beta_k:[0,1]\to\C\times[0,1]$ tal que:
 \begin{itemize}
-\item $\beta_k(0)=(P_k,0)$ para todo $1\leq k\leq n$,
-\item la segunda coordenada de $\beta_k(t)$ es la misma función monótona creciente para todo $1\leq k\leq n$, 
-\item existe una permutación $\tau=\tau(\beta)\in\Sigma_n$ tal que $\beta_k(1)=(P_{\tau(k)},1)$ para todo $1\leq k\leq n$, llamada \emph{permutación inducida por $\beta$},
-\item $\beta_k(t)\neq \beta_l(t)$ para todo $k\neq l$ y para todo $t\in[0,1]$.
+\item $\beta_k(t)=(\alpha_k(t),t)$, donde $\alpha_k(0)=P_k$ para todo $1\leq k\leq n$, 
+\item existe una permutación $\tau=\tau(\beta)\in\Sigma_n$ tal que $\alpha_k(1)=P_{\tau(k)}$ para todo $1\leq k\leq n$, llamada \emph{permutación inducida por $\beta$},
+\item $\alpha_k(t)\neq \alpha_l(t)$ para todo $k\neq l$ y para todo $t\in[0,1]$.
 \end{itemize}
 Si la permutación inducida por $\beta$ es el elemento neutro de $\Sigma_n$, es decir, si $\beta_k(1)=(P_k,1)$ para todo $1\leq k\leq n$, entonces decimos que la trenza geométrica es \emph{pura}.
 
@@ -188,11 +185,6 @@ En efecto, usando las propiedades de la homotopía de caminos con respecto al ca
 \alpha\alpha^{-1}=[(a_1,\dots, a_n)\cdot (\overline{a}_{\tau^{-1}(1)},\dots, \overline{a}_{\tau^{-1}(n)})]=[(a_1\overline{a}_{\tau(\tau^{-1}(1))},\dots, a_n\overline{a}_{\tau(\tau^{-1}(n))})]=[Id]
 \]
 
-Obsérvese que la segunda coordenada de la concatenación no tiene por qué ser exactamente igual al camino identidad, pero sí será siempre homotópico a él. Efectivamente, si la segunda coordenada resulta un camino $f:[0,1]\to [0,1]$, podemos llevarlo a la identidad den $[0,1]$ con la homotopía $H:[0,1]\times[0,1]\to [0,1]$ dada por
-\[
-H(x,t)=(1-t)f(x)-tx.
-\]
-
 Análogamente se prueba $\alpha^{-1}\alpha=[Id]$. 
 $\QED$
 \end{dem}
@@ -247,7 +239,7 @@ Veamos un ejemplo no trivial de espacio de configuración. Consideremos $M_2(\R^
 \[
 (x_1,x_2)\mapsto (x_1+x_2,x_1-x_2).
 \]
-Es fácil ver que esta aplicación es un homeomorfismo, por lo que $M_2(\R^3)\cong \R^3\times(\R^3\setminus\{0\})$. Además, la aplicación es compatible con la acción de $\Sigma_2$, es decir, la aplicación sigue siendo un homeomorfismo sobre $\R^3\times(\R^3\setminus\{0\})$ al permutar las componentes. Sin embargo, punto a punto, lo que se observa es que la primera coordenada se conserva y la segunda cambia de signo tras la permutación. Por lo tanto, en $N_2(\R^3)=M_2(\R^3)/\Sigma_2$, $(x,y)\sim (x,-y)$ y no hay más puntos distintos relacionados entre sí. Por tanto, $N_2(\R^3)=\R^3\times(\R^3_{\geq 0}\setminus\{0\})$, donde $\R^3_{\geq 0}$ denota los puntos que tienen alguna coordenada no negativa.
+Es fácil ver que esta aplicación es un homeomorfismo, por lo que $M_2(\R^3)\cong \R^3\times(\R^3\setminus\{0\})$. Además, la aplicación es compatible con la acción de $\Sigma_2$, es decir, la aplicación sigue siendo un homeomorfismo sobre $\R^3\times(\R^3\setminus\{0\})$ al permutar las componentes. Sin embargo, punto a punto, lo que se observa es que la primera coordenada se conserva y la segunda cambia de signo tras la permutación. Por lo tanto, en $N_2(\R^3)=M_2(\R^3)/\Sigma_2$, $(x,y)\sim (x,-y)$ y no hay más puntos distintos relacionados entre sí. Por tanto, $N_2(\R^3)=\R^3\times(\R^3_{+}\setminus\{0\})$, donde $\R^3_{+}$ denota los puntos cuya primera coordenada no nula es positiva.
 
 \end{ej}
 
@@ -391,7 +383,7 @@ En la Figura \ref{generador} se puede observar qué trenza representa geométric
 
 
 \begin{nota}
-Cuando $j=i+1$, $A_{ij}=\sigma_i^2$ y cuando $j=i$, $A_{ij}=1$. 
+Cuando $j=i+1$, $A_{ij}=\sigma_i^2$. 
 \end{nota}
 
 También nos serán útiles a la hora de hacer cálculos las siguientes relaciones equivalentes a las anteriores, y que de nuevo se pueden encontrar en \cite{polynomial}:
@@ -402,6 +394,8 @@ A_{ij}A_{is}A_{ij}^{-1}&=A_{js}^{-1}A_{is}A_{js}\text{ si } (i<j<s),\\
 A_{ij}A_{rs}A_{ij}^{-1}&=A_{js}^{-1}A_{is}^{-1}A_{js}A_{is}A_{rs}A_{is}^{-1}A_{js}^{-1}A_{is}A_{js}\text{ si } (i+1<r<j<s).
 \end{align*}
 %Al final no las usa, pero si hubiera querido pasar a la derecha en lugar de a la izquierda en el braid combing habrían hecho falta
+
+\section{El problema de la palabra}
 
 \section{Definiciones y resultados adicionales}
 
@@ -446,10 +440,12 @@ Ambas expresiones son la misma puesto que $G$ actúa mediante automorfismos. Por
 
 Por la forma en el que está definido el producto semidirecto, conseguimos conservar $F$ y de $G$ con cierta estructura dentro de $F\rtimes G$, es más 
 \begin{prop}\label{reciproco}
- $F$ se puede ver como subgrupo normal de $F\rtimes G$ mediante la aplicación $\delta\mapsto (\delta,e_G)$, mientras que $G$ se puede ver como subgrupo mediante la aplicación $h\mapsto (e_F,h)$.
+ $F$ se puede ver como subgrupo normal de $F\rtimes G$ mediante la aplicación $\delta\mapsto (\delta,e_G)$, mientras que $G$ se puede ver como subgrupo mediante la aplicación $h\mapsto (e_F,h)$. Además, visto de esta forma, todo elemento de $F\rtimes G$ se escribe de forma única como producto de un elemento de $F$ y un elemento de $G$.
 \end{prop}
 \begin{dem}
 En ambos casos es elemental probar que se tratan de morfismos inyectivos. Así que vamos a probar que la imagen de $F$ mediante la aplicación $\delta\mapsto (\delta,e_G)$ es un subgrupo normal de $F\rtimes G$. Para ello vamos a ver que $F\times\{e_G\}$ es el núcleo de un cierto homomorfismo de grupos $\varphi:F\rtimes G\to G$. Este homomorfismo vendrá definido como $\varphi(\delta,h)=h$, el cual es fácil ver que efectivamente es homomorfismo de grupos. Claramente $\ker\varphi=\{(\delta,h)\mid h=e_G\}=F\times\{e_G\}$, como queríamos demostrar. 
+
+Para la segunda parte, supongamos que tenemos $h_1g_1=h_2g_2\in F\times\{e_G\}$ con $h_1,h_2\in F$ y $g_1,g_2\in G$. Entonces consideramos la proyección $p:F\rtimes G\to G$, de modo que $g_1=p(h_1g_1)=p(h_2g_2)=g_2$. Ahora basta multiplicar a derecha por $g_1^{-1}$ para obtener $h_1=h_2$.
 \QED
 %https://groupprops.subwiki.org/wiki/Normal_subgroup_equals_kernel_of_homomorphism
 %El razonamiento análogo para G no se podría hacer porque el producto en F es el normal y en la primera componente es el producto twisteado, que no coincidiría en general
@@ -469,11 +465,11 @@ En el caso de que $G$ sea un grupo finito, diremos que la extensión es \emph{fi
 \end{defi} 
 
 \begin{prop}\label{semidirect}
-Si $H$ es una extensión de $F$ por $G$, de modo que la sucesión exacta 
+Si existe una la sucesión exacta escindible
 \[
-1\to F\to H\to G\to 1
+1\to F\to H\to G\to 1,
 \]
-escinde, entonces $H\cong F\rtimes G$. El recíproco también es cierto. 
+entonces $H\cong F\rtimes G$. El recíproco también es cierto. 
 \end{prop}
 %la imagen de F siempre es normal en H por ser isomorfa al núcleo de la otra
 \begin{dem}
@@ -535,7 +531,7 @@ Si un monoide satisface las condiciones de Ore, entonces se inyecta en su grupo 
 Sea $X$ un espacio topológico. Un \emph{espacio recubridor} de $X$ es un espacio topológico $\widetilde{X}$ junto con una aplicación continua sobreyectiva $p:\widetilde{X}\to X$, llamada \emph{aplicación recubridora}, tal que para todo $x\in X$ existe un entorno $U$ de $x$ de modo que $p^{-1}(U)$ es unión disjunta de abiertos de $\widetilde{X}$ homeomorfos a $U$, llamados \emph{hojas}. El espacio $p^{-1}(x)$ se llama \emph{fibra} de $x$.
 \end{defi}
 
-\begin{ej}
+\begin{ej}\label{RS1}
 El ejemplo más habitual de espacio recubridor se da para $S^1$ usando como espacio recubridor $\R$ con la aplicación $p:\R\to S^1$ dada por $p(t)=e^{2\pi i t}$. 
 \end{ej}
 
@@ -550,7 +546,7 @@ Para un espacio recubridor $p:\widetilde{X}\to X$, los isomorfismos $\widetilde{
 Claramente, la inversa de un isomorfismo de espacios recubridores es isomorfismo y la composición de isomorfismos es isomorfismo. Por tanto, el conjunto de transformaciones recubridoras forma un grupo con elemento neutro la identidad denotado $G(\widetilde{X})$. 
 
 \begin{ej}
-En el ejemplo de espacio recubridor anterior, las transformaciones recubridoras son las aplicaciones de la forma $f(t)=t+n$ para cada $n\in\Z$, por lo que $G(\widetilde{X})\cong\Z$. En particular, $\Z$ actúa sobre el espacio recubridor mediante cada $f$. 
+En el espacio recubridor el ejemplo \ref{RS1}, las transformaciones recubridoras son las aplicaciones de la forma $f(t)=t+n$ para cada $n\in\Z$, por lo que $G(\widetilde{X})\cong\Z$. En particular, $\Z$ actúa sobre el espacio recubridor mediante cada $f$. 
 \end{ej}
 
 \begin{defi}

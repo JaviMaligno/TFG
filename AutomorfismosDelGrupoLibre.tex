@@ -59,12 +59,10 @@ Merece la pena remarcar que este algoritmo no es en absoluto eficiente (de hecho
 Veamos un ejemplo de cómo se aplica este método.
 \begin{ej}
 Dado $n\geq 3$, sean $\beta_1=\sigma_i\sigma_{i+1}^{-1}\sigma_i$ y $\beta_2=\sigma_{i+1}\sigma_i^{-1}\sigma_{i+1}$ para algún $1\leq i\leq n-2$. Nos preguntamos si estas palabras representan la misma trenza. Serán la misma si y solo si $\rho_{\beta_1}(x_j)=\rho_{\beta_2}(x_j)$ para todo $1\leq j\leq n-1$, por lo que para probar que son distintas basta encontrar un generador del grupo libre para el que sus imágenes no coincidan. Sea pues $x_i$. Tenemos por un lado
-$$\rho_{\beta_1}(x_i)=\rho_{\sigma_i}(x_i)\rho^{-1}_{\sigma_{i+1}}(x_i)\rho_{\sigma_i}(x_i)=
-x_{i+1}x_ix_{i+1}$$
+$$\rho_{\beta_1}(x_i)=\rho_{\sigma_i}\rho^{-1}_{\sigma_{i+1}}\rho_{\sigma_i}(x_i)=\rho_{\sigma_i}\rho^{-1}_{\sigma_{i+1}}(x_{i+1})=\rho_{\sigma_i}(x_{i+1}x_{i+2}x_{i+1}^{-1})=x_{i+1}^{-1}x_ix_{i+1}x_{i+2}x_{i+1}^{-1}x_i^{-1}x_{i+1}$$
 y por otro
-$$\rho_{\beta_2}(x_i)=\rho_{\sigma_{i+1}}(x_i)\rho_{\sigma_i}^{-1}(x_i)\rho_{\sigma_{i+1}}(x_i)=
-x_i (x_i x_{i+1} x_i^{-1})x_i=x_i^2x_{i+1}.$$
-Claramente $x_{i+1}x_ix_{i+1}\neq x_i^2x_{i+1}$ en $F_n$, por lo que $\beta_1\neq\beta_2$.
+$$\rho_{\beta_2}(x_i)=\rho_{\sigma_{i+1}}\rho_{\sigma_i}^{-1}\rho_{\sigma_{i+1}}(x_i)=\rho_{\sigma_{i+1}}\rho_{\sigma_i}^{-1}(x_i)=\rho_{\sigma_{i+1}}(x_{i+1})=x_{i+2}.$$
+Claramente $x_{i+2}\neq x_{i+1}^{-1}x_ix_{i+1}x_{i+2}x_{i+1}^{-1}x_i^{-1}x_{i+1}$ en $F_n$, por lo que $\beta_1\neq\beta_2$.
 \end{ej}
 
 \end{document}

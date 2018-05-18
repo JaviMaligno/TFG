@@ -111,6 +111,9 @@ Procedemos a desplazar a la derecha el $\sigma_1$ subrayado tal como hemos hecho
 \Delta=\sigma_1(\sigma_2\sigma_1)\cdots(\sigma_{n-i}\dots\underline{\sigma_1})(\sigma_{n-i+1}\cdots\sigma_1)\cdots(\sigma_{n-1}\dots\sigma_1)=
 \]
 \[
+\sigma_1(\sigma_2\sigma_1)\cdots(\sigma_{n-i}\cdots\sigma_2)(\sigma_{n-i+1}\cdots\sigma_1\underline{\sigma}_2)\cdots(\sigma_{n-1}\dots\sigma_1)=
+\]
+\[
 \sigma_1(\sigma_2\sigma_1)\cdots(\sigma_{n-i}\cdots\sigma_2)(\sigma_{n-i+1}\cdots\sigma_1)\cdots(\sigma_{n-1}\dots\sigma_1)\underline{\sigma}_i
 \]
 
@@ -123,9 +126,9 @@ Procedemos a desplazar a la derecha el $\sigma_1$ subrayado tal como hemos hecho
 
 \item Probamos $a\preccurlyeq\Delta^m$ donde $m$ es la longitud de $a$ por inducción en $m$. Evidentemente, $1\preccurlyeq\Delta^0=1$. Para una palabra de longitud 1 también es claro porque $\sigma_i\preccurlyeq\Delta$ para todo $1\leq i\leq n-1$ por definición de mínimo común múltiplo. Supongamos ahora, que para una palabra $a\in B_n^+$ de longitud $m-1$ se tiene el resultado. Entonces, cualquier palabra de longitud $m$ será de la forma $\sigma_j a$ para algún $1\leq j\leq n-1$. Así que, usando la invarianza por multiplicación a izquierda y el caso $m=1$,
 \[
-a\preccurlyeq\Delta^{m-1}\Rightarrow \sigma_j a\preccurlyeq \sigma_j\Delta^{m-1} \preccurlyeq \Delta\Delta^{m-1}=\Delta^{m}.
+a\preccurlyeq\Delta^{m-1}\Rightarrow \sigma_j a\preccurlyeq \sigma_j\Delta^{m-1} =\Delta^{m-1}\sigma_t\preccurlyeq \Delta^{m-1}\Delta=\Delta^{m}
 \]
-De forma análoga usando la invarianza por multiplicación a derecha se prueba que $\Delta^m\succcurlyeq a$.
+donde $t=j$ o bien $t=n-j$ dependiendo de la paridad de $m$. De forma análoga usando la invarianza por multiplicación a derecha se prueba que $\Delta^m\succcurlyeq a$.
 \end{enumerate}
 \QED
 \end{dem}
@@ -139,7 +142,7 @@ Las propiedades anteriores implican que el orden parcial $\preccurlyeq$ (respect
 % a,b\in B_n, a<b sii a^{-1}b\in B_n^+
 
 \section{Solución al problema de la palabra}
-Garside dio una nueva solución al problema de la palabra en los grupos de trenzas de la siguiente manera. Recordemos que para todo $i=1,\dots, n-1$ se tiene que $\Delta\succcurlyeq\sigma_i$ por la proposición \ref{sufijos} apartado 1, esto es, $\Delta=X_i\sigma_i$ para algún $X_i\in B_n^+$. Dada una trenza escrita como una palabra en $\sigma_1,\dots,\sigma_{n-1}$ y sus inversos, se puede reemplazar cada aparición de $\sigma_i^{-1}$ por $\Delta^{-1}X_i$. Conjugar una trenza positiva por $\Delta$ sigue dando una trenza positiva por la proposición \ref{conjuga} apartado 2, así que podemos mover todas las apariciones de $\Delta^{-1}$ a la izquierda, de la siguiente forma: si encontramos $\sigma_j\Delta^{-1}$ ($1\leq j\leq n-1)$, entonces por \ref{conjuga} sabemos que $\Delta\sigma_{j}=\sigma_{n-j}\Delta$, si y solo si  $\sigma_j\Delta^{-1}=\Delta^{-1}\sigma_{n-j}$, por lo que podemos sustituir $\sigma_j\Delta^{-1}$ por $\Delta^{-1}\sigma_{n-j}$. Esto muestra que toda trenza puede ser escrita como $\Delta^p A$ para algún $p\in\Z$ y algún $A\in B_n^+$. Además, si $\Delta\preccurlyeq A$, podemos reemplazar $\Delta^p$ por $\Delta^{p+1}$ y $A$ por $\Delta^{-1}A$. Esto reduce la longitud de $A$, así que solo puede hacerse una cantidad finita de veces. Por tanto, toda trenza puede escribirse, \emph{de manera única}, como $\Delta^pA$, donde $p\in\Z$, $A\in B_n^+$ y $\Delta\not\preccurlyeq A$. Efectivamente, si tuviéramos dos expresiones $\Delta^pA=\Delta^q B$ con $p<q$ en las condiciones anteriores, dividiendo por $\Delta^p$ tendríamos que $A=\Delta^{q-p}B$, lo cual contradice el hecho de que $A$ no tenga a $\Delta$ como prefijo. Análogamente para $p>q$, luego $p=q$ y $A=B$.
+Garside dio una nueva solución al problema de la palabra en los grupos de trenzas de la siguiente manera. Recordemos que para todo $i=1,\dots, n-1$ se tiene que $\Delta\succcurlyeq\sigma_i$ por la proposición \ref{sufijos} apartado 1, esto es, $\Delta=X_i\sigma_i$ para algún $X_i\in B_n^+$. Dada una trenza escrita como una palabra en $\sigma_1,\dots,\sigma_{n-1}$ y sus inversos, se puede reemplazar cada aparición de $\sigma_i^{-1}$ por $\Delta^{-1}X_i$. Conjugar una trenza positiva por $\Delta$ sigue dando una trenza positiva por la proposición \ref{conjuga} apartado 2, así que podemos mover todas las apariciones de $\Delta^{-1}$ a la izquierda, de la siguiente forma: si encontramos $\sigma_j\Delta^{-1}$ ($1\leq j\leq n-1)$, entonces por \ref{conjuga} sabemos que $\Delta\sigma_{j}=\sigma_{n-j}\Delta$, si y solo si  $\sigma_j\Delta^{-1}=\Delta^{-1}\sigma_{n-j}$, por lo que podemos sustituir $\sigma_j\Delta^{-1}$ por $\Delta^{-1}\sigma_{n-j}$. Esto muestra que toda trenza puede ser escrita como $\Delta^p A$ para algún $p\in\Z$ y algún $A\in B_n^+$. Además, si $\Delta\preccurlyeq A$, podemos reemplazar $\Delta^p$ por $\Delta^{p+1}$ y $A$ por $\Delta^{-1}A$. Esto reduce la longitud de $A$, así que solo puede hacerse una cantidad finita de veces. Por tanto, toda trenza puede descomponerse \emph{de manera única}, como $\Delta^pA$, donde $p\in\Z$, $A\in B_n^+$ y $\Delta\not\preccurlyeq A$. Efectivamente, si tuviéramos dos expresiones $\Delta^pA=\Delta^q B$ con $p<q$ en las condiciones anteriores, dividiendo por $\Delta^p$ tendríamos que $A=\Delta^{q-p}B$, lo cual contradice el hecho de que $A$ no tenga a $\Delta$ como prefijo. Análogamente para $p>q$, luego $p=q$ y $A=B$.
 
 %\Delta c=A, \Delta^p A = \Delta^{p+1} \Delta^{-1}A=\Delta^{p+1}c
 \begin{defi}
@@ -153,9 +156,9 @@ Esta forma normal permite resolver el problema de la palabra, ya que se pueden e
 El-rifai y Morton \cite{EM} lo mejoraron definiendo la \emph{forma normal a la izquierda} de una trenza. Basta tomar la descomposición $\Delta^pA$ y después definir %izquierda porque se van pasando elementos a la izquierda
 \begin{align*}
 &a_1=A\land\Delta\\
-&a_i=(a_{i-1}^{-1}\cdots a_1^{-1}A)\land\Delta,\ i>1.
+&a_i=(a_{i-1}^{-1}\cdots a_1^{-1}A)\land\Delta,\ \forall\ i>1.
 \end{align*}
-Nótese que existe un $r\geq 0$ tal que $a_i=1$ para todo $i>r$, ya que la longitud de $a_i$ es estrictamente decreciente. De esta forma, toda trenza puede ser escrita de manera única como:
+Nótese que existe un $r\geq 0$ tal que $a_i=1$ para todo $i>r$, ya que la longitud de $a_{i-1}^{-1}\cdots a_1^{-1}A$ es estrictamente decreciente. De esta forma, toda trenza puede ser escrita de manera única como:
 %la longitud decrece porque estás cancelando prefijos de A, luego cada vez lo haces más corto
 $$\Delta^p a_1\cdots a_r,$$
 donde $a_i$ es un prefijo propio de $\Delta$, es decir, $1\prec a_i\prec\Delta$, y además se puede demostrar que $(a_ia_{i+1})\land\Delta=a_i$ \cite{Thurston} para todo $i=1,\dots, r-1$. Esta es la anteriormente mencionada forma normal a la izquierda de la trenza. Los prefijos positivos de $\Delta$ son llamados \emph{elementos simples} o \emph{trenzas de permutación}. El nombre no es casual, ya que como prueba Thurston \cite{Thurston}, estas trenzas son justamente las mismas trenzas de permutación definidas en \ref{simples}. Por tanto, la forma normal a la izquierda de una trenza es una descomposición única como producto de una potencia de $\Delta$ y una sucesión de elementos simples propios. Thurston \cite{Thurston} mostró que esta forma normal puede ser calculada en tiempo $O(l^2n\log(n))$ para una palabra de $l$ letras en $B_n$. 
@@ -164,16 +167,15 @@ donde $a_i$ es un prefijo propio de $\Delta$, es decir, $1\prec a_i\prec\Delta$,
 
 En \cite{Thurston} se puede encontrar además una forma más práctica de llevar a cabo el algoritmo de encontrar la forma normal a la izquierda, la cual será la que utilicemos en el ejemplo \ref{ejnormal}. Esta forma consiste en:
 \begin{enumerate}
-\item Una vez tenemos una palabra $w\in B_n$ en forma normal de Garside $w=\Delta^p A$, si $A=1$, entonces no hay nada que hacer. En caso contrario, dividimos $A$ en bloques formados por elementos simples no triviales, digamos, $$A=a_{1,0}a_{2,0}\dots a_{m,0}.$$
+\item Una vez tenemos una palabra $w\in B_n$ en forma normal de Garside $w=\Delta^p A$, si $A=1$, entonces no hay nada que hacer. En caso contrario, dividimos $A$ en bloques formados por elementos simples, digamos, $$A=a_{1,0}a_{2,0}\dots a_{m,0}.$$
 \item En el paso $t\geq 0$ tenemos $A$ expresada en bloques de elementos simples como
 $$A=a_{1,t}a_{2,t}\dots a_{m,t}.$$
 En este paso buscamos el primer par $a_{i,t}a_{i+1,t}$ de modo que se pueda pasar alguna letra de $a_{i+1,t}$ a $a_{i,t}$ sin que $a_{i,t}$ deje de ser simple y pasamos todas las letras posibles. Para ello habrá que tener en cuenta todas las posibles formas equivalentes de escribir estos bloques, como veremos en el ejemplo \ref{ejnormal}. Esto nos dará la descomposición 
 $$A=a_{1,t+1}a_{2,t+1}\dots a_{m,t+1}.$$
-\item Si $a_{i+1,t+1}$ queda vacío, lo movemos hasta el final de la palabra, reindexándolo como $a_{m,t+1}$ y reidenxando como $a_{j-1,t+1}$ todos los bloques de la forma $a_{j,t+1}$ con $j>i+1$. 
 \item Volvemos paso 2 y reiteramos hasta que no quede ningún par que verifique la condición. 
 \end{enumerate} 
 
-Este proceso naturalmente termina porque el vector formado por las longitudes de los bloques aumenta en cada paso su orden lexicográfico, el cual está acotado por $(m,0,\dots, 0)$ donde $m$ es la longitud de $A$. La forma normal a la izquierda se obtendrá eliminando los bloques triviales.
+Este proceso naturalmente termina porque el vector formado por las longitudes de los bloques aumenta en cada paso su orden lexicográfico, el cual está acotado por $(m,0,\dots, 0)$ donde $m$ es la longitud de $A$. La forma normal a la izquierda se obtendrá eliminando los bloques triviales (que necesariamente estarán al final).
 
 Alternativamente, podríamos empezar con una descomposición $w=\Delta^qA$ con $A\in B_n^+$, pero sin asegurarnos de que $\Delta \not\preccurlyeq A$, pues $\Delta$ aparecería al acumular elementos simples en caso de ser prefijo de $A$, y podríamos enviarlo al bloque de $\Delta^q$. En cualquier caso, este proceso acabará con la forma normal a la izquierda, pues no poder pasar ninguna letra del bloque $a_{i+1}$ al bloque $a_i$ sin que $a_i$ deje de ser simple es equivalente a que $a_i=(a_ia_{i+1})\land \Delta$. 
 
@@ -212,7 +214,7 @@ Ahora tenemos la situación inversa: aparentemente podríamos añadir $\sigma_2$
 
 %el bloque que hemos pasado a la izquierda se corresponde con eso porque estamos añadiendo elementos de Delta que no están en b_{1,0}
 
-Vamos ahora con la parte positiva de $\alpha_1$, que la dividimos en bloques $a_{1,0}=\sigma_3$, $a_{2,0}=\sigma_3\sigma_2\sigma_1\sigma_2\sigma_3$ y $a_{3,0}=\sigma_3$. Tenemos 
+Vamos ahora con la parte positiva de $\alpha_1$, que la dividimos en bloques $a_{1,0}=\sigma_3$, $a_{2,0}=\sigma_1\sigma_2\sigma_3\sigma_2\sigma_3$ y $a_{3,0}=\sigma_3$. Tenemos 
 \begin{align*}
 \alpha_1&=(\sigma_3)(\sigma_1\sigma_2\sigma_3\sigma_2\sigma_1)(\sigma_3)=a_{1,0}a_{2,0}a_{3,0} \\
 &=(\sigma_3\sigma_1\sigma_2\sigma_3)(\sigma_2\sigma_1)(\sigma_3)=a_{1,1}a_{2,1}a_{3,1}\\
@@ -224,6 +226,10 @@ Vemos que ya no podemos pasar ninguna letra más a la izquierda y que ningún fa
 
 Antes de terminar este capítulo, como comentábamos al final de la sección anterior, la forma normal de Garside permite probar la existencia y unicidad de mínimo común múltiplo y máximo común divisor en $B_n$ con el orden parcial inducido por el orden parcial definido en $B_n^+$.  
 
+\begin{prop}
+Dadas $a,b\in B_n$, existen $c=a\land b\in B_n$ y $d=a\lor b\in B_n$, es decir, existen el máximo común divisor y el mínimo común múltiplo en $B_n$. 
+\end{prop}
+\begin{dem}
 Dadas $a,b\in B_n$, sean sus formas normales $a=\Delta^{p_1}A$ y $b=\Delta^{p_2}B$, donde $p_1,p_2\in\Z$ y $A,B\in B_n^+$. Tomando $q=\max\{|p_1|,|p_2|\}$ tenemos que $\Delta^qa,\Delta^qb\in B_n^+$. Por tanto, sabemos que existe un máximo común divisor $c=(\Delta^qa\land\Delta^qb)\in B_n^+$. Entonces, por la invarianza por multiplicación a izquierda del orden de prefijos
 \begin{align*}
 c\preccurlyeq \Delta^qa &\Leftrightarrow\Delta^{-q}c\preccurlyeq a,\\
@@ -231,8 +237,8 @@ c\preccurlyeq \Delta^qb &\Leftrightarrow\Delta^{-q}c\preccurlyeq b.
 \end{align*}
 Esto significa que $\Delta^{-q}c$ es un prefijo común de $a$ y de $b$. Sea $d\in B_n$ con $d\preccurlyeq a$ y $d\preccurlyeq b$. Existe entonces $N\geq q$ de modo que $\Delta^N d, \Delta^Na, \Delta^N b\in B_n^+$ y, además, $\Delta^N d \preccurlyeq\Delta^Na$ y $\Delta^N d \preccurlyeq\Delta^Nb$. Por tanto, 
 $$\Delta^Nd\preccurlyeq \Delta^N a\land\Delta^N b=\Delta^{N-q}(\Delta^qa\land \Delta^qb)=\Delta^{N-q}c.$$
-Por consiguiente, $d\preccurlyeq \Delta^{-q}c$, con lo que $\Delta^{-q}c$ es de hecho el máximo común divisor de $a$ y $b$. Análogamente se prueba para el mínimo común múltiplo. 
-
+Por consiguiente, $d\preccurlyeq \Delta^{-q}c$, con lo que $\Delta^{-q}c$ es de hecho el máximo común divisor de $a$ y $b$. Análogamente se prueba para el mínimo común múltiplo. \QED
+\end{dem}
 
 %La invarianza por multiplicación del orden inducido en B_n se tiene por la definición
 \end{document}

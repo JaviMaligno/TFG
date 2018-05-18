@@ -73,13 +73,13 @@ Para cada $n$ fijo, podemos considerar, salvo homeomorfismo, las trenzas de $PB_
 \end{tikzcd}
 \]
 
-Por exactitud, $\iota(F_n)=\ker(\rho)$, por lo que $\iota(F_n)$ es normal en $PB_{n+1}$, así que por \ref{semidirect}, tenemos que $PB_{n+1}\cong F_n\rtimes PB_n$. Reiterando este proceso y teniendo en cuenta que $PB_2\cong F_1$, llegamos a que 
+Por exactitud, $\iota(F_n)=\ker(\rho)$, por lo que $\iota(F_n)$ es normal en $PB_{n+1}$, así que por la proposición \ref{semidirect}, tenemos que $PB_{n+1}\cong F_n\rtimes PB_n$. Reiterando este proceso y teniendo en cuenta que $PB_2\cong F_1$, llegamos a que 
 $$PB_{n+1}\cong F_n\rtimes (F_{n-1} \rtimes\dots\rtimes (F_3\rtimes (F_2\rtimes F_1))\cdots)).$$
 
 %$\heartsuit$
 De igual modo, podríamos empezar con $PB_{n+1}\cong PB_n\ltimes F_n$, lo que nos daría
 $$PB_{n+1}\cong ((\cdots ((F_1\ltimes F_2)\ltimes F_3)\ltimes\dots\ltimes F_{n-1})\ltimes F_n.$$
-Por tanto, cada trenza de $PB_{n+1}$ se expresa de forma única como producto de elementos de los grupos libres desde $F_1$ hasta $F_n$, donde los generadores pueden ser vistos como los generadores de Birman de las trenzas puras. Esto nos permitirá resolver el problema de la palabra en los grupos de trenzas puras mediante un proceso denominado \emph{peinado de trenzas}, consistente en expresar una trenza pura como un elemento del producto semidirecto anterior. El nombre es debido a que, geométricamente, la trenza original se convierte en una trenza en que en cada nivel solo se mueve una cuerda (en el nivel $j$ se mueve la cuerda $j$ mediante los generadores $A_{ij}$ con $i<j$ de $F_{j-1}$, ver Figura \ref{peinada}).
+Por tanto, cada trenza de $PB_{n+1}$ se expresa de forma única (proposición \ref{reciproco}) como producto de elementos de los grupos libres desde $F_1$ hasta $F_n$, donde los generadores pueden ser vistos como los generadores de Birman de las trenzas puras. Esto nos permitirá resolver el problema de la palabra en los grupos de trenzas puras mediante un proceso denominado \emph{peinado de trenzas}, consistente en expresar una trenza pura como un elemento del producto semidirecto anterior. El nombre es debido a que, geométricamente, la trenza original se convierte en una trenza en que en cada nivel solo se mueve una cuerda (en el nivel $j$ se mueve la cuerda $j$ mediante los generadores $A_{ij}$ con $i<j$ de $F_{j-1}$, ver Figura \ref{peinada}).
 
 
 \begin{figure}[h!]
@@ -216,7 +216,7 @@ Como hemos podido comprobar en el ejemplo anterior, la palabra se va haciendo ex
 
 \emph{``Although it has been proved that every braid can be deformed into a similar normal form, the writer is
 convinced that any attempt to carry this out on a living person would only lead to violent protests and
-discrimination against mathematics. He would therefore discourage such an experiment''\footnote{``Aunque ha sido probado que toda trenza puede ser deformada en una forma normal similar, el escritor está convencido de que cualquier intento de llevar esto acabo por una persona viva solo llevaría a violentas protestas y discriminación hacia las matemáticas. Por tanto, desaconsejaría tal experimento''.}.}
+discrimination against mathematics. He would therefore discourage such an experiment''\footnote{``Aunque ha sido probado que toda trenza puede ser deformada en una forma normal similar, el escritor está convencido de que cualquier intento de llevar esto a cabo por una persona viva solo llevaría a violentas protestas y discriminación hacia las matemáticas. Por tanto, desaconsejaría tal experimento''.}.}
 
 Sin embargo, versiones mejoradas hasta tiempo polinomial pueden ser encontradas en \cite{polynomial}.
 
