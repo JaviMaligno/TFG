@@ -56,7 +56,7 @@ Normalmente, se representan las trenzas como su proyección en $\R\times[0,1]$ (
 \end{figure}
 
 \begin{defi}\label{estandar}
-Se definen los \emph{generadores estándar} o \emph{generadores de Artin} como las trenzas $\sigma_i$ con $1\leq i\leq n-1$ indicadas en la figura siguiente.
+Se definen los \emph{generadores estándar} o \emph{generadores de Artin} como las trenzas $\sigma_i$ con $1\leq i\leq n-1$ indicadas en la Figura \ref{artingen}.
 \begin{figure}[h!]
 \begin{tikzpicture}
 \fill[black] ( 6.7 , -0.5 ) circle ( 1 pt ) ;
@@ -89,6 +89,7 @@ Se definen los \emph{generadores estándar} o \emph{generadores de Artin} como l
 \node[ at=(braid-5-s),  label=north : $i+1$ ] {} ;
 \draw (4.5,-2) node[anchor=south] {$\sigma_i^{-1}$};
 \end{tikzpicture}
+\caption{Generador de Artin y su inverso.}\label{artingen}
 \end{figure}
 \end{defi}\
 
@@ -172,7 +173,7 @@ El conjunto $B_n$ dotado de esta operación tiene estructura de grupo, y se le l
 \end{prop}
 
 \begin{dem}
-Sean $\alpha$ y $\beta$ dos trenzas con representantes $a=(a_1,\dots, a_n)$ y $b=(b_1,\dots, b_n)$ respectivamente. En primer lugar, veamos que la operación está bien definida, es decir, que $a\cdot b$ es una trenza, y por tanto podemos definir $\alpha\beta=[a\cdot b]$. Sea $\tau=\tau(a)$ la permutación inducida por $a$. Como $a_kb_{\tau(k)}(0)=a_k(0)=(P_k,0)$ para todo $1\leq k\leq n$, se cumple la primera propiedad de la definición \ref{geo}. Para la segunda, basta observar que la nueva permutación es $\tau(a\cdot b)=\tau(b)\circ \tau(a)$. En particular, si $a$ y $b$ son puras, entonces la permutación inducida por el producto también es la identidad, por lo que el producto es una trenza pura. Por último, si $t\in[0,1/2]$, entonces $a_k\beta_{\tau(k)}=a_k(2t)$ y si $t\in [1/2,1]$, $\alpha_k\beta_{\tau(k)}=\beta_{\tau(k)}(2t-1)$ para todo $1\leq k\leq n$, por lo que se tiene claramente la tercera propiedad. 
+Sean $\alpha$ y $\beta$ dos trenzas con representantes $a=(a_1,\dots, a_n)$ y $b=(b_1,\dots, b_n)$ respectivamente. En primer lugar, veamos que la operación está bien definida, es decir, que $a\cdot b$ es una trenza, y por tanto podemos definir $\alpha\beta=[a\cdot b]$. Sea $\tau=\tau(a)$ la permutación inducida por $a$. Como $a_kb_{\tau(k)}(0)=a_k(0)=(P_k,0)$ para todo $1\leq k\leq n$, se cumple la primera propiedad de la Definición \ref{geo}. Para la segunda, basta observar que la nueva permutación es $\tau(a\cdot b)=\tau(b)\circ \tau(a)$. En particular, si $a$ y $b$ son puras, entonces la permutación inducida por el producto también es la identidad, por lo que el producto es una trenza pura. Por último, si $t\in[0,1/2]$, entonces $a_k\beta_{\tau(k)}=a_k(2t)$ y si $t\in [1/2,1]$, $\alpha_k\beta_{\tau(k)}=\beta_{\tau(k)}(2t-1)$ para todo $1\leq k\leq n$, por lo que se tiene claramente la tercera propiedad. 
 
 Por otra parte, si $a'$ y $b'$ son otros representantes de $\alpha$ y $\beta$ respectivamente, se tiene que $[a'\cdot b']=[a\cdot b]$ por las propiedades de la homotopía de caminos con respecto a la concatenación.
 
@@ -211,7 +212,7 @@ $\QED$
 
 
 \section{Espacios de configuración}
-Vamos a empezar dando la noción general de espacio de configuración, introducidos por Fadell en 1962 \cite{Fadell}.
+Vamos a empezar dando la noción general de espacio de configuración, introducida por Fadell en 1962 \cite{Fadell}.
 \begin{defi}
 Dado un espacio topológico $X$, el $n$-ésimo \emph{espacio de configuración} de $X$ o \emph{espacio de configuración de $n$ puntos} de $X$ se define como el conjunto
 $$M_n(X)=\{(x_1,\dots,x_n)\in X^n\mid x_i\neq x_j\ \forall i\neq j\},$$
@@ -269,7 +270,7 @@ El \emph{grupo de trenzas} de $n$ cuerdas, $B_n$,  es el grupo fundamental del $
 $$B_n=\pi_1(N_n)=\pi_1(M_n/\Sigma_n).$$
 \end{defi}
 
-La equivalencia entre estas definiciones y la definición \ref{geo} se puede encontrar en \cite{Zariski}.
+La equivalencia entre estas definiciones y la Definición \ref{geo} se puede encontrar en \cite{Zariski}.
 
 Al igual que antes, las trenzas pueden ser visualizadas como lazos, con la diferencia de que ahora, dado un lazo $\beta:[0,1]\to N_n$, $\beta(1)$ puede tener como representante una permutación de las coordenadas de $\beta(0)$. De nuevo, dos trenzas son consideradas iguales si son homotópicamente equivalentes. Al representar el movimiento en $\C\times[0,1]$ nos quedaría un dibujo similar al de la Figura \ref{hilos} a la derecha.
 
@@ -317,7 +318,7 @@ Se sabe que un automorfismo del disco cerrado $\D^2$ que fije la frontera puede 
 \newpage
 
 \section{Presentación del grupo de trenzas}
-Una de las características mejor conocidas de los grupos de trenzas es su presentación finita descubierta por Artin en \cite{Artin}. Ya hemos mencionado los generadores $\sigma_1,\dots,\sigma_{n-1}\in B_n$ en la definición \ref{estandar}. La presentación completa sería la siguiente:
+Una de las características mejor conocidas de los grupos de trenzas es su presentación finita descubierta por Artin en \cite{Artin}. Ya hemos mencionado los generadores $\sigma_1,\dots,\sigma_{n-1}\in B_n$ en la Definición \ref{estandar}. La presentación completa sería la siguiente:
 \begin{equation}\label{presentacion}
 B_n=\left\langle\begin{array}{c| c c}
 \multirow{2}{*}{$\sigma_1,\dots,\sigma_{n-1}$} & \sigma_i\sigma_j=\sigma_j\sigma_i, & |i-j|>1\\
@@ -373,8 +374,8 @@ En la Figura \ref{generador} se puede observar qué trenza representa geométric
 \draw[smooth,white,double=black,line width=2mm,-] plot[variable=\x,domain=-2:2] ({-3.5*exp(-1.4*\x*\x)},{\x});
 \draw[white,double=black,very thick,-] (-3,-2) -- (-3,0);
 \node[anchor=south] at (-3,2.1) {$i$};
-\draw[decorate sep={1mm}{9mm},fill] (-6.5,0) -- (-4.5,0);
-\draw[decorate sep={1mm}{9mm},fill] (1.5,0) -- (3.5,0);
+\draw[decorate sep={0.5mm}{9mm},fill] (-6.5,0) -- (-4.5,0);
+\draw[decorate sep={0.5mm}{9mm},fill] (1.5,0) -- (3.5,0);
 \draw[-] (-8,2) -- (5,2);
 \draw[-] (-8,-2) -- (5,-2);
 \end{tikzpicture}
@@ -397,11 +398,33 @@ A_{ij}A_{rs}A_{ij}^{-1}&=A_{js}^{-1}A_{is}^{-1}A_{js}A_{is}A_{rs}A_{is}^{-1}A_{j
 
 \section{El problema de la palabra}
 
+El problema de la palabra fue descrito por primera vez por Max Dehn \cite{Dehn11} en 1911 y desde entonces se ha convertido en uno de los problemas más importantes de la teoría algorítmica de grupos. Este problema consiste en: dado un grupo $G$ con una presentación finita $\langle S| R\rangle$ y dados dos elementos $A$ y $B$ de $G$ expresados como producto de los elementos de $S$ y sus inversos, decidir si $A=B$ como elementos del grupo o, equivalentemente, si $AB^{-1}=e$, donde $e$ representa el elemento neutro.
+
+El nombre de este problema proviene de que podemos considerar el alfabeto $\Sigma=S\cup S^{-1}$, donde $S^{-1}$ representa el conjunto formado por los inversos de los elementos de $S$, y ver $G$ como un lenguaje sobre $\Sigma$, en el que dos palabras $A$ y $B$ representarán el mismo elemento si y solo si se puede transformar $A$ en $B$ mediante un número finito de pasos usando las reglas de reescritura proporcionadas por las relaciones de $R$ junto con la cancelación de inversos. 
+
+El problema de la palabra es un problema de \emph{decisión}. Los problemas de decisión consisten en determinar si un objeto $\mathcal{O}$ cumple una propiedad $\mathcal{P}$. En este caso, decidimos si dos elementos de un grupo son el mismo. Dentro de los problemas de decisión podemos encontrar los problemas de \emph{conocimiento} y los problemas de \emph{búsqueda}. Los problemas de conocimiento requieren una prueba de que el objeto $\mathcal{O}$ cumple la propiedad $\mathcal{P}$, pero no se requiere ninguna construcción explícita. Un ejemplo ilustrativo sería decidir si una matriz es invertible. La solución al problema de conocimiento no requeriría construir la matriz inversa, sino que bastaría con calcular el determinante o reducir la matriz a la identidad. Los problemas de búsqueda requieren una construcción más explícita. En el caso del problema de la palabra, no solo consistiría en decidir si un elemento $A$ de un grupo $G=\gene{S|R}$ es trivial o no, si no que, en caso de que la respuesta sea afirmativa, se pide encontrar las transformaciones mediante relaciones de $S$ que convierten $A$ en el elemento neutro. Más información y ejemplos sobre los problemas de decisión en teoría de grupos se pueden encontrar en \cite{problemas}.
+\newpage
+Por lo general, hay dos técnicas principales para resolver el problema de la palabra:
+\begin{itemize}
+\item Representaciones fieles en otros grupos: una representación fiel es un homomorfismo de grupos inyectivo. Si tenemos una representación fiel dada de forma explícita podemos trasladar el problema del grupo original a un grupo en el que ya sepamos resolverlo. Un ejemplo paradigmático son las representaciones lineales, en las que el grupo de llegada es un grupo de matrices. 
+\item Cálculo de una forma normal:  se trata de encontrar una forma única de escribir todos los elementos del grupo, con lo que dos elementos sean el mismo si y solo si sus formas normales coinciden.
+\end{itemize} 
+
+En este trabajo veremos dos ejemplos de cada una de las técnicas. La primera de ellas aparece en los capítulos \ref{capitulo1} y \ref{capitulo4}, mientras que la segunda corresponde a los capítulo \ref{capitulo2} y \ref{capitulo3}. En el capítulo \ref{capitulo1} la representación de $B_n$ se hará sobre los automorfismos del grupo libre de rango $n$, donde el problema de la palabra se resuelve simplemente calculando la forma reducida de las imágenes de los automorfismos. En el capítulo \ref{capitulo4} se construyen varias representaciones lineales, que permiten resolver el problema de la palabra haciendo productos de matrices con coeficientes en unos ciertos anillos de polinomios. La forma normal del capítulo \ref{capitulo2} se construirá usando los generadores de Birman (ecuación \ref{birman}) y las propiedades del producto semidirecto (ver sección \ref{semidirectproduct}). Finalmente, en el capítulo \ref{capitulo3} se describe una forma normal basada en un cierto orden parcial del que se puede dotar a los grupos de trenzas.
+
+También existen algoritmos para resolver parcialmente el problema de la palabra, es decir, podemos encontrar ciertos invariantes de las palabras que representan el elemento neutro, de modo que si una palabra no los verifica sabemos que no es trivial en el grupo, aunque no podamos asegurar que sí lo sea en caso de que verifique las propiedades. Algunos de estos invariantes para los grupos de trenzas son:
+\begin{itemize}
+\item Suma de los exponentes: en cualquier grupo con relaciones homogéneas, para que un elemento represente el neutro, la suma de los exponentes de los generadores que lo representan debe ser cero. Esto se puede considerar como una representación no fiel (morfismo no inyectivo) $\varphi:G\to \Z$. En general, una representación no fiel nos dará una solución parcial al problema de la palabra.
+\item Permutación inducida: la trenza trivial es una trenza pura, por lo que la permutación inducida por cualquier palabra que represente la trenza trivial debe ser la identidad. En este caso también tenemos una representación no fiel $\eta:B_n\to \Sigma_n$. 
+\end{itemize}
+
+Más invariantes de las trenzas se pueden encontrar en \cite{invariants}.
+
 \section{Definiciones y resultados adicionales}
 
 
 En esta sección veremos definiciones y resultados más generales  que serán utilizados a lo largo del trabajo. 
-\subsection{Producto semidirecto}
+\subsection{Producto semidirecto}\label{semidirectproduct}
 
 \begin{defi}
 Si un grupo $G$ actúa (por la izquierda) sobre un grupo $F$ mediante automorfismos de grupos
@@ -445,7 +468,7 @@ Por la forma en el que está definido el producto semidirecto, conseguimos conse
 \begin{dem}
 En ambos casos es elemental probar que se tratan de morfismos inyectivos. Así que vamos a probar que la imagen de $F$ mediante la aplicación $\delta\mapsto (\delta,e_G)$ es un subgrupo normal de $F\rtimes G$. Para ello vamos a ver que $F\times\{e_G\}$ es el núcleo de un cierto homomorfismo de grupos $\varphi:F\rtimes G\to G$. Este homomorfismo vendrá definido como $\varphi(\delta,h)=h$, el cual es fácil ver que efectivamente es homomorfismo de grupos. Claramente $\ker\varphi=\{(\delta,h)\mid h=e_G\}=F\times\{e_G\}$, como queríamos demostrar. 
 
-Para la segunda parte, supongamos que tenemos $h_1g_1=h_2g_2\in F\times\{e_G\}$ con $h_1,h_2\in F$ y $g_1,g_2\in G$. Entonces consideramos la proyección $p:F\rtimes G\to G$, de modo que $g_1=p(h_1g_1)=p(h_2g_2)=g_2$. Ahora basta multiplicar a derecha por $g_1^{-1}$ para obtener $h_1=h_2$.
+Para la segunda parte, supongamos que tenemos $h_1g_1=h_2g_2\in F\rtimes G$ con $h_1,h_2\in F\times\{e_G\}\cong F$ y $g_1,g_2\in \{e_F\}\times G\cong G$. Entonces consideramos la proyección $p:F\rtimes G\to G$, de modo que $g_1=p(h_1g_1)=p(h_2g_2)=g_2$. Ahora basta multiplicar a derecha por $g_1^{-1}$ para obtener $h_1=h_2$.
 \QED
 %https://groupprops.subwiki.org/wiki/Normal_subgroup_equals_kernel_of_homomorphism
 %El razonamiento análogo para G no se podría hacer porque el producto en F es el normal y en la primera componente es el producto twisteado, que no coincidiría en general
@@ -475,7 +498,7 @@ entonces $H\cong F\rtimes G$. El recíproco también es cierto.
 \begin{dem}
 Supongamos que tenemos una sección $s:G\to H$. Como la imagen de $F$ es isomorfa a $F$, podemos identificar ambos grupos. Definamos pues $\rho:G\to Aut(F)$ como $g\to C_{s(g)}|_F$, donde $C_{s(g)}$ denota la conjugación por $s(g)$ en $H$. Al restringirlo a $F$, esto nos da un automorfismo bien definido al ser $F$ normal en $H$ al ser el núcleo de la aplicación $H\to G$. Así que hemos definido una acción mediante automorfismos que da lugar a un producto semidirecto isomorfo a $F\rtimes G$. 
 
-El recíproco nos lo da la proposición \ref{reciproco}, en la cual definimos la sección $h\mapsto (e_F,h)$ y probamos que la imagen de $F$ era normal en el producto semidirecto.
+El recíproco nos lo da la Proposición \ref{reciproco}, en la cual definimos la sección $h\mapsto (e_F,h)$ y probamos que la imagen de $F$ era normal en el producto semidirecto.
 \QED
 %Para el recíproco basta tomar la sucesión exacta de inclusión y cociente por ser F normal y el cociente sale isomorfo a G con el 1er tma isomorfía usando la aplicación que he elegido en la demostración anterior \url{https://math.stackexchange.com/questions/339731/relation-between-semidirect-products-extensions-and-split-extensions}
 \end{dem}
@@ -549,7 +572,7 @@ Claramente, la inversa de un isomorfismo de espacios recubridores es isomorfismo
 En el espacio recubridor el ejemplo \ref{RS1}, las transformaciones recubridoras son las aplicaciones de la forma $f(t)=t+n$ para cada $n\in\Z$, por lo que $G(\widetilde{X})\cong\Z$. En particular, $\Z$ actúa sobre el espacio recubridor mediante cada $f$. 
 \end{ej}
 
-\begin{defi}
+\begin{defi}\label{corresponde}
 Dado un espacio topológico $X$ y un grupo $G$, se dice que un espacio recubridor $\widetilde{X}$ \emph{se corresponde} con $G$ si $\pi_1(\widetilde{X})=G$. 
 \end{defi}
 

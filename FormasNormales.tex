@@ -4,9 +4,9 @@
 
 
 
-\chapter{Formas normales}
+\chapter{Formas normales}\label{capitulo3}
 
-El objetivo de este capítulo será proporcionar una \emph{forma normal} para las trenzas, es decir, una forma ``estándar'' de escribirlas, de modo que para ver si dos palabras representan la misma trenza sea suficiente calcular sus formas normales y comprobar si son iguales. Para llegar hasta esa forma normal estudiaremos la \emph{estructura de Garside} del grupo de trenzas. Los resultados referentes a Thurston \cite{Thurston} se pueden encontrar en el capítulo 9 de dicho libro.
+El objetivo de este capítulo será proporcionar una \emph{forma normal} para las trenzas, es decir, una forma ``estándar'' de escribirlas, de modo que para ver si dos palabras representan la misma trenza sea suficiente calcular sus formas normales y comprobar si son iguales. Para llegar hasta esa forma normal estudiaremos la \emph{estructura de Garside} del grupo de trenzas. Los resultados referentes a \emph{Word processing in groups} \cite{Thurston} se pueden encontrar en el capítulo 9 de dicho libro.
 
 \section{Estructura de Garside}
 
@@ -142,7 +142,7 @@ Las propiedades anteriores implican que el orden parcial $\preccurlyeq$ (respect
 % a,b\in B_n, a<b sii a^{-1}b\in B_n^+
 
 \section{Solución al problema de la palabra}
-Garside dio una nueva solución al problema de la palabra en los grupos de trenzas de la siguiente manera. Recordemos que para todo $i=1,\dots, n-1$ se tiene que $\Delta\succcurlyeq\sigma_i$ por la proposición \ref{sufijos} apartado 1, esto es, $\Delta=X_i\sigma_i$ para algún $X_i\in B_n^+$. Dada una trenza escrita como una palabra en $\sigma_1,\dots,\sigma_{n-1}$ y sus inversos, se puede reemplazar cada aparición de $\sigma_i^{-1}$ por $\Delta^{-1}X_i$. Conjugar una trenza positiva por $\Delta$ sigue dando una trenza positiva por la proposición \ref{conjuga} apartado 2, así que podemos mover todas las apariciones de $\Delta^{-1}$ a la izquierda, de la siguiente forma: si encontramos $\sigma_j\Delta^{-1}$ ($1\leq j\leq n-1)$, entonces por \ref{conjuga} sabemos que $\Delta\sigma_{j}=\sigma_{n-j}\Delta$, si y solo si  $\sigma_j\Delta^{-1}=\Delta^{-1}\sigma_{n-j}$, por lo que podemos sustituir $\sigma_j\Delta^{-1}$ por $\Delta^{-1}\sigma_{n-j}$. Esto muestra que toda trenza puede ser escrita como $\Delta^p A$ para algún $p\in\Z$ y algún $A\in B_n^+$. Además, si $\Delta\preccurlyeq A$, podemos reemplazar $\Delta^p$ por $\Delta^{p+1}$ y $A$ por $\Delta^{-1}A$. Esto reduce la longitud de $A$, así que solo puede hacerse una cantidad finita de veces. Por tanto, toda trenza puede descomponerse \emph{de manera única}, como $\Delta^pA$, donde $p\in\Z$, $A\in B_n^+$ y $\Delta\not\preccurlyeq A$. Efectivamente, si tuviéramos dos expresiones $\Delta^pA=\Delta^q B$ con $p<q$ en las condiciones anteriores, dividiendo por $\Delta^p$ tendríamos que $A=\Delta^{q-p}B$, lo cual contradice el hecho de que $A$ no tenga a $\Delta$ como prefijo. Análogamente para $p>q$, luego $p=q$ y $A=B$.
+Garside dio una nueva solución al problema de la palabra en los grupos de trenzas de la siguiente manera. Recordemos que para todo $i=1,\dots, n-1$ se tiene que $\Delta\succcurlyeq\sigma_i$ por la Proposición \ref{sufijos} apartado 1, esto es, $\Delta=X_i\sigma_i$ para algún $X_i\in B_n^+$. Dada una trenza escrita como una palabra en $\sigma_1,\dots,\sigma_{n-1}$ y sus inversos, se puede reemplazar cada aparición de $\sigma_i^{-1}$ por $\Delta^{-1}X_i$. Conjugar una trenza positiva por $\Delta$ sigue dando una trenza positiva por la Proposición \ref{conjuga} apartado 2, así que podemos mover todas las apariciones de $\Delta^{-1}$ a la izquierda, de la siguiente forma: si encontramos $\sigma_j\Delta^{-1}$ ($1\leq j\leq n-1)$, entonces por \ref{conjuga} sabemos que $\Delta\sigma_{j}=\sigma_{n-j}\Delta$, si y solo si  $\sigma_j\Delta^{-1}=\Delta^{-1}\sigma_{n-j}$, por lo que podemos sustituir $\sigma_j\Delta^{-1}$ por $\Delta^{-1}\sigma_{n-j}$. Esto muestra que toda trenza puede ser escrita como $\Delta^p A$ para algún $p\in\Z$ y algún $A\in B_n^+$. Además, si $\Delta\preccurlyeq A$, podemos reemplazar $\Delta^p$ por $\Delta^{p+1}$ y $A$ por $\Delta^{-1}A$. Esto reduce la longitud de $A$, así que solo puede hacerse una cantidad finita de veces. Por tanto, toda trenza puede descomponerse \emph{de manera única}, como $\Delta^pA$, donde $p\in\Z$, $A\in B_n^+$ y $\Delta\not\preccurlyeq A$. Efectivamente, si tuviéramos dos expresiones $\Delta^pA=\Delta^q B$ con $p<q$ en las condiciones anteriores, dividiendo por $\Delta^p$ tendríamos que $A=\Delta^{q-p}B$, lo cual contradice el hecho de que $A$ no tenga a $\Delta$ como prefijo. Análogamente para $p>q$, luego $p=q$ y $A=B$.
 
 %\Delta c=A, \Delta^p A = \Delta^{p+1} \Delta^{-1}A=\Delta^{p+1}c
 \begin{defi}
@@ -184,11 +184,11 @@ Alternativamente, podríamos empezar con una descomposición $w=\Delta^qA$ con $
 
 
 \begin{ej}\label{ejnormal}
-En $B_4$ sean $\alpha_1=\sigma_1\sigma_2^{-1}\sigma_3$ y $\alpha_2=\sigma_3\sigma_1\sigma_1\sigma_2\sigma_1$, las cuales queremos comprobar si representan el mismo elemento. Lo primero que debemos hacer es eliminar el exponente negativo de $\alpha_1$. Para ello, tenemos que expresar $\Delta=\Delta_4=\sigma_1(\sigma_2\sigma_1)(\sigma_3\sigma_2\sigma_1)$ de forma que tenga a $\sigma_2$ como sufijo. Esto es sencillo pues basta usar la técnica de la demostración del primer apartado de la proposición \ref{sufijos} para escribir
+En $B_4$ sean $\alpha_1=\sigma_1\sigma_2^{-1}\sigma_3$ y $\alpha_2=\sigma_3\sigma_1\sigma_1\sigma_2\sigma_1$, las cuales queremos comprobar si representan el mismo elemento. Lo primero que debemos hacer es eliminar el exponente negativo de $\alpha_1$. Para ello, tenemos que expresar $\Delta=\Delta_4=\sigma_1(\sigma_2\sigma_1)(\sigma_3\sigma_2\sigma_1)$ de forma que tenga a $\sigma_2$ como sufijo. Esto es sencillo pues basta usar la técnica de la demostración del primer apartado de la Proposición \ref{sufijos} para escribir
 \[
 \Delta=\sigma_1(\sigma_2)(\sigma_3\sigma_2\sigma_1)\sigma_2.
 \]
-Así pues, $\sigma_2^{-1}=\Delta^{-1}\sigma_1\sigma_2\sigma_3\sigma_2\sigma_1$, de modo que $\alpha_1=\sigma_1\Delta^{-1}\sigma_1\sigma_2\sigma_3\sigma_2\sigma_1\sigma_3$. Usando la proposición \ref{conjuga}, pasamos $\Delta^{-1}$ a la izquierda:
+Así pues, $\sigma_2^{-1}=\Delta^{-1}\sigma_1\sigma_2\sigma_3\sigma_2\sigma_1$, de modo que $\alpha_1=\sigma_1\Delta^{-1}\sigma_1\sigma_2\sigma_3\sigma_2\sigma_1\sigma_3$. Usando la Proposición \ref{conjuga}, pasamos $\Delta^{-1}$ a la izquierda:
 \[
 \alpha_1=\Delta^{-1}\sigma_3\sigma_1\sigma_2\sigma_3\sigma_2\sigma_1\sigma_3
 \]

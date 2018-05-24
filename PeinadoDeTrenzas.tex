@@ -4,7 +4,7 @@
 
 
 %\hyphenation{equi-va-len-cia}\hyphenation{pro-pie-dad}\hyphenation{res-pec-ti-va-men-te}\hyphenation{sub-es-pa-cio}
-\chapter{Peinado de trenzas}
+\chapter{Peinado de trenzas}\label{capitulo2}
 
 
 En este capítulo veremos un algoritmo para resolver el problema de la palabra basado en la posibilidad de expresar las trenzas puras como elementos de un producto semidirecto de grupos libres. El algoritmo requerirá una técnica denominada \emph{peinado de trenzas} para que el orden de los factores sea el adecuado.
@@ -73,13 +73,13 @@ Para cada $n$ fijo, podemos considerar, salvo homeomorfismo, las trenzas de $PB_
 \end{tikzcd}
 \]
 
-Por exactitud, $\iota(F_n)=\ker(\rho)$, por lo que $\iota(F_n)$ es normal en $PB_{n+1}$, así que por la proposición \ref{semidirect}, tenemos que $PB_{n+1}\cong F_n\rtimes PB_n$. Reiterando este proceso y teniendo en cuenta que $PB_2\cong F_1$, llegamos a que 
+Por exactitud, $\iota(F_n)=\ker(\rho)$, por lo que $\iota(F_n)$ es normal en $PB_{n+1}$, así que por la Proposición \ref{semidirect}, tenemos que $PB_{n+1}\cong F_n\rtimes PB_n$. Reiterando este proceso y teniendo en cuenta que $PB_2\cong F_1$, llegamos a que 
 $$PB_{n+1}\cong F_n\rtimes (F_{n-1} \rtimes\dots\rtimes (F_3\rtimes (F_2\rtimes F_1))\cdots)).$$
 
 %$\heartsuit$
 De igual modo, podríamos empezar con $PB_{n+1}\cong PB_n\ltimes F_n$, lo que nos daría
 $$PB_{n+1}\cong ((\cdots ((F_1\ltimes F_2)\ltimes F_3)\ltimes\dots\ltimes F_{n-1})\ltimes F_n.$$
-Por tanto, cada trenza de $PB_{n+1}$ se expresa de forma única (proposición \ref{reciproco}) como producto de elementos de los grupos libres desde $F_1$ hasta $F_n$, donde los generadores pueden ser vistos como los generadores de Birman de las trenzas puras. Esto nos permitirá resolver el problema de la palabra en los grupos de trenzas puras mediante un proceso denominado \emph{peinado de trenzas}, consistente en expresar una trenza pura como un elemento del producto semidirecto anterior. El nombre es debido a que, geométricamente, la trenza original se convierte en una trenza en que en cada nivel solo se mueve una cuerda (en el nivel $j$ se mueve la cuerda $j$ mediante los generadores $A_{ij}$ con $i<j$ de $F_{j-1}$, ver Figura \ref{peinada}).
+Por tanto, cada trenza de $PB_{n+1}$ se expresa de forma única (Proposición \ref{reciproco}) como producto de elementos de los grupos libres desde $F_1$ hasta $F_n$, donde los generadores pueden ser vistos como los generadores de Birman de las trenzas puras. Esto nos permitirá resolver el problema de la palabra en los grupos de trenzas puras mediante un proceso denominado \emph{peinado de trenzas}, consistente en expresar una trenza pura como un elemento del producto semidirecto anterior. El nombre es debido a que, geométricamente, la trenza original se convierte en una trenza en que en cada nivel solo se mueve una cuerda (en el nivel $j$ se mueve la cuerda $j$ mediante los generadores $A_{ij}$ con $i<j$ de $F_{j-1}$, ver Figura \ref{peinada}).
 
 
 \begin{figure}[h!]
@@ -123,7 +123,7 @@ Cada paréntesis es una trenza pura pues
 
 %Lo de usar trenzas simples es porque la idea era que en cada paso solo se vaya moviendo una cuerda alrededor de las otras
 
-Así iríamos reiterando hasta llegar al final de la palabra. Obsérvese que al sustituir, muchos términos se cancelarán y otros quedarán con una cierta simetría que facilitará expresarlos como producto de los generadores de Birman. En cualquier caso, como hay $n!$ trenzas de permutación y $2(n-1)$ generadores contando las potencias negativas, hay a lo sumo $n!2(n-1)$ factores distintos para expresarlos como producto de los generadores de Birman. Al ser una cantidad finita, siempre es factible hacer una lista para transformarlos automáticamente. Una vez que tengamos una palabra de la forma
+Así iríamos reiterando hasta llegar al final de la palabra. Obsérvese que al sustituir, muchos términos se cancelarán y otros quedarán con una cierta simetría que facilitará expresarlos como producto de los generadores de Birman. En cualquier caso, como hay $n!$ trenzas de permutación y $2(n-1)$ generadores contando las potencias negativas, hay a lo sumo $n!2(n-1)$ factores distintos para expresarlos como producto de los generadores de Birman. Al ser una cantidad finita, siempre es factible hacer una lista para transformarlos automáticamente. Para una forma sistemática de realizar esta transformación consultar \cite{Meneses}. Una vez que tengamos una palabra de la forma
 \[
 A_{i_1,j_1}^{\pm 1}\cdots A_{i_r,j_r}^{\pm 1},
 \]
