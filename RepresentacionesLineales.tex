@@ -6,7 +6,7 @@
 %\hyphenation{equi-va-len-cia}\hyphenation{pro-pie-dad}\hyphenation{res-pec-ti-va-men-te}\hyphenation{sub-es-pa-cio}
 \chapter{Representaciones lineales}\label{capitulo4}
 
-La existencia (o no existencia) de representaciones lineales fieles de los grupos de trenzas es uno de las mayores cuestiones de esta área de investigación. Este problema fue por primera vez resuelto por Bigelow \cite{Bigelow} y Krammer \cite{Krammer} en el año 2000, mediante la conocida como \emph{representación LKB}. Además de esta representación existen otras, como la representación de Burau reducida, con la cual empezaremos este capítulo.
+La existencia (o no existencia) de representaciones lineales fieles de los grupos de trenzas es una de las mayores cuestiones de esta área de investigación. Este problema fue por primera vez resuelto por Bigelow \cite{Bigelow} y Krammer \cite{Krammer} en el año 2000, mediante la conocida como \emph{representación LKB}. Además de esta representación existen otras, como la representación de Burau reducida, con la cual empezaremos este capítulo.
 
 \section{Representación de Burau reducida}
 
@@ -64,7 +64,7 @@ Vamos a ver cómo definir la representación de Burau reducida. Sea $\beta\in B_
 
 
 \begin{defi}
-Sea el homomorfismo $\psi_r:B_n\to GL(H_1(\widetilde{\D}_n))$ dado por $\psi_r(\beta)=[\tilde{h}]$. Esta aplicación está bien definida por las observaciones anteriores y es lo que se conoce como \emph{representación de Burau reducida} de $B_n$.
+Sea el homomorfismo $\psi_r:B_n\to GL(H_1(\widetilde{\D}_n))$ dado por $\psi_r(\beta)=[\tilde{h}]$. Esta aplicación está bien definida por las observaciones anteriores y se conoce como \emph{representación de Burau reducida} de $B_n$.
 \end{defi}
 
 Se llama \emph{reducida} porque existe una representación $n$-dimensional de la cual la forma reducida es un sumando irreducible, es decir, que no se puede expresar como una combinación de dos representaciones lineales. Esta mencionada representación $n$-dimensional puede encontrarse en \cite{thesis}. Como veremos con la siguiente proposición, la representación que hemos dado es $(n-1)$-dimensional.
@@ -82,18 +82,20 @@ $H_1(\widetilde{\D}_n)$ es un módulo libre de rango $n-1$ sobre $\Z[t,t^{-1}]$.
 
 
 
-Vamos a calcular la homología de $\widetilde{X}$, que es claramente del mismo tipo de homotopía que $\widetilde{\D}_n$. Además podemos considerar $\phi$ como una aplicación $\pi_1(X)\to\Z$ por ser $X$ homotópicamente equivalente a $\D_n$. Eligiendo entonces un generador $t\in \pi_1(X)/\ker\phi$ podemos ver $H_1(\widetilde{X})$ como un $\Z[t,t^{-1}]$-módulo. LA SUMA SE CORRESPONDE CON LA CONCATENACIÓN DE CAMINOS Y EL PRODUCTO POR EL CAMINO QUE REPRESENTA T QUE SUBE Y BAJA NIVELES (CONJUGACIÓN)
+Vamos a calcular la homología de $\widetilde{X}$, que es claramente del mismo tipo de homotopía que $\widetilde{\D}_n$. Además podemos considerar $\phi$ como una aplicación $\pi_1(X)\to\Z$ por ser $X$ homotópicamente equivalente a $\D_n$. Eligiendo entonces un generador $t\in \pi_1(X)/\ker\phi$ podemos ver $H_1(\widetilde{X})$ como un $\Z[t,t^{-1}]$-módulo, donde la suma se corresponde con la concatenación de lazos y el producto por $t$ con la conjugación por un lazo $x_i$. 
 
 Sean $A=\bigcup_{j\in\Z}X_{2j}^*$ y $B=\bigcup_{j\in\Z}X_{2j+1}^*$ subespacios cuya unión es $\widetilde{X}$. La sucesión de Mayer-Vietoris nos da
 \[
 0\to H_1(\widetilde{X})\overset{\Delta}{\to} H_0(A\cap B)\overset{i_*}{\to} H_0(A)\oplus H_0(B),
 \]
-donde el 0 proviene de que $A$ y $B$ son homotópicamente equivalentes a un espacio discreto. Por tanto, $H_1(\widetilde{X})\cong \Ima\Delta=\ker i_*$. Ahora, $H_0(A\cap B)$ es isomorfo a $\bigoplus_{j\in\Z}\Z^n$, ya que para cada $j\in\Z$, la intersección $X_j^*\cap X_{j+1}^*$ es homotópicamente equivalente a un espacio de $n$ puntos. Entonces $\{a_{j,1},\dots, a_{j,n}\}_{j\in\Z}$ una $\Z$-base para $H_0(A\cap B)$. Es fácil ver que $\{a_{j,1}-a_{j,2},\dots,a_{j,n-1}-a_{j,n}\}_{j\in\Z}$ es una base para $\ker i_*$. Sea $\tilde{d}_0\in\widetilde{X}$ un levantamiento del punto base $d_0\in X$, digamos $\tilde{d}_0\in X_0^*$. Denotamos por $v_i$ el elemento de $H_1(\widetilde{X})$ representado por el levantamiento del lazo $x_ix_{i+1}^{-1}$. Se tiene que $\Delta (v_i)=a_{0,i}-a_{0,i+1}$ \cite{thesis} y para todo $j\in\Z$ se tiene $\Delta(t^j v_i)=a_{j,i}-a_{j,i+1}$. Por tanto, los $t^jv_i$ forman una base de $H_1(\widetilde{X})$ como $\Z$-módulo, y como consecuencia $\{v_1,\dots, v_{n-1}\}$ es una base de $H_1(\widetilde{X})$ como $\Z[t,t^{-1}]$-módulo. \QED
+donde el 0 proviene de que $A$ y $B$ son homotópicamente equivalentes a un espacio discreto. Por tanto, $H_1(\widetilde{X})\cong \Ima\Delta=\ker i_*$. Ahora, $H_0(A\cap B)$ es isomorfo a $\bigoplus_{j\in\Z}\Z^n$, ya que para cada $j\in\Z$, la intersección $X_j^*\cap X_{j+1}^*$ es homotópicamente equivalente a un espacio de $n$ puntos. Entonces $\{a_{j,1},\dots, a_{j,n}\}_{j\in\Z}$ una $\Z$-base para $H_0(A\cap B)$. Es fácil ver que $\{a_{j,1}-a_{j,2},\dots,a_{j,n-1}-a_{j,n}\}_{j\in\Z}$ es una base para $\ker i_*$. Sea $\tilde{d}_0\in\widetilde{X}$ un levantamiento del punto base $d_0\in X$, digamos $\tilde{d}_0\in X_0^*$. Denotamos por $v_i$ el elemento de $H_1(\widetilde{X})$ representado por el levantamiento del lazo $x_ix_{i+1}^{-1}$ ($1\leq i\leq n-1$). Se tiene que $\Delta (v_i)=a_{0,i}-a_{0,i+1}$ \cite{thesis} y para todo $j\in\Z$ se tiene $\Delta(t^j v_i)=a_{j,i}-a_{j,i+1}$. Por tanto, los $t^jv_i$ forman una base de $H_1(\widetilde{X})$ como $\Z$-módulo, y como consecuencia $\{v_1,\dots, v_{n-1}\}$ es una base de $H_1(\widetilde{X})$ como $\Z[t,t^{-1}]$-módulo. \QED
 
 \end{dem}
 %\end{comment}
 
 %Lo del t^j es que t es una que da solo una vuelta (se puede expresar como phi(p(t))=1, con lo cual en el recubridor sube o baja un nivel, así que hacer eso j veces te da j cambios de nivel y por eso te lo lleva a esa base
+
+%el x_i que usemos para conjugar depende del v_i 
 
 %Lo de que se corresponda al ker es como cuando en Hatcher hace corresponder un espacio recubridor de S1vS1 a cada grupo libre generado con combinaciones de los lazos ab. Como explica Hatcher, se hace cogiendo la imagen del homomorfismo inducido por el recubrimiento en el grupo fundamental del recubrimiento fijando un punto base preimagen del punto base de X. El subgrupo generado por esta imagen en pi(X,x0) es el que se corresponde con el recubrimiento. En este caso, fijada una preimagen de d0, los lazos en d0 son los que tienen total winding number 0 porque cada vez que hacen un giro bajan o suben de nivel, por lo que para volver a d0 tienen que subir lo mismo que bajan
 
@@ -103,7 +105,7 @@ donde el 0 proviene de que $A$ y $B$ son homotópicamente equivalentes a un espa
 
 \begin{figure}[h!]
 \includegraphics[scale=0.7]{Imagenes/Burau}
-\caption{Cálculo de la acción de $\psi_r(\sigma_i)$ sobre $H_1(\widetilde{X})$ usando diagramas de nivel.}\label{representacion}
+\caption{Acción de $\psi_r(\sigma_i)$ sobre $H_1(\widetilde{X})$.}\label{representacion}
 \end{figure}
 
 \subsection{Expresión matricial}
@@ -118,7 +120,7 @@ v_j & c.c.
 \end{cases}
 \]
 
-Así, las matrices para la representación con respecto a la base $\{v_1,\dots, v_n\}$ son
+Así, las matrices para la representación con respecto a la base $\{v_1,\dots, v_{n-1}\}$ son
 \[
 \psi_r(\sigma_1)=\begin{pmatrix}
 -t & 0 & \\
@@ -140,15 +142,24 @@ I_{i-2} & & &\\
 \end{pmatrix}.
 \]
 
-Vamos a ver exactamente cómo obtener estas matrices a partir de la Figura \ref{representacion}. Tenemos en la figura todos los casos en los que $\sigma_i$ afecta a un generador de la homología representado por un levantamiento de un lazo de la forma $x_jx_{j+1}^{-1}$. Suponemos que partimos de la hoja $X^*_0$. Buscamos expresar el levantamiento la imagen de $x_jx_{j+1}^{-1}$ como el levantamiento de un conjugado de un producto de generadores del tipo $x_jx_{j+1}^{-1}$ y sus inversos. En la homología, conjugar no afecta porque es un grupo abeliano, pero nos indicará en qué nivel del recubridor comienza el levantamiento de cada $(x_jx_{j+1}^{-1})^{\pm 1}$. La fila en la que coloquemos los monomios será la $j$-ésima donde $x_jx_{j+1}^{-1}$ es el lazo al que se le aplicaba $\sigma_i$. La columna será la de índice $k$ tal que un levantamiento de $x_kx_{k+1}^{-1}$ (o de su inverso) es un factor del levantamiento de la imagen de $x_jx_{j+1}^{-1}$ mediante $\sigma_i$. El monomio que ocupará la posición $(j,k)$ será $(-1)^et^m$ donde $e$ es el exponente de $x_kx_{k+1}^{-1}$ y $m$ es el nivel más bajo del recubrimiento por el que pasa el levantamiento de $x_kx_{k+1}^{-1}$. El resto de entradas serán 0.
+Vamos a ver exactamente cómo obtener esta representación a partir de la Figura \ref{representacion}. Tenemos en la figura todos los casos en los que la acción de $\sigma_i$ afecta a un generador $v_j$ de $H_1(\widetilde{X})$ representado por un levantamiento de un lazo de la forma $x_jx_{j+1}^{-1}$. Buscamos expresar la imagen de cada $v_j$ como combinación con coeficientes en $\Z[t,t^{-1}]$ de la base de $H_1(\widetilde{X})$, para lo cual seguiremos la interpretación de $H_1(\widetilde{X})$ como $\Z[t,t^{-1}]$-módulo de la demostración de la Proposición \ref{dimension}. 
+%Suponemos que partimos de la hoja $X^*_0$. Buscamos expresar el levantamiento la imagen de $x_jx_{j+1}^{-1}$ como el levantamiento de un conjugado de un producto de generadores del tipo $x_jx_{j+1}^{-1}$ y sus inversos. En la homología, conjugar no afecta porque es un grupo abeliano, pero nos indicará en qué nivel del recubridor comienza el levantamiento de cada $(x_jx_{j+1}^{-1})^{\pm 1}$. La fila en la que coloquemos los monomios será la $j$-ésima donde $x_jx_{j+1}^{-1}$ es el lazo al que se le aplicaba $\sigma_i$. La columna será la de índice $k$ tal que un levantamiento de $x_kx_{k+1}^{-1}$ (o de su inverso) es un factor del levantamiento de la imagen de $x_jx_{j+1}^{-1}$ mediante $\sigma_i$. El monomio que ocupará la posición $(j,k)$ será $(-1)^et^m$ donde $e$ es el exponente de $x_kx_{k+1}^{-1}$ y $m$ es el nivel más bajo del recubrimiento por el que pasa el levantamiento de $x_kx_{k+1}^{-1}$. El resto de entradas serán 0.
+%
 
-En el primer caso de la Figura \ref{representacion} partimos de $x_{i-1}x_i^{-1}$ y vemos que el resultado es un levantamiento de $x_{i-1}x_ix_{i+1}^{-1}x_i^{-1}$, o equivalentemente en la homología, de $x_{i-1}x_i^{-1}x_ix_{i+1}^{-1}$. La primera expresión nos permite ver que el lazo $x_ix_{i+1}^{-1}$ ocurre entre el nivel 1 y el 2, ya que $x_{i-1}$ sube a $X^*_1$ en el recubridor, para luego bajar a $X^*_0$ con $x_i^{-1}$. La segunda expresión hace ver que hay dos generadores interviniendo. Entonces, como el lazo al que le aplicábamos $\sigma_i$ era $x_{i-1}x_i^{-1}$, vamos a situarnos en la fila $i-1$ de la matriz. En la columna $i-1$ introducimos la información proporcionada por $x_{i-1}x_i^{-1}$ en el levantamiento. Como hemos explicado, este generador aparece levantado entre los niveles 0 y 1, por lo que elegimos el monomio $t^0=1$ para ocupar la posición $(i-1,i-1)$. En el caso de $x_ix_{i+1}^{-1}$, que determina la posición $(i-1,i)$, como este generador aparece entre los niveles 1 y 2, el monomio que elegimos es $t^1=t$. 
+En el primer caso de la Figura \ref{representacion} partimos de $v_{i-1}$, y su imagen está representada por un levantamiento de $x_{i-1}x_ix_{i+1}^{-1}x_i^{-1}=(x_{i-1}x_i^{-1})(x_ix_ix_{i+1}^{-1}x_i^{-1})$, que representa a $v_i+tv_i$. 
 
-En el segundo caso, la imagen viene dada por el levantamiento de $x_ix_{i+1}x_i^{-1}x_i^{-1}=x_i(x_ix_{i+1}^{-1})^{-1}x_i^{-1}$, es decir, un conjungado de $(x_ix_{i+1}^{-1})^{-1}$. Como ahora $\sigma_i$ actuaba sobre $x_ix_{i+1}^{-1}$, nos situamos en la fila $i$. Al empezar con $x_i$, vemos que el levantamiento de $(x_ix_{i+1}^{-1})^{-1}$ ocurre entre los niveles 1 y 2. Como además tiene exponente negativo, la posición $(i,i)$ estará ocupada por $-t$. 
+En el segundo caso el generador es $v_i$. La imagen viene dada por el levantamiento de $x_ix_{i+1}x_i^{-1}x_i^{-1}=x_i(x_ix_{i+1}^{-1})^{-1}x_i^{-1}$, es decir, un representante de $-tv_i$. 
 
-Por último, en el tercer caso la imagen es un levantamiento de $x_ix_{i+2}^{-1}=x_ix_{i+1}^{-1}x_{i+1}x_{i+2}^{-1}$. Análogamente a los casos anteriores, tenemos un 1 en la posición $(i+1,i+1)$ y otro 1 en la posición $(i+1,i+2)$. 
+Por último, en el tercer caso la imagen de $v_{i+1}$ es un levantamiento de $x_ix_{i+2}^{-1}=(x_ix_{i+1}^{-1})(x_{i+1}x_{i+2}^{-1})$, que representa al elemento $v_i+v_{i+1}$.
 
-En los casos en los que $\sigma_i$ no modifica el lazo $x_jx_{j+1}^{-1}$ también se puede seguir el mismo razonamiento para concluir que los bloques restantes forman matrices identidad. También en los casos extremos de $\sigma_1$ y $\sigma_{n-1}$ se hace de la misma manera.
+En los casos en los que $\sigma_i$ no modifica el lazo $x_jx_{j+1}^{-1}$ es claro que la acción resultante es la identidad. 
+%En el primer caso de la Figura \ref{representacion} partimos de $x_{i-1}x_i^{-1}$ y vemos que el resultado es un levantamiento de $x_{i-1}x_ix_{i+1}^{-1}x_i^{-1}$, o equivalentemente en la homología, de $x_{i-1}x_i^{-1}x_ix_{i+1}^{-1}$. La primera expresión nos permite ver que el lazo $x_ix_{i+1}^{-1}$ ocurre entre el nivel 1 y el 2, ya que $x_{i-1}$ sube a $X^*_1$ en el recubridor, para luego bajar a $X^*_0$ con $x_i^{-1}$. La segunda expresión hace ver que hay dos generadores interviniendo. Entonces, como el lazo al que le aplicábamos $\sigma_i$ era $x_{i-1}x_i^{-1}$, vamos a situarnos en la fila $i-1$ de la matriz. En la columna $i-1$ introducimos la información proporcionada por $x_{i-1}x_i^{-1}$ en el levantamiento. Como hemos explicado, este generador aparece levantado entre los niveles 0 y 1, por lo que elegimos el monomio $t^0=1$ para ocupar la posición $(i-1,i-1)$. En el caso de $x_ix_{i+1}^{-1}$, que determina la posición $(i-1,i)$, como este generador aparece entre los niveles 1 y 2, el monomio que elegimos es $t^1=t$. 
+%
+%En el segundo caso, la imagen viene dada por el levantamiento de $x_ix_{i+1}x_i^{-1}x_i^{-1}=x_i(x_ix_{i+1}^{-1})^{-1}x_i^{-1}$, es decir, un conjungado de $(x_ix_{i+1}^{-1})^{-1}$. Como ahora $\sigma_i$ actuaba sobre $x_ix_{i+1}^{-1}$, nos situamos en la fila $i$. Al empezar con $x_i$, vemos que el levantamiento de $(x_ix_{i+1}^{-1})^{-1}$ ocurre entre los niveles 1 y 2. Como además tiene exponente negativo, la posición $(i,i)$ estará ocupada por $-t$. 
+%
+%Por último, en el tercer caso la imagen es un levantamiento de $x_ix_{i+2}^{-1}=x_ix_{i+1}^{-1}x_{i+1}x_{i+2}^{-1}$. Análogamente a los casos anteriores, tenemos un 1 en la posición $(i+1,i+1)$ y otro 1 en la posición $(i+1,i+2)$. 
+%
+%En los casos en los que $\sigma_i$ no modifica el lazo $x_jx_{j+1}^{-1}$ también se puede seguir el mismo razonamiento para concluir que los bloques restantes forman matrices identidad. También en los casos extremos de $\sigma_1$ y $\sigma_{n-1}$ se hace de la misma manera.
 
 Se puede comprobar directamente que las matrices anteriores satisfacen las relaciones de la presentación \ref{presentacion}. Un hecho interesante de esta representación es que se sabe que es fiel para $n\leq 3$ \cite{Birman} y que no es fiel para $n\geq 5$ \cite{Bil}\cite{LP}, pero el caso $n=4$ sigue siendo un problema abierto.
 
@@ -190,7 +201,7 @@ Existe un caso particular de la representación LKB encontrado independientement
 Consideremos $C=M_2(\D_n)/\Sigma_2$. Aquí, $\Sigma_2$ actúa sobre $M_2(\D_n)$ enviando $(x,y)$ a $(y,x)$. Se denotarán los puntos de $C$ como $\{x,y\}$ ya que al actuar $\Sigma_2$ no importa el orden. La proyección $M_2(\D_n)\to C$ que lleva $(x,y)$ a $\{x,y\}$ es claramente un recubrimiento de dos hojas. Sean $d_0$ y $d_0'$ dos puntos de $\partial\D_n$ lo bastante cercanos entre sí como para que no se crucen las hojas del recubridor. Tomamos $c_0=\{d_0,d_0'\}$ como punto base de $C$.
 
 %Es sobreyectiva y continua porque la preimagen de un abierto es unión de dos abiertos simétricos y disjuntos porque no está la diagonal
-%lo de cercanos es para asegurar que estén siempre en la misma hoja del recubridor
+%lo de cercanos es para asegurar que estén siempre en la misma hoja del recubridor PREGUNTAR ESTO
 
 Sea $\alpha:[0,1]\to C$ un camino basado $c_0$. Este camino se puede levantar relativamente a $(d_0,d_0')$ como un par de caminos de la forma $(\alpha_1,\alpha_2)$, con $\alpha_1,\alpha_2:[0,1]\to\D_n$, el primero basado en $d_0$ y el segundo en $d_0'$. Denotemos pues $\alpha(t)=\{\alpha_1(t),\alpha_2(t)\}$. Nótese que si $\alpha$ es un lazo entonces $\{\alpha_1(0),\alpha_2(0)\}=\{\alpha_1(1),\alpha_2(1)\}=\{d_0,d_0'\}$. Por lo tanto, o bien $\alpha_1$ y $\alpha_2$ son ambos lazos o bien su concatenación forma un lazo. Ambos casos se observan en la Figura \ref{loop}. 
 
@@ -219,14 +230,14 @@ Sea $h$ un automorfismo de $\D_n$ que fije el borde punto a punto. Entonces $h$ 
 
 
 \begin{defi}
-La representación $\kappa:B_n\to Aut(H_2(\widetilde{C}))$ inducida por $h\to\tilde{h}_*$ se llama \emph{representación de Bigelow}.
+La representación $\kappa:B_n\to Aut(H_2(\widetilde{C}))$ inducida por $h\mapsto\tilde{h}_*$ se llama \emph{representación de Bigelow}.
 \end{defi}
 
 \begin{teorema}
 La representación de Bigelow $\kappa:B_n\to Aut(H_2(\widetilde{C}))$ es fiel para todo $n\geq 1$.
 \end{teorema}
 
-Este resultado se prueba en \cite{Bil}. También por \cite{Bil} podemos tomar una base $\{v_{i,j}\in H_2(\widetilde{C})\}_{(i,j)\in Ref}$. Con esto, podemos establecer la equivalencia (\cite{nundam}) entre esta representación y la representación  \ref{LKB} como sigue:
+Este resultado se prueba en \cite{Bil}. También por \cite{Bil} podemos tomar una base $\{v_{i,j}\in H_2(\widetilde{C})\}_{(i,j)\in Ref}$. Con esto, podemos establecer la equivalencia \cite{nundam} entre esta representación y la representación  \ref{LKB} como sigue:
 \[
 v_{i,j}=x_{i,j}+(1-q)\sum_{i<k<j}x_{k,j},\quad x_{i,j}=v_{i,j}+(q-1)\sum_{i<k<j}q^{k-i-1}v_{k,j}.
 \]
@@ -234,13 +245,11 @@ v_{i,j}=x_{i,j}+(1-q)\sum_{i<k<j}x_{k,j},\quad x_{i,j}=v_{i,j}+(q-1)\sum_{i<k<j}
 %El punto base se fija porque está en el borde
 
 \section{Solución al problema de la palabra}
-Una vez obtenida una representación lineal fiel, es inmediato resolver el problema de la palabra a partir de la expresión matricial: basta hacer el producto de las matrices que representan las letras de la palabra. Si el resultado de dicho producto es la matriz identidad, entonces la palabra representa el elemento trivial y recíprocamente.
+Los resultados anteriores demuestran que los grupos de trenzas son grupos lineales. Una vez obtenida una representación lineal fiel, es inmediato resolver el problema de la palabra a partir de la expresión matricial: basta hacer el producto de las matrices que representan las letras de la palabra. Si el resultado de dicho producto es la matriz identidad, entonces la palabra representa el elemento trivial y recíprocamente.
 
 Dado que el producto de matrices se puede calcular en tiempo polinomial sobre la dimensión de la matriz, este algoritmo puede ser bastante rápido, pero la aparición de polinomios en $t$ y $t^{-1}$ de tamaño y coeficientes arbitrarios en las entradas de las matrices puede ralentizarlo significativamente, especialmente para trenzas de longitud larga.
 
 
-
-DECIR QUE LO DE ANTES DE MUESTRA QUE LOS GRUPOS DE TRENZAS SON GRUPOS LINEALES
 \begin{ej}
 Vamos a ver un ejemplo de resolver el problema de la palabra con la representación de Burau reducida para $n=3$, caso para el que sabemos que la representación es fiel. Para cualquier otra representación la mecánica es la misma. Consideremos la palabra $\sigma_1\sigma_2\sigma_1^{-1}\sigma_2^{-1}$. En este caso, tenemos las matrices
 \[
