@@ -1,0 +1,12 @@
+\frametitle{Peinado de trenzas}
+\[
+\begin{tikzcd}
+1\arrow[r]& PB_n\arrow[r, "i"] & B_n\arrow[r,"\eta"]& \Sigma_n\arrow[r] & 1
+\end{tikzcd}
+\]
+
+\[
+\begin{tikzcd}
+1\arrow[r]& F_n\arrow[r, "\iota"] & PB_{n+1}\arrow[r,"\rho", shift left]& \arrow[l,"s",shift left]PB_n\arrow[r] & 1
+\end{tikzcd}
+\]
