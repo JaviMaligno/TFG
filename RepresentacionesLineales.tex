@@ -146,7 +146,8 @@ Vamos a ver exactamente cómo obtener esta representación a partir de la Figura
 %Suponemos que partimos de la hoja $X^*_0$. Buscamos expresar el levantamiento la imagen de $x_jx_{j+1}^{-1}$ como el levantamiento de un conjugado de un producto de generadores del tipo $x_jx_{j+1}^{-1}$ y sus inversos. En la homología, conjugar no afecta porque es un grupo abeliano, pero nos indicará en qué nivel del recubridor comienza el levantamiento de cada $(x_jx_{j+1}^{-1})^{\pm 1}$. La fila en la que coloquemos los monomios será la $j$-ésima donde $x_jx_{j+1}^{-1}$ es el lazo al que se le aplicaba $\sigma_i$. La columna será la de índice $k$ tal que un levantamiento de $x_kx_{k+1}^{-1}$ (o de su inverso) es un factor del levantamiento de la imagen de $x_jx_{j+1}^{-1}$ mediante $\sigma_i$. El monomio que ocupará la posición $(j,k)$ será $(-1)^et^m$ donde $e$ es el exponente de $x_kx_{k+1}^{-1}$ y $m$ es el nivel más bajo del recubrimiento por el que pasa el levantamiento de $x_kx_{k+1}^{-1}$. El resto de entradas serán 0.
 %
 
-En el primer caso de la Figura \ref{representacion} partimos de $v_{i-1}$, y su imagen está representada por un levantamiento de $x_{i-1}x_ix_{i+1}^{-1}x_i^{-1}=(x_{i-1}x_i^{-1})(x_ix_ix_{i+1}^{-1}x_i^{-1})$, que representa a $v_i+tv_i$. 
+En el primer caso de la Figura \ref{representacion} partimos de $v_{i-1}$, y su imagen está representada por un levantamiento de $x_{i-1}x_ix_{i+1}^{-1}x_i^{-1}=(x_{i-1}x_i^{-1})(x_ix_ix_{i+1}^{-1}x_i^{-1})$, que representa a $v_{i-1}+tv_i$. 
+%SE TIENE SIEMPRE COMO REFERENCIA EL PISO 0
 
 En el segundo caso el generador es $v_i$. La imagen viene dada por el levantamiento de $x_ix_{i+1}x_i^{-1}x_i^{-1}=x_i(x_ix_{i+1}^{-1})^{-1}x_i^{-1}$, es decir, un representante de $-tv_i$. 
 
@@ -201,7 +202,7 @@ Existe un caso particular de la representación LKB encontrado independientement
 Consideremos $C=M_2(\D_n)/\Sigma_2$. Aquí, $\Sigma_2$ actúa sobre $M_2(\D_n)$ enviando $(x,y)$ a $(y,x)$. Se denotarán los puntos de $C$ como $\{x,y\}$ ya que al actuar $\Sigma_2$ no importa el orden. La proyección $M_2(\D_n)\to C$ que lleva $(x,y)$ a $\{x,y\}$ es claramente un recubrimiento de dos hojas. Sean $d_0$ y $d_0'$ dos puntos de $\partial\D_n$ lo bastante cercanos entre sí como para que no se crucen las hojas del recubridor. Tomamos $c_0=\{d_0,d_0'\}$ como punto base de $C$.
 
 %Es sobreyectiva y continua porque la preimagen de un abierto es unión de dos abiertos simétricos y disjuntos porque no está la diagonal
-%lo de cercanos es para asegurar que estén siempre en la misma hoja del recubridor PREGUNTAR ESTO
+%lo de cercanos es para asegurar que estén siempre en la misma hoja del recubridor 
 
 Sea $\alpha:[0,1]\to C$ un camino basado $c_0$. Este camino se puede levantar relativamente a $(d_0,d_0')$ como un par de caminos de la forma $(\alpha_1,\alpha_2)$, con $\alpha_1,\alpha_2:[0,1]\to\D_n$, el primero basado en $d_0$ y el segundo en $d_0'$. Denotemos pues $\alpha(t)=\{\alpha_1(t),\alpha_2(t)\}$. Nótese que si $\alpha$ es un lazo entonces $\{\alpha_1(0),\alpha_2(0)\}=\{\alpha_1(1),\alpha_2(1)\}=\{d_0,d_0'\}$. Por lo tanto, o bien $\alpha_1$ y $\alpha_2$ son ambos lazos o bien su concatenación forma un lazo. Ambos casos se observan en la Figura \ref{loop}. 
 
