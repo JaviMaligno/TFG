@@ -1,12 +1,28 @@
-\frametitle{Peinado de trenzas}
-\[
-\begin{tikzcd}
-1\arrow[r]& PB_n\arrow[r, "i"] & B_n\arrow[r,"\eta"]& \Sigma_n\arrow[r] & 1
-\end{tikzcd}
-\]
+\frametitle{Generadores del grupo de trenzas puras}
+%\begin{figure}[h!]
+%\includegraphics[scale=0.5]{Imagenes/birman}
+%\caption{Generador de Birman $A_{ij}$.}
+%\end{figure}
+\begin{figure}[h!]
+\centering
+\tikzset{decorate sep/.style 2 args=
+{decorate,decoration={shape backgrounds,shape=circle,shape size=#1,shape sep=#2}}}
+\resizebox{9cm}{4cm}{%
+\begin{tikzpicture}
 
-\[
-\begin{tikzcd}
-1\arrow[r]& F_n\arrow[r, "\iota"] & PB_{n+1}\arrow[r,"\rho", shift left]& \arrow[l,"s",shift left]PB_n\arrow[r] & 1
-\end{tikzcd}
-\]
+\node[anchor=south] at (0,2.1) {$j$};
+\foreach \x in {-7,-4,-2,-1,1,4}{
+\draw[white,double=black,very thick,-] (\x,-2) -- (\x,2);
+}
+\draw[white,double=black,very thick,-] (-3,0) -- (-3,2);
+\draw[smooth,white,double=black,line width=2mm,-] plot[variable=\x,domain=-2:2] ({-3.5*exp(-1.4*\x*\x)},{\x});
+\draw[white,double=black,very thick,-] (-3,-2) -- (-3,0);
+\node[anchor=south] at (-3,2.1) {$i$};
+\draw[decorate sep={0.5mm}{9mm},fill] (-6.5,0) -- (-4.5,0);
+\draw[decorate sep={0.5mm}{9mm},fill] (1.5,0) -- (3.5,0);
+\draw[-] (-8,2) -- (5,2);
+\draw[-] (-8,-2) -- (5,-2);
+\end{tikzpicture}
+}
+\caption{Generador de Birman $A_{ij}$.}
+\end{figure}
