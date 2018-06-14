@@ -66,8 +66,8 @@ Cuando $n$ se sobreentiende, escribimos simplemente $\Delta$.
 \begin{prop}\label{conjuga}
 Se verifican: 
 \begin{enumerate}
-\item $\Delta=\sigma_1\lor\dots\lor\sigma_{n-1}$ (\cite[Lema 1]{Garside}).
-\item $\sigma_i\Delta=\Delta\sigma_{n-i}$ para todo $i=1,\dots, n-1$ (\cite[Lema 4]{Garside}).
+\item $\Delta=\sigma_1\lor\dots\lor\sigma_{n-1}$ \cite[Lema 1]{Garside}.
+\item $\sigma_i\Delta=\Delta\sigma_{n-i}$ para todo $i=1,\dots, n-1$ \cite[Lema 4]{Garside}.
 \end{enumerate}
 \end{prop} 
 
@@ -165,7 +165,7 @@ donde los $a_i$ son los definidos anteriormente, los cuales por definición son 
 
 %prefijo propio de Delta porque Delta no era prefijo de A y se está haciendo el meet
 
-En \cite{Thurston} se puede encontrar además una forma más práctica de llevar a cabo el algoritmo de encontrar la forma normal a la izquierda, la cual será la que utilicemos en el ejemplo \ref{ejnormal}. Antes de explicarla vamos a introducir algo de nomenclatura. Dadas dos trenzas simples positivas $A$ y $B$, decimos que un prefijo no trivial $b\preccurlyeq B$ \emph{se puede pasar} de $B$ a $A$ si $Ab$ es simple, y en tal caso \emph{pasar} $b$ de $B$ a $A$ consiste en las transformacines $A\to Ab$ y $B\to b^{-1}B$. Con esto presente, el algoritmo consiste en lo siguiente:
+En \cite{Thurston} se puede encontrar además una forma más práctica de llevar a cabo el algoritmo de encontrar la forma normal a la izquierda, la cual será la que utilicemos en el ejemplo \ref{ejnormal}. Antes de explicarla vamos a introducir algo de nomenclatura. Dadas dos trenzas simples positivas $A$ y $B$, decimos que un prefijo no trivial $b\preccurlyeq B$ \emph{se puede pasar} de $B$ a $A$ si $Ab$ es simple, y en tal caso \emph{pasar} $b$ de $B$ a $A$ consiste en las transformaciones $A\to Ab$ y $B\to b^{-1}B$. Con esto presente, el algoritmo consiste en lo siguiente:
 \begin{enumerate}
 \item Una vez tenemos una palabra $w\in B_n$ en forma normal de Garside $w=\Delta^p A$, si $A=1$, entonces no hay nada que hacer. En caso contrario, dividimos $A$ en bloques formados por elementos simples, digamos, $$A=a_{1,0}a_{2,0}\dots a_{m,0}.$$
 \item En el paso $t\geq 0$ tenemos $A$ expresada en bloques de elementos simples como
